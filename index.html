@@ -1,0 +1,852 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<title>Home Page</title>
+		<script type="module" crossorigin="" src="./js/index.min.js?v=1788808698006"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1788808698006">
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1788808698006">
+		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1788808698006">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1788808698006">
+		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1788808698006">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" data-fls-header-scroll="" class="header">
+				<div class="header__container">
+					<div class="header__content">
+						<a href="#" class="header__logo">
+							<img src="./assets/img/logo.svg" alt="logo">
+						</a>
+						<div class="header__menu menu">
+							<nav class="menu__body">
+								<ul class="menu__list">
+									<li class="menu__item">
+										<a href="#" class="menu__link">Каталог</a>
+									</li>
+									<li class="menu__item">
+										<a href="#" class="menu__link">Як це працює</a>
+									</li>
+									<li class="menu__item">
+										<a href="#" class="menu__link">Про нас</a>
+									</li>
+									<li class="menu__item">
+										<a href="#" class="menu__link">Доставка</a>
+									</li>
+									<li class="menu__item">
+										<a href="#" class="menu__link">Контакти</a>
+									</li>
+								</ul>
+								<div class="menu__actions-mob"></div>
+							</nav>
+						</div>
+						<!--
+<fetch url="@components/layout/menu/menu.json">
+<each loop='item in response'>
+</each>
+</fetch>
+-->
+						<div class="header__actions">
+							<button data-fls-dynamic=".menu__actions-mob, 768" data-fls-button="" type="button" class="header__button button button--padding-one button--border-color-two">
+								Кошик
+								<span>0</span>
+							</button>
+							<button data-fls-dynamic=".menu__actions-mob, 768" data-fls-button="" type="button" class="header__button button button--padding-one button--border-color-one button--background-black">
+								log
+					in
+								<svg aria-hidden="true" viewbox="0 0 12 8" xmlns="http://www.w3.org/2000/svg">
+									<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z"></path>
+								</svg>
+							</button>
+							<button type="button" data-fls-menu="" class="menu__icon icon-menu">
+								<span></span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</header>
+			<main class="page">
+				<div data-fls-index="" class="index">
+					<section data-fls-hero="" class="hero">
+						<div class="hero__decor" aria-hidden="true">
+							<svg width="1672" height="1337" viewbox="0 0 1672 1337" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M49.1168 446.86C164.961 -161.271 584.522 -21.0081 311.342 534.525C38.1624 1090.06 459.668 1224.5 573.568 622.189C687.467 19.8761 1107.03 160.139 835.793 709.854C564.558 1259.57 1032.75 1254.37 1098.02 797.518C1163.29 340.663 1582.85 480.926 1360.24 885.183C1137.64 1289.44 1533.86 1499.52 1622.47 972.847" stroke="#DFC1B7" stroke-width="100"></path>
+							</svg>
+						</div>
+						<div class="hero__container">
+							<div class="hero__content">
+								<h1 class="hero__title">Більше, ніж порядок</h1>
+								<p class="hero__text">
+									Лотки, бокси та фіксатори, що тримаються на сітці й не роз'їжджаються, коли відкриваєш шухляду. Збери
+				свою комбінацію під власний ящик.
+								</p>
+								<div class="hero__buttons">
+									<button data-fls-button="" type="button" class="button button--padding-two button--border-color-one button--background-black">
+										Обрати набір
+										<svg aria-hidden="true" width="12" height="8" viewbox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z" fill="#F8F4F1"></path>
+										</svg>
+									</button>
+									<button data-fls-button="" type="button" class="button button--padding-two button--border-color-one">
+										Як це працює
+										<svg aria-hidden="true" width="12" height="8" viewbox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z" fill="#2e2e2e"></path>
+										</svg>
+									</button>
+								</div>
+							</div>
+						</div>
+						<!--
+Повнобережна (full-bleed, ширша за __container) галерея: свайпер із фото товарів
+"пропливає" за мокапом телефону, який лежить нерухомо по центру зверху.
+Слайди йдуть внахлест (від'ємний spaceBetween) і масштабуються в hero.js за
+прогресом слайду відносно центру (що далі від центру — то менший, і той,
+що ближче — лягає зверху) — design ref: рівно 2 картки зліва й 2 справа,
+центр повністю перекритий мокапом. Це не CSS, а розрахунок на кожному
+кадрі свайпу.
+TODO: зараз усі слайди — одне тимчасове фото (oakywood-*.jpg), поки немає
+реальної предметної зйомки. Заміни src на реальні фото — розмітку й свайпер
+міняти не потрібно, досить розширити/замінити список .hero__slide.
+-->
+						<div class="hero__gallery" aria-hidden="true">
+							<div data-fls-hero-slider="" class="hero__slider swiper">
+								<div class="hero__wrapper swiper-wrapper">
+									<div class="hero__slide swiper-slide">
+										<div class="hero__slide-inner">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/IMG_9846-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/IMG_9846-1200.webp" type="image/webp">
+												<img class="hero__slide-image" alt="" width="500" height="400" src="./assets/img/IMG_9846.webp">
+											</picture>
+										</div>
+									</div>
+									<div class="hero__slide swiper-slide">
+										<div class="hero__slide-inner">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/IMG_9847-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/IMG_9847-1200.webp" type="image/webp">
+												<img class="hero__slide-image" alt="" width="500" height="400" src="./assets/img/IMG_9847.webp">
+											</picture>
+										</div>
+									</div>
+									<div class="hero__slide swiper-slide">
+										<div class="hero__slide-inner">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
+												<img class="hero__slide-image" alt="" width="500" height="400" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
+											</picture>
+										</div>
+									</div>
+									<div class="hero__slide swiper-slide">
+										<div class="hero__slide-inner">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/IMG_9857-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/IMG_9857-1200.webp" type="image/webp">
+												<img class="hero__slide-image" alt="" width="500" height="400" src="./assets/img/IMG_9857.webp">
+											</picture>
+										</div>
+									</div>
+									<div class="hero__slide swiper-slide">
+										<div class="hero__slide-inner">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
+												<img class="hero__slide-image" alt="" width="500" height="400" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
+											</picture>
+										</div>
+									</div>
+									<div class="hero__slide swiper-slide">
+										<div class="hero__slide-inner">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
+												<img class="hero__slide-image" alt="" width="500" height="400" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
+											</picture>
+										</div>
+									</div>
+									<div class="hero__slide swiper-slide">
+										<div class="hero__slide-inner">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
+												<img class="hero__slide-image" alt="" width="500" height="400" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
+											</picture>
+										</div>
+									</div>
+									<div class="hero__slide swiper-slide">
+										<div class="hero__slide-inner">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
+												<img class="hero__slide-image" alt="" width="500" height="400" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
+											</picture>
+										</div>
+									</div>
+									<div class="hero__slide swiper-slide">
+										<div class="hero__slide-inner">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
+												<img class="hero__slide-image" alt="" width="500" height="400" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
+											</picture>
+										</div>
+									</div>
+									<div class="hero__slide swiper-slide">
+										<div class="hero__slide-inner">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
+												<img class="hero__slide-image" alt="" width="500" height="400" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
+											</picture>
+										</div>
+									</div>
+									<div class="hero__slide swiper-slide">
+										<div class="hero__slide-inner">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
+												<img class="hero__slide-image" alt="" width="500" height="400" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
+											</picture>
+										</div>
+									</div>
+									<div class="hero__slide swiper-slide">
+										<div class="hero__slide-inner">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
+												<img class="hero__slide-image" alt="" width="500" height="400" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
+											</picture>
+										</div>
+									</div>
+									<div class="hero__slide swiper-slide">
+										<div class="hero__slide-inner">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
+												<img class="hero__slide-image" alt="" width="500" height="400" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
+											</picture>
+										</div>
+									</div>
+									<div class="hero__slide swiper-slide">
+										<div class="hero__slide-inner">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
+												<img class="hero__slide-image" alt="" width="500" height="400" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
+											</picture>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="hero__mockup">
+								<img class="hero__mockup-frame" src="./assets/img/hero/Device%2014PM.png" alt="" width="384" height="787">
+								<svg width="25" height="25" viewbox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero__mockup-logotop">
+									<path d="M0 12.9825C0 5.81248 5.81248 0 12.9825 0C14.9742 0 16.5888 1.61458 16.5888 3.60626V11.9808C16.5888 14.5257 14.5257 16.5888 11.9808 16.5888H3.60626C1.61458 16.5888 0 14.9742 0 12.9825Z" fill="#2E2E2E"></path>
+									<rect x="20.2751" width="16.5888" height="16.5888" rx="4.608" fill="#2E2E2E"></rect>
+									<circle cx="8.2944" cy="28.5696" r="8.2944" fill="#BE8E89"></circle>
+									<rect x="20.2751" y="20.2752" width="16.5888" height="16.5888" rx="4.608" fill="#2E2E2E"></rect>
+								</svg>
+								<div class="hero__mockup-screen">
+									<img class="hero__mockup-logo" src="./assets/img/H1.svg" alt="" width="70" height="19">
+									<p class="hero__mockup-heading">Порядок для твого особистого простору</p>
+									<p class="hero__mockup-text">
+										Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину рядків,
+					відступи та загальну композицію сторінки.
+									</p>
+									<!-- src синхронізується з активним слайдом свайпера в hero.js -->
+									<div class="hero__mockup-photo">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
+											<img data-fls-hero-mockup-photo="" alt="" width="400" height="320" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
+										</picture>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section data-fls-sistempintext="" class="sistempintext">
+						<div class="sistempintext__container sistempintext__container--two">
+							<span class="sistempintext__kicker">Система Pin Pin</span>
+							<h2 class="sistempintext__title">
+								Модульна система яку
+								<mark class="sistempintext__highlight">ти збираєш під себе</mark>
+							</h2>
+							<div class="sistempintext__parahraph">
+								<p class="sistempintext__text">
+									Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту,
+				довжину рядків, відступи та загальну композицію сторінки.
+								</p>
+							</div>
+							<a href="#" class="sistempintext__button button button--padding-two button--border-color-one">
+								Обрати набір
+								<svg aria-hidden="true" width="12" height="8" viewbox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z" fill="#2e2e2e"></path>
+								</svg>
+							</a>
+						</div>
+					</section>
+					<section data-fls-catalogscart="" class="catalogscart">
+						<div class="catalogscart__container catalogscart__container--three">
+							<div class="catalogscart__head">
+								<div class="catalogscart__heading">
+									<span class="catalogscart__kicker">каталог</span>
+									<h2 class="catalogscart__title">Обери свій набір</h2>
+								</div>
+								<a href="#" class="catalogscart__all">
+									Весь каталог
+									<svg aria-hidden="true" width="12" height="8" viewbox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z" fill="currentColor"></path>
+									</svg>
+								</a>
+							</div>
+							<ul class="catalogscart__grid">
+								<li class="catalogscart__card">
+									<a href="#" class="catalogscart__photo">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
+											<img alt="BOX_L" width="400" height="400" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
+										</picture>
+									</a>
+									<div class="catalogscart__info">
+										<a href="#" class="catalogscart__name">BOX_L</a>
+										<p class="catalogscart__dims">11 × 18 × 6.3 см</p>
+										<p class="catalogscart__price">890 ₴</p>
+										<div class="catalogscart__swatches" aria-hidden="true">
+											<button type="button" class="catalogscart__swatch catalogscart__swatch--black"></button>
+											<button type="button" class="catalogscart__swatch catalogscart__swatch--white"></button>
+											<button type="button" class="catalogscart__swatch catalogscart__swatch--blush"></button>
+											<button type="button" class="catalogscart__swatch catalogscart__swatch--mixed"></button>
+										</div>
+									</div>
+									<div class="catalogscart__add-halo" aria-hidden="true">
+										<button type="button" class="catalogscart__add" aria-label="Додати BOX_L у кошик">
+											<svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+												<path d="M14.6188 15.4938C15.102 15.4938 15.4938 15.102 15.4938 14.6188L15.4938 6.74377C15.4938 6.26053 15.102 5.86877 14.6188 5.86877C14.1355 5.86877 13.7438 6.26053 13.7438 6.74377L13.7438 13.7438L6.74377 13.7438C6.26053 13.7438 5.86877 14.1355 5.86877 14.6188C5.86877 15.102 6.26053 15.4938 6.74377 15.4938L14.6188 15.4938ZM0.618774 0.618774L5.59911e-05 1.23749L14.0001 15.2375L14.6188 14.6188L15.2375 14.0001L1.23749 5.59911e-05L0.618774 0.618774Z"></path>
+											</svg>
+										</button>
+									</div>
+								</li>
+								<li class="catalogscart__card">
+									<a href="#" class="catalogscart__photo">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/IMG_9846-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/IMG_9846-1200.webp" type="image/webp">
+											<img alt="BOX_S" width="400" height="400" src="./assets/img/IMG_9846.webp">
+										</picture>
+									</a>
+									<div class="catalogscart__info">
+										<a href="#" class="catalogscart__name">BOX_S</a>
+										<p class="catalogscart__dims">11 × 18 × 3.5 см</p>
+										<p class="catalogscart__price">650 ₴</p>
+										<div class="catalogscart__swatches" aria-hidden="true">
+											<button type="button" class="catalogscart__swatch catalogscart__swatch--black"></button>
+											<button type="button" class="catalogscart__swatch catalogscart__swatch--white"></button>
+											<button type="button" class="catalogscart__swatch catalogscart__swatch--blush"></button>
+											<button type="button" class="catalogscart__swatch catalogscart__swatch--mixed"></button>
+										</div>
+									</div>
+									<div class="catalogscart__add-halo" aria-hidden="true">
+										<button type="button" class="catalogscart__add" aria-label="Додати BOX_L у кошик">
+											<svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+												<path d="M14.6188 15.4938C15.102 15.4938 15.4938 15.102 15.4938 14.6188L15.4938 6.74377C15.4938 6.26053 15.102 5.86877 14.6188 5.86877C14.1355 5.86877 13.7438 6.26053 13.7438 6.74377L13.7438 13.7438L6.74377 13.7438C6.26053 13.7438 5.86877 14.1355 5.86877 14.6188C5.86877 15.102 6.26053 15.4938 6.74377 15.4938L14.6188 15.4938ZM0.618774 0.618774L5.59911e-05 1.23749L14.0001 15.2375L14.6188 14.6188L15.2375 14.0001L1.23749 5.59911e-05L0.618774 0.618774Z"></path>
+											</svg>
+										</button>
+									</div>
+								</li>
+								<li class="catalogscart__card">
+									<a href="#" class="catalogscart__photo">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/IMG_9848-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/IMG_9848-1200.webp" type="image/webp">
+											<img alt="BOX_S" width="400" height="400" src="./assets/img/IMG_9848.webp">
+										</picture>
+									</a>
+									<div class="catalogscart__info">
+										<a href="#" class="catalogscart__name">BOX_S</a>
+										<p class="catalogscart__dims">11 × 18 × 3.5 см</p>
+										<p class="catalogscart__price">650 ₴</p>
+										<div class="catalogscart__swatches" aria-hidden="true">
+											<button type="button" class="catalogscart__swatch catalogscart__swatch--black"></button>
+											<button type="button" class="catalogscart__swatch catalogscart__swatch--white"></button>
+											<button type="button" class="catalogscart__swatch catalogscart__swatch--blush"></button>
+											<button type="button" class="catalogscart__swatch catalogscart__swatch--mixed"></button>
+										</div>
+									</div>
+									<div class="catalogscart__add-halo" aria-hidden="true">
+										<button type="button" class="catalogscart__add" aria-label="Додати BOX_L у кошик">
+											<svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+												<path d="M14.6188 15.4938C15.102 15.4938 15.4938 15.102 15.4938 14.6188L15.4938 6.74377C15.4938 6.26053 15.102 5.86877 14.6188 5.86877C14.1355 5.86877 13.7438 6.26053 13.7438 6.74377L13.7438 13.7438L6.74377 13.7438C6.26053 13.7438 5.86877 14.1355 5.86877 14.6188C5.86877 15.102 6.26053 15.4938 6.74377 15.4938L14.6188 15.4938ZM0.618774 0.618774L5.59911e-05 1.23749L14.0001 15.2375L14.6188 14.6188L15.2375 14.0001L1.23749 5.59911e-05L0.618774 0.618774Z"></path>
+											</svg>
+										</button>
+									</div>
+								</li>
+								<li class="catalogscart__card">
+									<a href="#" class="catalogscart__photo">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/IMG_9861-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/IMG_9861-1200.webp" type="image/webp">
+											<img alt="BOX_L" width="400" height="400" src="./assets/img/IMG_9861.webp">
+										</picture>
+									</a>
+									<div class="catalogscart__info">
+										<a href="#" class="catalogscart__name">BOX_L</a>
+										<p class="catalogscart__dims">11 × 18 × 6.3 см</p>
+										<p class="catalogscart__price">890 ₴</p>
+										<div class="catalogscart__swatches" aria-hidden="true">
+											<button type="button" class="catalogscart__swatch catalogscart__swatch--black"></button>
+											<button type="button" class="catalogscart__swatch catalogscart__swatch--white"></button>
+											<button type="button" class="catalogscart__swatch catalogscart__swatch--blush"></button>
+											<button type="button" class="catalogscart__swatch catalogscart__swatch--mixed"></button>
+										</div>
+									</div>
+									<div class="catalogscart__add-halo" aria-hidden="true">
+										<button type="button" class="catalogscart__add" aria-label="Додати BOX_L у кошик">
+											<svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+												<path d="M14.6188 15.4938C15.102 15.4938 15.4938 15.102 15.4938 14.6188L15.4938 6.74377C15.4938 6.26053 15.102 5.86877 14.6188 5.86877C14.1355 5.86877 13.7438 6.26053 13.7438 6.74377L13.7438 13.7438L6.74377 13.7438C6.26053 13.7438 5.86877 14.1355 5.86877 14.6188C5.86877 15.102 6.26053 15.4938 6.74377 15.4938L14.6188 15.4938ZM0.618774 0.618774L5.59911e-05 1.23749L14.0001 15.2375L14.6188 14.6188L15.2375 14.0001L1.23749 5.59911e-05L0.618774 0.618774Z"></path>
+											</svg>
+										</button>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</section>
+					<section data-fls-beforeandafter="" class="beforeandafter">
+						<div class="beforeandafter__container beforeandafter__container--four">
+							<span class="beforeandafter__kicker">До і після</span>
+							<h2 class="beforeandafter__title">Та сама шухляда</h2>
+							<div data-fls-beforeafter="" class="beforeandafter__before-after">
+								<div data-fls-beforeafter-before="" class="beforeandafter__item">
+									<div class="beforeandafter__text-before">ДО</div>
+									<div class="beforeandafter__before-center">Фото шухляди без системи</div>
+									<picture>
+										<source media="(max-width: 600px)" srcset="./assets/img/IMG_9848-600.webp" type="image/webp">
+										<source media="(max-width: 1200px)" srcset="./assets/img/IMG_9848-1200.webp" type="image/webp">
+										<img alt="Image" class="beforeandafter__image" src="./assets/img/IMG_9848.webp">
+									</picture>
+								</div>
+								<div data-fls-beforeafter-after="" class="beforeandafter__item">
+									<div class="beforeandafter__text-after">ПІСЛЯ</div>
+									<div class="beforeandafter__after-center">Фото тієї самої шухляди з PIN PIN</div>
+									<picture>
+										<source media="(max-width: 600px)" srcset="./assets/img/IMG_9861-600.webp" type="image/webp">
+										<source media="(max-width: 1200px)" srcset="./assets/img/IMG_9861-1200.webp" type="image/webp">
+										<img alt="Image" class="beforeandafter__image" src="./assets/img/IMG_9861.webp">
+									</picture>
+								</div>
+								<div data-fls-beforeafter-arrow="" class="beforeandafter__arrow">
+									<div class="beforeandafter__drag">перетягни</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section data-fls-stepsgettingorganised="" class="stepsgettingorganised">
+						<div class="stepsgettingorganised__container stepsgettingorganised__container--nine">
+							<span class="stepsgettingorganised__kicker">Як це працює</span>
+							<h2 class="stepsgettingorganised__title">Три кроки до порядку</h2>
+							<div class="stepsgettingorganised__list">
+								<div class="stepsgettingorganised__step stepsgettingorganised__step--1">
+									<span class="stepsgettingorganised__number">01</span>
+									<h3 class="stepsgettingorganised__name">Виміряй шухляду</h3>
+									<p class="stepsgettingorganised__text">
+										Довжина, ширина, висота.
+										<br>
+										Звір із таблицею сумісності.
+									</p>
+								</div>
+								<div class="stepsgettingorganised__step stepsgettingorganised__step--2">
+									<span class="stepsgettingorganised__number">02</span>
+									<h3 class="stepsgettingorganised__name">Обери конфігурацію</h3>
+									<p class="stepsgettingorganised__text">
+										Готовий набір або збери свій —
+										<br>
+										покомпонентно, під свої речі.
+									</p>
+								</div>
+								<div class="stepsgettingorganised__step stepsgettingorganised__step--3">
+									<span class="stepsgettingorganised__number">03</span>
+									<h3 class="stepsgettingorganised__name">Встанови за хвилину</h3>
+									<p class="stepsgettingorganised__text">
+										Поклади основу, встав штирі,
+										<br>
+										натисни контейнер. Клацнуло.
+									</p>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section data-fls-aboutuspin="" class="aboutuspin">
+						<div class="aboutuspin__container aboutuspin__container--five">
+							<div class="aboutuspin__content">
+								<span class="aboutuspin__kicker">Про нас</span>
+								<h2 class="aboutuspin__title">Це приклад тексту</h2>
+								<div class="aboutuspin__parahraph">
+									<p class="aboutuspin__text">
+										Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину рядків,
+					відступи та загальну композицію сторінки.
+									</p>
+									<p class="aboutuspin__text">
+										Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину рядків,
+					відступи та загальну композицію сторінки.
+									</p>
+								</div>
+								<a href="#" class="aboutuspin__button button button--padding-two button--background-black button--border-color-one">
+									Дізнатись більше
+									<svg aria-hidden="true" width="12" height="8" viewbox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z" fill="#F8F4F1"></path>
+									</svg>
+								</a>
+							</div>
+							<div class="aboutuspin__media" data-fls-watcher="" data-fls-watcher-once="">
+								<div class="aboutuspin__photo">
+									<picture>
+										<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
+										<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
+										<img alt="" width="636" height="688" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
+									</picture>
+								</div>
+								<div class="aboutuspin__badge aboutuspin__badge--top">
+									<strong class="aboutuspin__badge-value">
+										<span data-fls-digcounter="">25</span>
+										<span>+ років</span>
+									</strong>
+									<span class="aboutuspin__badge-text">на ринку України, з бізнесом, який обслуговує більше аніж 80
+					країн</span>
+								</div>
+								<div class="aboutuspin__badge aboutuspin__badge--bottom">
+									<strong class="aboutuspin__badge-value">
+										<span data-fls-digcounter="">25</span>
+										<span>+ років</span>
+									</strong>
+									<span class="aboutuspin__badge-text">на ринку України, з бізнесом, який обслуговує більше аніж 80
+					країн</span>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section data-fls-reviewspin="" class="reviewspin">
+						<div class="reviewspin__container reviewspin__container--six">
+							<span class="reviewspin__kicker">Відгуки</span>
+							<h2 class="reviewspin__title">Реальні відгуки покупців</h2>
+							<p class="reviewspin__text">
+								Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину рядків, відступи
+			та загальну композицію сторінки.
+							</p>
+							<span class="reviewspin__caption">Обирай порядок для свого простору</span>
+						</div>
+						<ul data-fls-parallax-parent="" class="reviewspin__list">
+							<li data-fls-parallax="" class="reviewspin__card-block">
+								<div class="reviewspin__card reviewspin__card--1">
+									<div class="reviewspin__decor">
+										<svg viewbox="0 0 483 612" xmlns="http://www.w3.org/2000/svg">
+											<path d="M39.6083 654.134C3.85708 528.798 36.4066 473.402 137.257 487.947C216.371 495.054 248.92 439.659 234.905 321.759C218.56 207.825 251.109 152.429 332.554 155.571C414.533 158.86 447.082 103.464 430.202 -10.617"></path>
+										</svg>
+									</div>
+									<div class="reviewspin__avatar-and-meta">
+										<div class="reviewspin__avatar" aria-hidden="true">
+											<picture>
+												<img alt="Image" src="./assets/img/avatar.webp">
+											</picture>
+										</div>
+										<div class="reviewspin__meta">
+											<strong class="reviewspin__name">Анна, 27 років</strong>
+											<span class="reviewspin__role">Викладачка англійської</span>
+										</div>
+									</div>
+									<p class="reviewspin__quote">
+										Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину рядків,
+					відступи та загальну композицію сторінки.
+									</p>
+								</div>
+							</li>
+							<li data-fls-parallax="" class="reviewspin__card-block">
+								<div class="reviewspin__card reviewspin__card--2">
+									<div class="reviewspin__decor">
+										<svg viewbox="0 0 263 685" xmlns="http://www.w3.org/2000/svg">
+											<path d="M221.146 637.625C109.861 595.805 94.8325 546.346 176.061 489.249C236.829 442.237 221.801 392.779 130.976 340.874C41.2266 292.51 26.1983 243.051 85.8907 192.498C146.062 141.679 131.034 92.2201 40.8057 44.1225"></path>
+										</svg>
+									</div>
+									<div class="reviewspin__avatar-and-meta">
+										<div class="reviewspin__avatar" aria-hidden="true">
+											<picture>
+												<img alt="Image" src="./assets/img/avatar.webp">
+											</picture>
+										</div>
+										<div class="reviewspin__meta">
+											<strong class="reviewspin__name">Анна, 27 років</strong>
+											<span class="reviewspin__role">Викладачка англійської</span>
+										</div>
+									</div>
+									<p class="reviewspin__quote">
+										Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину рядків,
+					відступи та загальну композицію сторінки. Це приклад тексту для заповнення макета.
+									</p>
+								</div>
+							</li>
+							<li data-fls-parallax="" class="reviewspin__card-block">
+								<div class="reviewspin__card reviewspin__card--3">
+									<div class="reviewspin__decor">
+										<svg viewbox="0 0 725 970" xmlns="http://www.w3.org/2000/svg">
+											<path d="M50.5182 967.781C44.1736 804.063 96.1901 723.743 206.568 726.821C294.329 723.414 346.346 643.094 362.617 485.86C375.165 334.377 427.181 254.057 518.667 244.9C610.718 235.855 662.735 155.534 674.716 3.93958"></path>
+										</svg>
+									</div>
+									<div class="reviewspin__avatar-and-meta">
+										<div class="reviewspin__avatar" aria-hidden="true">
+											<picture>
+												<img alt="Image" src="./assets/img/avatar.webp">
+											</picture>
+										</div>
+										<div class="reviewspin__meta">
+											<strong class="reviewspin__name">Анна, 27 років</strong>
+											<span class="reviewspin__role">Викладачка англійської</span>
+										</div>
+									</div>
+									<p class="reviewspin__quote">
+										Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину рядків,
+					відступи та загальну композицію сторінки.
+									</p>
+								</div>
+							</li>
+							<li data-fls-parallax="" class="reviewspin__card-block">
+								<div class="reviewspin__card reviewspin__card--4">
+									<div class="reviewspin__decor">
+										<svg viewbox="0 0 921 825" xmlns="http://www.w3.org/2000/svg">
+											<path d="M49.1335 815.107C79.5041 654.106 148.141 587.427 255.045 615.073C341.351 631.348 409.989 564.669 460.957 415.038C507.011 270.181 575.648 203.503 666.868 215.004C758.615 226.74 827.253 160.062 872.78 14.9693"></path>
+										</svg>
+									</div>
+									<div class="reviewspin__avatar-and-meta">
+										<div class="reviewspin__avatar" aria-hidden="true">
+											<picture>
+												<img alt="Image" src="./assets/img/avatar.webp">
+											</picture>
+										</div>
+										<div class="reviewspin__meta">
+											<strong class="reviewspin__name">Анна, 27 років</strong>
+											<span class="reviewspin__role">Викладачка англійської</span>
+										</div>
+									</div>
+									<p class="reviewspin__quote">
+										Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину рядків,
+					відступи та загальну композицію сторінки. Це приклад тексту для заповнення макета.
+									</p>
+								</div>
+							</li>
+						</ul>
+					</section>
+					<section data-fls-settext="" class="settext">
+						<div class="settext__container">
+							<h2 class="settext__title">
+								<mark class="settext__highlight">Почни зі свого набору</mark>
+							</h2>
+							<p class="settext__text">
+								Обери базову платформу та кілька модулів під свою шухляду.
+								<br>
+								Доставка по Україні — 1–3 робочі дні.
+							</p>
+							<a href="#" class="settext__button button button--padding-two button--background-black button--border-color-one">
+								Обрати набір
+								<svg aria-hidden="true" width="12" height="8" viewbox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z" fill="#F8F4F1"></path>
+								</svg>
+							</a>
+						</div>
+					</section>
+					<section data-fls-faqpin="" class="faqpin">
+						<section data-fls-marqueepin="" data-fls-marquee="" data-fls-marquee-space="20" data-fls-marquee-direction="left" data-fls-marquee-pause="" data-fls-marquee-speed="1000" class="marqueepin">
+							<div class="marqueepin__item marqueepin__item--one">
+								<picture>
+									<img alt="logo" src="./assets/img/mark-dark.webp">
+								</picture>
+								власне виробництво
+							</div>
+							<div class="marqueepin__item marqueepin__item--two">
+								<picture>
+									<img alt="logo" src="./assets/img/mark-light.webp">
+								</picture>
+								Тримається на сітці
+							</div>
+							<div class="marqueepin__item marqueepin__item--three">
+								<picture>
+									<img alt="logo" src="./assets/img/mark-dark.webp">
+								</picture>
+								Підходить під різні
+		шухляди
+							</div>
+							<div class="marqueepin__item marqueepin__item--four">
+								<picture>
+									<img alt="logo" src="./assets/img/mark-dark.webp">
+								</picture>
+								Комбінуй під себе
+							</div>
+							<div class="marqueepin__item marqueepin__item--five">
+								<picture>
+									<img alt="logo" src="./assets/img/mark-dark.webp">
+								</picture>
+								Доставка по Україні
+							</div>
+							<div class="marqueepin__item marqueepin__item--six">
+								<picture>
+									<img alt="logo" src="./assets/img/mark-light.webp">
+								</picture>
+								Власне виробництво з
+		2019
+							</div>
+						</section>
+						<div class="faqpin__decor">
+							<div class="faqpin__decor-track">
+								<div class="faqpin__decor-item">
+									<svg width="2030" height="1114" viewbox="0 0 2030 1114" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M139.244 854.954C-143.778 390.615 327.407 206.725 433.734 740.023C540.062 1273.32 1009.3 1084.44 728.225 625.092C447.15 165.741 918.335 -18.1489 1022.72 510.161C1127.1 1038.47 1549.61 729.876 1317.21 395.23C1084.8 60.5832 1555.98 -123.306 1611.7 280.299C1667.41 683.904 2161.95 559.872 1906.19 165.367" stroke="#F9F1EF" stroke-width="100"></path>
+									</svg>
+								</div>
+								<!--
+другий дублікат тієї самої фігури, зміщений одразу на вектор анімації
+(див. &__decor-item--offset у faqpin.scss) — щоб рух ішов уздовж діагоналі,
+в якій "складена" сама змійка, а не просто вбік
+-->
+								<div class="faqpin__decor-item faqpin__decor-item--offset">
+									<svg width="2030" height="1114" viewbox="0 0 2030 1114" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M139.244 854.954C-143.778 390.615 327.407 206.725 433.734 740.023C540.062 1273.32 1009.3 1084.44 728.225 625.092C447.15 165.741 918.335 -18.1489 1022.72 510.161C1127.1 1038.47 1549.61 729.876 1317.21 395.23C1084.8 60.5832 1555.98 -123.306 1611.7 280.299C1667.41 683.904 2161.95 559.872 1906.19 165.367" stroke="#F9F1EF" stroke-width="100"></path>
+									</svg>
+								</div>
+							</div>
+						</div>
+						<div class="faqpin__container faqpin__container--seven">
+							<span class="faqpin__kicker">FAQ</span>
+							<h2 class="faqpin__title">
+								<mark class="faqpin__highlight">Найчастіші запитання</mark>
+							</h2>
+							<!-- data-fls-spollers(-one) — акордеон із layout/spollers (плавне розкриття, лише один пункт відкритий), не нативний <details> -->
+							<div class="faqpin__list" data-fls-spollers="" data-fls-spollers-one="">
+								<details class="faqpin__item">
+									<summary class="faqpin__question">
+										Як зрозуміти, які модулі мені потрібні?
+										<span class="faqpin__icon" aria-hidden="true"></span>
+									</summary>
+									<div class="faqpin__answer">
+										<p>
+											Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину
+						рядків, відступи та загальну композицію сторінки.
+										</p>
+									</div>
+								</details>
+								<details class="faqpin__item">
+									<summary class="faqpin__question">
+										Чи підійде система під мою шухляду?
+										<span class="faqpin__icon" aria-hidden="true"></span>
+									</summary>
+									<div class="faqpin__answer">
+										<p>
+											Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину
+						рядків, відступи та загальну композицію сторінки.
+										</p>
+									</div>
+								</details>
+								<details class="faqpin__item">
+									<summary class="faqpin__question">
+										Чи можна докупити окремі модулі пізніше?
+										<span class="faqpin__icon" aria-hidden="true"></span>
+									</summary>
+									<div class="faqpin__answer">
+										<p>
+											Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину
+						рядків, відступи та загальну композицію сторінки.
+										</p>
+									</div>
+								</details>
+								<details class="faqpin__item">
+									<summary class="faqpin__question">
+										Скільки часу займає доставка?
+										<span class="faqpin__icon" aria-hidden="true"></span>
+									</summary>
+									<div class="faqpin__answer">
+										<p>
+											Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину
+						рядків, відступи та загальну композицію сторінки.
+										</p>
+									</div>
+								</details>
+								<details class="faqpin__item">
+									<summary class="faqpin__question">
+										Як доглядати за виробами?
+										<span class="faqpin__icon" aria-hidden="true"></span>
+									</summary>
+									<div class="faqpin__answer">
+										<p>
+											Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину
+						рядків, відступи та загальну композицію сторінки.
+										</p>
+									</div>
+								</details>
+							</div>
+						</div>
+					</section>
+				</div>
+			</main>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__container">
+					<div class="footer__top">
+						<div class="footer__brand">
+							<a href="#" class="footer__logo">7dem</a>
+							<p class="footer__tagline">
+								Модульна система Pin Pin для порядку
+								<br>
+								у твоєму особистому просторі.
+							</p>
+						</div>
+						<div class="footer__col">
+							<span class="footer__heading">Меню</span>
+							<ul class="footer__list">
+								<li>
+									<a href="#" class="footer__link">Каталог</a>
+								</li>
+								<li>
+									<a href="#" class="footer__link">Як це працює</a>
+								</li>
+								<li>
+									<a href="#" class="footer__link">Про нас</a>
+								</li>
+								<li>
+									<a href="#" class="footer__link">FAQ</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer__col">
+							<span class="footer__heading">Контакти</span>
+							<ul class="footer__list">
+								<li>
+									<a href="mailto:hello@7dem.ua" class="footer__link">hello@7dem.ua</a>
+								</li>
+								<li>
+									<a href="tel:+380440000000" class="footer__link">+380 44 000 00 00</a>
+								</li>
+								<li>
+									<span class="footer__link footer__link--static">Київ, Україна</span>
+								</li>
+							</ul>
+						</div>
+						<div class="footer__col">
+							<span class="footer__heading">Соцмережі</span>
+							<ul class="footer__list">
+								<li>
+									<a href="#" class="footer__link">Instagram — @7dem.ua</a>
+								</li>
+								<li>
+									<a href="#" class="footer__link">TikTok — @7dem.ua</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="footer__bottom">
+						<span class="footer__copy">© 2026 7dem. Усі права захищені.</span>
+						<span class="footer__note">Модульна система Pin Pin</span>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
