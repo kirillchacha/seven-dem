@@ -161,13 +161,16 @@
   flex-direction: column;
   align-items: center;
 }
-.sistempintext__kicker {
+.sistempintext .tabletext {
   color: var(--color-rose);
-  font-weight: 400;
-  padding-block: 0.5rem;
-  padding-inline: 1rem;
-  border-radius: 1.5rem;
-  background: var(--color-white);
+  border: none;
+  font-weight: 400 !important;
+  padding-inline: 1rem !important;
+  padding-block: 0.5rem !important;
+}
+.sistempintext .tabletext::before {
+  content: "";
+  display: none;
 }
 .sistempintext__title {
   margin: 0;
@@ -548,11 +551,17 @@
   flex-direction: column;
   height: 100%;
 }
-.aboutuspin__kicker {
-  display: block;
+.aboutuspin .tabletext {
+  align-self: flex-start;
   color: var(--main-color);
-  padding-block: 0.5rem;
-  padding-inline: 1rem;
+  font-weight: 400 !important;
+  border: none !important;
+  padding-inline: 1rem !important;
+  padding-block: 0.5rem !important;
+}
+.aboutuspin .tabletext::before {
+  content: "";
+  display: none;
 }
 .aboutuspin__title {
   font-family: "Days One", sans-serif;
@@ -631,10 +640,16 @@
   flex-direction: column;
   align-items: center;
 }
-.reviewspin__kicker {
+.reviewspin .tabletext {
   color: var(--main-color);
-  padding-block: 0.5rem;
-  padding-inline: 1rem;
+  border: none !important;
+  padding-inline: 1rem !important;
+  padding-block: 0.5rem !important;
+  font-weight: 400 !important;
+}
+.reviewspin .tabletext::before {
+  content: "";
+  display: none;
 }
 .reviewspin__title {
   font-family: "Days One", sans-serif;
@@ -646,12 +661,6 @@
 .reviewspin__text {
   color: var(--main-color);
   line-height: 1.6;
-}
-.reviewspin__caption {
-  text-transform: uppercase;
-  color: var(--main-color);
-  padding-block: 0.5rem;
-  padding-inline: 1rem;
 }
 .reviewspin__list {
   display: flex;
@@ -921,11 +930,16 @@
   flex-direction: column;
   align-items: center;
 }
-.faqpin__kicker {
+.faqpin .tabletext {
   color: var(--main-color);
+  border: none !important;
+  font-weight: 400 !important;
   padding-inline: 1rem;
   padding-block: 0.5rem;
-  border-radius: 1.5rem;
+}
+.faqpin .tabletext::before {
+  content: "";
+  display: none;
 }
 .faqpin__title {
   font-family: "Days One", sans-serif;
@@ -1242,10 +1256,7 @@
   .sistempintext {
     padding-bottom: 3.5rem;
   }
-  .sistempintext__kicker {
-    font-size: 0.875rem;
-  }
-  .sistempintext__kicker:not(:last-child) {
+  .sistempintext .tabletext:not(:last-child) {
     margin-bottom: 0.75rem;
   }
   .sistempintext__title {
@@ -1395,10 +1406,7 @@
   .aboutuspin__container {
     gap: 1.75rem;
   }
-  .aboutuspin__kicker {
-    font-size: 0.875rem;
-  }
-  .aboutuspin__kicker:not(:last-child) {
+  .aboutuspin .tabletext:not(:last-child) {
     margin-bottom: 1rem;
   }
   .aboutuspin__title {
@@ -1443,10 +1451,7 @@
   .reviewspin__container:not(:last-child) {
     margin-bottom: 2rem;
   }
-  .reviewspin__kicker {
-    font-size: 0.875rem;
-  }
-  .reviewspin__kicker:not(:last-child) {
+  .reviewspin .tabletext:not(:last-child) {
     margin-bottom: 0.625rem;
   }
   .reviewspin__title {
@@ -1460,9 +1465,6 @@
   }
   .reviewspin__text {
     max-width: 20rem;
-  }
-  .reviewspin__caption {
-    font-size: 0.875rem;
   }
   .reviewspin__list {
     padding-left: 1rem;
@@ -1500,10 +1502,10 @@
   .faqpin__container {
     margin-top: 2.125rem;
   }
-  .faqpin__kicker {
+  .faqpin .tabletext {
     font-size: 0.75rem;
   }
-  .faqpin__kicker:not(:last-child) {
+  .faqpin .tabletext:not(:last-child) {
     margin-bottom: 0.625rem;
   }
   .faqpin__title {
@@ -1602,10 +1604,7 @@
   .sistempintext {
     padding-bottom: clamp( 3.5rem , 2.00549450549375rem  +  7.4725274725vw , 7.75rem );
   }
-  .sistempintext__kicker {
-    font-size: clamp( 0.875rem , 0.83104395604375rem  +  0.2197802198vw , 1rem );
-  }
-  .sistempintext__kicker:not(:last-child) {
+  .sistempintext .tabletext:not(:last-child) {
     margin-bottom: clamp( 0.75rem , 0.61813186813125rem  +  0.6593406593vw , 1.125rem );
   }
   .sistempintext__title {
@@ -1755,10 +1754,7 @@
   .aboutuspin__container {
     gap: clamp( 1.75rem , 1.17857142856875rem  +  2.8571428571vw , 3.375rem );
   }
-  .aboutuspin__kicker {
-    font-size: clamp( 0.875rem , 0.83104395604375rem  +  0.2197802198vw , 1rem );
-  }
-  .aboutuspin__kicker:not(:last-child) {
+  .aboutuspin .tabletext:not(:last-child) {
     margin-bottom: clamp( 1rem , 0.824175824175rem  +  0.8791208791vw , 1.5rem );
   }
   .aboutuspin__title {
@@ -1803,10 +1799,7 @@
   .reviewspin__container:not(:last-child) {
     margin-bottom: clamp( 2rem , 1.29670329670625rem  +  3.5164835165vw , 4rem );
   }
-  .reviewspin__kicker {
-    font-size: clamp( 0.875rem , 0.83104395604375rem  +  0.2197802198vw , 1rem );
-  }
-  .reviewspin__kicker:not(:last-child) {
+  .reviewspin .tabletext:not(:last-child) {
     margin-bottom: clamp( 0.625rem , 0.449175824175rem  +  0.8791208791vw , 1.125rem );
   }
   .reviewspin__title {
@@ -1820,9 +1813,6 @@
   }
   .reviewspin__text {
     max-width: clamp( 20rem , 13.8901098901125rem  +  30.5494505495vw , 37.375rem );
-  }
-  .reviewspin__caption {
-    font-size: clamp( 0.875rem , 0.83104395604375rem  +  0.2197802198vw , 1rem );
   }
   .reviewspin__list {
     padding-left: clamp( 1rem , 0.472527472525rem  +  2.6373626374vw , 2.5rem );
@@ -1860,10 +1850,10 @@
   .faqpin__container {
     margin-top: clamp( 2.125rem , 1.399725274725rem  +  3.6263736264vw , 4.1875rem );
   }
-  .faqpin__kicker {
+  .faqpin .tabletext {
     font-size: clamp( 0.75rem , 0.70604395604375rem  +  0.2197802198vw , 0.875rem );
   }
-  .faqpin__kicker:not(:last-child) {
+  .faqpin .tabletext:not(:last-child) {
     margin-bottom: clamp( 0.625rem , 0.49313186813125rem  +  0.6593406593vw , 1rem );
   }
   .faqpin__title {
@@ -1988,10 +1978,7 @@
   .sistempintext {
     padding-bottom: 7.75rem;
   }
-  .sistempintext__kicker {
-    font-size: 1rem;
-  }
-  .sistempintext__kicker:not(:last-child) {
+  .sistempintext .tabletext:not(:last-child) {
     margin-bottom: 1.125rem;
   }
   .sistempintext__title {
@@ -2153,10 +2140,7 @@
   .aboutuspin__container {
     gap: 3.375rem;
   }
-  .aboutuspin__kicker {
-    font-size: 1rem;
-  }
-  .aboutuspin__kicker:not(:last-child) {
+  .aboutuspin .tabletext:not(:last-child) {
     margin-bottom: 1.5rem;
   }
   .aboutuspin__title {
@@ -2201,10 +2185,7 @@
   .reviewspin__container:not(:last-child) {
     margin-bottom: 4rem;
   }
-  .reviewspin__kicker {
-    font-size: 1rem;
-  }
-  .reviewspin__kicker:not(:last-child) {
+  .reviewspin .tabletext:not(:last-child) {
     margin-bottom: 1.125rem;
   }
   .reviewspin__title {
@@ -2218,9 +2199,6 @@
   }
   .reviewspin__text {
     max-width: 37.375rem;
-  }
-  .reviewspin__caption {
-    font-size: 1rem;
   }
   .reviewspin__list {
     padding-left: 2.5rem;
@@ -2264,10 +2242,10 @@
   .faqpin__container {
     margin-top: 4.1875rem;
   }
-  .faqpin__kicker {
+  .faqpin .tabletext {
     font-size: 0.875rem;
   }
-  .faqpin__kicker:not(:last-child) {
+  .faqpin .tabletext:not(:last-child) {
     margin-bottom: 1rem;
   }
   .faqpin__title {
