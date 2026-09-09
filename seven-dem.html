@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="uk">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="robots" content="noindex, nofollow">
+		<meta name="theme-color" content="#f8f4f1">
+		<title>seven-dem — перегляд проєкту</title>
+		<style>
+			:root {
+				color-scheme: light;
+				--paper: #f8f4f1;
+				--ink: #2e2e2e;
+				--muted: #736d69;
+				--rose: #be8e89;
+				--line: #e5dfda;
+			}
+			*, *::before, *::after { box-sizing: border-box; }
+			html { scroll-behavior: smooth; scroll-padding-top: 32px; }
+			body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Segoe UI", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+			a { color: inherit; text-decoration: none; }
+			button { font: inherit; cursor: pointer; }
+			button, a { -webkit-tap-highlight-color: transparent; }
+			button:focus-visible, a:focus-visible { outline: 3px solid #81544e; outline-offset: 6px; }
+			[hidden] { display: none !important; }
+			::selection { color: var(--ink); background: #dfc1b7; }
+			.projectpage { width: min(1240px, calc(100% - 96px)); margin-inline: auto; }
+			.projectpage__skip { position: absolute; top: 12px; left: 12px; z-index: 10; padding: 12px 20px; background: white; border-radius: 12px; transform: translateY(-180%); }
+			.projectpage__skip:focus { transform: translateY(0); }
+			.projectpage__header { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 30px; border-bottom: 1px solid var(--line); }
+			.projectpage__brand { display: inline-flex; align-items: center; gap: 13px; min-width: 0; }
+			.projectpage__brand-name { font-size: 25px; font-weight: 700; letter-spacing: -1.2px; overflow-wrap: anywhere; }
+			.projectpage__mark { display: grid; grid-template-columns: repeat(2, 13px); grid-template-rows: repeat(2, 13px); gap: 3px; transform: rotate(-7deg); flex-shrink: 0; }
+			.projectpage__mark i { background: var(--rose); border-radius: 4px; }
+			.projectpage__mark i:nth-child(2) { background: #b8ceac; border-radius: 7px; }
+			.projectpage__mark i:nth-child(3) { background: #a8bcce; }
+			.projectpage__mark i:nth-child(4) { background: #dfc1b7; border-radius: 4px 4px 8px 4px; }
+			.projectpage__header-note { display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 13px; }
+			.projectpage__header-note::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--rose); }
+			.projectpage__hero { display: grid; grid-template-columns: 1.5fr 1fr; align-items: end; gap: 64px; padding-block: 78px 76px; }
+			.projectpage__eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 25px; color: var(--muted); font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
+			.projectpage__eyebrow::before { content: ""; width: 26px; height: 1px; background: var(--rose); }
+			.projectpage__title { margin: 0; font-size: clamp(48px, 6.5vw, 88px); font-weight: 600; line-height: 1.03; letter-spacing: -4px; }
+			.projectpage__title em { display: block; margin-top: 5px; color: var(--rose); font-family: Georgia, "Times New Roman", serif; font-weight: 400; letter-spacing: -4.5px; }
+			.projectpage__intro { max-width: 340px; padding-bottom: 4px; justify-self: end; }
+			.projectpage__description { margin: 0 0 26px; color: var(--muted); font-size: 16px; line-height: 1.75; }
+			.projectpage__cta { display: inline-flex; align-items: center; justify-content: space-between; gap: 32px; min-height: 52px; padding: 14px 22px; border: 1px solid var(--ink); border-radius: 100px; background: var(--ink); color: white; font-size: 14px; transition: background .2s, border-color .2s, transform .2s; }
+			.projectpage__cta span { font-size: 20px; line-height: 1; }
+			.projectpage__section { padding-bottom: 56px; }
+			.projectpage__toolbar { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 26px; padding-top: 27px; border-top: 1px solid var(--line); }
+			.projectpage__section-title { display: flex; align-items: center; gap: 12px; margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -.6px; }
+			.projectpage__count { display: inline-flex; align-items: center; justify-content: center; min-width: 30px; height: 27px; padding-inline: 7px; border: 1px solid #d9d2cc; border-radius: 8px; color: var(--muted); font-size: 12px; font-weight: 500; letter-spacing: 0; font-variant-numeric: tabular-nums; }
+			.projectpage__devices { display: flex; gap: 4px; padding: 4px; border: 1px solid var(--line); border-radius: 100px; }
+			.projectpage__device { display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 8px 14px; border: 0; border-radius: 100px; color: var(--muted); background: transparent; font-size: 12px; transition: background .2s, color .2s, box-shadow .2s; }
+			.projectpage__device[aria-pressed="true"] { color: var(--ink); background: white; box-shadow: 0 2px 7px #2e2e2e0a; }
+			.projectpage__device svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+			.projectpage__list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; margin: 0; padding: 0; list-style: none; counter-reset: page; }
+			.projectpage__list > li { position: relative; min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 24px; background: #fffdfa; counter-increment: page; transition: transform .25s, box-shadow .25s, border-color .25s; }
+			.projectpage__list > li:focus-within { outline: 3px solid #81544e; outline-offset: 5px; }
+			.projectpage__list > li > a { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 25px 28px 28px; font-size: 24px; font-weight: 600; }
+			.projectpage__list > li > a::after { content: ""; position: absolute; inset: 0; z-index: 2; border-radius: 24px; }
+			.projectpage__preview { display: grid; place-items: center; aspect-ratio: 1.63; overflow: hidden; padding: 28px 28px 0; background: #e7ebe2; pointer-events: none; }
+			.projectpage__list > li:nth-child(4n + 2) .projectpage__preview { background: #eadad4; }
+			.projectpage__list > li:nth-child(4n + 3) .projectpage__preview { background: #dfe7ed; }
+			.projectpage__list > li:nth-child(4n + 4) .projectpage__preview { background: #eee4d6; }
+			.projectpage__browser { align-self: start; width: 100%; overflow: hidden; border: 1px solid #ffffffb3; border-radius: 9px 9px 0 0; background: white; box-shadow: 0 12px 40px #41372c14; }
+			.projectpage__browser-bar { display: flex; align-items: center; gap: 4px; height: 25px; padding-inline: 10px; border-bottom: 1px solid #eeeae6; background: #fffdfa; }
+			.projectpage__browser-bar i { width: 4px; height: 4px; border-radius: 50%; background: #dbd4cf; }
+			.projectpage__browser-label { margin-inline: auto; padding-right: 20px; color: #9b948e; font-size: 8px; font-weight: 500; letter-spacing: .3px; }
+			.projectpage__viewport { position: relative; width: 100%; aspect-ratio: 1.6; overflow: hidden; background: var(--paper); }
+			.projectpage__viewport iframe { position: absolute; top: 0; left: 0; width: 1440px; height: 900px; border: 0; transform: scale(var(--preview-scale, .35)); transform-origin: top left; pointer-events: none; }
+			.projectpage__list[data-device="mobile"] .projectpage__preview { padding: 16px; }
+			.projectpage__list[data-device="mobile"] .projectpage__browser { align-self: center; width: 42%; max-width: 155px; padding: 4px; border-radius: 20px; box-shadow: 0 12px 30px #41372c1a; }
+			.projectpage__list[data-device="mobile"] .projectpage__browser-bar { display: none; }
+			.projectpage__list[data-device="mobile"] .projectpage__viewport { aspect-ratio: .5; border-radius: 15px; }
+			.projectpage__list[data-device="mobile"] iframe { width: 390px; height: 780px; }
+			.projectpage__card-copy { display: grid; gap: 9px; }
+			.projectpage__card-number { display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; }
+			.projectpage__card-number::before { content: counter(page, decimal-leading-zero); font-variant-numeric: tabular-nums; }
+			.projectpage__card-number::after { content: ""; width: 22px; height: 1px; background: #d8d0c9; }
+			.projectpage__card-title { letter-spacing: -.7px; line-height: 1.2; overflow-wrap: anywhere; }
+			.projectpage__card-description { color: var(--muted); font-size: 13px; font-weight: 400; line-height: 1.5; }
+			.projectpage__card-arrow { display: grid; flex: 0 0 44px; place-items: center; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 50%; font-size: 24px; font-weight: 400; transition: color .2s, background .2s, border-color .2s, transform .2s; }
+			.projectpage__hint { display: flex; align-items: center; justify-content: center; gap: 9px; margin: 25px 0 0; color: var(--muted); font-size: 12px; line-height: 1.6; text-align: center; }
+			.projectpage__hint svg { width: 14px; height: 14px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.4; }
+			.projectpage__empty { padding: 56px 24px; border: 1px dashed #cfc5bd; border-radius: 24px; color: var(--muted); text-align: center; line-height: 1.6; }
+			.projectpage__footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 25px 32px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+			.projectpage__footer-name { font-weight: 600; color: var(--ink); overflow-wrap: anywhere; }
+			.projectpage__footer a { display: inline-flex; align-items: center; gap: 9px; padding-block: 6px; }
+			@media (any-hover: hover) {
+				.projectpage__cta:hover { background: #81544e; border-color: #81544e; transform: translateY(-2px); }
+				.projectpage__list > li:hover { transform: translateY(-4px); border-color: #c8b9ae; box-shadow: 0 14px 32px #41372c0c; }
+				.projectpage__list > li:hover .projectpage__card-arrow { background: var(--ink); border-color: var(--ink); color: white; transform: rotate(5deg); }
+				.projectpage__device:hover { color: var(--ink); }
+				.projectpage__footer a:hover { color: var(--ink); }
+			}
+			@media (max-width: 900px) {
+				.projectpage { width: calc(100% - 48px); }
+				.projectpage__hero { gap: 36px; padding-block: 64px; }
+				.projectpage__title { font-size: 60px; letter-spacing: -3px; }
+				.projectpage__title em { letter-spacing: -3px; }
+				.projectpage__description { font-size: 14px; }
+				.projectpage__list { gap: 18px; }
+				.projectpage__preview { padding: 18px 18px 0; }
+				.projectpage__list > li > a { padding: 22px; font-size: 21px; }
+				.projectpage__list[data-device="mobile"] .projectpage__browser { max-width: 115px; }
+			}
+			@media (max-width: 640px) {
+				.projectpage { width: calc(100% - 36px); }
+				.projectpage__header { padding-block: 22px; gap: 14px; }
+				.projectpage__brand-name { font-size: 22px; }
+				.projectpage__header-note { max-width: 116px; font-size: 11px; line-height: 1.4; }
+				.projectpage__hero { grid-template-columns: 1fr; gap: 25px; padding-block: 45px; }
+				.projectpage__eyebrow { margin-bottom: 22px; font-size: 10px; }
+				.projectpage__title { font-size: clamp(43px, 10vw, 62px); letter-spacing: -2.5px; }
+				.projectpage__title em { letter-spacing: -2.5px; }
+				.projectpage__intro { max-width: 390px; justify-self: start; }
+				.projectpage__description { margin-bottom: 22px; font-size: 15px; }
+				.projectpage__cta { min-height: 48px; }
+				.projectpage__toolbar { align-items: flex-start; flex-direction: column; gap: 20px; padding-top: 24px; margin-bottom: 20px; }
+				.projectpage__section-title { font-size: 21px; }
+				.projectpage__devices { align-self: stretch; }
+				.projectpage__device { justify-content: center; flex: 1; min-height: 38px; }
+				.projectpage__list { grid-template-columns: 1fr; gap: 22px; }
+				.projectpage__list > li { border-radius: 20px; }
+				.projectpage__list > li > a { padding: 22px; }
+				.projectpage__list[data-device="mobile"] .projectpage__browser { max-width: 145px; }
+				.projectpage__hint { align-items: flex-start; padding-inline: 12px; }
+				.projectpage__hint svg { margin-top: 3px; }
+				.projectpage__section { padding-bottom: 34px; }
+				.projectpage__footer { padding-block: 20px 26px; }
+			}
+			@media (prefers-reduced-motion: reduce) {
+				html { scroll-behavior: auto; }
+				*, *::before, *::after { transition: none !important; }
+			}
+		</style>
+	</head>
+	<body>
+		<a class="projectpage__skip" href="#pages">До сторінок проєкту</a>
+		<div class="projectpage" id="top">
+			<header class="projectpage__header">
+				<a class="projectpage__brand" href="#top" aria-label="seven-dem — на початок">
+					<span class="projectpage__mark" aria-hidden="true">
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+					</span>
+					<span class="projectpage__brand-name">seven-dem</span>
+				</a>
+				<span class="projectpage__header-note">Клієнтський перегляд</span>
+			</header>
+			<main>
+				<section class="projectpage__hero" aria-labelledby="project-title">
+					<div>
+						<p class="projectpage__eyebrow">Знайомство з проєктом</p>
+						<h1 class="projectpage__title" id="project-title">
+							Ваш сайт.
+							<em>У всіх деталях.</em>
+						</h1>
+					</div>
+					<div class="projectpage__intro">
+						<p class="projectpage__description">
+							Усі сторінки проєкту — в одному місці. Переглядайте дизайн, знайомтеся з деталями та відкривайте повну версію кожної сторінки.
+						</p>
+						<a class="projectpage__cta" href="#pages">
+							Переглянути сторінки
+							<span aria-hidden="true">↓</span>
+						</a>
+					</div>
+				</section>
+				<section class="projectpage__section" id="pages" aria-labelledby="pages-title">
+					<div class="projectpage__toolbar">
+						<h2 class="projectpage__section-title" id="pages-title">
+							Сторінки проєкту
+							<span class="projectpage__count" data-page-count="" hidden></span>
+						</h2>
+						<div class="projectpage__devices" role="group" aria-label="Формат попереднього перегляду" data-devices="" hidden>
+							<button class="projectpage__device" type="button" data-device="desktop" aria-pressed="true" aria-controls="page-list">
+								<svg viewbox="0 0 20 20" aria-hidden="true">
+									<rect x="2" y="3" width="16" height="11" rx="2"></rect>
+									<path d="M10 14v3m-4 0h8"></path>
+								</svg>
+								Комп’ютер
+							</button>
+							<button class="projectpage__device" type="button" data-device="mobile" aria-pressed="false" aria-controls="page-list">
+								<svg viewbox="0 0 20 20" aria-hidden="true">
+									<rect x="5" y="1.5" width="10" height="17" rx="2.5"></rect>
+									<path d="M8 4h4m-3 12h2"></path>
+								</svg>
+								Телефон
+							</button>
+						</div>
+					</div>
+					<ul class="projectpage__list" id="page-list" data-device="desktop">
+						<li>
+							<a target="_blank" rel="noopener noreferrer" href="index.html">Головна сторінка</a>
+						</li>
+						<li>
+							<a target="_blank" rel="noopener noreferrer" href="about.html">Про нас</a>
+						</li>
+					</ul>
+					<p class="projectpage__empty" data-empty="" hidden>Сторінки проєкту незабаром з’являться тут.</p>
+					<p class="projectpage__hint" data-hint="">
+						<svg viewbox="0 0 16 16" aria-hidden="true">
+							<path d="M9 2h5v5m0-5L7 9M7 3H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V9"></path>
+						</svg>
+						Натисніть на картку — сторінка відкриється в новій вкладці.
+					</p>
+				</section>
+			</main>
+			<footer class="projectpage__footer">
+				<span>
+					<span class="projectpage__footer-name">seven-dem</span>
+					· Перегляд проєкту
+				</span>
+				<a href="#top">
+					Нагору
+					<span aria-hidden="true">↑</span>
+				</a>
+			</footer>
+		</div>
+		<script>
+      (() => {
+        const list = document.querySelector('#page-list');
+        const links = Array.from(list.querySelectorAll('li > a'));
+        const count = document.querySelector('[data-page-count]');
+        const devices = document.querySelector('[data-devices]');
+        const descriptions = {
+          index: 'Перше знайомство з брендом та колекцією.',
+          about: 'Історія, філософія та деталі виробництва.'
+        };
+        const viewports = [];
+        count.textContent = String(links.length).padStart(2, '0');
+        count.hidden = false;
+        document.querySelector('[data-empty]').hidden = links.length > 0;
+        document.querySelector('[data-hint]').hidden = links.length === 0;
+        devices.hidden = links.length === 0;
+
+        const element = (tag, className, text) => {
+          const node = document.createElement(tag);
+          node.className = className;
+          if (text) node.textContent = text;
+          return node;
+        };
+
+        links.forEach(link => {
+          const title = link.textContent.trim();
+          const slug = new URL(link.href).pathname.split('/').pop().replace(/\.html$/i, '');
+          const preview = element('div', 'projectpage__preview');
+          preview.setAttribute('aria-hidden', 'true');
+          preview.inert = true;
+          const browser = element('div', 'projectpage__browser');
+          const bar = element('div', 'projectpage__browser-bar');
+          bar.append(document.createElement('i'), document.createElement('i'), document.createElement('i'));
+          bar.append(element('span', 'projectpage__browser-label', title));
+          const viewport = element('div', 'projectpage__viewport');
+          const frame = document.createElement('iframe');
+          frame.title = 'Попередній перегляд: ' + title;
+          frame.tabIndex = -1;
+          frame.loading = 'lazy';
+          frame.src = link.href;
+          viewport.append(frame);
+          browser.append(bar, viewport);
+          preview.append(browser);
+          link.before(preview);
+          viewports.push(viewport);
+
+          const copy = element('span', 'projectpage__card-copy');
+          const number = element('span', 'projectpage__card-number', 'Сторінка');
+          number.setAttribute('aria-hidden', 'true');
+          copy.append(number, element('span', 'projectpage__card-title', title));
+          if (Object.hasOwn(descriptions, slug)) copy.append(element('span', 'projectpage__card-description', descriptions[slug]));
+          const arrow = element('span', 'projectpage__card-arrow', '↗');
+          arrow.setAttribute('aria-hidden', 'true');
+          link.replaceChildren(copy, arrow);
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          link.setAttribute('aria-label', title + ' — відкрити в новій вкладці');
+        });
+
+        const resizePreviews = () => {
+          const mobile = list.dataset.device === 'mobile';
+          const width = mobile ? 390 : 1440;
+          viewports.forEach(viewport => {
+            const browser = viewport.parentElement;
+            const preview = browser.parentElement;
+            browser.style.width = mobile ? Math.min(155, (preview.clientHeight - 22) / 2) + 'px' : '';
+            viewport.style.setProperty('--preview-scale', viewport.clientWidth / width);
+          });
+        };
+        devices.addEventListener('click', event => {
+          const button = event.target.closest('button[data-device]');
+          if (!button) return;
+          list.dataset.device = button.dataset.device;
+          devices.querySelectorAll('button').forEach(control => control.setAttribute('aria-pressed', String(control === button)));
+          resizePreviews();
+        });
+        if ('ResizeObserver' in window) {
+          const observer = new ResizeObserver(resizePreviews);
+          viewports.forEach(viewport => observer.observe(viewport));
+        } else {
+          window.addEventListener('resize', resizePreviews);
+        }
+        resizePreviews();
+      })();
+		</script>
+	</body>
+</html>
