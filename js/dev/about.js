@@ -1,55 +1,74 @@
 import "./main.min.js";
 import "./common.min.js";
-//#region src/components/custom/companyintro/companyintro.js
-var titles = [...document.querySelectorAll(".companyintro__title")].map((title) => {
-	const walker = document.createTreeWalker(title, NodeFilter.SHOW_TEXT);
-	const nodes = [];
-	while (walker.nextNode()) nodes.push(walker.currentNode);
+/* empty css              */
+import "./settext.min.js";
+//#region src/components/layout/videofullscreen/videofullscreen.js
+var requestFullscreen = (element) => {
+	const request = element.requestFullscreen || element.webkitRequestFullscreen || element.msRequestFullscreen;
+	return request ? Promise.resolve(request.call(element)) : Promise.reject(/* @__PURE__ */ new Error("no Fullscreen API"));
+};
+var exitFullscreen = () => {
+	const exit = document.exitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen;
+	exit && exit.call(document);
+};
+var getFullscreenElement = () => document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement || null;
+function openFullscreen(container) {
+	const video = container.querySelector("video");
+	requestFullscreen(container).then(() => {
+		video && video.play().catch(() => null);
+	}).catch(() => {
+		if (video && video.webkitEnterFullscreen) {
+			video.play().catch(() => null);
+			video.webkitEnterFullscreen();
+		}
+	});
+}
+function videoFullscreen() {
+	document.addEventListener("click", (e) => {
+		const container = e.target.closest("[data-fls-videofullscreen]");
+		if (!container) return;
+		getFullscreenElement() === container ? exitFullscreen() : openFullscreen(container);
+	});
+	const onChange = () => {
+		if (getFullscreenElement()) return;
+		document.querySelectorAll("[data-fls-videofullscreen] video").forEach((video) => video.pause());
+	};
+	document.addEventListener("fullscreenchange", onChange);
+	document.addEventListener("webkitfullscreenchange", onChange);
+}
+document.querySelector("[data-fls-videofullscreen]") && window.addEventListener("load", videoFullscreen);
+//#endregion
+//#region src/components/effects/textreveal/textreveal.js
+var WORD_CLASS = "textreveal__word";
+function splitWords(element) {
+	const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+	const textNodes = [];
+	while (walker.nextNode()) textNodes.push(walker.currentNode);
 	const words = [];
-	nodes.forEach((node) => {
+	textNodes.forEach((node) => {
 		const fragment = document.createDocumentFragment();
 		node.textContent.split(/(\s+)/).forEach((part) => {
+			if (!part) return;
 			if (!part.trim()) {
 				fragment.append(document.createTextNode(part));
 				return;
 			}
 			const word = document.createElement("span");
-			word.className = "companyintro__word";
+			word.className = WORD_CLASS;
 			word.textContent = part;
 			words.push(word);
 			fragment.append(word);
 		});
 		node.replaceWith(fragment);
 	});
-	return {
-		title,
-		words
-	};
-});
-if (titles.length) {
-	const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-	let frame = 0;
-	const update = () => {
-		frame = 0;
-		const height = window.innerHeight;
-		titles.forEach(({ title, words }) => {
-			const rect = title.getBoundingClientRect();
-			const progress = reducedMotion.matches ? 1 : Math.max(0, Math.min(1, (height * .85 - rect.top) / (height * .5 + rect.height)));
-			words.forEach((word, index) => {
-				const fill = Math.max(0, Math.min(1, progress * words.length - index));
-				word.style.setProperty("--word-fill", `${fill * 100}%`);
-			});
-		});
-	};
-	const scheduleUpdate = () => {
-		if (!frame) frame = requestAnimationFrame(update);
-	};
-	window.addEventListener("scroll", scheduleUpdate, { passive: true });
-	window.addEventListener("resize", scheduleUpdate);
-	window.addEventListener("load", scheduleUpdate);
-	reducedMotion.addEventListener("change", scheduleUpdate);
-	new ResizeObserver(scheduleUpdate).observe(document.body);
-	document.fonts.ready.then(scheduleUpdate);
-	update();
+	return words;
 }
+function textReveal() {
+	const items = document.querySelectorAll("[data-fls-textreveal]");
+	if (!items.length) return;
+	items.forEach((item) => {
+		splitWords(item).forEach((word, index) => word.style.setProperty("--word-index", index));
+	});
+}
+document.querySelector("[data-fls-textreveal]") && textReveal();
 //#endregion

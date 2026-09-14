@@ -19,6 +19,13 @@ var isMobile = {
 		return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
 	}
 };
+function getHash() {
+	if (location.hash) return location.hash.replace("#", "");
+}
+function setHash(hash) {
+	hash = hash ? `#${hash}` : window.location.href.split("#")[0];
+	history.pushState("", "", hash);
+}
 var slideUp = (target, duration = 500, showmore = 0) => {
 	if (!target.classList.contains("--slide")) {
 		target.classList.add("--slide");
@@ -144,4 +151,4 @@ function dataMediaQueries(array, dataSetValue) {
 	});
 }
 //#endregion
-export { isMobile as a, uniqArray as c, getDigFormat as i, bodyLockToggle as n, slideToggle as o, dataMediaQueries as r, slideUp as s, bodyLockStatus as t };
+export { dataMediaQueries as a, isMobile as c, slideToggle as d, slideUp as f, bodyUnlock as i, setHash as l, bodyLockStatus as n, getDigFormat as o, uniqArray as p, bodyLockToggle as r, getHash as s, bodyLock as t, slideDown as u };
