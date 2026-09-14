@@ -5,20 +5,18 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>Home Page</title>
-		<script type="module" crossorigin="" src="./js/index.min.js?v=1789382297879"></script>
-		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1789382297879">
-		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1789382297879">
-		<link rel="modulepreload" crossorigin="" href="./js/swiper.min.js?v=1789382297879">
-		<link rel="modulepreload" crossorigin="" href="./js/spollers.min.js?v=1789382297879">
-		<link rel="modulepreload" crossorigin="" href="./js/settext.min.js?v=1789382297879">
-		<link rel="modulepreload" crossorigin="" href="./js/faqpin.min.js?v=1789382297879">
-		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1789382297879">
-		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1789382297879">
-		<link rel="stylesheet" crossorigin="" href="./css/spollers.min.css?v=1789382297879">
-		<link rel="stylesheet" crossorigin="" href="./css/settext.min.css?v=1789382297879">
-		<link rel="stylesheet" crossorigin="" href="./css/faqpin.min.css?v=1789382297879">
-		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1789382297879">
-		<link rel="stylesheet" crossorigin="" href="./css/tabletext.min.css?v=1789382297879">
+		<script type="module" crossorigin="" src="./js/index.min.js?v=1789400385090"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1789400385090">
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1789400385090">
+		<link rel="modulepreload" crossorigin="" href="./js/spollers.min.js?v=1789400385090">
+		<link rel="modulepreload" crossorigin="" href="./js/settext.min.js?v=1789400385090">
+		<link rel="modulepreload" crossorigin="" href="./js/faqpin.min.js?v=1789400385090">
+		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1789400385090">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1789400385090">
+		<link rel="stylesheet" crossorigin="" href="./css/spollers.min.css?v=1789400385090">
+		<link rel="stylesheet" crossorigin="" href="./css/settext.min.css?v=1789400385090">
+		<link rel="stylesheet" crossorigin="" href="./css/faqpin.min.css?v=1789400385090">
+		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1789400385090">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -26,7 +24,9 @@
 				<div class="header__container">
 					<div class="header__content">
 						<a href="#" class="header__logo">
-							<img src="./assets/img/logo.svg" alt="logo">
+							<picture>
+								<img alt="7dem" width="165" height="155" src="./assets/img/logo-new.webp">
+							</picture>
 						</a>
 						<div class="header__menu menu">
 							<nav class="menu__body">
@@ -68,6 +68,16 @@
 									<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z"></path>
 								</svg>
 							</button>
+							<!--
+«Збережене»: лічильник оновлює layout/bookmarks (localStorage),
+атрибут data-fls-bookmarks-count і підвантажує цей модуль на кожній сторінці
+-->
+							<a href="saved.html" class="header__saved" aria-label="Збережене">
+								<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+									<path d="M5 7.8C5 6.12 5 5.28 5.33 4.64C5.61 4.07 6.07 3.61 6.64 3.33C7.28 3 8.12 3 9.8 3H14.2C15.88 3 16.72 3 17.36 3.33C17.93 3.61 18.39 4.07 18.67 4.64C19 5.28 19 6.12 19 7.8V21L12 17L5 21V7.8Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+								</svg>
+								<span class="header__saved-count" data-fls-bookmarks-count="" hidden>0</span>
+							</a>
 							<button type="button" data-fls-menu="" class="menu__icon icon-menu">
 								<span></span>
 							</button>
@@ -663,7 +673,13 @@ TODO: зараз усі слайди — одне тимчасове фото (o
 							</a>
 						</div>
 					</section>
-					<section data-fls-faqpin="" class="faqpin">
+					<!--
+FAQ. Два варіанти через locals variant (передавати явно в кожному include):
+"home" — головна (стрічка marqueepin, пілюля «FAQ», заголовок з плашкою);
+"catalog" — каталог, Figma 219:1668 (без стрічки, пілюля «• Часті запитання»,
+широкий список окремих білих рядків).
+-->
+					<section data-fls-faqpin="" class="faqpin faqpin--home">
 						<section data-fls-marqueepin="" data-fls-marquee="" data-fls-marquee-space="20" data-fls-marquee-direction="left" data-fls-marquee-pause="" data-fls-marquee-speed="1000" class="marqueepin">
 							<div class="marqueepin__item marqueepin__item--one">
 								<picture>

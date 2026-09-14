@@ -6,15 +6,16 @@
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<meta name="description" content="Стартовий набір MAX модульної системи Pin Pin: 65 елементів — бокси, лотки, фіксатори, перестінки та підставка.">
 		<title>Набір MAX — 7dem</title>
-		<script type="module" crossorigin="" src="./js/product-card.min.js?v=1789382297878"></script>
-		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1789382297878">
-		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1789382297878">
-		<link rel="modulepreload" crossorigin="" href="./js/swiper.min.js?v=1789382297878">
-		<link rel="modulepreload" crossorigin="" href="./js/spollers.min.js?v=1789382297878">
-		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1789382297878">
-		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1789382297878">
-		<link rel="stylesheet" crossorigin="" href="./css/spollers.min.css?v=1789382297878">
-		<link rel="stylesheet" crossorigin="" href="./css/product-card.min.css?v=1789382297878">
+		<script type="module" crossorigin="" src="./js/product-card.min.js?v=1789400385091"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1789400385091">
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1789400385091">
+		<link rel="modulepreload" crossorigin="" href="./js/spollers.min.js?v=1789400385091">
+		<link rel="modulepreload" crossorigin="" href="./js/popup.min.js?v=1789400385091">
+		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1789400385091">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1789400385091">
+		<link rel="stylesheet" crossorigin="" href="./css/spollers.min.css?v=1789400385091">
+		<link rel="stylesheet" crossorigin="" href="./css/popup.min.css?v=1789400385091">
+		<link rel="stylesheet" crossorigin="" href="./css/product-card.min.css?v=1789400385091">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -22,7 +23,9 @@
 				<div class="header__container">
 					<div class="header__content">
 						<a href="#" class="header__logo">
-							<img src="./assets/img/logo.svg" alt="logo">
+							<picture>
+								<img alt="7dem" width="165" height="155" src="./assets/img/logo-new.webp">
+							</picture>
 						</a>
 						<div class="header__menu menu">
 							<nav class="menu__body">
@@ -64,6 +67,16 @@
 									<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z"></path>
 								</svg>
 							</button>
+							<!--
+«Збережене»: лічильник оновлює layout/bookmarks (localStorage),
+атрибут data-fls-bookmarks-count і підвантажує цей модуль на кожній сторінці
+-->
+							<a href="saved.html" class="header__saved" aria-label="Збережене">
+								<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+									<path d="M5 7.8C5 6.12 5 5.28 5.33 4.64C5.61 4.07 6.07 3.61 6.64 3.33C7.28 3 8.12 3 9.8 3H14.2C15.88 3 16.72 3 17.36 3.33C17.93 3.61 18.39 4.07 18.67 4.64C19 5.28 19 6.12 19 7.8V21L12 17L5 21V7.8Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+								</svg>
+								<span class="header__saved-count" data-fls-bookmarks-count="" hidden>0</span>
+							</a>
 							<button type="button" data-fls-menu="" class="menu__icon icon-menu">
 								<span></span>
 							</button>
@@ -79,7 +92,7 @@
 Акордеони панелі — data-fls-spollers (layout/spollers), посилання на повний
 склад відкриває попап productcomposition (layout/popup).
 -->
-					<section data-fls-productgallery="" class="productgallery">
+					<section data-fls-productgallery="" data-fls-bookmarks-card="" class="productgallery">
 						<div class="productgallery__intro">
 							<div class="productgallery__container">
 								<span class="productgallery__eyebrow">
@@ -92,7 +105,11 @@
 								</h1>
 								<div class="productgallery__actions">
 									<a href="#" class="productgallery__buy">купити</a>
-									<button type="button" class="productgallery__save" aria-label="Зберегти в обране">
+									<!--
+Закладка (layout/bookmarks): фото для списку «Збережене» береться з
+першого img секції (data-fls-bookmarks-card на section)
+-->
+									<button type="button" class="productgallery__save" data-fls-bookmarks-toggle="max-pink" data-bookmark-title="Набір MAX" data-bookmark-price="1 065 ₴" data-bookmark-url="product-card.html" aria-pressed="false" aria-label="Зберегти в обране: Набір MAX">
 										<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
 											<path d="M5 7.8C5 6.12 5 5.28 5.33 4.64C5.61 4.07 6.07 3.61 6.64 3.33C7.28 3 8.12 3 9.8 3H14.2C15.88 3 16.72 3 17.36 3.33C17.93 3.61 18.39 4.07 18.67 4.64C19 5.28 19 6.12 19 7.8V21L12 17L5 21V7.8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
 										</svg>
@@ -349,14 +366,15 @@
 							</div>
 							<div class="productrelated__slider swiper">
 								<ul class="productrelated__wrapper swiper-wrapper">
-									<li class="productrelated__card swiper-slide">
+									<li class="productrelated__card swiper-slide" data-fls-bookmarks-card="">
 										<a class="productrelated__photo" href="product-card.html" tabindex="-1" aria-hidden="true">
 											<picture>
 												<source media="(max-width: 600px)" srcset="./assets/img/product/related-1-600.webp" type="image/webp">
 												<img alt="Набір MAX" src="./assets/img/product/related-1.webp">
 											</picture>
 										</a>
-										<button type="button" class="productrelated__save" aria-label="Зберегти в обране: Набір MAX">
+										<!-- Закладка: стан і список «Збережене» — layout/bookmarks -->
+										<button type="button" class="productrelated__save" data-fls-bookmarks-toggle="max-black" data-bookmark-title="Набір MAX" data-bookmark-price="1 950 ₴" data-bookmark-url="product-card.html" aria-pressed="false" aria-label="Зберегти в обране: Набір MAX">
 											<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
 												<path d="M5 7.8C5 6.12 5 5.28 5.33 4.64C5.61 4.07 6.07 3.61 6.64 3.33C7.28 3 8.12 3 9.8 3H14.2C15.88 3 16.72 3 17.36 3.33C17.93 3.61 18.39 4.07 18.67 4.64C19 5.28 19 6.12 19 7.8V21L12 17L5 21V7.8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
 											</svg>
@@ -376,7 +394,7 @@
 											</a>
 										</div>
 									</li>
-									<li class="productrelated__card swiper-slide">
+									<li class="productrelated__card swiper-slide" data-fls-bookmarks-card="">
 										<a class="productrelated__photo" href="product-card.html" tabindex="-1" aria-hidden="true">
 											<picture>
 												<source media="(max-width: 600px)" srcset="./assets/img/product/related-2-600.webp" type="image/webp">
@@ -384,7 +402,8 @@
 												<img alt="Набір MAX" src="./assets/img/product/related-2.webp">
 											</picture>
 										</a>
-										<button type="button" class="productrelated__save" aria-label="Зберегти в обране: Набір MAX">
+										<!-- Закладка: стан і список «Збережене» — layout/bookmarks -->
+										<button type="button" class="productrelated__save" data-fls-bookmarks-toggle="max-pink" data-bookmark-title="Набір MAX" data-bookmark-price="1 950 ₴" data-bookmark-url="product-card.html" aria-pressed="false" aria-label="Зберегти в обране: Набір MAX">
 											<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
 												<path d="M5 7.8C5 6.12 5 5.28 5.33 4.64C5.61 4.07 6.07 3.61 6.64 3.33C7.28 3 8.12 3 9.8 3H14.2C15.88 3 16.72 3 17.36 3.33C17.93 3.61 18.39 4.07 18.67 4.64C19 5.28 19 6.12 19 7.8V21L12 17L5 21V7.8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
 											</svg>
@@ -404,7 +423,7 @@
 											</a>
 										</div>
 									</li>
-									<li class="productrelated__card swiper-slide">
+									<li class="productrelated__card swiper-slide" data-fls-bookmarks-card="">
 										<a class="productrelated__photo" href="product-card.html" tabindex="-1" aria-hidden="true">
 											<picture>
 												<source media="(max-width: 600px)" srcset="./assets/img/product/related-3-600.webp" type="image/webp">
@@ -412,7 +431,8 @@
 												<img alt="Набір MAX" src="./assets/img/product/related-3.webp">
 											</picture>
 										</a>
-										<button type="button" class="productrelated__save" aria-label="Зберегти в обране: Набір MAX">
+										<!-- Закладка: стан і список «Збережене» — layout/bookmarks -->
+										<button type="button" class="productrelated__save" data-fls-bookmarks-toggle="max-color" data-bookmark-title="Набір MAX" data-bookmark-price="1 950 ₴" data-bookmark-url="product-card.html" aria-pressed="false" aria-label="Зберегти в обране: Набір MAX">
 											<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
 												<path d="M5 7.8C5 6.12 5 5.28 5.33 4.64C5.61 4.07 6.07 3.61 6.64 3.33C7.28 3 8.12 3 9.8 3H14.2C15.88 3 16.72 3 17.36 3.33C17.93 3.61 18.39 4.07 18.67 4.64C19 5.28 19 6.12 19 7.8V21L12 17L5 21V7.8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
 											</svg>
@@ -432,7 +452,7 @@
 											</a>
 										</div>
 									</li>
-									<li class="productrelated__card swiper-slide">
+									<li class="productrelated__card swiper-slide" data-fls-bookmarks-card="">
 										<a class="productrelated__photo" href="product-card.html" tabindex="-1" aria-hidden="true">
 											<picture>
 												<source media="(max-width: 600px)" srcset="./assets/img/IMG_9846-600.webp" type="image/webp">
@@ -440,7 +460,8 @@
 												<img alt="Набір MID" src="./assets/img/IMG_9846.webp">
 											</picture>
 										</a>
-										<button type="button" class="productrelated__save" aria-label="Зберегти в обране: Набір MID">
+										<!-- Закладка: стан і список «Збережене» — layout/bookmarks -->
+										<button type="button" class="productrelated__save" data-fls-bookmarks-toggle="related-mid-black" data-bookmark-title="Набір MID" data-bookmark-price="1 450 ₴" data-bookmark-url="product-card.html" aria-pressed="false" aria-label="Зберегти в обране: Набір MID">
 											<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
 												<path d="M5 7.8C5 6.12 5 5.28 5.33 4.64C5.61 4.07 6.07 3.61 6.64 3.33C7.28 3 8.12 3 9.8 3H14.2C15.88 3 16.72 3 17.36 3.33C17.93 3.61 18.39 4.07 18.67 4.64C19 5.28 19 6.12 19 7.8V21L12 17L5 21V7.8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
 											</svg>
@@ -460,7 +481,7 @@
 											</a>
 										</div>
 									</li>
-									<li class="productrelated__card swiper-slide">
+									<li class="productrelated__card swiper-slide" data-fls-bookmarks-card="">
 										<a class="productrelated__photo" href="product-card.html" tabindex="-1" aria-hidden="true">
 											<picture>
 												<source media="(max-width: 600px)" srcset="./assets/img/IMG_9855-600.webp" type="image/webp">
@@ -468,7 +489,8 @@
 												<img alt="Набір MIN" src="./assets/img/IMG_9855.webp">
 											</picture>
 										</a>
-										<button type="button" class="productrelated__save" aria-label="Зберегти в обране: Набір MIN">
+										<!-- Закладка: стан і список «Збережене» — layout/bookmarks -->
+										<button type="button" class="productrelated__save" data-fls-bookmarks-toggle="related-min-white" data-bookmark-title="Набір MIN" data-bookmark-price="950 ₴" data-bookmark-url="product-card.html" aria-pressed="false" aria-label="Зберегти в обране: Набір MIN">
 											<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
 												<path d="M5 7.8C5 6.12 5 5.28 5.33 4.64C5.61 4.07 6.07 3.61 6.64 3.33C7.28 3 8.12 3 9.8 3H14.2C15.88 3 16.72 3 17.36 3.33C17.93 3.61 18.39 4.07 18.67 4.64C19 5.28 19 6.12 19 7.8V21L12 17L5 21V7.8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
 											</svg>

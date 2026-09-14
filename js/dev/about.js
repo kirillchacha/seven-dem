@@ -1,6 +1,5 @@
 import "./main.min.js";
 import "./common.min.js";
-/* empty css              */
 import "./settext.min.js";
 //#region src/components/layout/videofullscreen/videofullscreen.js
 var requestFullscreen = (element) => {

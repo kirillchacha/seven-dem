@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="uk">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<meta name="description" content="Товари модульної системи Pin Pin, які ти зберіг, щоб повернутися до них пізніше.">
+		<title>Збережене — 7dem</title>
+		<link rel="modulepreload" crossorigin href="./js/common.min.js?v=1789400385089">
+		<script type="module" crossorigin="" src="./js/main.min.js?v=1789400385089"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1789400385089">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1789400385089">
+		<link rel="stylesheet" crossorigin="" href="./css/saved.min.css?v=1789400385089">
+		<link rel="stylesheet" crossorigin="" href="./css/cataloggrid.min.css?v=1789400385089">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" data-fls-header-scroll="" class="header">
+				<div class="header__container">
+					<div class="header__content">
+						<a href="#" class="header__logo">
+							<picture>
+								<img alt="7dem" width="165" height="155" src="./assets/img/logo-new.webp">
+							</picture>
+						</a>
+						<div class="header__menu menu">
+							<nav class="menu__body">
+								<ul class="menu__list">
+									<li class="menu__item">
+										<a href="cataloge.html" class="menu__link">Каталог</a>
+									</li>
+									<li class="menu__item">
+										<a href="#" class="menu__link">Як це працює</a>
+									</li>
+									<li class="menu__item">
+										<a href="about.html" class="menu__link">Про нас</a>
+									</li>
+									<li class="menu__item">
+										<a href="#" class="menu__link">Доставка</a>
+									</li>
+									<li class="menu__item">
+										<a href="#" class="menu__link">Контакти</a>
+									</li>
+								</ul>
+								<div class="menu__actions-mob"></div>
+							</nav>
+						</div>
+						<!--
+<fetch url="@components/layout/menu/menu.json">
+<each loop='item in response'>
+</each>
+</fetch>
+-->
+						<div class="header__actions">
+							<button data-fls-dynamic=".menu__actions-mob, 768" data-fls-button="" type="button" class="header__button button button--padding-one button--border-color-two">
+								Кошик
+								<span>0</span>
+							</button>
+							<button data-fls-dynamic=".menu__actions-mob, 768" data-fls-button="" type="button" class="header__button button button--padding-one button--border-color-one button--background-black">
+								log
+					in
+								<svg aria-hidden="true" viewbox="0 0 12 8" xmlns="http://www.w3.org/2000/svg">
+									<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z"></path>
+								</svg>
+							</button>
+							<!--
+«Збережене»: лічильник оновлює layout/bookmarks (localStorage),
+атрибут data-fls-bookmarks-count і підвантажує цей модуль на кожній сторінці
+-->
+							<a href="saved.html" class="header__saved" aria-label="Збережене">
+								<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+									<path d="M5 7.8C5 6.12 5 5.28 5.33 4.64C5.61 4.07 6.07 3.61 6.64 3.33C7.28 3 8.12 3 9.8 3H14.2C15.88 3 16.72 3 17.36 3.33C17.93 3.61 18.39 4.07 18.67 4.64C19 5.28 19 6.12 19 7.8V21L12 17L5 21V7.8Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+								</svg>
+								<span class="header__saved-count" data-fls-bookmarks-count="" hidden>0</span>
+							</a>
+							<button type="button" data-fls-menu="" class="menu__icon icon-menu">
+								<span></span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</header>
+			<main class="page">
+				<div data-fls-saved="" class="saved">
+					<!--
+Сторінка «Збережене». Картки рендерить layout/bookmarks з localStorage
+у ul[data-fls-bookmarks-list="saved"] за шаблоном нижче. Розмітка й класи
+картки — ті самі, що в custom/cataloggrid (стилі імпортує savedlist.js),
+щоб картка на обох сторінках не розходилась. Окремого макета в Figma немає.
+-->
+					<section data-fls-savedlist="" class="savedlist">
+						<div class="savedlist__container">
+							<div class="savedlist__head">
+								<nav class="savedlist__crumbs" aria-label="Хлібні крихти">
+									<span class="savedlist__crumbs-dot" aria-hidden="true"></span>
+									<a class="savedlist__crumb" href="index.html">головна</a>
+									<span aria-hidden="true">/</span>
+									<span class="savedlist__crumb savedlist__crumb--current" aria-current="page">збережене</span>
+								</nav>
+								<h1 class="savedlist__title">Збережене</h1>
+								<p class="savedlist__count">
+									<span data-fls-bookmarks-count="always">0</span>
+									<span data-fls-bookmarks-plural="товар|товари|товарів">товарів</span>
+								</p>
+							</div>
+							<ul class="savedlist__grid cataloggrid__grid" data-fls-bookmarks-list="saved"></ul>
+							<div class="savedlist__empty" data-fls-bookmarks-empty="saved">
+								<p class="savedlist__empty-text">Тут поки порожньо. Натисни закладку на картці товару — і він з'явиться
+				тут.</p>
+								<a class="savedlist__cta" href="cataloge.html">
+									До каталогу
+									<svg viewbox="0 0 12 8" fill="none" aria-hidden="true">
+										<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z" fill="currentColor"></path>
+									</svg>
+								</a>
+							</div>
+							<template data-fls-bookmarks-template="saved">
+								<li class="cataloggrid__card" data-fls-bookmarks-card="">
+									<a class="cataloggrid__photo" href="#" data-bookmark-href="url" tabindex="-1" aria-hidden="true">
+										<img alt="" data-bookmark-src="image" loading="lazy">
+										<span class="cataloggrid__zoom">
+											<svg class="catalog-icon" viewbox="0 0 16 16" fill="none" aria-hidden="true">
+												<path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+											</svg>
+										</span>
+									</a>
+									<button type="button" class="cataloggrid__save" data-fls-bookmarks-toggle="" aria-pressed="true" data-bookmark-label="Прибрати зі збережених:">
+										<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+											<path d="M5 7.8C5 6.12 5 5.28 5.33 4.64C5.61 4.07 6.07 3.61 6.64 3.33C7.28 3 8.12 3 9.8 3H14.2C15.88 3 16.72 3 17.36 3.33C17.93 3.61 18.39 4.07 18.67 4.64C19 5.28 19 6.12 19 7.8V21L12 17L5 21V7.8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+										</svg>
+									</button>
+									<div class="cataloggrid__bar">
+										<div class="cataloggrid__pill">
+											<h3 class="cataloggrid__name">
+												<a href="#" data-bookmark-href="url" data-bookmark-text="title"></a>
+											</h3>
+											<p class="cataloggrid__price" data-bookmark-text="price"></p>
+										</div>
+										<a class="cataloggrid__bag" href="#" data-bookmark-href="url" data-bookmark-label="Обрати варіант:">
+											<svg viewbox="0 0 48 48" fill="none" aria-hidden="true">
+												<path d="M9 17.5H39L36.9 38.3C36.79 39.39 36.28 40.39 35.47 41.12C34.66 41.86 33.61 42.26 32.52 42.26H15.48C14.39 42.26 13.34 41.86 12.53 41.12C11.72 40.39 11.21 39.39 11.1 38.3L9 17.5Z" stroke="currentColor" stroke-linejoin="round"></path>
+												<path d="M17.5 21V13.8C17.5 12.08 18.18 10.42 19.4 9.2C20.62 7.98 22.28 7.3 24 7.3C25.72 7.3 27.38 7.98 28.6 9.2C29.82 10.42 30.5 12.08 30.5 13.8V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+											</svg>
+										</a>
+									</div>
+								</li>
+							</template>
+						</div>
+					</section>
+				</div>
+			</main>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__container">
+					<div class="footer__top">
+						<div class="footer__brand">
+							<a href="#" class="footer__logo">7dem</a>
+							<p class="footer__tagline">
+								Модульна система Pin Pin для порядку
+								<br>
+								у твоєму особистому просторі.
+							</p>
+						</div>
+						<div class="footer__col">
+							<span class="footer__heading">Меню</span>
+							<ul class="footer__list">
+								<li>
+									<a href="#" class="footer__link">Каталог</a>
+								</li>
+								<li>
+									<a href="#" class="footer__link">Як це працює</a>
+								</li>
+								<li>
+									<a href="#" class="footer__link">Про нас</a>
+								</li>
+								<li>
+									<a href="#" class="footer__link">FAQ</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer__col">
+							<span class="footer__heading">Контакти</span>
+							<ul class="footer__list">
+								<li>
+									<a href="mailto:hello@7dem.ua" class="footer__link">hello@7dem.ua</a>
+								</li>
+								<li>
+									<a href="tel:+380440000000" class="footer__link">+380 44 000 00 00</a>
+								</li>
+								<li>
+									<span class="footer__link footer__link--static">Київ, Україна</span>
+								</li>
+							</ul>
+						</div>
+						<div class="footer__col">
+							<span class="footer__heading">Соцмережі</span>
+							<ul class="footer__list">
+								<li>
+									<a href="#" class="footer__link">Instagram — @7dem.ua</a>
+								</li>
+								<li>
+									<a href="#" class="footer__link">TikTok — @7dem.ua</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="footer__bottom">
+						<span class="footer__copy">© 2026 7dem. Усі права захищені.</span>
+						<span class="footer__note">Модульна система Pin Pin</span>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
