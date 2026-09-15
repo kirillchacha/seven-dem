@@ -1,0 +1,1 @@
+body:has([data-fls-register]) .header{--header-bg:var(--color-bone)}

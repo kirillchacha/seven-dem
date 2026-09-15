@@ -689,6 +689,13 @@
   margin: 0;
   padding: 0;
 }
+.reviewspin__card-block {
+  position: relative;
+  z-index: 0;
+}
+.reviewspin__card-block:has(> .reviewspin__card:hover) {
+  z-index: 10;
+}
 .reviewspin__card {
   position: relative;
   display: flex;

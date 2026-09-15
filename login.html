@@ -4,14 +4,15 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
-		<meta name="description" content="Товари модульної системи Pin Pin, які ти зберіг, щоб повернутися до них пізніше.">
-		<title>Збережене — 7dem</title>
+		<meta name="description" content="Вхід до особистого кабінету 7dem: замовлення, збережені набори та швидше оформлення покупок.">
+		<title>Вхід — 7dem</title>
 		<link rel="modulepreload" crossorigin href="./js/common.min.js?v=1789508880267">
 		<script type="module" crossorigin="" src="./js/main.min.js?v=1789508880267"></script>
+		<script type="module" crossorigin="" src="./js/authform.min.js?v=1789508880267"></script>
 		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1789508880267">
 		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1789508880267">
-		<link rel="stylesheet" crossorigin="" href="./css/saved.min.css?v=1789508880267">
-		<link rel="stylesheet" crossorigin="" href="./css/cataloggrid.min.css?v=1789508880267">
+		<link rel="stylesheet" crossorigin="" href="./css/authform.min.css?v=1789508880267">
+		<link rel="stylesheet" crossorigin="" href="./css/login.min.css?v=1789508880267">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -92,70 +93,74 @@
 				</div>
 			</header>
 			<main class="page">
-				<div data-fls-saved="" class="saved">
+				<div data-fls-login="" class="login">
 					<!--
-Сторінка «Збережене». Картки рендерить layout/bookmarks з localStorage
-у ul[data-fls-bookmarks-list="saved"] за шаблоном нижче. Розмітка й класи
-картки — ті самі, що в custom/cataloggrid (стилі імпортує savedlist.js),
-щоб картка на обох сторінках не розходилась. Окремого макета в Figma немає.
+Форма особистого кабінету: вхід (variant "login") і реєстрація (variant "register").
+Макети — PNG від дизайнерки (Figma-вузлів немає): docs/design/refs/Вхід — заповнені поля.png,
+docs/design/refs/Реєстрація — Desktop.png. Мобільного макета немає — до 768px поля в одну колонку.
+Порту в тему НЕМАЄ і не буде: магазин на нових клієнтських акаунтах Shopify (вхід без пароля,
+кодом на email, на сторінці Shopify), шаблони customers/login і customers/register не рендеряться,
+legacy-акаунти недоступні з 26.02.2026. У темі вхід — через shopify-account у шапці, а вигляд сторінки
+входу налаштовується в Checkout and accounts editor (docs/shopify-setup.md).
+Ванільний макет: форма нікуди не відправляється.
 -->
-					<section data-fls-savedlist="" class="savedlist">
-						<div class="savedlist__container">
-							<div class="savedlist__head">
-								<nav class="savedlist__crumbs" aria-label="Хлібні крихти">
-									<span class="savedlist__crumbs-dot" aria-hidden="true"></span>
-									<a class="savedlist__crumb" href="index.html">головна</a>
-									<span aria-hidden="true">/</span>
-									<span class="savedlist__crumb savedlist__crumb--current" aria-current="page">збережене</span>
-								</nav>
-								<h1 class="savedlist__title">Збережене</h1>
-								<p class="savedlist__count">
-									<span data-fls-bookmarks-count="always">0</span>
-									<span data-fls-bookmarks-plural="товар|товари|товарів">товарів</span>
+					<section data-fls-authform="" class="authform">
+						<div class="authform__container authform__container--seven">
+							<div class="authform__head">
+								<p class="authform__eyebrow">
+									<span class="authform__eyebrow-dot" aria-hidden="true"></span>
+									Особистий кабінет
+								</p>
+								<h1 class="authform__title">Вхід до кабінету</h1>
+								<p class="authform__lead">
+									Щоб бачити свої замовлення, зберігати улюблені набори та швидше оформлювати
+					покупки.
 								</p>
 							</div>
-							<ul class="savedlist__grid cataloggrid__grid" data-fls-bookmarks-list="saved"></ul>
-							<div class="savedlist__empty" data-fls-bookmarks-empty="saved">
-								<p class="savedlist__empty-text">Тут поки порожньо. Натисни закладку на картці товару — і він з'явиться
-				тут.</p>
-								<a class="savedlist__cta" href="cataloge.html">
-									До каталогу
-									<svg viewbox="0 0 12 8" fill="none" aria-hidden="true">
-										<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z" fill="currentColor"></path>
-									</svg>
-								</a>
-							</div>
-							<template data-fls-bookmarks-template="saved">
-								<li class="cataloggrid__card" data-fls-bookmarks-card="">
-									<a class="cataloggrid__photo" href="#" data-bookmark-href="url" tabindex="-1" aria-hidden="true">
-										<img alt="" data-bookmark-src="image" loading="lazy">
-										<span class="cataloggrid__zoom">
-											<svg class="catalog-icon" viewbox="0 0 16 16" fill="none" aria-hidden="true">
-												<path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+							<form class="authform__form" action="#" novalidate>
+								<div class="authform__fields">
+									<label class="authform__field">
+										<span class="authform__label">Email</span>
+										<input class="authform__input" type="email" name="email" autocomplete="email" placeholder="">
+									</label>
+									<label class="authform__field">
+										<span class="authform__label">Пароль</span>
+										<span class="authform__control">
+											<input class="authform__input" type="password" name="password" placeholder="" autocomplete="current-password">
+											<button class="authform__eye" type="button" data-fls-authform-eye="" aria-pressed="false" aria-label="Показати пароль">
+												<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+													<path d="M2 12C3.8 8.4 7.6 6 12 6C16.4 6 20.2 8.4 22 12C20.2 15.6 16.4 18 12 18C7.6 18 3.8 15.6 2 12Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+													<circle cx="12" cy="12" r="2.6" fill="currentColor"></circle>
+												</svg>
+											</button>
+										</span>
+									</label>
+								</div>
+								<div class="authform__options">
+									<label class="authform__check">
+										<input class="authform__check-input" type="checkbox" name="remember" value="1">
+										<span class="authform__check-box" aria-hidden="true">
+											<svg viewbox="0 0 12 12" fill="none">
+												<path d="M2.5 6.2L5 8.6L9.5 3.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
 											</svg>
 										</span>
-									</a>
-									<button type="button" class="cataloggrid__save" data-fls-bookmarks-toggle="" aria-pressed="true" data-bookmark-label="Прибрати зі збережених:">
-										<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
-											<path d="M5 7.8C5 6.12 5 5.28 5.33 4.64C5.61 4.07 6.07 3.61 6.64 3.33C7.28 3 8.12 3 9.8 3H14.2C15.88 3 16.72 3 17.36 3.33C17.93 3.61 18.39 4.07 18.67 4.64C19 5.28 19 6.12 19 7.8V21L12 17L5 21V7.8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-										</svg>
-									</button>
-									<div class="cataloggrid__bar">
-										<div class="cataloggrid__pill">
-											<h3 class="cataloggrid__name">
-												<a href="#" data-bookmark-href="url" data-bookmark-text="title"></a>
-											</h3>
-											<p class="cataloggrid__price" data-bookmark-text="price"></p>
-										</div>
-										<a class="cataloggrid__bag" href="#" data-bookmark-href="url" data-bookmark-label="Обрати варіант:">
-											<svg viewbox="0 0 48 48" fill="none" aria-hidden="true">
-												<path d="M9 17.5H39L36.9 38.3C36.79 39.39 36.28 40.39 35.47 41.12C34.66 41.86 33.61 42.26 32.52 42.26H15.48C14.39 42.26 13.34 41.86 12.53 41.12C11.72 40.39 11.21 39.39 11.1 38.3L9 17.5Z" stroke="currentColor" stroke-linejoin="round"></path>
-												<path d="M17.5 21V13.8C17.5 12.08 18.18 10.42 19.4 9.2C20.62 7.98 22.28 7.3 24 7.3C25.72 7.3 27.38 7.98 28.6 9.2C29.82 10.42 30.5 12.08 30.5 13.8V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-											</svg>
-										</a>
-									</div>
-								</li>
-							</template>
+										<span class="authform__check-text">Запам'ятати мене</span>
+									</label>
+									<a class="authform__forgot" href="#">Забули пароль?</a>
+								</div>
+								<button class="authform__submit" type="submit">Увійти</button>
+								<p class="authform__divider">
+									<span>або</span>
+								</p>
+								<div class="authform__socials">
+									<button class="authform__social" type="button">Google</button>
+									<button class="authform__social" type="button">Facebook</button>
+								</div>
+								<p class="authform__switch">
+									Ще не маєш акаунту?
+									<a href="register.html">Зареєструватися</a>
+								</p>
+							</form>
 						</div>
 					</section>
 				</div>

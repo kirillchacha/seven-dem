@@ -471,6 +471,7 @@ function initFadeSliders() {
 	});
 }
 window.addEventListener("load", initFadeSliders);
+document.addEventListener("shopify:section:load", initFadeSliders);
 //#endregion
 //#region src/components/layout/tabs/tabs.js
 function tabs() {

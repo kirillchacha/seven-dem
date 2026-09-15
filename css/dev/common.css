@@ -59,11 +59,11 @@
 }
 @media (any-hover: hover) {
   .button:hover {
-    background: var(--main-color);
-    color: var(--color-bone);
+    background: var(--color-rose);
+    color: var(--main-color);
   }
   .button:hover svg path {
-    fill: var(--color-bone);
+    fill: var(--main-color);
   }
 }
 @media (any-hover: hover), (pointer: fine) {

@@ -1,0 +1,1 @@
+body:has([data-fls-login]) .header{--header-bg:var(--color-bone)}
