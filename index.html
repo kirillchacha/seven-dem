@@ -4,19 +4,30 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<!--
+Страхувальна сітка для появи секцій (@components/effects/reveal): без JS
+ніхто не зніме початковий opacity: 0 з [data-fls-reveal*].
+-->
+		<noscript>
+			<style>
+				[data-fls-reveal],
+			[data-fls-reveal-group] > * { opacity: 1 !important; transform: none !important; }
+			</style>
+		</noscript>
 		<title>Home Page</title>
-		<script type="module" crossorigin="" src="./js/index.min.js?v=1789508880268"></script>
-		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1789508880268">
-		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1789508880268">
-		<link rel="modulepreload" crossorigin="" href="./js/spollers.min.js?v=1789508880268">
-		<link rel="modulepreload" crossorigin="" href="./js/settext.min.js?v=1789508880268">
-		<link rel="modulepreload" crossorigin="" href="./js/faqpin.min.js?v=1789508880268">
-		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1789508880268">
-		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1789508880268">
-		<link rel="stylesheet" crossorigin="" href="./css/spollers.min.css?v=1789508880268">
-		<link rel="stylesheet" crossorigin="" href="./css/settext.min.css?v=1789508880268">
-		<link rel="stylesheet" crossorigin="" href="./css/faqpin.min.css?v=1789508880268">
-		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1789508880268">
+		<script type="module" crossorigin="" src="./js/index.min.js?v=1790601590796"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1790601590796">
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1790601590796">
+		<link rel="modulepreload" crossorigin="" href="./js/swiper.min.js?v=1790601590796">
+		<link rel="modulepreload" crossorigin="" href="./js/spollers.min.js?v=1790601590796">
+		<link rel="modulepreload" crossorigin="" href="./js/settext.min.js?v=1790601590796">
+		<link rel="modulepreload" crossorigin="" href="./js/faqpin.min.js?v=1790601590796">
+		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1790601590796">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1790601590796">
+		<link rel="stylesheet" crossorigin="" href="./css/spollers.min.css?v=1790601590796">
+		<link rel="stylesheet" crossorigin="" href="./css/settext.min.css?v=1790601590796">
+		<link rel="stylesheet" crossorigin="" href="./css/faqpin.min.css?v=1790601590796">
+		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1790601590796">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -67,14 +78,18 @@
 </fetch>
 -->
 						<div class="header__actions">
-							<button data-fls-dynamic=".menu__actions-mob, 768" data-fls-button="" type="button" class="header__button button button--padding-one button--border-color-two">
+							<!-- У ванілі — посилання на сторінку кошика (custom/cartlist); у темі кошик відкриває вендорський cart-drawer -->
+							<a href="cart.html" data-fls-dynamic=".menu__actions-mob, 768" data-fls-button="" class="header__button button button--padding-one button--border-color-two">
 								Кошик
 								<span>0</span>
-							</button>
-							<!-- «log in» веде на ванільну сторінку входу (custom/authform). У темі тут shopify-account -->
+							</a>
+							<!--
+«log in» веде на ванільну сторінку входу (custom/authform). У темі тут shopify-account.
+locals user (лише ваніль, сторінки кабінету) — «увійшла» клієнтка: ім'я замість log in і посилання в кабінет.
+Лише через typeof: голий плейсхолдер незаданого local у strictMode posthtml-expressions валить збірку
+-->
 							<a href="login.html" data-fls-dynamic=".menu__actions-mob, 768" data-fls-button="" class="header__button button button--padding-one button--border-color-one button--background-black">
-								log
-					in
+								log in
 								<svg aria-hidden="true" viewbox="0 0 12 8" xmlns="http://www.w3.org/2000/svg">
 									<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z"></path>
 								</svg>
@@ -99,14 +114,14 @@
 			<main class="page">
 				<div data-fls-index="" class="index">
 					<!-- Порт: src/shopify/relax-theme/sections/hero.liquid + frontend/styles/hero.scss (2026-09-15 синхронізовано; поправки під вендорську базу — в кінці партіала). -->
-					<section data-fls-hero="" class="hero">
-						<div class="hero__decor" aria-hidden="true">
+					<section data-fls-hero="" class="hero" data-fls-reveal-load="">
+						<div class="hero__decor" aria-hidden="true" data-fls-reveal="fade">
 							<svg width="1672" height="1337" viewbox="0 0 1672 1337" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M49.1168 446.86C164.961 -161.271 584.522 -21.0081 311.342 534.525C38.1624 1090.06 459.668 1224.5 573.568 622.189C687.467 19.8761 1107.03 160.139 835.793 709.854C564.558 1259.57 1032.75 1254.37 1098.02 797.518C1163.29 340.663 1582.85 480.926 1360.24 885.183C1137.64 1289.44 1533.86 1499.52 1622.47 972.847" stroke="#DFC1B7" stroke-width="100"></path>
 							</svg>
 						</div>
 						<div class="hero__container">
-							<div class="hero__content">
+							<div class="hero__content" data-fls-reveal-group="">
 								<h1 class="hero__title">Більше, ніж порядок</h1>
 								<p class="hero__text">
 									Лотки, бокси та фіксатори, що тримаються на сітці й не роз'їжджаються, коли відкриваєш шухляду. Збери
@@ -140,7 +155,7 @@ TODO: зараз усі слайди — одне тимчасове фото (o
 реальної предметної зйомки. Заміни src на реальні фото — розмітку й свайпер
 міняти не потрібно, досить розширити/замінити список .hero__slide.
 -->
-						<div class="hero__gallery" aria-hidden="true">
+						<div class="hero__gallery" aria-hidden="true" data-fls-reveal="fade">
 							<div data-fls-hero-slider="" class="hero__slider swiper">
 								<div class="hero__wrapper swiper-wrapper">
 									<div class="hero__slide swiper-slide">
@@ -298,8 +313,9 @@ TODO: зараз усі слайди — одне тимчасове фото (o
 							</div>
 						</div>
 					</section>
+					<!-- Порт: src/shopify/relax-theme/sections/sistempintext.liquid (2026-09-18 синхронізовано з ваніллю: кікер знову рендериться сніпетом tabletext, а не власним __kicker). -->
 					<section data-fls-sistempintext="" class="sistempintext">
-						<div class="sistempintext__container sistempintext__container--two">
+						<div class="sistempintext__container sistempintext__container--two" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
 							<div data-fls-tabletext="" class="tabletext">Система Pin Pin</div>
 							<h2 class="sistempintext__title">
 								Модульна система яку
@@ -319,8 +335,9 @@ TODO: зараз усі слайди — одне тимчасове фото (o
 							</a>
 						</div>
 					</section>
+					<!-- Порт: src/shopify/relax-theme/sections/catalogscart.liquid + snippets/catalogscart__card.liquid (2026-09-18 синхронізовано). Свідомі відмінності порту: назва в <h3>, свотчі <ul>/<li> з inline style замість модифікаторів, halo — сусід кнопки, а не обгортка (форма Shopify). -->
 					<section data-fls-catalogscart="" class="catalogscart">
-						<div class="catalogscart__container catalogscart__container--three">
+						<div class="catalogscart__container catalogscart__container--three" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
 							<div class="catalogscart__head">
 								<div class="catalogscart__heading">
 									<span class="catalogscart__kicker">каталог</span>
@@ -333,7 +350,7 @@ TODO: зараз усі слайди — одне тимчасове фото (o
 									</svg>
 								</a>
 							</div>
-							<ul class="catalogscart__grid">
+							<ul class="catalogscart__grid" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
 								<li class="catalogscart__card">
 									<a href="#" class="catalogscart__photo">
 										<picture>
@@ -447,7 +464,7 @@ TODO: зараз усі слайди — одне тимчасове фото (o
 					</section>
 					<!-- Порт: src/shopify/relax-theme/sections/beforeandafter.liquid (2026-09-15 синхронізовано з ваніллю). -->
 					<section data-fls-beforeandafter="" class="beforeandafter">
-						<div class="beforeandafter__container beforeandafter__container--four">
+						<div class="beforeandafter__container beforeandafter__container--four" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
 							<span class="beforeandafter__kicker">До і після</span>
 							<h2 class="beforeandafter__title">Та сама шухляда</h2>
 							<div data-fls-beforeafter="" class="beforeandafter__before-after">
@@ -475,11 +492,12 @@ TODO: зараз усі слайди — одне тимчасове фото (o
 							</div>
 						</div>
 					</section>
+					<!-- Порт: src/shopify/relax-theme/sections/stepsgettingorganised.liquid (2026-09-18 синхронізовано). Свідома відмінність: модифікатори --1/--2/--3 у темі замінені на CSS-змінну --step-bg із налаштування блоку. -->
 					<section data-fls-stepsgettingorganised="" class="stepsgettingorganised">
-						<div class="stepsgettingorganised__container stepsgettingorganised__container--nine">
+						<div class="stepsgettingorganised__container stepsgettingorganised__container--nine" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
 							<span class="stepsgettingorganised__kicker">Як це працює</span>
 							<h2 class="stepsgettingorganised__title">Три кроки до порядку</h2>
-							<div class="stepsgettingorganised__list">
+							<div class="stepsgettingorganised__list" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
 								<div class="stepsgettingorganised__step stepsgettingorganised__step--1">
 									<span class="stepsgettingorganised__number">01</span>
 									<h3 class="stepsgettingorganised__name">Виміряй шухляду</h3>
@@ -510,8 +528,9 @@ TODO: зараз усі слайди — одне тимчасове фото (o
 							</div>
 						</div>
 					</section>
+					<!-- Порт: src/shopify/relax-theme/sections/aboutuspin.liquid (2026-09-18 синхронізовано: кікер знову сніпет tabletext). Свідома відмінність: абзаци — richtext-налаштування, тож <p> без класу, і ширину їм задає .aboutuspin__parahraph > p. -->
 					<section data-fls-aboutuspin="" class="aboutuspin">
-						<div class="aboutuspin__container aboutuspin__container--five">
+						<div class="aboutuspin__container aboutuspin__container--five" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
 							<div class="aboutuspin__content">
 								<div data-fls-tabletext="" class="tabletext">Про нас</div>
 								<h2 class="aboutuspin__title">Це приклад тексту</h2>
@@ -559,8 +578,9 @@ TODO: зараз усі слайди — одне тимчасове фото (o
 							</div>
 						</div>
 					</section>
+					<!-- Порт: src/shopify/relax-theme/sections/reviewspin.liquid (2026-09-18 синхронізовано: кікер і капшн знову рендеряться сніпетом tabletext). Відгуки в темі — блоки @theme, декор картки рахується з позиції (forloop.index0 modulo 4). -->
 					<section data-fls-reviewspin="" class="reviewspin">
-						<div class="reviewspin__container reviewspin__container--six">
+						<div class="reviewspin__container reviewspin__container--six" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
 							<div data-fls-tabletext="" class="tabletext">Відгуки</div>
 							<h2 class="reviewspin__title">Реальні відгуки покупців</h2>
 							<p class="reviewspin__text">
@@ -569,7 +589,7 @@ TODO: зараз усі слайди — одне тимчасове фото (o
 							</p>
 							<div data-fls-tabletext="" class="tabletext">Обирай порядок для свого простору</div>
 						</div>
-						<ul data-fls-parallax-parent="" class="reviewspin__list">
+						<ul data-fls-parallax-parent="" class="reviewspin__list" data-fls-reveal-group="fade" data-fls-watcher="" data-fls-watcher-once="">
 							<li data-fls-parallax="" class="reviewspin__card-block">
 								<div class="reviewspin__card reviewspin__card--1">
 									<div class="reviewspin__decor">
@@ -668,8 +688,9 @@ TODO: зараз усі слайди — одне тимчасове фото (o
 							</li>
 						</ul>
 					</section>
+					<!-- Порт: src/shopify/relax-theme/sections/settext.liquid (2026-09-18 синхронізовано). Надстройка теми: варіант settext--about і налаштування heading_highlight — у ванілі їх немає. -->
 					<section data-fls-settext="" class="settext">
-						<div class="settext__container">
+						<div class="settext__container" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
 							<h2 class="settext__title">
 								<mark class="settext__highlight">Почни зі свого набору</mark>
 							</h2>
@@ -694,6 +715,7 @@ FAQ. Два варіанти через locals variant (передавати я�
 широкий список окремих білих рядків).
 -->
 					<section data-fls-faqpin="" class="faqpin faqpin--home">
+						<!-- Порт: ОКРЕМОЇ секції в темі немає — Shopify падає з "Cannot render sections inside sections", тому стрічка інлайниться всередину sections/faqpin.liquid блоками badge (2026-09-18 звірено). -->
 						<section data-fls-marqueepin="" data-fls-marquee="" data-fls-marquee-space="20" data-fls-marquee-direction="left" data-fls-marquee-pause="" data-fls-marquee-speed="1000" class="marqueepin">
 							<div class="marqueepin__item marqueepin__item--one">
 								<picture>
@@ -753,13 +775,13 @@ FAQ. Два варіанти через locals variant (передавати я�
 								</div>
 							</div>
 						</div>
-						<div class="faqpin__container faqpin__container--seven">
+						<div class="faqpin__container faqpin__container--seven" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
 							<div data-fls-tabletext="" class="tabletext">FAQ</div>
 							<h2 class="faqpin__title">
 								<mark class="faqpin__highlight">Найчастіші запитання</mark>
 							</h2>
 							<!-- data-fls-spollers(-one) — акордеон із layout/spollers (плавне розкриття, лише один пункт відкритий), не нативний <details> -->
-							<div class="faqpin__list" data-fls-spollers="" data-fls-spollers-one="">
+							<div class="faqpin__list" data-fls-spollers="" data-fls-spollers-one="" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
 								<details class="faqpin__item">
 									<summary class="faqpin__question">
 										Як зрозуміти, які модулі мені потрібні?
@@ -850,7 +872,7 @@ FAQ. Два варіанти через locals variant (передавати я�
 									<a href="#" class="footer__link">Про нас</a>
 								</li>
 								<li>
-									<a href="#" class="footer__link">FAQ</a>
+									<a href="faq.html" class="footer__link">FAQ</a>
 								</li>
 							</ul>
 						</div>
@@ -881,7 +903,7 @@ FAQ. Два варіанти через locals variant (передавати я�
 						</div>
 					</div>
 					<div class="footer__bottom">
-						<span class="footer__copy">© 2026 7dem. Усі права захищені.</span>
+						<span class="footer__copy">© 2026 7dem. Усі права захищено.</span>
 						<span class="footer__note">Модульна система Pin Pin</span>
 					</div>
 				</div>

@@ -1,0 +1,1 @@
+body:has([data-fls-account]) .header{--header-bg:var(--color-bone)}

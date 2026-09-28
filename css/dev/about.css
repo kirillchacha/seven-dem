@@ -594,8 +594,10 @@ body:has([data-fls-about]) .header {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 4rem;
-  height: 4rem;
+  width: 4.625rem;
+  height: 4.625rem;
+  min-width: 0;
+  padding: 0;
   border: none;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.35);
@@ -716,8 +718,10 @@ body:has([data-fls-about]) .header {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 4rem;
-  height: 4rem;
+  width: 4.625rem;
+  height: 4.625rem;
+  min-width: 0;
+  padding: 0;
   border: none;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.35);

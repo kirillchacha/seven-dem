@@ -1,6 +1,7 @@
 import "./main.min.js";
-import { c as isMobile } from "./common.min.js";
-import { t as Swiper } from "./spollers.min.js";
+import { l as isMobile } from "./common.min.js";
+import { t as Swiper } from "./swiper.min.js";
+import "./spollers.min.js";
 import "./settext.min.js";
 import "./faqpin.min.js";
 //#region src/components/layout/heroslider/heroslider.js

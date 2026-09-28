@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="uk">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<meta name="description" content="Особистий кабінет 7dem: персональні дані, пароль і адреси доставки.">
+		<!--
+Страхувальна сітка для появи секцій (@components/effects/reveal): без JS
+ніхто не зніме початковий opacity: 0 з [data-fls-reveal*].
+-->
+		<noscript>
+			<style>
+				[data-fls-reveal],
+			[data-fls-reveal-group] > * { opacity: 1 !important; transform: none !important; }
+			</style>
+		</noscript>
+		<title>Персональні дані — 7dem</title>
+		<link rel="modulepreload" crossorigin href="./js/common.min.js?v=1790601590795">
+		<script type="module" crossorigin="" src="./js/main.min.js?v=1790601590795"></script>
+		<script type="module" crossorigin="" src="./js/cabinet.min.js?v=1790601590795"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1790601590795">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1790601590795">
+		<link rel="stylesheet" crossorigin="" href="./css/cabinet.min.css?v=1790601590795">
+		<link rel="stylesheet" crossorigin="" href="./css/account.min.css?v=1790601590795">
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- Порт: src/shopify/relax-theme/sections/header.liquid (header_style relax), стилі — frontend/styles/header-relax.scss (2026-09-15 синхронізовано з ваніллю). -->
+			<header data-fls-header="" data-fls-header-scroll="" class="header">
+				<div class="header__container">
+					<div class="header__content">
+						<!--
+Логотип: іконка 28.8×28.8 (розовий таб @img/logo-new.jpg) + напис «7dem» (вектор з @img/H1.svg)
+— пропорції старого logo.svg: іконка 28.8, проміжок ~9, напис 65
+-->
+						<a href="index.html" class="header__logo" aria-label="7dem">
+							<span class="header__logo-icon">
+								<picture>
+									<img alt="" width="165" height="155" src="./assets/img/logo-new.webp">
+								</picture>
+							</span>
+							<svg class="header__logo-text" viewbox="0 0 65 17" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+								<path d="M2.43858e-05 2.12626V1.06876C2.43858e-05 0.776259 0.108774 0.525009 0.326274 0.315009C0.543774 0.105009 0.798774 9.3542e-06 1.09127 9.3542e-06H13.14C13.4325 9.3542e-06 13.6838 0.105009 13.8938 0.315009C14.1113 0.525009 14.22 0.776259 14.22 1.06876V2.10376C14.22 2.62126 13.9913 3.30376 13.5338 4.15126L7.62752 15.075C7.24502 15.78 6.75377 16.1325 6.15377 16.1325H3.84752C3.54752 16.1325 3.33377 16.035 3.20627 15.84C3.08627 15.6375 3.08627 15.42 3.20627 15.1875L9.70877 3.18376H1.09127C0.783774 3.18376 0.525024 3.08251 0.315024 2.88001C0.105024 2.67001 2.43858e-05 2.41876 2.43858e-05 2.12626ZM20.0903 16.3575C18.5228 16.3575 17.2103 15.8063 16.1528 14.7038C15.1028 13.6013 14.5778 12.0225 14.5778 9.96751C14.5778 7.90501 15.1215 6.32626 16.209 5.23126C17.304 4.12876 18.774 3.57751 20.619 3.57751C21.5715 3.57751 22.6553 3.76876 23.8703 4.15126V0.697509C23.8703 0.495009 23.934 0.330009 24.0615 0.202509C24.1965 0.0675093 24.3615 9.3542e-06 24.5565 9.3542e-06H27.0653C27.2678 9.3542e-06 27.4328 0.0675093 27.5603 0.202509C27.6953 0.330009 27.7628 0.495009 27.7628 0.697509V15.4463C27.7628 15.6413 27.6953 15.8063 27.5603 15.9413C27.4328 16.0688 27.2678 16.1325 27.0653 16.1325H24.9053C24.7028 16.1325 24.5378 16.0688 24.4103 15.9413C24.2828 15.8063 24.219 15.6413 24.219 15.4463V15.0975C23.034 15.9375 21.6578 16.3575 20.0903 16.3575ZM21.429 6.30001C20.394 6.30001 19.6628 6.59251 19.2353 7.17751C18.8078 7.75501 18.594 8.68501 18.594 9.96751C18.594 11.25 18.7965 12.1838 19.2015 12.7688C19.6065 13.3538 20.214 13.6463 21.024 13.6463C21.8415 13.6463 22.7903 13.3088 23.8703 12.6338V6.75001C22.9028 6.45001 22.089 6.30001 21.429 6.30001ZM30.9893 14.715C29.8343 13.62 29.2568 12.045 29.2568 9.99001C29.2568 7.92751 29.838 6.34501 31.0005 5.24251C32.163 4.13251 33.7755 3.57751 35.838 3.57751C37.9005 3.57751 39.5093 4.11751 40.6643 5.19751C41.8193 6.27001 42.3968 7.81126 42.3968 9.82126V10.4625C42.3968 10.665 42.3293 10.8338 42.1943 10.9688C42.0668 11.0963 41.9018 11.16 41.6993 11.16H33.228C33.303 12.0825 33.5655 12.7538 34.0155 13.1738C34.473 13.5938 35.2005 13.8038 36.198 13.8038C37.1955 13.8038 37.878 13.5788 38.2455 13.1288C38.613 12.6788 39.0668 12.45 39.6068 12.4425H41.283C41.4855 12.4425 41.6505 12.51 41.778 12.645C41.913 12.7725 41.9805 12.9375 41.9805 13.14C41.9805 15.2925 39.9293 16.365 35.8268 16.3575C33.7568 16.3575 32.1443 15.81 30.9893 14.715ZM33.2055 8.78626H38.4368C38.3618 7.01626 37.4918 6.13126 35.8268 6.13126C34.1693 6.13126 33.2955 7.01626 33.2055 8.78626ZM43.8908 15.4463V4.50001C43.8908 4.29751 43.9545 4.13251 44.082 4.00501C44.217 3.87001 44.382 3.80251 44.577 3.80251H47.097C47.2995 3.80251 47.4645 3.87001 47.592 4.00501C47.7195 4.13251 47.7833 4.29751 47.7833 4.50001V5.20876C48.3233 4.68376 48.852 4.28251 49.3695 4.00501C49.8945 3.72001 50.5245 3.57751 51.2595 3.57751C53.007 3.57751 54.3308 4.29751 55.2308 5.73751C56.6258 4.29001 58.0545 3.57001 59.517 3.57751C60.987 3.57751 62.1458 4.02001 62.9933 4.90501C63.8483 5.78251 64.2758 7.14376 64.2758 8.98876V15.4463C64.2758 15.6488 64.212 15.8138 64.0845 15.9413C63.957 16.0688 63.792 16.1325 63.5895 16.1325H61.0808C60.8783 16.1325 60.7095 16.0688 60.5745 15.9413C60.447 15.8063 60.3833 15.6413 60.3833 15.4463V8.98876C60.3833 7.18876 59.7308 6.29251 58.4258 6.30001C57.6308 6.30001 56.8095 6.87376 55.962 8.02126C56.007 8.34376 56.0295 8.66626 56.0295 8.98876V15.4463C56.0295 15.6488 55.962 15.8138 55.827 15.9413C55.6995 16.0688 55.5383 16.1325 55.3433 16.1325H52.8345C52.632 16.1325 52.4633 16.0688 52.3283 15.9413C52.2008 15.8063 52.137 15.6413 52.137 15.4463V8.98876C52.137 7.18876 51.4845 6.29251 50.1795 6.30001C49.347 6.30001 48.5483 6.83626 47.7833 7.90876V15.4463C47.7833 15.6488 47.7158 15.8138 47.5808 15.9413C47.4533 16.0688 47.292 16.1325 47.097 16.1325H44.577C44.3745 16.1325 44.2095 16.0688 44.082 15.9413C43.9545 15.8138 43.8908 15.6488 43.8908 15.4463Z" fill="currentColor"></path>
+							</svg>
+						</a>
+						<div class="header__menu menu">
+							<nav class="menu__body">
+								<ul class="menu__list">
+									<li class="menu__item">
+										<a href="cataloge.html" class="menu__link">Каталог</a>
+									</li>
+									<li class="menu__item">
+										<a href="#" class="menu__link">Як це працює</a>
+									</li>
+									<li class="menu__item">
+										<a href="about.html" class="menu__link">Про нас</a>
+									</li>
+									<li class="menu__item">
+										<a href="#" class="menu__link">Доставка</a>
+									</li>
+									<li class="menu__item">
+										<a href="#" class="menu__link">Контакти</a>
+									</li>
+								</ul>
+								<div class="menu__actions-mob"></div>
+							</nav>
+						</div>
+						<!--
+<fetch url="@components/layout/menu/menu.json">
+<each loop='item in response'>
+</each>
+</fetch>
+-->
+						<div class="header__actions">
+							<!-- У ванілі — посилання на сторінку кошика (custom/cartlist); у темі кошик відкриває вендорський cart-drawer -->
+							<a href="cart.html" data-fls-dynamic=".menu__actions-mob, 768" data-fls-button="" class="header__button button button--padding-one button--border-color-two">
+								Кошик
+								<span>0</span>
+							</a>
+							<!--
+«log in» веде на ванільну сторінку входу (custom/authform). У темі тут shopify-account.
+locals user (лише ваніль, сторінки кабінету) — «увійшла» клієнтка: ім'я замість log in і посилання в кабінет.
+Лише через typeof: голий плейсхолдер незаданого local у strictMode posthtml-expressions валить збірку
+-->
+							<a href="account.html" data-fls-dynamic=".menu__actions-mob, 768" data-fls-button="" class="header__button button button--padding-one button--border-color-one button--background-black">
+								Олена
+								<svg aria-hidden="true" viewbox="0 0 12 8" xmlns="http://www.w3.org/2000/svg">
+									<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z"></path>
+								</svg>
+							</a>
+							<!--
+«Збережене»: лічильник оновлює layout/bookmarks (localStorage),
+атрибут data-fls-bookmarks-count і підвантажує цей модуль на кожній сторінці
+-->
+							<a href="saved.html" class="header__saved" aria-label="Збережене">
+								<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+									<path d="M5 7.8C5 6.12 5 5.28 5.33 4.64C5.61 4.07 6.07 3.61 6.64 3.33C7.28 3 8.12 3 9.8 3H14.2C15.88 3 16.72 3 17.36 3.33C17.93 3.61 18.39 4.07 18.67 4.64C19 5.28 19 6.12 19 7.8V21L12 17L5 21V7.8Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+								</svg>
+								<span class="header__saved-count" data-fls-bookmarks-count="" hidden>0</span>
+							</a>
+							<button type="button" data-fls-menu="" class="menu__icon icon-menu">
+								<span></span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</header>
+			<main class="page">
+				<div data-fls-account="" class="account">
+					<!--
+Особистий кабінет: бокове меню + вміст. locals variant (передавати явно):
+"profile" — Персональні дані (docs/design/refs/Персональні дані — Desktop.png);
+"orders"  — Мої замовлення, є замовлення (Мої замовлення — є замовлення.png);
+"empty"   — Мої замовлення, порожньо (Мої замовлення — порожньо.png).
+Макети — PNG від дизайнерки (Figma-вузлів немає), лише десктоп: до 992px меню стає рядком над вмістом.
+Порту в тему НЕМАЄ і не буде (як authform): магазин на нових клієнтських акаунтах Shopify — кабінет, замовлення
+й адреси показує сама Shopify (customer account pages), шаблони customers/*.liquid не рендеряться.
+Ваніль без бекенду: форма нікуди не відправляється, «Деталі замовлення» відкривають попап custom/orderpopup
+(layout/popup), «Збережені набори» — наявна сторінка saved.html (layout/bookmarks).
+-->
+					<section data-fls-cabinet="" class="cabinet" data-fls-reveal-load="">
+						<div class="cabinet__container">
+							<aside class="cabinet__aside" data-fls-reveal="fade">
+								<p class="cabinet__hello">Привіт, Олено!</p>
+								<nav class="cabinet__nav" aria-label="Особистий кабінет">
+									<a class="cabinet__link" href="account.html" aria-current="page">Персональні
+					дані</a>
+									<a class="cabinet__link" href="orders.html" aria-current="false">Мої
+					замовлення</a>
+									<a class="cabinet__link" href="saved.html">Збережені набори</a>
+								</nav>
+								<a class="cabinet__logout" href="login.html">Вийти з акаунту</a>
+							</aside>
+							<div class="cabinet__main" data-fls-reveal-group="">
+								<!-- ============================================================ Персональні дані -->
+								<form class="cabinet__form" action="#" novalidate>
+									<h1 class="cabinet__title">Персональні дані</h1>
+									<div class="cabinet__fields">
+										<label class="cabinet__field">
+											<span class="cabinet__label">Ім'я*</span>
+											<input class="cabinet__input" type="text" name="first_name" autocomplete="given-name" value="Олена" required>
+										</label>
+										<label class="cabinet__field">
+											<span class="cabinet__label">Прізвище*</span>
+											<input class="cabinet__input" type="text" name="last_name" autocomplete="family-name" value="Коваленко" required>
+										</label>
+										<label class="cabinet__field">
+											<span class="cabinet__label">Номер телефону*</span>
+											<span class="cabinet__control">
+												<span class="cabinet__code">
+													+380
+													<svg viewbox="0 0 14 14" fill="none" aria-hidden="true">
+														<path d="M2.5 5L7 9.5L11.5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg>
+												</span>
+												<input class="cabinet__input" type="tel" name="phone" autocomplete="tel-national" value="67 123 45 67" required>
+											</span>
+										</label>
+										<label class="cabinet__field">
+											<span class="cabinet__label">Ваш email*</span>
+											<input class="cabinet__input" type="email" name="email" autocomplete="email" value="olena.kovalenko@gmail.com" required>
+										</label>
+										<label class="cabinet__field">
+											<span class="cabinet__label">Instagram</span>
+											<input class="cabinet__input" type="text" name="instagram" value="@olena.home">
+										</label>
+										<label class="cabinet__field">
+											<span class="cabinet__label">Дата народження</span>
+											<input class="cabinet__input" type="text" name="birthday" inputmode="numeric" autocomplete="bday" data-fls-cabinet-date="" placeholder="дд.мм.рррр" maxlength="10">
+										</label>
+									</div>
+									<div class="cabinet__surprise">
+										<p class="cabinet__surprise-title">Сюрприз!</p>
+										<p class="cabinet__surprise-text">
+											Збережи свою дату народження — і за 5 днів до свята ми надішлемо тобі
+							знижку 10% на будь-який набір.
+										</p>
+									</div>
+									<p class="cabinet__required">* Обов'язкові поля</p>
+									<h2 class="cabinet__title cabinet__title--section">Зміна паролю</h2>
+									<div class="cabinet__fields">
+										<label class="cabinet__field">
+											<span class="cabinet__label">Старий пароль</span>
+											<span class="cabinet__control">
+												<input class="cabinet__input" type="password" name="password_old" autocomplete="current-password">
+												<button class="cabinet__eye" type="button" data-fls-cabinet-eye="" aria-pressed="false" aria-label="Показати пароль">
+													<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+														<path d="M2 12C3.8 8.4 7.6 6 12 6C16.4 6 20.2 8.4 22 12C20.2 15.6 16.4 18 12 18C7.6 18 3.8 15.6 2 12Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+														<circle cx="12" cy="12" r="2.6" fill="currentColor"></circle>
+													</svg>
+												</button>
+											</span>
+										</label>
+										<label class="cabinet__field">
+											<span class="cabinet__label">Новий пароль</span>
+											<span class="cabinet__control">
+												<input class="cabinet__input" type="password" name="password_new" autocomplete="new-password">
+												<button class="cabinet__eye" type="button" data-fls-cabinet-eye="" aria-pressed="false" aria-label="Показати пароль">
+													<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+														<path d="M2 12C3.8 8.4 7.6 6 12 6C16.4 6 20.2 8.4 22 12C20.2 15.6 16.4 18 12 18C7.6 18 3.8 15.6 2 12Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+														<circle cx="12" cy="12" r="2.6" fill="currentColor"></circle>
+													</svg>
+												</button>
+											</span>
+										</label>
+										<label class="cabinet__field">
+											<span class="cabinet__label">Повторіть новий пароль</span>
+											<span class="cabinet__control">
+												<input class="cabinet__input" type="password" name="password_confirm" autocomplete="new-password">
+												<button class="cabinet__eye" type="button" data-fls-cabinet-eye="" aria-pressed="false" aria-label="Показати пароль">
+													<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+														<path d="M2 12C3.8 8.4 7.6 6 12 6C16.4 6 20.2 8.4 22 12C20.2 15.6 16.4 18 12 18C7.6 18 3.8 15.6 2 12Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+														<circle cx="12" cy="12" r="2.6" fill="currentColor"></circle>
+													</svg>
+												</button>
+											</span>
+										</label>
+									</div>
+									<h2 class="cabinet__title cabinet__title--section">Адреси доставки</h2>
+									<!--
+Три способи доставки Нової Пошти. Поля всіх способів видно завжди, як на макеті;
+фокус у полі способу сам вибирає його радіокнопку (cabinet.js). Міста/відділення — заглушки:
+живий пошук НП є в forms/novaposhta, але він на id (#np-city) і розрахований на одну пару полів
+-->
+									<div class="cabinet__ship" role="radiogroup" aria-label="Спосіб доставки">
+										<fieldset class="cabinet__way" data-fls-cabinet-way="">
+											<legend class="cabinet__way-head">
+												<label class="cabinet__radio">
+													<input class="cabinet__radio-input" type="radio" name="shipping" value="branch" checked>
+													<span class="cabinet__radio-mark" aria-hidden="true"></span>
+													<span class="cabinet__radio-name">Нова Пошта (відділення)</span>
+													<span class="cabinet__radio-note">за тарифами Нової Пошти</span>
+												</label>
+											</legend>
+											<div class="cabinet__way-fields">
+												<label class="cabinet__field">
+													<span class="cabinet__label">Місто</span>
+													<span class="cabinet__control cabinet__control--select">
+														<select class="cabinet__select" name="branch_city">
+															<option value="" selected>Оберіть місто</option>
+															<option value="kyiv">Київ</option>
+															<option value="odesa">Одеса</option>
+															<option value="lviv">Львів</option>
+															<option value="dnipro">Дніпро</option>
+															<option value="kharkiv">Харків</option>
+														</select>
+														<svg class="cabinet__chevron" viewbox="0 0 16 16" fill="none" aria-hidden="true">
+															<path d="M3.5 6L8 10.5L12.5 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+														</svg>
+													</span>
+												</label>
+												<label class="cabinet__field">
+													<span class="cabinet__label">Відділення</span>
+													<span class="cabinet__control cabinet__control--select">
+														<select class="cabinet__select" name="branch_point">
+															<option value="" selected>Оберіть відділення</option>
+															<option value="1">№ 1</option>
+															<option value="12">№ 12</option>
+															<option value="25">№ 25</option>
+														</select>
+														<svg class="cabinet__chevron" viewbox="0 0 16 16" fill="none" aria-hidden="true">
+															<path d="M3.5 6L8 10.5L12.5 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+														</svg>
+													</span>
+												</label>
+											</div>
+										</fieldset>
+										<fieldset class="cabinet__way" data-fls-cabinet-way="">
+											<legend class="cabinet__way-head">
+												<label class="cabinet__radio">
+													<input class="cabinet__radio-input" type="radio" name="shipping" value="locker">
+													<span class="cabinet__radio-mark" aria-hidden="true"></span>
+													<span class="cabinet__radio-name">Нова Пошта (поштомат)</span>
+													<span class="cabinet__radio-note">за тарифами Нової Пошти</span>
+												</label>
+											</legend>
+											<div class="cabinet__way-fields">
+												<label class="cabinet__field">
+													<span class="cabinet__label">Місто</span>
+													<span class="cabinet__control cabinet__control--select">
+														<select class="cabinet__select" name="locker_city">
+															<option value="" selected>Оберіть місто</option>
+															<option value="kyiv">Київ</option>
+															<option value="odesa">Одеса</option>
+															<option value="lviv">Львів</option>
+															<option value="dnipro">Дніпро</option>
+															<option value="kharkiv">Харків</option>
+														</select>
+														<svg class="cabinet__chevron" viewbox="0 0 16 16" fill="none" aria-hidden="true">
+															<path d="M3.5 6L8 10.5L12.5 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+														</svg>
+													</span>
+												</label>
+												<label class="cabinet__field">
+													<span class="cabinet__label">Поштомат</span>
+													<span class="cabinet__control cabinet__control--select">
+														<select class="cabinet__select" name="locker_point">
+															<option value="" selected>Оберіть поштомат</option>
+															<option value="1">№ 1</option>
+															<option value="12">№ 12</option>
+															<option value="25">№ 25</option>
+														</select>
+														<svg class="cabinet__chevron" viewbox="0 0 16 16" fill="none" aria-hidden="true">
+															<path d="M3.5 6L8 10.5L12.5 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+														</svg>
+													</span>
+												</label>
+											</div>
+										</fieldset>
+										<fieldset class="cabinet__way" data-fls-cabinet-way="">
+											<legend class="cabinet__way-head">
+												<label class="cabinet__radio">
+													<input class="cabinet__radio-input" type="radio" name="shipping" value="courier">
+													<span class="cabinet__radio-mark" aria-hidden="true"></span>
+													<span class="cabinet__radio-name">Адресна доставка Нова Пошта</span>
+													<span class="cabinet__radio-note">за тарифами Нової Пошти</span>
+												</label>
+											</legend>
+											<div class="cabinet__way-fields">
+												<label class="cabinet__field">
+													<span class="cabinet__label">Місто</span>
+													<span class="cabinet__control cabinet__control--select">
+														<select class="cabinet__select" name="courier_city">
+															<option value="" selected>Оберіть місто</option>
+															<option value="kyiv">Київ</option>
+															<option value="odesa">Одеса</option>
+															<option value="lviv">Львів</option>
+															<option value="dnipro">Дніпро</option>
+															<option value="kharkiv">Харків</option>
+														</select>
+														<svg class="cabinet__chevron" viewbox="0 0 16 16" fill="none" aria-hidden="true">
+															<path d="M3.5 6L8 10.5L12.5 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+														</svg>
+													</span>
+												</label>
+												<label class="cabinet__field">
+													<span class="cabinet__label">Вулиця</span>
+													<input class="cabinet__input" type="text" name="street" placeholder="Введіть вулицю">
+												</label>
+												<label class="cabinet__field">
+													<span class="cabinet__label">Будинок</span>
+													<input class="cabinet__input" type="text" name="house" placeholder="№">
+												</label>
+												<label class="cabinet__field">
+													<span class="cabinet__label">Квартира</span>
+													<input class="cabinet__input" type="text" name="flat" placeholder="№">
+												</label>
+											</div>
+										</fieldset>
+									</div>
+									<p class="cabinet__note">
+										Ми відправляємо замовлення з понеділка по п'ятницю протягом 3–4 робочих днів, якщо
+						товар у наявності. Вартість доставки розраховується за тарифами Нової Пошти.
+									</p>
+									<div class="cabinet__actions">
+										<button class="cabinet__cancel" type="reset">Відмінити</button>
+										<button class="cabinet__submit" type="submit">Зберегти зміни</button>
+									</div>
+								</form>
+								<!-- ============================================================ Мої замовлення -->
+								<!-- ============================================================ Порожньо -->
+							</div>
+						</div>
+					</section>
+				</div>
+			</main>
+			<!-- Порт: src/shopify/relax-theme/sections/footer-relax.liquid (2026-09-15, 1:1 з ваніллю). -->
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__container">
+					<div class="footer__top">
+						<div class="footer__brand">
+							<a href="#" class="footer__logo">7dem</a>
+							<p class="footer__tagline">
+								Модульна система Pin Pin для порядку
+								<br>
+								у твоєму особистому просторі.
+							</p>
+						</div>
+						<div class="footer__col">
+							<span class="footer__heading">Меню</span>
+							<ul class="footer__list">
+								<li>
+									<a href="#" class="footer__link">Каталог</a>
+								</li>
+								<li>
+									<a href="#" class="footer__link">Як це працює</a>
+								</li>
+								<li>
+									<a href="#" class="footer__link">Про нас</a>
+								</li>
+								<li>
+									<a href="faq.html" class="footer__link">FAQ</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer__col">
+							<span class="footer__heading">Контакти</span>
+							<ul class="footer__list">
+								<li>
+									<a href="mailto:hello@7dem.ua" class="footer__link">hello@7dem.ua</a>
+								</li>
+								<li>
+									<a href="tel:+380440000000" class="footer__link">+380 44 000 00 00</a>
+								</li>
+								<li>
+									<span class="footer__link footer__link--static">Київ, Україна</span>
+								</li>
+							</ul>
+						</div>
+						<div class="footer__col">
+							<span class="footer__heading">Соцмережі</span>
+							<ul class="footer__list">
+								<li>
+									<a href="#" class="footer__link">Instagram — @7dem.ua</a>
+								</li>
+								<li>
+									<a href="#" class="footer__link">TikTok — @7dem.ua</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="footer__bottom">
+						<span class="footer__copy">© 2026 7dem. Усі права захищено.</span>
+						<span class="footer__note">Модульна система Pin Pin</span>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

@@ -4,20 +4,31 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<!--
+Страхувальна сітка для появи секцій (@components/effects/reveal): без JS
+ніхто не зніме початковий opacity: 0 з [data-fls-reveal*].
+-->
+		<noscript>
+			<style>
+				[data-fls-reveal],
+			[data-fls-reveal-group] > * { opacity: 1 !important; transform: none !important; }
+			</style>
+		</noscript>
 		<title>Каталог</title>
-		<script type="module" crossorigin="" src="./js/cataloge.min.js?v=1789508880268"></script>
-		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1789508880268">
-		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1789508880268">
-		<link rel="modulepreload" crossorigin="" href="./js/spollers.min.js?v=1789508880268">
-		<link rel="modulepreload" crossorigin="" href="./js/popup.min.js?v=1789508880268">
-		<link rel="modulepreload" crossorigin="" href="./js/faqpin.min.js?v=1789508880268">
-		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1789508880268">
-		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1789508880268">
-		<link rel="stylesheet" crossorigin="" href="./css/spollers.min.css?v=1789508880268">
-		<link rel="stylesheet" crossorigin="" href="./css/popup.min.css?v=1789508880268">
-		<link rel="stylesheet" crossorigin="" href="./css/faqpin.min.css?v=1789508880268">
-		<link rel="stylesheet" crossorigin="" href="./css/cataloge.min.css?v=1789508880268">
-		<link rel="stylesheet" crossorigin="" href="./css/cataloggrid.min.css?v=1789508880268">
+		<script type="module" crossorigin="" src="./js/cataloge.min.js?v=1790601590796"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1790601590796">
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1790601590796">
+		<link rel="modulepreload" crossorigin="" href="./js/swiper.min.js?v=1790601590796">
+		<link rel="modulepreload" crossorigin="" href="./js/popup.min.js?v=1790601590796">
+		<link rel="modulepreload" crossorigin="" href="./js/spollers.min.js?v=1790601590796">
+		<link rel="modulepreload" crossorigin="" href="./js/faqpin.min.js?v=1790601590796">
+		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1790601590796">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1790601590796">
+		<link rel="stylesheet" crossorigin="" href="./css/popup.min.css?v=1790601590796">
+		<link rel="stylesheet" crossorigin="" href="./css/spollers.min.css?v=1790601590796">
+		<link rel="stylesheet" crossorigin="" href="./css/faqpin.min.css?v=1790601590796">
+		<link rel="stylesheet" crossorigin="" href="./css/cataloge.min.css?v=1790601590796">
+		<link rel="stylesheet" crossorigin="" href="./css/cataloggrid.min.css?v=1790601590796">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -68,14 +79,18 @@
 </fetch>
 -->
 						<div class="header__actions">
-							<button data-fls-dynamic=".menu__actions-mob, 768" data-fls-button="" type="button" class="header__button button button--padding-one button--border-color-two">
+							<!-- У ванілі — посилання на сторінку кошика (custom/cartlist); у темі кошик відкриває вендорський cart-drawer -->
+							<a href="cart.html" data-fls-dynamic=".menu__actions-mob, 768" data-fls-button="" class="header__button button button--padding-one button--border-color-two">
 								Кошик
 								<span>0</span>
-							</button>
-							<!-- «log in» веде на ванільну сторінку входу (custom/authform). У темі тут shopify-account -->
+							</a>
+							<!--
+«log in» веде на ванільну сторінку входу (custom/authform). У темі тут shopify-account.
+locals user (лише ваніль, сторінки кабінету) — «увійшла» клієнтка: ім'я замість log in і посилання в кабінет.
+Лише через typeof: голий плейсхолдер незаданого local у strictMode posthtml-expressions валить збірку
+-->
 							<a href="login.html" data-fls-dynamic=".menu__actions-mob, 768" data-fls-button="" class="header__button button button--padding-one button--border-color-one button--background-black">
-								log
-					in
+								log in
 								<svg aria-hidden="true" viewbox="0 0 12 8" xmlns="http://www.w3.org/2000/svg">
 									<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z"></path>
 								</svg>
@@ -114,8 +129,8 @@
 у цих коментарях Liquid-теги у фігурних дужках з відсотком: ванільна гілка
 проганяє HTML через nunjucks, і він парсить їх навіть усередині HTML-коментаря.
 -->
-					<section data-fls-cataloghero="" class="cataloghero">
-						<div class="cataloghero__card">
+					<section data-fls-cataloghero="" class="cataloghero" data-fls-reveal-load="">
+						<div class="cataloghero__card" data-fls-reveal-group="fade">
 							<div class="cataloghero__slider" data-fls-fadeslider="4000">
 								<div class="swiper-wrapper">
 									<div class="cataloghero__slide swiper-slide">
@@ -134,7 +149,7 @@
 										<picture>
 											<source media="(max-width: 600px)" srcset="./assets/img/product/related-3-600.webp" type="image/webp">
 											<source media="(max-width: 1200px)" srcset="./assets/img/product/related-3-1200.webp" type="image/webp">
-											<img alt="Набір MAX, кольоровий" width="2268" height="4032" loading="lazy" src="./assets/img/product/related-3.webp">
+											<img alt="Набір MAX, різнокольоровий" width="2268" height="4032" loading="lazy" src="./assets/img/product/related-3.webp">
 										</picture>
 									</div>
 								</div>
@@ -189,7 +204,7 @@
 (layout/tabs шукає прямих нащадків — DOM не змінюється).
 -->
 					<section data-fls-catalogfeatured="" class="catalogfeatured">
-						<div class="catalogfeatured__tabs" data-fls-tabs="">
+						<div class="catalogfeatured__tabs" data-fls-tabs="" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
 							<nav class="catalogfeatured__titles" data-fls-tabs-titles="">
 								<button type="button" class="catalogfeatured__title --tab-active">MAX</button>
 								<button type="button" class="catalogfeatured__title">MED</button>
@@ -215,13 +230,13 @@ colors: кружечки кольорів на фото; клік перемик
 										<picture>
 											<source media="(max-width: 600px)" srcset="./assets/img/product/related-3-600.webp" type="image/webp">
 											<source media="(max-width: 1200px)" srcset="./assets/img/product/related-3-1200.webp" type="image/webp">
-											<img class="catalogfeatured__photo" alt="Стартовий набір MAX, Кольоровий" data-catalogfeatured-photo="mixed" loading="lazy" src="./assets/img/product/related-3.webp">
+											<img class="catalogfeatured__photo" alt="Стартовий набір MAX, Різнокольоровий" data-catalogfeatured-photo="mixed" loading="lazy" src="./assets/img/product/related-3.webp">
 										</picture>
 										<div class="catalog-swatches" role="radiogroup" aria-label="Колір набору MAX">
 											<button type="button" class="catalog-swatches__item catalog-swatches__item--black" role="radio" aria-checked="false" aria-label="Чорний" data-catalogfeatured-color="black"></button>
 											<button type="button" class="catalog-swatches__item catalog-swatches__item--blush" role="radio" aria-checked="false" aria-label="Рожевий" data-catalogfeatured-color="blush"></button>
 											<button type="button" class="catalog-swatches__item catalog-swatches__item--white" role="radio" aria-checked="false" aria-label="Білий" data-catalogfeatured-color="white"></button>
-											<button type="button" class="catalog-swatches__item catalog-swatches__item--mixed" role="radio" aria-checked="false" aria-label="Кольоровий" data-catalogfeatured-color="mixed"></button>
+											<button type="button" class="catalog-swatches__item catalog-swatches__item--mixed" role="radio" aria-checked="false" aria-label="Різнокольоровий" data-catalogfeatured-color="mixed"></button>
 										</div>
 									</div>
 									<div class="catalogfeatured__info">
@@ -234,7 +249,7 @@ colors: кружечки кольорів на фото; клік перемик
 										</div>
 										<div class="catalogfeatured__bottom">
 											<p class="catalogfeatured__price">
-												1 065 ₴
+												1 950 ₴
 												<span class="catalogfeatured__parts">/ 65 деталей</span>
 											</p>
 											<div class="catalogfeatured__actions">
@@ -266,10 +281,16 @@ colors: кружечки кольорів на фото; клік перемик
 											<source media="(max-width: 1200px)" srcset="./assets/img/product/related-2-1200.webp" type="image/webp">
 											<img class="catalogfeatured__photo" alt="Стартовий набір MED, Рожевий" data-catalogfeatured-photo="blush" loading="lazy" src="./assets/img/product/related-2.webp">
 										</picture>
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/product/related-3-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/product/related-3-1200.webp" type="image/webp">
+											<img class="catalogfeatured__photo" alt="Стартовий набір MED, Різнокольоровий" data-catalogfeatured-photo="mixed" loading="lazy" src="./assets/img/product/related-3.webp">
+										</picture>
 										<div class="catalog-swatches" role="radiogroup" aria-label="Колір набору MED">
 											<button type="button" class="catalog-swatches__item catalog-swatches__item--black" role="radio" aria-checked="false" aria-label="Чорний" data-catalogfeatured-color="black"></button>
 											<button type="button" class="catalog-swatches__item catalog-swatches__item--blush" role="radio" aria-checked="false" aria-label="Рожевий" data-catalogfeatured-color="blush"></button>
 											<button type="button" class="catalog-swatches__item catalog-swatches__item--white" role="radio" aria-checked="false" aria-label="Білий" data-catalogfeatured-color="white"></button>
+											<button type="button" class="catalog-swatches__item catalog-swatches__item--mixed" role="radio" aria-checked="false" aria-label="Різнокольоровий" data-catalogfeatured-color="mixed"></button>
 										</div>
 									</div>
 									<div class="catalogfeatured__info">
@@ -278,12 +299,12 @@ colors: кружечки кольорів на фото; клік перемик
 												Стартовий набір
 												<span class="catalogfeatured__heading-accent">MED</span>
 											</h2>
-											<p class="catalogfeatured__specs">4 основи · 20 фіксаторів · 6 перестінок · 10 боксів · 1 підставка</p>
+											<p class="catalogfeatured__specs">5 основ · 24 фіксатори · 8 перестінок · 8 боксів</p>
 										</div>
 										<div class="catalogfeatured__bottom">
 											<p class="catalogfeatured__price">
-												820 ₴
-												<span class="catalogfeatured__parts">/ 41 деталь</span>
+												1 065 ₴
+												<span class="catalogfeatured__parts">/ 45 деталей</span>
 											</p>
 											<div class="catalogfeatured__actions">
 												<a class="catalogfeatured__cta" href="product-card.html">
@@ -309,9 +330,21 @@ colors: кружечки кольорів на фото; клік перемик
 											<source media="(max-width: 1200px)" srcset="./assets/img/IMG_9861-1200.webp" type="image/webp">
 											<img class="catalogfeatured__photo" alt="Стартовий набір MIN, Чорний" data-catalogfeatured-photo="black" loading="lazy" src="./assets/img/IMG_9861.webp">
 										</picture>
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/product/related-2-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/product/related-2-1200.webp" type="image/webp">
+											<img class="catalogfeatured__photo" alt="Стартовий набір MIN, Рожевий" data-catalogfeatured-photo="blush" loading="lazy" src="./assets/img/product/related-2.webp">
+										</picture>
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/product/related-3-600.webp" type="image/webp">
+											<source media="(max-width: 1200px)" srcset="./assets/img/product/related-3-1200.webp" type="image/webp">
+											<img class="catalogfeatured__photo" alt="Стартовий набір MIN, Різнокольоровий" data-catalogfeatured-photo="mixed" loading="lazy" src="./assets/img/product/related-3.webp">
+										</picture>
 										<div class="catalog-swatches" role="radiogroup" aria-label="Колір набору MIN">
 											<button type="button" class="catalog-swatches__item catalog-swatches__item--black" role="radio" aria-checked="false" aria-label="Чорний" data-catalogfeatured-color="black"></button>
+											<button type="button" class="catalog-swatches__item catalog-swatches__item--blush" role="radio" aria-checked="false" aria-label="Рожевий" data-catalogfeatured-color="blush"></button>
 											<button type="button" class="catalog-swatches__item catalog-swatches__item--white" role="radio" aria-checked="false" aria-label="Білий" data-catalogfeatured-color="white"></button>
+											<button type="button" class="catalog-swatches__item catalog-swatches__item--mixed" role="radio" aria-checked="false" aria-label="Різнокольоровий" data-catalogfeatured-color="mixed"></button>
 										</div>
 									</div>
 									<div class="catalogfeatured__info">
@@ -320,12 +353,12 @@ colors: кружечки кольорів на фото; клік перемик
 												Стартовий набір
 												<span class="catalogfeatured__heading-accent">MIN</span>
 											</h2>
-											<p class="catalogfeatured__specs">2 основи · 10 фіксаторів · 4 перестінки · 6 боксів</p>
+											<p class="catalogfeatured__specs">4 основи · 18 фіксаторів · 6 перестінок</p>
 										</div>
 										<div class="catalogfeatured__bottom">
 											<p class="catalogfeatured__price">
 												482 ₴
-												<span class="catalogfeatured__parts">/ 22 деталі</span>
+												<span class="catalogfeatured__parts">/ 28 деталей</span>
 											</p>
 											<div class="catalogfeatured__actions">
 												<a class="catalogfeatured__cta" href="product-card.html">
@@ -358,7 +391,7 @@ colors: кружечки кольорів на фото; клік перемик
 через layout/bookmarks, дровер фільтрів — custom/catalogfilters.
 -->
 					<section data-fls-cataloggrid="" class="cataloggrid">
-						<div class="cataloggrid__container">
+						<div class="cataloggrid__container" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
 							<div class="cataloggrid__head">
 								<span class="cataloggrid__kicker">
 									<span class="cataloggrid__kicker-dot" aria-hidden="true"></span>
@@ -408,7 +441,7 @@ colors: кружечки кольорів на фото; клік перемик
 									</button>
 								</div>
 							</div>
-							<ul class="cataloggrid__grid">
+							<ul class="cataloggrid__grid" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
 								<!--
 Фото наборів у кольорах є лише product/related-* (чорний, розовий,
 кольоровий) — як у макеті; білого набору в репозиторії немає
@@ -740,14 +773,14 @@ FAQ. Два варіанти через locals variant (передавати я�
 								</div>
 							</div>
 						</div>
-						<div class="faqpin__container faqpin__container--seven">
+						<div class="faqpin__container faqpin__container--seven" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
 							<span class="faqpin__kicker">
 								<span class="faqpin__kicker-dot" aria-hidden="true"></span>
 								Часті запитання
 							</span>
 							<h2 class="faqpin__title">Найчастіші запитання</h2>
 							<!-- data-fls-spollers(-one) — акордеон із layout/spollers (плавне розкриття, лише один пункт відкритий), не нативний <details> -->
-							<div class="faqpin__list" data-fls-spollers="" data-fls-spollers-one="">
+							<div class="faqpin__list" data-fls-spollers="" data-fls-spollers-one="" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
 								<details class="faqpin__item">
 									<summary class="faqpin__question">
 										Як зрозуміти, які модулі мені потрібні?
@@ -838,7 +871,7 @@ FAQ. Два варіанти через locals variant (передавати я�
 									<a href="#" class="footer__link">Про нас</a>
 								</li>
 								<li>
-									<a href="#" class="footer__link">FAQ</a>
+									<a href="faq.html" class="footer__link">FAQ</a>
 								</li>
 							</ul>
 						</div>
@@ -869,7 +902,7 @@ FAQ. Два варіанти через locals variant (передавати я�
 						</div>
 					</div>
 					<div class="footer__bottom">
-						<span class="footer__copy">© 2026 7dem. Усі права захищені.</span>
+						<span class="footer__copy">© 2026 7dem. Усі права захищено.</span>
 						<span class="footer__note">Модульна система Pin Pin</span>
 					</div>
 				</div>
@@ -1016,9 +1049,9 @@ filter.v.price.gte/lte). У ванілі фільтрації немає (сіт
 										</li>
 										<li>
 											<label class="catalogfilters__option">
-												<input class="catalogfilters__input" type="checkbox" name="color" value="кольоровий">
+												<input class="catalogfilters__input" type="checkbox" name="color" value="різнокольоровий">
 												<span class="catalogfilters__swatch catalogfilters__swatch--mixed" aria-hidden="true"></span>
-												<span class="catalogfilters__label">кольоровий</span>
+												<span class="catalogfilters__label">різнокольоровий</span>
 												<span class="catalogfilters__qty">3</span>
 											</label>
 										</li>

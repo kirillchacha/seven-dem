@@ -5,17 +5,30 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<meta name="description" content="Стартовий набір MAX модульної системи Pin Pin: 65 елементів — бокси, лотки, фіксатори, перестінки та підставка.">
+		<!--
+Страхувальна сітка для появи секцій (@components/effects/reveal): без JS
+ніхто не зніме початковий opacity: 0 з [data-fls-reveal*].
+-->
+		<noscript>
+			<style>
+				[data-fls-reveal],
+			[data-fls-reveal-group] > * { opacity: 1 !important; transform: none !important; }
+			</style>
+		</noscript>
 		<title>Набір MAX — 7dem</title>
-		<script type="module" crossorigin="" src="./js/product-card.min.js?v=1789508880268"></script>
-		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1789508880268">
-		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1789508880268">
-		<link rel="modulepreload" crossorigin="" href="./js/spollers.min.js?v=1789508880268">
-		<link rel="modulepreload" crossorigin="" href="./js/popup.min.js?v=1789508880268">
-		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1789508880268">
-		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1789508880268">
-		<link rel="stylesheet" crossorigin="" href="./css/spollers.min.css?v=1789508880268">
-		<link rel="stylesheet" crossorigin="" href="./css/popup.min.css?v=1789508880268">
-		<link rel="stylesheet" crossorigin="" href="./css/product-card.min.css?v=1789508880268">
+		<script type="module" crossorigin="" src="./js/product-card.min.js?v=1790601590796"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1790601590796">
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1790601590796">
+		<link rel="modulepreload" crossorigin="" href="./js/swiper.min.js?v=1790601590796">
+		<link rel="modulepreload" crossorigin="" href="./js/productrelated.min.js?v=1790601590796">
+		<link rel="modulepreload" crossorigin="" href="./js/popup.min.js?v=1790601590796">
+		<link rel="modulepreload" crossorigin="" href="./js/spollers.min.js?v=1790601590796">
+		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1790601590796">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1790601590796">
+		<link rel="stylesheet" crossorigin="" href="./css/productrelated.min.css?v=1790601590796">
+		<link rel="stylesheet" crossorigin="" href="./css/popup.min.css?v=1790601590796">
+		<link rel="stylesheet" crossorigin="" href="./css/spollers.min.css?v=1790601590796">
+		<link rel="stylesheet" crossorigin="" href="./css/product-card.min.css?v=1790601590796">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -66,14 +79,18 @@
 </fetch>
 -->
 						<div class="header__actions">
-							<button data-fls-dynamic=".menu__actions-mob, 768" data-fls-button="" type="button" class="header__button button button--padding-one button--border-color-two">
+							<!-- У ванілі — посилання на сторінку кошика (custom/cartlist); у темі кошик відкриває вендорський cart-drawer -->
+							<a href="cart.html" data-fls-dynamic=".menu__actions-mob, 768" data-fls-button="" class="header__button button button--padding-one button--border-color-two">
 								Кошик
 								<span>0</span>
-							</button>
-							<!-- «log in» веде на ванільну сторінку входу (custom/authform). У темі тут shopify-account -->
+							</a>
+							<!--
+«log in» веде на ванільну сторінку входу (custom/authform). У темі тут shopify-account.
+locals user (лише ваніль, сторінки кабінету) — «увійшла» клієнтка: ім'я замість log in і посилання в кабінет.
+Лише через typeof: голий плейсхолдер незаданого local у strictMode posthtml-expressions валить збірку
+-->
 							<a href="login.html" data-fls-dynamic=".menu__actions-mob, 768" data-fls-button="" class="header__button button button--padding-one button--border-color-one button--background-black">
-								log
-					in
+								log in
 								<svg aria-hidden="true" viewbox="0 0 12 8" xmlns="http://www.w3.org/2000/svg">
 									<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z"></path>
 								</svg>
@@ -104,16 +121,16 @@
 Акордеони панелі — data-fls-spollers (layout/spollers), посилання на повний
 склад відкриває попап productcomposition (layout/popup).
 -->
-					<section data-fls-productgallery="" data-fls-bookmarks-card="" class="productgallery">
+					<section data-fls-productgallery="" data-fls-bookmarks-card="" class="productgallery" data-fls-reveal-load="">
 						<div class="productgallery__intro">
-							<div class="productgallery__container">
+							<div class="productgallery__container" data-fls-reveal-group="">
 								<span class="productgallery__eyebrow">
 									<span class="productgallery__eyebrow-dot" aria-hidden="true"></span>
 									65 деталей
 								</span>
 								<h1 class="productgallery__title">
 									<span class="productgallery__name">Набір MAX</span>
-									<span class="productgallery__price">1 065 ₴</span>
+									<span class="productgallery__price">1 950 ₴</span>
 								</h1>
 								<div class="productgallery__actions">
 									<a href="#" class="productgallery__buy">купити</a>
@@ -121,7 +138,7 @@
 Закладка (layout/bookmarks): фото для списку «Збережене» береться з
 першого img секції (data-fls-bookmarks-card на section)
 -->
-									<button type="button" class="productgallery__save" data-fls-bookmarks-toggle="max-pink" data-bookmark-title="Набір MAX" data-bookmark-price="1 065 ₴" data-bookmark-url="product-card.html" aria-pressed="false" aria-label="Зберегти в обране: Набір MAX">
+									<button type="button" class="productgallery__save" data-fls-bookmarks-toggle="max-pink" data-bookmark-title="Набір MAX" data-bookmark-price="1 950 ₴" data-bookmark-url="product-card.html" aria-pressed="false" aria-label="Зберегти в обране: Набір MAX">
 										<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
 											<path d="M5 7.8C5 6.12 5 5.28 5.33 4.64C5.61 4.07 6.07 3.61 6.64 3.33C7.28 3 8.12 3 9.8 3H14.2C15.88 3 16.72 3 17.36 3.33C17.93 3.61 18.39 4.07 18.67 4.64C19 5.28 19 6.12 19 7.8V21L12 17L5 21V7.8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
 										</svg>
@@ -130,7 +147,7 @@
 							</div>
 						</div>
 						<div class="productgallery__body">
-							<ul class="productgallery__photos">
+							<ul class="productgallery__photos" data-fls-reveal-group="">
 								<li class="productgallery__photo">
 									<picture>
 										<source media="(max-width: 600px)" srcset="./assets/img/product/gallery-1-600.webp" type="image/webp">
@@ -149,15 +166,15 @@
 									</picture>
 								</li>
 							</ul>
-							<div class="productgallery__aside">
+							<div class="productgallery__aside" data-fls-reveal="fade">
 								<div class="productgallery__panel">
 									<div class="productgallery__colors">
 										<p class="productgallery__label">Колір</p>
 										<div class="productgallery__swatches" role="radiogroup" aria-label="Колір">
 											<button type="button" role="radio" aria-checked="true" aria-label="Рожевий" class="productgallery__swatch productgallery__swatch--rose productgallery__swatch--active"></button>
 											<button type="button" role="radio" aria-checked="false" aria-label="Білий" class="productgallery__swatch productgallery__swatch--white"></button>
-											<button type="button" role="radio" aria-checked="false" aria-label="Графіт" class="productgallery__swatch productgallery__swatch--ink"></button>
-											<button type="button" role="radio" aria-checked="false" aria-label="Шавлія" class="productgallery__swatch productgallery__swatch--sage"></button>
+											<button type="button" role="radio" aria-checked="false" aria-label="Чорний" class="productgallery__swatch productgallery__swatch--ink"></button>
+											<button type="button" role="radio" aria-checked="false" aria-label="Різнокольоровий" class="productgallery__swatch productgallery__swatch--mixed"></button>
 										</div>
 									</div>
 									<a href="#" class="productgallery__cta">Купити</a>
@@ -219,7 +236,7 @@
 відкриває попап productreviewform (layout/popup).
 -->
 					<section data-fls-productreviews="" class="productreviews">
-						<div class="productreviews__container">
+						<div class="productreviews__container" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
 							<div class="productreviews__head">
 								<h2 class="productreviews__title">Відгуки</h2>
 								<button type="button" class="productreviews__write" data-fls-popup-link="review">
@@ -227,10 +244,10 @@
 									<span aria-hidden="true">→</span>
 								</button>
 							</div>
-							<ul class="productreviews__list">
+							<ul class="productreviews__list" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
 								<li class="productreviews__card">
 									<div class="productreviews__top">
-										<p class="productreviews__meta">Набір MAX · Пудровий</p>
+										<p class="productreviews__meta">Набір MAX · Рожевий</p>
 										<time class="productreviews__date" datetime="2026-08-12">12 серпня 2026</time>
 									</div>
 									<h3 class="productreviews__heading">Шухляда нарешті виглядає як вітрина</h3>
@@ -268,7 +285,7 @@
 								</li>
 								<li class="productreviews__card">
 									<div class="productreviews__top">
-										<p class="productreviews__meta">Набір MAX · Кістковий</p>
+										<p class="productreviews__meta">Набір MAX · Білий</p>
 										<time class="productreviews__date" datetime="2026-07-29">29 липня 2026</time>
 									</div>
 									<h3 class="productreviews__heading">Маленькі бокси — саме те, чого бракувало</h3>
@@ -320,7 +337,7 @@
 								</li>
 								<li class="productreviews__card">
 									<div class="productreviews__top">
-										<p class="productreviews__meta">Набір MAX · Графіт</p>
+										<p class="productreviews__meta">Набір MAX · Чорний</p>
 										<time class="productreviews__date" datetime="2026-06-21">21 червня 2026</time>
 									</div>
 									<h3 class="productreviews__heading">Через місяць замовила другий набір</h3>
@@ -357,9 +374,13 @@
 «Думаємо, що тобі сподобається» (Figma 219:2016) + хлібні крихти внизу
 сторінки. Стрічка карток — Swiper, ініціалізація в productrelated.js
 окремо для кожної секції (навігація шукається всередині неї).
+Необов'язкові locals (лише ваніль; без них розмітка = порт, синхронізувати нічого):
+title / accent — заголовок і його рожевий хвіст (accent "" — без хвоста; кошик: "Доповни набір");
+nav "round" — стрілки в колах 56px, як на макетах кошика й кабінету (Cart — Desktop.png);
+crumbs "no" — без хлібних крихт (сторінки, де товару немає).
 -->
 					<section data-fls-productrelated="" class="productrelated">
-						<div class="productrelated__container">
+						<div class="productrelated__container" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
 							<div class="productrelated__head">
 								<h2 class="productrelated__title">
 									Думаємо, що тобі
@@ -471,11 +492,11 @@
 											<picture>
 												<source media="(max-width: 600px)" srcset="./assets/img/IMG_9846-600.webp" type="image/webp">
 												<source media="(max-width: 1200px)" srcset="./assets/img/IMG_9846-1200.webp" type="image/webp">
-												<img alt="Набір MID" src="./assets/img/IMG_9846.webp">
+												<img alt="Набір MED" src="./assets/img/IMG_9846.webp">
 											</picture>
 										</a>
 										<!-- Закладка: стан і список «Збережене» — layout/bookmarks -->
-										<button type="button" class="productrelated__save" data-fls-bookmarks-toggle="related-mid-black" data-bookmark-title="Набір MID" data-bookmark-price="1 450 ₴" data-bookmark-url="product-card.html" aria-pressed="false" aria-label="Зберегти в обране: Набір MID">
+										<button type="button" class="productrelated__save" data-fls-bookmarks-toggle="related-med-black" data-bookmark-title="Набір MED" data-bookmark-price="1 065 ₴" data-bookmark-url="product-card.html" aria-pressed="false" aria-label="Зберегти в обране: Набір MED">
 											<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
 												<path d="M5 7.8C5 6.12 5 5.28 5.33 4.64C5.61 4.07 6.07 3.61 6.64 3.33C7.28 3 8.12 3 9.8 3H14.2C15.88 3 16.72 3 17.36 3.33C17.93 3.61 18.39 4.07 18.67 4.64C19 5.28 19 6.12 19 7.8V21L12 17L5 21V7.8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
 											</svg>
@@ -483,11 +504,11 @@
 										<div class="productrelated__bar">
 											<div class="productrelated__pill">
 												<h3 class="productrelated__name">
-													<a href="product-card.html">Набір MID</a>
+													<a href="product-card.html">Набір MED</a>
 												</h3>
-												<p class="productrelated__price">1 450 ₴</p>
+												<p class="productrelated__price">1 065 ₴</p>
 											</div>
-											<a class="productrelated__bag" href="product-card.html" aria-label="Обрати варіант: Набір MID">
+											<a class="productrelated__bag" href="product-card.html" aria-label="Обрати варіант: Набір MED">
 												<svg viewbox="0 0 48 48" fill="none" aria-hidden="true">
 													<path d="M9 17.5H39L36.9 38.3C36.79 39.39 36.28 40.39 35.47 41.12C34.66 41.86 33.61 42.26 32.52 42.26H15.48C14.39 42.26 13.34 41.86 12.53 41.12C11.72 40.39 11.21 39.39 11.1 38.3L9 17.5Z" stroke="currentColor" stroke-linejoin="round"></path>
 													<path d="M17.5 21V13.8C17.5 12.08 18.18 10.42 19.4 9.2C20.62 7.98 22.28 7.3 24 7.3C25.72 7.3 27.38 7.98 28.6 9.2C29.82 10.42 30.5 12.08 30.5 13.8V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -504,7 +525,7 @@
 											</picture>
 										</a>
 										<!-- Закладка: стан і список «Збережене» — layout/bookmarks -->
-										<button type="button" class="productrelated__save" data-fls-bookmarks-toggle="related-min-white" data-bookmark-title="Набір MIN" data-bookmark-price="950 ₴" data-bookmark-url="product-card.html" aria-pressed="false" aria-label="Зберегти в обране: Набір MIN">
+										<button type="button" class="productrelated__save" data-fls-bookmarks-toggle="related-min-white" data-bookmark-title="Набір MIN" data-bookmark-price="482 ₴" data-bookmark-url="product-card.html" aria-pressed="false" aria-label="Зберегти в обране: Набір MIN">
 											<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
 												<path d="M5 7.8C5 6.12 5 5.28 5.33 4.64C5.61 4.07 6.07 3.61 6.64 3.33C7.28 3 8.12 3 9.8 3H14.2C15.88 3 16.72 3 17.36 3.33C17.93 3.61 18.39 4.07 18.67 4.64C19 5.28 19 6.12 19 7.8V21L12 17L5 21V7.8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
 											</svg>
@@ -514,7 +535,7 @@
 												<h3 class="productrelated__name">
 													<a href="product-card.html">Набір MIN</a>
 												</h3>
-												<p class="productrelated__price">950 ₴</p>
+												<p class="productrelated__price">482 ₴</p>
 											</div>
 											<a class="productrelated__bag" href="product-card.html" aria-label="Обрати варіант: Набір MIN">
 												<svg viewbox="0 0 48 48" fill="none" aria-hidden="true">
@@ -563,7 +584,7 @@
 									<a href="#" class="footer__link">Про нас</a>
 								</li>
 								<li>
-									<a href="#" class="footer__link">FAQ</a>
+									<a href="faq.html" class="footer__link">FAQ</a>
 								</li>
 							</ul>
 						</div>
@@ -594,7 +615,7 @@
 						</div>
 					</div>
 					<div class="footer__bottom">
-						<span class="footer__copy">© 2026 7dem. Усі права захищені.</span>
+						<span class="footer__copy">© 2026 7dem. Усі права захищено.</span>
 						<span class="footer__note">Модульна система Pin Pin</span>
 					</div>
 				</div>
@@ -801,7 +822,7 @@ data-fls-popup-link="composition" у productgallery.
 						</picture>
 						<div class="productreviewform__product-info">
 							<p class="productreviewform__product-name">Стартовий набір MAX</p>
-							<p class="productreviewform__product-price">1 065 ₴</p>
+							<p class="productreviewform__product-price">1 950 ₴</p>
 						</div>
 					</div>
 					<p class="productreviewform__lead">Поділися своїм відгуком і думкою про цей товар з іншими</p>

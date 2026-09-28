@@ -19,6 +19,13 @@ var isMobile = {
 		return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
 	}
 };
+function addLoadedAttr() {
+	if (!document.documentElement.hasAttribute("data-fls-preloader-loading")) window.addEventListener("load", function() {
+		setTimeout(function() {
+			document.documentElement.setAttribute("data-fls-loaded", "");
+		}, 0);
+	});
+}
 function getHash() {
 	if (location.hash) return location.hash.replace("#", "");
 }
@@ -150,5 +157,39 @@ function dataMediaQueries(array, dataSetValue) {
 		};
 	});
 }
+var gotoBlock = (targetBlock, noHeader = false, speed = 500, offsetTop = 0) => {
+	const targetBlockElement = document.querySelector(targetBlock);
+	if (targetBlockElement) {
+		let headerItem = "";
+		let headerItemHeight = 0;
+		if (noHeader) {
+			headerItem = "header.header";
+			const headerElement = document.querySelector(headerItem);
+			if (!headerElement.classList.contains("--header-scroll")) {
+				headerElement.style.cssText = `transition-duration: 0s;`;
+				headerElement.classList.add("--header-scroll");
+				headerItemHeight = headerElement.offsetHeight;
+				headerElement.classList.remove("--header-scroll");
+				setTimeout(() => {
+					headerElement.style.cssText = ``;
+				}, 0);
+			} else headerItemHeight = headerElement.offsetHeight;
+		}
+		if (document.documentElement.hasAttribute("data-fls-menu-open")) {
+			bodyUnlock();
+			document.documentElement.removeAttribute("data-fls-menu-open");
+		}
+		let targetBlockElementPosition = targetBlockElement.getBoundingClientRect().top + scrollY;
+		targetBlockElementPosition = headerItemHeight ? targetBlockElementPosition - headerItemHeight : targetBlockElementPosition;
+		targetBlockElementPosition = offsetTop ? targetBlockElementPosition - offsetTop : targetBlockElementPosition;
+		window.scrollTo({
+			top: targetBlockElementPosition,
+			behavior: "smooth"
+		});
+	}
+};
 //#endregion
-export { dataMediaQueries as a, isMobile as c, slideToggle as d, slideUp as f, bodyUnlock as i, setHash as l, bodyLockStatus as n, getDigFormat as o, uniqArray as p, bodyLockToggle as r, getHash as s, bodyLock as t, slideDown as u };
+//#region src/js/app.js
+addLoadedAttr();
+//#endregion
+export { dataMediaQueries as a, gotoBlock as c, slideDown as d, slideToggle as f, bodyUnlock as i, isMobile as l, uniqArray as m, bodyLockStatus as n, getDigFormat as o, slideUp as p, bodyLockToggle as r, getHash as s, bodyLock as t, setHash as u };

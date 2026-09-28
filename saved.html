@@ -5,13 +5,23 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<meta name="description" content="Товари модульної системи Pin Pin, які ти зберіг, щоб повернутися до них пізніше.">
+		<!--
+Страхувальна сітка для появи секцій (@components/effects/reveal): без JS
+ніхто не зніме початковий opacity: 0 з [data-fls-reveal*].
+-->
+		<noscript>
+			<style>
+				[data-fls-reveal],
+			[data-fls-reveal-group] > * { opacity: 1 !important; transform: none !important; }
+			</style>
+		</noscript>
 		<title>Збережене — 7dem</title>
-		<link rel="modulepreload" crossorigin href="./js/common.min.js?v=1789508880267">
-		<script type="module" crossorigin="" src="./js/main.min.js?v=1789508880267"></script>
-		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1789508880267">
-		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1789508880267">
-		<link rel="stylesheet" crossorigin="" href="./css/saved.min.css?v=1789508880267">
-		<link rel="stylesheet" crossorigin="" href="./css/cataloggrid.min.css?v=1789508880267">
+		<link rel="modulepreload" crossorigin href="./js/common.min.js?v=1790601590794">
+		<script type="module" crossorigin="" src="./js/main.min.js?v=1790601590794"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1790601590794">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1790601590794">
+		<link rel="stylesheet" crossorigin="" href="./css/saved.min.css?v=1790601590794">
+		<link rel="stylesheet" crossorigin="" href="./css/cataloggrid.min.css?v=1790601590794">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -62,14 +72,18 @@
 </fetch>
 -->
 						<div class="header__actions">
-							<button data-fls-dynamic=".menu__actions-mob, 768" data-fls-button="" type="button" class="header__button button button--padding-one button--border-color-two">
+							<!-- У ванілі — посилання на сторінку кошика (custom/cartlist); у темі кошик відкриває вендорський cart-drawer -->
+							<a href="cart.html" data-fls-dynamic=".menu__actions-mob, 768" data-fls-button="" class="header__button button button--padding-one button--border-color-two">
 								Кошик
 								<span>0</span>
-							</button>
-							<!-- «log in» веде на ванільну сторінку входу (custom/authform). У темі тут shopify-account -->
+							</a>
+							<!--
+«log in» веде на ванільну сторінку входу (custom/authform). У темі тут shopify-account.
+locals user (лише ваніль, сторінки кабінету) — «увійшла» клієнтка: ім'я замість log in і посилання в кабінет.
+Лише через typeof: голий плейсхолдер незаданого local у strictMode posthtml-expressions валить збірку
+-->
 							<a href="login.html" data-fls-dynamic=".menu__actions-mob, 768" data-fls-button="" class="header__button button button--padding-one button--border-color-one button--background-black">
-								log
-					in
+								log in
 								<svg aria-hidden="true" viewbox="0 0 12 8" xmlns="http://www.w3.org/2000/svg">
 									<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z"></path>
 								</svg>
@@ -99,8 +113,8 @@
 картки — ті самі, що в custom/cataloggrid (стилі імпортує savedlist.js),
 щоб картка на обох сторінках не розходилась. Окремого макета в Figma немає.
 -->
-					<section data-fls-savedlist="" class="savedlist">
-						<div class="savedlist__container">
+					<section data-fls-savedlist="" class="savedlist" data-fls-reveal-load="">
+						<div class="savedlist__container" data-fls-reveal-group="">
 							<div class="savedlist__head">
 								<nav class="savedlist__crumbs" aria-label="Хлібні крихти">
 									<span class="savedlist__crumbs-dot" aria-hidden="true"></span>
@@ -185,7 +199,7 @@
 									<a href="#" class="footer__link">Про нас</a>
 								</li>
 								<li>
-									<a href="#" class="footer__link">FAQ</a>
+									<a href="faq.html" class="footer__link">FAQ</a>
 								</li>
 							</ul>
 						</div>
@@ -216,7 +230,7 @@
 						</div>
 					</div>
 					<div class="footer__bottom">
-						<span class="footer__copy">© 2026 7dem. Усі права захищені.</span>
+						<span class="footer__copy">© 2026 7dem. Усі права захищено.</span>
 						<span class="footer__note">Модульна система Pin Pin</span>
 					</div>
 				</div>

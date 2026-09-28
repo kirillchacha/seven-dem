@@ -5,14 +5,24 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<meta name="description" content="Створи акаунт 7dem, щоб швидше оформлювати замовлення й зберігати обрані набори в кабінеті.">
+		<!--
+Страхувальна сітка для появи секцій (@components/effects/reveal): без JS
+ніхто не зніме початковий opacity: 0 з [data-fls-reveal*].
+-->
+		<noscript>
+			<style>
+				[data-fls-reveal],
+			[data-fls-reveal-group] > * { opacity: 1 !important; transform: none !important; }
+			</style>
+		</noscript>
 		<title>Реєстрація — 7dem</title>
-		<link rel="modulepreload" crossorigin href="./js/common.min.js?v=1789508880267">
-		<script type="module" crossorigin="" src="./js/main.min.js?v=1789508880267"></script>
-		<script type="module" crossorigin="" src="./js/authform.min.js?v=1789508880267"></script>
-		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1789508880267">
-		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1789508880267">
-		<link rel="stylesheet" crossorigin="" href="./css/authform.min.css?v=1789508880267">
-		<link rel="stylesheet" crossorigin="" href="./css/register.min.css?v=1789508880267">
+		<link rel="modulepreload" crossorigin href="./js/common.min.js?v=1790601590794">
+		<script type="module" crossorigin="" src="./js/main.min.js?v=1790601590794"></script>
+		<script type="module" crossorigin="" src="./js/authform.min.js?v=1790601590794"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1790601590794">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1790601590794">
+		<link rel="stylesheet" crossorigin="" href="./css/authform.min.css?v=1790601590794">
+		<link rel="stylesheet" crossorigin="" href="./css/register.min.css?v=1790601590794">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -63,14 +73,18 @@
 </fetch>
 -->
 						<div class="header__actions">
-							<button data-fls-dynamic=".menu__actions-mob, 768" data-fls-button="" type="button" class="header__button button button--padding-one button--border-color-two">
+							<!-- У ванілі — посилання на сторінку кошика (custom/cartlist); у темі кошик відкриває вендорський cart-drawer -->
+							<a href="cart.html" data-fls-dynamic=".menu__actions-mob, 768" data-fls-button="" class="header__button button button--padding-one button--border-color-two">
 								Кошик
 								<span>0</span>
-							</button>
-							<!-- «log in» веде на ванільну сторінку входу (custom/authform). У темі тут shopify-account -->
+							</a>
+							<!--
+«log in» веде на ванільну сторінку входу (custom/authform). У темі тут shopify-account.
+locals user (лише ваніль, сторінки кабінету) — «увійшла» клієнтка: ім'я замість log in і посилання в кабінет.
+Лише через typeof: голий плейсхолдер незаданого local у strictMode posthtml-expressions валить збірку
+-->
 							<a href="login.html" data-fls-dynamic=".menu__actions-mob, 768" data-fls-button="" class="header__button button button--padding-one button--border-color-one button--background-black">
-								log
-					in
+								log in
 								<svg aria-hidden="true" viewbox="0 0 12 8" xmlns="http://www.w3.org/2000/svg">
 									<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z"></path>
 								</svg>
@@ -104,8 +118,8 @@ legacy-акаунти недоступні з 26.02.2026. У темі вхід �
 входу налаштовується в Checkout and accounts editor (docs/shopify-setup.md).
 Ванільний макет: форма нікуди не відправляється.
 -->
-					<section data-fls-authform="" class="authform">
-						<div class="authform__container authform__container--seven">
+					<section data-fls-authform="" class="authform" data-fls-reveal-load="">
+						<div class="authform__container authform__container--seven" data-fls-reveal-group="">
 							<div class="authform__head">
 								<p class="authform__eyebrow">
 									<span class="authform__eyebrow-dot" aria-hidden="true"></span>
@@ -226,7 +240,7 @@ legacy-акаунти недоступні з 26.02.2026. У темі вхід �
 									<a href="#" class="footer__link">Про нас</a>
 								</li>
 								<li>
-									<a href="#" class="footer__link">FAQ</a>
+									<a href="faq.html" class="footer__link">FAQ</a>
 								</li>
 							</ul>
 						</div>
@@ -257,7 +271,7 @@ legacy-акаунти недоступні з 26.02.2026. У темі вхід �
 						</div>
 					</div>
 					<div class="footer__bottom">
-						<span class="footer__copy">© 2026 7dem. Усі права захищені.</span>
+						<span class="footer__copy">© 2026 7dem. Усі права захищено.</span>
 						<span class="footer__note">Модульна система Pin Pin</span>
 					</div>
 				</div>

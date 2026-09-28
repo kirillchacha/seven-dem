@@ -1,8 +1,9 @@
 import "./main.min.js";
 /* empty css                */
-import { a as dataMediaQueries, f as slideUp, l as setHash, s as getHash, u as slideDown } from "./common.min.js";
-import { a as getSlideTransformEl, i as elementTransitionEnd, t as Swiper } from "./spollers.min.js";
+import { a as dataMediaQueries, d as slideDown, p as slideUp, s as getHash, u as setHash } from "./common.min.js";
+import { a as getSlideTransformEl, i as elementTransitionEnd, t as Swiper } from "./swiper.min.js";
 import "./popup.min.js";
+import "./spollers.min.js";
 import "./faqpin.min.js";
 //#region node_modules/swiper/modules/autoplay.mjs
 var Autoplay = ({ swiper, extendParams, on, emit, params }) => {
