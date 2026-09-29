@@ -26,12 +26,14 @@ var HeroSlider = class {
 	}
 	sliderInit(el) {
 		const mockupPhoto = (el.closest(".hero__gallery") || document).querySelector("[data-fls-hero-mockup-photo]");
+		const farScale = parseFloat(el.dataset.flsHeroSliderFarScale);
+		const scaleFor = (progress) => Number.isNaN(farScale) ? clamp(1 - progress * .08, .82, 1) : progress <= 1 ? 1 - progress * .08 : clamp(.92 - (progress - 1) * (.92 - farScale), farScale - .1, .92);
 		const applyFanTransform = (swiper) => {
 			swiper.slides.forEach((slideEl) => {
 				const inner = slideEl.querySelector(".hero__slide-inner");
 				if (!inner) return;
 				const progress = Math.abs(slideEl.progress);
-				const scale = clamp(1 - progress * .08, .82, 1);
+				const scale = scaleFor(progress);
 				const rotation = clamp(-slideEl.progress * 22, -32, 32);
 				const perspective = slideEl.swiperSlideSize * 2.5;
 				const offset = Math.sign(slideEl.progress) * Math.max(0, progress - 1) * slideEl.swiperSlideSize * .25;

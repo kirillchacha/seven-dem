@@ -15,19 +15,19 @@
 			</style>
 		</noscript>
 		<title>Home Page</title>
-		<script type="module" crossorigin="" src="./js/index.min.js?v=1790682816132"></script>
-		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1790682816132">
-		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1790682816132">
-		<link rel="modulepreload" crossorigin="" href="./js/swiper.min.js?v=1790682816132">
-		<link rel="modulepreload" crossorigin="" href="./js/spollers.min.js?v=1790682816132">
-		<link rel="modulepreload" crossorigin="" href="./js/settext.min.js?v=1790682816132">
-		<link rel="modulepreload" crossorigin="" href="./js/faqpin.min.js?v=1790682816132">
-		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1790682816132">
-		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1790682816132">
-		<link rel="stylesheet" crossorigin="" href="./css/spollers.min.css?v=1790682816132">
-		<link rel="stylesheet" crossorigin="" href="./css/settext.min.css?v=1790682816132">
-		<link rel="stylesheet" crossorigin="" href="./css/faqpin.min.css?v=1790682816132">
-		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1790682816132">
+		<script type="module" crossorigin="" src="./js/index.min.js?v=1790684291658"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1790684291658">
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1790684291658">
+		<link rel="modulepreload" crossorigin="" href="./js/swiper.min.js?v=1790684291658">
+		<link rel="modulepreload" crossorigin="" href="./js/spollers.min.js?v=1790684291658">
+		<link rel="modulepreload" crossorigin="" href="./js/settext.min.js?v=1790684291658">
+		<link rel="modulepreload" crossorigin="" href="./js/faqpin.min.js?v=1790684291658">
+		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1790684291658">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1790684291658">
+		<link rel="stylesheet" crossorigin="" href="./css/spollers.min.css?v=1790684291658">
+		<link rel="stylesheet" crossorigin="" href="./css/settext.min.css?v=1790684291658">
+		<link rel="stylesheet" crossorigin="" href="./css/faqpin.min.css?v=1790684291658">
+		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1790684291658">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -119,200 +119,179 @@ fill: currentColor (ховер і білий варіант у підвалі), 
 			</header>
 			<main class="page">
 				<div data-fls-index="" class="index">
-					<!-- Порт: src/shopify/relax-theme/sections/hero.liquid + frontend/styles/hero.scss (2026-09-15 синхронізовано; поправки під вендорську базу — в кінці партіала). -->
+					<!--
+Порт: src/shopify/relax-theme/sections/hero.liquid + frontend/styles/hero.scss (2026-09-15 синхронізовано; поправки під вендорську базу — в кінці партіала).
+2026-09-29 ваніль оновлено за редизайном (Homepage.png): заголовок капсом із розовим першим рядком,
+кнопки-пігулки без стрілок, телефон видно цілком, нова хвиля, кольорові фото. Порт у тему ще НЕ синхронізовано.
+-->
 					<section data-fls-hero="" class="hero" data-fls-reveal-load="">
+						<!--
+Хвиля: шлях підібрано під Homepage.png (координати макета 1440, штрих 100). Нижня
+петля (y до ~1600) навмисно виходить за низ секції — у макеті вона заходить у sistempintext
+-->
 						<div class="hero__decor" aria-hidden="true" data-fls-reveal="fade">
-							<svg width="1672" height="1337" viewbox="0 0 1672 1337" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M49.1168 446.86C164.961 -161.271 584.522 -21.0081 311.342 534.525C38.1624 1090.06 459.668 1224.5 573.568 622.189C687.467 19.8761 1107.03 160.139 835.793 709.854C564.558 1259.57 1032.75 1254.37 1098.02 797.518C1163.29 340.663 1582.85 480.926 1360.24 885.183C1137.64 1289.44 1533.86 1499.52 1622.47 972.847" stroke="#DFC1B7" stroke-width="100"></path>
+							<svg class="hero__decor-svg" viewbox="0 0 1440 1650" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M-71 751C-63.2 717.3 -49.2 613.2 -24 549C1.2 484.8 41.5 405.3 80 366C118.5 326.7 172.8 306 207 313C241.2 320 274.5 357.3 285 408C295.5 458.7 287.5 544.8 270 617C252.5 689.2 208.3 771 180 841C151.7 911 106.7 971.5 100 1037C93.3 1102.5 120 1194.8 140 1234C160 1273.2 191.3 1273.5 220 1272C248.7 1270.5 281 1258.5 312 1225C343 1191.5 375.8 1147.8 406 1071C436.2 994.2 466.7 842.5 493 764C519.3 685.5 531.2 645.7 564 600C596.8 554.3 652.3 500 690 490C727.7 480 772.3 512.3 790 540C807.7 567.7 798.5 587.7 796 656C793.5 724.3 788.2 847.3 775 950C761.8 1052.7 730.2 1203 717 1272C703.8 1341 691.8 1344.3 696 1364C700.2 1383.7 712.3 1394 742 1390C771.7 1386 842.5 1366.3 874 1340C905.5 1313.7 903.7 1306.8 931 1232C958.3 1157.2 1001.2 966.3 1038 891C1074.8 815.7 1119.7 797.8 1152 780C1184.3 762.2 1209 774.3 1232 784C1255 793.7 1276.8 802 1290 838C1303.2 874 1325 933.2 1311 1000C1297 1066.8 1227 1173.2 1206 1239C1185 1304.8 1183.2 1352.2 1185 1395C1186.8 1437.8 1197.8 1471 1217 1496C1236.2 1521 1265.5 1547.7 1300 1545C1334.5 1542.3 1390 1521.8 1424 1480C1458 1438.2 1490.7 1325 1504 1294" stroke-width="100"></path>
 							</svg>
 						</div>
 						<div class="hero__container">
 							<div class="hero__content" data-fls-reveal-group="">
-								<h1 class="hero__title">Більше, ніж порядок</h1>
+								<h1 class="hero__title">
+									<mark class="hero__accent">Більше,</mark>
+									<br>
+									ніж порядок
+								</h1>
 								<p class="hero__text">
 									Лотки, бокси та фіксатори, що тримаються на сітці й не роз'їжджаються, коли відкриваєш шухляду. Збери
 				свою комбінацію під власний ящик.
 								</p>
 								<div class="hero__buttons">
-									<button data-fls-button="" type="button" class="button button--padding-two button--border-color-one button--background-black">
-										Обрати набір
-										<svg aria-hidden="true" width="12" height="8" viewbox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z" fill="#F8F4F1"></path>
-										</svg>
-									</button>
-									<button data-fls-button="" type="button" class="button button--padding-two button--border-color-one">
-										Як це працює
-										<svg aria-hidden="true" width="12" height="8" viewbox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z" fill="#2e2e2e"></path>
-										</svg>
-									</button>
+									<a href="cataloge.html" class="button button--caps button--border-color-one button--background-black">Обрати набір</a>
+									<!-- якір на «Три кроки до порядку» (stepsgettingorganised) з'явиться разом з її редизайном -->
+									<a href="#" class="button button--caps button--border-color-one">Як це працює</a>
 								</div>
 							</div>
 						</div>
 						<!--
 Повнобережна (full-bleed, ширша за __container) галерея: свайпер із фото товарів
-"пропливає" за мокапом телефону, який лежить нерухомо по центру зверху.
-Слайди йдуть внахлест (від'ємний spaceBetween) і масштабуються в hero.js за
-прогресом слайду відносно центру (що далі від центру — то менший, і той,
-що ближче — лягає зверху) — design ref: рівно 2 картки зліва й 2 справа,
-центр повністю перекритий мокапом. Це не CSS, а розрахунок на кожному
-кадрі свайпу.
-TODO: зараз усі слайди — одне тимчасове фото (oakywood-*.jpg), поки немає
-реальної предметної зйомки. Заміни src на реальні фото — розмітку й свайпер
-міняти не потрібно, досить розширити/замінити список .hero__slide.
+"пропливає" за мокапом телефону, який стоїть нерухомо по центру зверху.
+Масштаб і поворот карток до телефону рахує layout/heroslider на кожному кадрі;
+слайд по центру ховається за мокапом, його фото показує великий знімок в екрані.
+Порядок як у макеті: активний (0) — рожевий набір; праворуч чорний бокс і рожеві
+перестінки, ліворуч (кінець списку) фіолетова підставка і жовті бокси.
+Фото карток вирізані з Homepage.png (перспективу вирівняно) — у зйомці їх немає.
 -->
 						<div class="hero__gallery" aria-hidden="true" data-fls-reveal="fade">
-							<div data-fls-hero-slider="" class="hero__slider swiper">
+							<div data-fls-hero-slider="" data-fls-hero-slider-far-scale="0.66" class="hero__slider swiper">
 								<div class="hero__wrapper swiper-wrapper">
 									<div class="hero__slide swiper-slide">
 										<div class="hero__slide-inner">
 											<picture>
-												<source media="(max-width: 600px)" srcset="./assets/img/IMG_9846-600.webp" type="image/webp">
-												<source media="(max-width: 1200px)" srcset="./assets/img/IMG_9846-1200.webp" type="image/webp">
-												<img class="hero__slide-image" alt="" width="500" height="400" src="./assets/img/IMG_9846.webp">
+												<img class="hero__slide-image" alt="" width="640" height="800" loading="lazy" src="./assets/img/hero/screen-set-pink.webp">
 											</picture>
 										</div>
 									</div>
 									<div class="hero__slide swiper-slide">
 										<div class="hero__slide-inner">
 											<picture>
-												<source media="(max-width: 600px)" srcset="./assets/img/IMG_9847-600.webp" type="image/webp">
-												<source media="(max-width: 1200px)" srcset="./assets/img/IMG_9847-1200.webp" type="image/webp">
-												<img class="hero__slide-image" alt="" width="500" height="400" src="./assets/img/IMG_9847.webp">
+												<source media="(max-width: 600px)" srcset="./assets/img/hero/slide-box-black-600.webp" type="image/webp">
+												<img class="hero__slide-image" alt="" width="640" height="800" loading="lazy" src="./assets/img/hero/slide-box-black.webp">
 											</picture>
 										</div>
 									</div>
 									<div class="hero__slide swiper-slide">
 										<div class="hero__slide-inner">
 											<picture>
-												<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
-												<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
-												<img class="hero__slide-image" alt="" width="500" height="400" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
+												<source media="(max-width: 600px)" srcset="./assets/img/hero/slide-walls-pink-600.webp" type="image/webp">
+												<img class="hero__slide-image" alt="" width="640" height="800" loading="lazy" src="./assets/img/hero/slide-walls-pink.webp">
 											</picture>
 										</div>
 									</div>
 									<div class="hero__slide swiper-slide">
 										<div class="hero__slide-inner">
 											<picture>
-												<source media="(max-width: 600px)" srcset="./assets/img/IMG_9857-600.webp" type="image/webp">
-												<source media="(max-width: 1200px)" srcset="./assets/img/IMG_9857-1200.webp" type="image/webp">
-												<img class="hero__slide-image" alt="" width="500" height="400" src="./assets/img/IMG_9857.webp">
+												<source media="(max-width: 600px)" srcset="./assets/img/product/gallery-3-600.webp" type="image/webp">
+												<img class="hero__slide-image" alt="" width="640" height="800" loading="lazy" src="./assets/img/product/gallery-3.webp">
 											</picture>
 										</div>
 									</div>
 									<div class="hero__slide swiper-slide">
 										<div class="hero__slide-inner">
 											<picture>
-												<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
-												<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
-												<img class="hero__slide-image" alt="" width="500" height="400" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
+												<img class="hero__slide-image" alt="" width="640" height="800" loading="lazy" src="./assets/img/product/gallery-2.webp">
 											</picture>
 										</div>
 									</div>
 									<div class="hero__slide swiper-slide">
 										<div class="hero__slide-inner">
 											<picture>
-												<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
-												<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
-												<img class="hero__slide-image" alt="" width="500" height="400" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
+												<source media="(max-width: 600px)" srcset="./assets/img/hero/slide-boxes-yellow-600.webp" type="image/webp">
+												<img class="hero__slide-image" alt="" width="640" height="800" loading="lazy" src="./assets/img/hero/slide-boxes-yellow.webp">
 											</picture>
 										</div>
 									</div>
 									<div class="hero__slide swiper-slide">
 										<div class="hero__slide-inner">
 											<picture>
-												<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
-												<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
-												<img class="hero__slide-image" alt="" width="500" height="400" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
+												<source media="(max-width: 600px)" srcset="./assets/img/hero/slide-watch-stand-violet-600.webp" type="image/webp">
+												<img class="hero__slide-image" alt="" width="640" height="800" loading="lazy" src="./assets/img/hero/slide-watch-stand-violet.webp">
 											</picture>
 										</div>
 									</div>
 									<div class="hero__slide swiper-slide">
 										<div class="hero__slide-inner">
 											<picture>
-												<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
-												<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
-												<img class="hero__slide-image" alt="" width="500" height="400" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
+												<img class="hero__slide-image" alt="" width="640" height="800" loading="lazy" src="./assets/img/hero/screen-set-pink.webp">
 											</picture>
 										</div>
 									</div>
 									<div class="hero__slide swiper-slide">
 										<div class="hero__slide-inner">
 											<picture>
-												<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
-												<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
-												<img class="hero__slide-image" alt="" width="500" height="400" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
+												<source media="(max-width: 600px)" srcset="./assets/img/hero/slide-box-black-600.webp" type="image/webp">
+												<img class="hero__slide-image" alt="" width="640" height="800" loading="lazy" src="./assets/img/hero/slide-box-black.webp">
 											</picture>
 										</div>
 									</div>
 									<div class="hero__slide swiper-slide">
 										<div class="hero__slide-inner">
 											<picture>
-												<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
-												<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
-												<img class="hero__slide-image" alt="" width="500" height="400" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
+												<source media="(max-width: 600px)" srcset="./assets/img/hero/slide-walls-pink-600.webp" type="image/webp">
+												<img class="hero__slide-image" alt="" width="640" height="800" loading="lazy" src="./assets/img/hero/slide-walls-pink.webp">
 											</picture>
 										</div>
 									</div>
 									<div class="hero__slide swiper-slide">
 										<div class="hero__slide-inner">
 											<picture>
-												<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
-												<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
-												<img class="hero__slide-image" alt="" width="500" height="400" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
+												<source media="(max-width: 600px)" srcset="./assets/img/product/gallery-3-600.webp" type="image/webp">
+												<img class="hero__slide-image" alt="" width="640" height="800" loading="lazy" src="./assets/img/product/gallery-3.webp">
 											</picture>
 										</div>
 									</div>
 									<div class="hero__slide swiper-slide">
 										<div class="hero__slide-inner">
 											<picture>
-												<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
-												<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
-												<img class="hero__slide-image" alt="" width="500" height="400" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
+												<img class="hero__slide-image" alt="" width="640" height="800" loading="lazy" src="./assets/img/product/gallery-2.webp">
 											</picture>
 										</div>
 									</div>
 									<div class="hero__slide swiper-slide">
 										<div class="hero__slide-inner">
 											<picture>
-												<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
-												<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
-												<img class="hero__slide-image" alt="" width="500" height="400" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
+												<source media="(max-width: 600px)" srcset="./assets/img/hero/slide-boxes-yellow-600.webp" type="image/webp">
+												<img class="hero__slide-image" alt="" width="640" height="800" loading="lazy" src="./assets/img/hero/slide-boxes-yellow.webp">
 											</picture>
 										</div>
 									</div>
 									<div class="hero__slide swiper-slide">
 										<div class="hero__slide-inner">
 											<picture>
-												<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
-												<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
-												<img class="hero__slide-image" alt="" width="500" height="400" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
+												<source media="(max-width: 600px)" srcset="./assets/img/hero/slide-watch-stand-violet-600.webp" type="image/webp">
+												<img class="hero__slide-image" alt="" width="640" height="800" loading="lazy" src="./assets/img/hero/slide-watch-stand-violet.webp">
 											</picture>
 										</div>
 									</div>
 								</div>
 							</div>
 							<div class="hero__mockup">
-								<img class="hero__mockup-frame" src="./assets/img/hero/Device%2014PM.png" alt="" width="384" height="787">
-								<svg width="25" height="25" viewbox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero__mockup-logotop">
-									<path d="M0 12.9825C0 5.81248 5.81248 0 12.9825 0C14.9742 0 16.5888 1.61458 16.5888 3.60626V11.9808C16.5888 14.5257 14.5257 16.5888 11.9808 16.5888H3.60626C1.61458 16.5888 0 14.9742 0 12.9825Z" fill="#2E2E2E"></path>
-									<rect x="20.2751" width="16.5888" height="16.5888" rx="4.608" fill="#2E2E2E"></rect>
-									<circle cx="8.2944" cy="28.5696" r="8.2944" fill="#BE8E89"></circle>
-									<rect x="20.2751" y="20.2752" width="16.5888" height="16.5888" rx="4.608" fill="#2E2E2E"></rect>
-								</svg>
+								<img class="hero__mockup-frame" src="./assets/img/hero/Device%2014PM.png" alt="" width="384" height="787" fetchpriority="high">
 								<div class="hero__mockup-screen">
-									<img class="hero__mockup-logo" src="./assets/img/H1.svg" alt="" width="70" height="19">
+									<img class="hero__mockup-logo" src="./assets/img/logo.svg" alt="" width="105" height="29">
 									<p class="hero__mockup-heading">Порядок для твого особистого простору</p>
 									<p class="hero__mockup-text">
 										Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину рядків,
 					відступи та загальну композицію сторінки.
 									</p>
-									<!-- src синхронізується з активним слайдом свайпера в hero.js -->
+									<div class="hero__mockup-photo hero__mockup-photo--small">
+										<picture>
+											<img alt="" width="494" height="252" src="./assets/img/hero/screen-pins-pink.webp">
+										</picture>
+									</div>
+									<!-- src синхронізується з активним слайдом свайпера в layout/heroslider -->
 									<div class="hero__mockup-photo">
 										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
-											<img data-fls-hero-mockup-photo="" alt="" width="400" height="320" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
+											<img data-fls-hero-mockup-photo="" alt="" width="494" height="504" src="./assets/img/hero/screen-set-pink.webp">
 										</picture>
 									</div>
 								</div>
@@ -853,29 +832,41 @@ FAQ. Два варіанти через locals variant (передавати я�
 					</section>
 				</div>
 			</main>
-			<!-- Порт: src/shopify/relax-theme/sections/footer-relax.liquid (2026-09-15, 1:1 з ваніллю). -->
+			<!--
+Порт: src/shopify/relax-theme/sections/footer-relax.liquid (2026-09-15, 1:1 з ваніллю).
+2026-09-29 ваніль оновлено за редизайном (логотип з іконкою, контент по контейнеру 1200), порт у тему ще НЕ синхронізовано.
+-->
 			<footer data-fls-footer="" class="footer">
 				<div class="footer__container">
 					<div class="footer__top">
 						<div class="footer__brand">
-							<a href="#" class="footer__logo">7dem</a>
+							<!-- Логотип — той самий @img/logo.svg, що в шапці: темне тут currentColor = bone, кружечок розовий -->
+							<a href="index.html" class="footer__logo" aria-label="7dem">
+								<svg class="footer__logo-img" viewbox="0 0 105 29" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+									<path d="M0 10.2426C0 4.64098 4.541 0.0999756 10.1426 0.0999756C11.6986 0.0999756 12.96 1.36136 12.96 2.91737V9.45997C12.96 11.4482 11.3482 13.06 9.36 13.06H2.81739C1.26139 13.06 0 11.7986 0 10.2426Z" fill="currentColor"></path>
+									<rect x="15.8401" y="0.0999756" width="12.96" height="12.96" rx="3.6" fill="currentColor"></rect>
+									<circle class="footer__logo-dot" cx="6.48" cy="22.4199" r="6.48"></circle>
+									<rect x="15.8401" y="15.9399" width="12.96" height="12.96" rx="3.6" fill="currentColor"></rect>
+									<path d="M37.6649 8.99375V7.93625C37.6649 7.64375 37.7737 7.3925 37.9912 7.1825C38.2087 6.9725 38.4637 6.8675 38.7562 6.8675H50.8049C51.0974 6.8675 51.3487 6.9725 51.5587 7.1825C51.7762 7.3925 51.8849 7.64375 51.8849 7.93625V8.97125C51.8849 9.48875 51.6562 10.1712 51.1987 11.0187L45.2924 21.9425C44.9099 22.6475 44.4187 23 43.8187 23H41.5124C41.2124 23 40.9987 22.9025 40.8712 22.7075C40.7512 22.505 40.7512 22.2875 40.8712 22.055L47.3737 10.0512H38.7562C38.4487 10.0512 38.1899 9.95 37.9799 9.7475C37.7699 9.5375 37.6649 9.28625 37.6649 8.99375ZM57.8704 23.225C56.3029 23.225 54.9904 22.6737 53.9329 21.5712C52.8829 20.4687 52.3579 18.89 52.3579 16.835C52.3579 14.7725 52.9016 13.1937 53.9891 12.0987C55.0841 10.9962 56.5541 10.445 58.3991 10.445C59.3516 10.445 60.4354 10.6362 61.6504 11.0187V7.565C61.6504 7.3625 61.7141 7.1975 61.8416 7.07C61.9766 6.935 62.1416 6.8675 62.3366 6.8675H64.8454C65.0479 6.8675 65.2129 6.935 65.3404 7.07C65.4754 7.1975 65.5429 7.3625 65.5429 7.565V22.3137C65.5429 22.5087 65.4754 22.6737 65.3404 22.8087C65.2129 22.9362 65.0479 23 64.8454 23H62.6854C62.4829 23 62.3179 22.9362 62.1904 22.8087C62.0629 22.6737 61.9991 22.5087 61.9991 22.3137V21.965C60.8141 22.805 59.4379 23.225 57.8704 23.225ZM59.2091 13.1675C58.1741 13.1675 57.4429 13.46 57.0154 14.045C56.5879 14.6225 56.3741 15.5525 56.3741 16.835C56.3741 18.1175 56.5766 19.0512 56.9816 19.6362C57.3866 20.2212 57.9941 20.5137 58.8041 20.5137C59.6216 20.5137 60.5704 20.1762 61.6504 19.5012V13.6175C60.6829 13.3175 59.8691 13.1675 59.2091 13.1675ZM68.8846 21.5825C67.7296 20.4875 67.1521 18.9125 67.1521 16.8575C67.1521 14.795 67.7333 13.2125 68.8958 12.11C70.0583 11 71.6708 10.445 73.7333 10.445C75.7958 10.445 77.4046 10.985 78.5596 12.065C79.7146 13.1375 80.2921 14.6787 80.2921 16.6887V17.33C80.2921 17.5325 80.2246 17.7012 80.0896 17.8362C79.9621 17.9637 79.7971 18.0275 79.5946 18.0275H71.1233C71.1983 18.95 71.4608 19.6212 71.9108 20.0412C72.3683 20.4612 73.0958 20.6712 74.0933 20.6712C75.0908 20.6712 75.7733 20.4462 76.1408 19.9962C76.5083 19.5462 76.9621 19.3175 77.5021 19.31H79.1783C79.3808 19.31 79.5458 19.3775 79.6733 19.5125C79.8083 19.64 79.8758 19.805 79.8758 20.0075C79.8758 22.16 77.8246 23.2325 73.7221 23.225C71.6521 23.225 70.0396 22.6775 68.8846 21.5825ZM71.1008 15.6537H76.3321C76.2571 13.8837 75.3871 12.9987 73.7221 12.9987C72.0646 12.9987 71.1908 13.8837 71.1008 15.6537ZM81.9013 22.3137V11.3675C81.9013 11.165 81.965 11 82.0925 10.8725C82.2275 10.7375 82.3925 10.67 82.5875 10.67H85.1075C85.31 10.67 85.475 10.7375 85.6025 10.8725C85.73 11 85.7938 11.165 85.7938 11.3675V12.0762C86.3338 11.5512 86.8625 11.15 87.38 10.8725C87.905 10.5875 88.535 10.445 89.27 10.445C91.0175 10.445 92.3413 11.165 93.2413 12.605C94.6363 11.1575 96.065 10.4375 97.5275 10.445C98.9975 10.445 100.156 10.8875 101.004 11.7725C101.859 12.65 102.286 14.0112 102.286 15.8562V22.3137C102.286 22.5162 102.223 22.6812 102.095 22.8087C101.968 22.9362 101.803 23 101.6 23H99.0913C98.8888 23 98.72 22.9362 98.585 22.8087C98.4575 22.6737 98.3938 22.5087 98.3938 22.3137V15.8562C98.3938 14.0562 97.7413 13.16 96.4363 13.1675C95.6413 13.1675 94.82 13.7412 93.9725 14.8887C94.0175 15.2112 94.04 15.5337 94.04 15.8562V22.3137C94.04 22.5162 93.9725 22.6812 93.8375 22.8087C93.71 22.9362 93.5488 23 93.3538 23H90.845C90.6425 23 90.4738 22.9362 90.3388 22.8087C90.2113 22.6737 90.1475 22.5087 90.1475 22.3137V15.8562C90.1475 14.0562 89.495 13.16 88.19 13.1675C87.3575 13.1675 86.5588 13.7037 85.7938 14.7762V22.3137C85.7938 22.5162 85.7263 22.6812 85.5913 22.8087C85.4638 22.9362 85.3025 23 85.1075 23H82.5875C82.385 23 82.22 22.9362 82.0925 22.8087C81.965 22.6812 81.9013 22.5162 81.9013 22.3137Z" fill="currentColor"></path>
+								</svg>
+							</a>
 							<p class="footer__tagline">
-								Модульна система Pin Pin для порядку
+								Модульна система Pin Pin для порядку у
 								<br>
-								у твоєму особистому просторі.
+								твоєму особистому просторі.
 							</p>
 						</div>
 						<div class="footer__col">
 							<span class="footer__heading">Меню</span>
 							<ul class="footer__list">
 								<li>
-									<a href="#" class="footer__link">Каталог</a>
+									<a href="cataloge.html" class="footer__link">Каталог</a>
 								</li>
 								<li>
 									<a href="#" class="footer__link">Як це працює</a>
 								</li>
 								<li>
-									<a href="#" class="footer__link">Про нас</a>
+									<a href="about.html" class="footer__link">Про нас</a>
 								</li>
 								<li>
 									<a href="faq.html" class="footer__link">FAQ</a>
