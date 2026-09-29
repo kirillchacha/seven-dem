@@ -16,14 +16,18 @@
 			</style>
 		</noscript>
 		<title>Про нас — 7dem</title>
-		<script type="module" crossorigin="" src="./js/about.min.js?v=1790684291656"></script>
-		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1790684291656">
-		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1790684291656">
-		<link rel="modulepreload" crossorigin="" href="./js/settext.min.js?v=1790684291656">
-		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1790684291656">
-		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1790684291656">
-		<link rel="stylesheet" crossorigin="" href="./css/settext.min.css?v=1790684291656">
-		<link rel="stylesheet" crossorigin="" href="./css/about.min.css?v=1790684291656">
+		<script type="module" crossorigin="" src="./js/about.min.js?v=1790693002695"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1790693002695">
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1790693002695">
+		<link rel="modulepreload" crossorigin="" href="./js/spollers.min.js?v=1790693002695">
+		<link rel="modulepreload" crossorigin="" href="./js/marqueepin.min.js?v=1790693002695">
+		<link rel="modulepreload" crossorigin="" href="./js/faqpin.min.js?v=1790693002695">
+		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1790693002695">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1790693002695">
+		<link rel="stylesheet" crossorigin="" href="./css/spollers.min.css?v=1790693002695">
+		<link rel="stylesheet" crossorigin="" href="./css/marqueepin.min.css?v=1790693002695">
+		<link rel="stylesheet" crossorigin="" href="./css/faqpin.min.css?v=1790693002695">
+		<link rel="stylesheet" crossorigin="" href="./css/about.min.css?v=1790693002695">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -115,8 +119,18 @@ fill: currentColor (ховер і білий варіант у підвалі), 
 			</header>
 			<main class="page">
 				<div data-fls-about="" class="about">
-					<!-- Shopify: src/shopify/relax-theme/sections/abouthero.liquid (стилі й JS спільні — підключені в theme.js). Змінюєш розмітку тут — онови й там -->
+					<!--
+Shopify: src/shopify/relax-theme/sections/abouthero.liquid (стилі й JS спільні — підключені в theme.js). Змінюєш розмітку тут — онови й там.
+2026-09-29 ваніль оновлено за редизайном (About.png): фото в межах контейнера (рожевий набір, вирізано з макета),
+білі хвилі на тлі, кнопки-пігулки капсом. Liquid ще НЕ синхронізовано — не запускати shopbuild для теми до порту.
+-->
 					<section data-fls-abouthero="" class="abouthero" data-fls-reveal-load="">
+						<!-- Білі хвилі на тлі — той самий шлях, що в hero головної, інший масштаб і зсув -->
+						<div class="abouthero__decor" aria-hidden="true">
+							<svg class="abouthero__decor-svg" viewbox="0 0 1440 1650" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M-71 751C-63.2 717.3 -49.2 613.2 -24 549C1.2 484.8 41.5 405.3 80 366C118.5 326.7 172.8 306 207 313C241.2 320 274.5 357.3 285 408C295.5 458.7 287.5 544.8 270 617C252.5 689.2 208.3 771 180 841C151.7 911 106.7 971.5 100 1037C93.3 1102.5 120 1194.8 140 1234C160 1273.2 191.3 1273.5 220 1272C248.7 1270.5 281 1258.5 312 1225C343 1191.5 375.8 1147.8 406 1071C436.2 994.2 466.7 842.5 493 764C519.3 685.5 531.2 645.7 564 600C596.8 554.3 652.3 500 690 490C727.7 480 772.3 512.3 790 540C807.7 567.7 798.5 587.7 796 656C793.5 724.3 788.2 847.3 775 950C761.8 1052.7 730.2 1203 717 1272C703.8 1341 691.8 1344.3 696 1364C700.2 1383.7 712.3 1394 742 1390C771.7 1386 842.5 1366.3 874 1340C905.5 1313.7 903.7 1306.8 931 1232C958.3 1157.2 1001.2 966.3 1038 891C1074.8 815.7 1119.7 797.8 1152 780C1184.3 762.2 1209 774.3 1232 784C1255 793.7 1276.8 802 1290 838C1303.2 874 1325 933.2 1311 1000C1297 1066.8 1227 1173.2 1206 1239C1185 1304.8 1183.2 1352.2 1185 1395C1186.8 1437.8 1197.8 1471 1217 1496C1236.2 1521 1265.5 1547.7 1300 1545C1334.5 1542.3 1390 1521.8 1424 1480C1458 1438.2 1490.7 1325 1504 1294" stroke-width="100"></path>
+							</svg>
+						</div>
 						<div class="abouthero__container" data-fls-reveal-group="">
 							<div data-fls-tabletext="" class="tabletext">Про нас</div>
 							<h1 class="abouthero__title">
@@ -130,29 +144,29 @@ fill: currentColor (ховер і білий варіант у підвалі), 
 			свою комбінацію під власний ящик.
 							</p>
 							<div class="abouthero__buttons">
-								<a href="#" class="abouthero__button abouthero__button--primary button button--padding-three button--border-color-three button--background-lightred">
-									Обрати набір
-									<svg aria-hidden="true" width="12" height="8" viewbox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z" fill="#F8F4F1"></path>
-									</svg>
-								</a>
-								<a href="#systemcompare" class="abouthero__button button button--padding-two button--border-color-one">
+								<a href="cataloge.html" class="abouthero__button abouthero__button--primary button button--caps button--border-color-three button--background-lightred">Обрати набір</a>
+								<a href="#systemcompare" class="abouthero__button button button--caps button--border-color-one">
 									Як це працює
 									<svg aria-hidden="true" width="12" height="8" viewbox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z" fill="#2e2e2e"></path>
+										<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z"></path>
 									</svg>
 								</a>
 							</div>
-						</div>
-						<div class="abouthero__media" data-fls-reveal="fade">
-							<picture>
-								<source media="(max-width: 600px)" srcset="./assets/img/IMG_9855-600.webp" type="image/webp">
-								<source media="(max-width: 1200px)" srcset="./assets/img/IMG_9855-1200.webp" type="image/webp">
-								<img alt="Базова платформа Pin Pin зі штирями" class="abouthero__image" width="1920" height="820" src="./assets/img/IMG_9855.webp">
-							</picture>
+							<div class="abouthero__media" data-fls-reveal="fade">
+								<picture>
+									<source media="(max-width: 600px)" srcset="./assets/img/about/hero-set-pink-600.webp" type="image/webp">
+									<source media="(max-width: 1200px)" srcset="./assets/img/about/hero-set-pink-1200.webp" type="image/webp">
+									<img alt="Рожевий набір Pin Pin на базовій платформі" class="abouthero__image" width="2402" height="1120" fetchpriority="high" src="./assets/img/about/hero-set-pink.webp">
+								</picture>
+							</div>
 						</div>
 					</section>
-					<!-- Shopify: src/shopify/relax-theme/sections/companyintro.liquid (стилі й JS спільні — підключені в theme.js). Змінюєш розмітку тут — онови й там -->
+					<!--
+Shopify: src/shopify/relax-theme/sections/companyintro.liquid (стилі й JS спільні — підключені в theme.js). Змінюєш розмітку тут — онови й там.
+2026-09-29 ваніль оновлено за редизайном (About.png): біла смуга на всю ширину замість картки, одне широке фото
+(постер відео, шухляда з інструментами — вирізано з макета, кнопку play зафарбовано) замість відео + плашки «2024».
+Заголовок заливається розовим при скролі (effects/textreveal). Liquid ще НЕ синхронізовано.
+-->
 					<section data-fls-companyintro="" class="companyintro">
 						<div class="companyintro__container">
 							<div class="companyintro__card" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
@@ -169,50 +183,27 @@ fill: currentColor (ховер і білий варіант у підвалі), 
 				випадкових форм, а єдина система. Базова платформа, модулі та фіксатори спроєктовані як частини
 				одного конструктора, який можна розширювати та адаптувати під простір.
 								</p>
-								<div class="companyintro__media">
-									<!-- TODO: тимчасове фото-заглушка замість відео виробництва — заміни src на постер реального відео, розмітку/JS плеєра додаси окремо -->
-									<div class="companyintro__video" data-fls-videofullscreen="">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/IMG_9861-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/IMG_9861-1200.webp" type="image/webp">
-											<img alt="Виробництво модулів Pin Pin" class="companyintro__video-image" src="./assets/img/IMG_9861.webp">
-										</picture>
-										<button type="button" class="companyintro__play" aria-label="Відтворити відео">
-											<svg width="18" height="20" viewbox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M17 8.26795C18.3333 9.03775 18.3333 10.9623 17 11.7321L3.5 19.5263C2.16667 20.2961 0.5 19.3338 0.5 17.7942L0.5 2.20577C0.5 0.666224 2.16667 -0.296101 3.5 0.473674L17 8.26795Z" fill="currentColor"></path>
-											</svg>
-										</button>
-									</div>
-									<div class="companyintro__badge">
-										<strong class="companyintro__year">
-											2024
-											<br>
-											рік
-										</strong>
-										<span class="companyintro__place">
-											Одеса,
-											<br>
-											Україна
-										</span>
-										<svg class="companyintro__logo" width="70" height="70" viewbox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<g clip-path="url(#clip0_168_724)">
-												<path d="M6.89394 0H25.9848C27.8132 0 29.5667 0.726324 30.8596 2.01919C32.1525 3.31205 32.8788 5.06555 32.8788 6.89394V25.9848C32.8788 27.8132 32.1525 29.5667 30.8596 30.8596C29.5667 32.1525 27.8132 32.8788 25.9848 32.8788C19.0932 32.8788 12.4839 30.1411 7.61079 25.268C2.73768 20.3949 0 13.7856 0 6.89394C0 5.06555 0.726324 3.31205 2.01919 2.01919C3.31205 0.726324 5.06555 0 6.89394 0Z" fill="#F8F4F1"></path>
-												<path d="M63.1061 0H44.0152C40.2077 0 37.1212 3.08652 37.1212 6.89394V25.9848C37.1212 29.7923 40.2077 32.8788 44.0152 32.8788H63.1061C66.9135 32.8788 70 29.7923 70 25.9848V6.89394C70 3.08652 66.9135 0 63.1061 0Z" fill="#F8F4F1"></path>
-												<path d="M63.1061 37.1212H44.0152C40.2077 37.1212 37.1212 40.2077 37.1212 44.0152V63.1061C37.1212 66.9135 40.2077 70 44.0152 70H63.1061C66.9135 70 70 66.9135 70 63.1061V44.0152C70 40.2077 66.9135 37.1212 63.1061 37.1212Z" fill="#F8F4F1"></path>
-												<path d="M16.4394 70C25.5186 70 32.8788 62.6398 32.8788 53.5606C32.8788 44.4814 25.5186 37.1212 16.4394 37.1212C7.36017 37.1212 0 44.4814 0 53.5606C0 62.6398 7.36017 70 16.4394 70Z" fill="#F8F4F1"></path>
-											</g>
-											<defs>
-												<clipPath id="clip0_168_724">
-													<rect width="70" height="70" fill="white"></rect>
-												</clipPath>
-											</defs>
+								<!-- TODO: постер-заглушка — розмітку/JS плеєра реального відео додати окремо -->
+								<div class="companyintro__video" data-fls-videofullscreen="">
+									<picture>
+										<source media="(max-width: 600px)" srcset="./assets/img/about/drawer-tools-600.webp" type="image/webp">
+										<source media="(max-width: 1200px)" srcset="./assets/img/about/drawer-tools-1200.webp" type="image/webp">
+										<img alt="Шухляда з інструментами без системи" class="companyintro__video-image" width="2404" height="1102" loading="lazy" src="./assets/img/about/drawer-tools.webp">
+									</picture>
+									<button type="button" class="companyintro__play" aria-label="Відтворити відео">
+										<svg width="18" height="20" viewbox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M17 8.26795C18.3333 9.03775 18.3333 10.9623 17 11.7321L3.5 19.5263C2.16667 20.2961 0.5 19.3338 0.5 17.7942L0.5 2.20577C0.5 0.666224 2.16667 -0.296101 3.5 0.473674L17 8.26795Z" fill="currentColor"></path>
 										</svg>
-									</div>
+									</button>
 								</div>
 							</div>
 						</div>
 					</section>
-					<!-- Shopify: src/shopify/relax-theme/sections/aboutfeatures.liquid (стилі й JS спільні — підключені в theme.js). Змінюєш розмітку тут — онови й там -->
+					<!--
+Shopify: src/shopify/relax-theme/sections/aboutfeatures.liquid (стилі й JS спільні — підключені в theme.js). Змінюєш розмітку тут — онови й там.
+2026-09-29 ваніль оновлено за редизайном (About.png): перша картка — розова з білим текстом, кнопка темна
+одразу під текстом. Liquid ще НЕ синхронізовано.
+-->
 					<section data-fls-aboutfeatures="" class="aboutfeatures">
 						<div class="aboutfeatures__container" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
 							<div class="aboutfeatures__head">
@@ -225,9 +216,11 @@ fill: currentColor (ховер і білий варіант у підвалі), 
 									Pin Pin не задає готовий порядок. Вона створює основу, на якій його можна будувати, змінювати й
 				розширювати.
 								</p>
-								<a href="#" class="aboutfeatures__button button button--padding-two">
+								<a href="cataloge.html" class="aboutfeatures__button button button--caps button--border-color-one button--background-black">
 									Обрати набір
-									<span aria-hidden="true">→</span>
+									<svg aria-hidden="true" width="12" height="8" viewbox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z"></path>
+									</svg>
 								</a>
 							</div>
 							<ul class="aboutfeatures__grid" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
@@ -284,10 +277,16 @@ fill: currentColor (ховер і білий варіант у підвалі), 
 							</ul>
 						</div>
 					</section>
-					<!-- Shopify: src/shopify/relax-theme/sections/systemcompare.liquid (стилі й JS спільні — підключені в theme.js). Змінюєш розмітку тут — онови й там -->
+					<!--
+Shopify: src/shopify/relax-theme/sections/systemcompare.liquid (стилі й JS спільні — підключені в theme.js). Змінюєш розмітку тут — онови й там.
+2026-09-29 ваніль оновлено за редизайном (About.png): пігулка «Pin Pin», статичний двоколірний заголовок
+(без textreveal), картки sky / violet з білим текстом без стрілки, постер відео з кольоровим набором
+(вирізано з макета, кнопку play зафарбовано). Liquid ще НЕ синхронізовано.
+-->
 					<section data-fls-systemcompare="" class="systemcompare" id="systemcompare">
 						<div class="systemcompare__container" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
-							<h2 class="systemcompare__title" data-fls-textreveal="" data-fls-watcher="" data-fls-watcher-once="" data-fls-watcher-threshold="0.3">
+							<div data-fls-tabletext="" class="tabletext">Pin Pin</div>
+							<h2 class="systemcompare__title">
 								<mark class="systemcompare__highlight">Порядок не</mark>
 								працює, якщо
 								<br>
@@ -305,11 +304,6 @@ fill: currentColor (ховер і білий варіант у підвалі), 
 					положення всередині шухляди.
 									</p>
 								</div>
-								<span class="systemcompare__arrow" aria-hidden="true">
-									<svg width="24" height="16" viewbox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M23.7071 8.70711C24.0976 8.31658 24.0976 7.68342 23.7071 7.29289L17.3431 0.928932C16.9526 0.538408 16.3195 0.538408 15.9289 0.928932C15.5384 1.31946 15.5384 1.95262 15.9289 2.34315L21.5858 8L15.9289 13.6569C15.5384 14.0474 15.5384 14.6805 15.9289 15.0711C16.3195 15.4616 16.9526 15.4616 17.3431 15.0711L23.7071 8.70711ZM0 9H23V7H0V9Z" fill="currentColor"></path>
-									</svg>
-								</span>
 								<div class="systemcompare__item systemcompare__item--after">
 									<h3 class="systemcompare__name">Як працює Pin Pin</h3>
 									<p class="systemcompare__desc">
@@ -320,12 +314,12 @@ fill: currentColor (ховер і білий варіант у підвалі), 
 									</p>
 								</div>
 							</div>
-							<!-- TODO: тимчасове фото-заглушка замість відео монтажу модуля — заміни src на постер реального відео -->
+							<!-- TODO: постер-заглушка — розмітку/JS плеєра реального відео додати окремо -->
 							<div class="systemcompare__video" data-fls-videofullscreen="">
 								<picture>
-									<source media="(max-width: 600px)" srcset="./assets/img/IMG_9863-600.webp" type="image/webp">
-									<source media="(max-width: 1200px)" srcset="./assets/img/IMG_9863-1200.webp" type="image/webp">
-									<img alt="Монтаж модуля Pin Pin" class="systemcompare__video-image" src="./assets/img/IMG_9863.webp">
+									<source media="(max-width: 600px)" srcset="./assets/img/about/video-set-black-600.webp" type="image/webp">
+									<source media="(max-width: 1200px)" srcset="./assets/img/about/video-set-black-1200.webp" type="image/webp">
+									<img alt="Чорний набір Pin Pin на базовій платформі" class="systemcompare__video-image" width="2400" height="940" loading="lazy" src="./assets/img/about/video-set-black.webp">
 								</picture>
 								<button type="button" class="systemcompare__play" aria-label="Відтворити відео">
 									<svg width="18" height="20" viewbox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -383,11 +377,19 @@ fill: currentColor (ховер і білий варіант у підвалі), 
 							</div>
 						</div>
 					</section>
-					<!-- Shopify: src/shopify/relax-theme/sections/statsexperience.liquid (стилі й JS спільні — підключені в theme.js). Змінюєш розмітку тут — онови й там -->
+					<!--
+Shopify: src/shopify/relax-theme/sections/statsexperience.liquid (стилі й JS спільні — підключені в theme.js). Змінюєш розмітку тут — онови й там.
+2026-09-29 ваніль оновлено за редизайном (About.png): «25 років досвіду» розовим, плашки в новому порядку й
+кольорах (2024 sky, $500M violet, 80+ blush, 25+ coral) — лише число й підпис білим; абзац під плашками прибрано.
+Liquid ще НЕ синхронізовано.
+-->
 					<section data-fls-statsexperience="" class="statsexperience">
 						<div class="statsexperience__container" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
 							<div class="statsexperience__head">
-								<h2 class="statsexperience__title">25 років досвіду виробництва</h2>
+								<h2 class="statsexperience__title">
+									<mark class="statsexperience__highlight">25 років досвіду</mark>
+									виробництва
+								</h2>
 								<p class="statsexperience__text">
 									7dem з'явився у 2024 році. Але виробнича культура бренду спирається на понад 25 років досвіду
 				Clixar — компанії, що виробляє захисні пломби для логістики, вантажів і контролю доступу та
@@ -397,94 +399,236 @@ fill: currentColor (ховер і білий варіант у підвалі), 
 							<ul class="statsexperience__grid" data-fls-watcher="" data-fls-watcher-once="" data-fls-reveal-group="">
 								<li class="statsexperience__card statsexperience__card--1">
 									<strong class="statsexperience__value">
-										<span data-fls-digcounter="">25</span>
-										+
+										<span data-fls-digcounter="">2024</span>
 									</strong>
-									<span class="statsexperience__label">років досвіду</span>
-									<p class="statsexperience__caption">у виробництві та розробці функціональних продуктів</p>
+									<p class="statsexperience__caption">рік народження нового бренду на основі багаторічної експертизи</p>
 								</li>
 								<li class="statsexperience__card statsexperience__card--2">
+									<strong class="statsexperience__value">$500M</strong>
+									<p class="statsexperience__caption">майна під захистом завдяки продукції Clixar</p>
+								</li>
+								<li class="statsexperience__card statsexperience__card--3">
 									<strong class="statsexperience__value">
 										У
 										<span data-fls-digcounter="">80</span>
 										+
 									</strong>
-									<span class="statsexperience__label">країн</span>
-									<p class="statsexperience__caption">постачається продукція Clixar</p>
-								</li>
-								<li class="statsexperience__card statsexperience__card--3">
-									<strong class="statsexperience__value">$500M</strong>
-									<span class="statsexperience__label">майна</span>
-									<p class="statsexperience__caption">під захистом щороку за допомогою продукції Clixar</p>
+									<p class="statsexperience__caption">країн постачається продукція Clixar</p>
 								</li>
 								<li class="statsexperience__card statsexperience__card--4">
 									<strong class="statsexperience__value">
-										<span data-fls-digcounter="">2024</span>
+										<span data-fls-digcounter="">25</span>
+										+
 									</strong>
-									<span class="statsexperience__label">рік народження</span>
-									<p class="statsexperience__caption">новий бренд на основі багаторічної експертизи</p>
+									<p class="statsexperience__caption">років досвіду у виробництві та розробці функціональних продуктів</p>
 								</li>
 							</ul>
-							<p class="statsexperience__note">
-								Досвід Clixar сформував підхід, який став основою 7dem: функція, точність і фізична якість були закладені в продукт ще на етапі проєктування.
-							</p>
 						</div>
 					</section>
-					<!-- Shopify: src/shopify/relax-theme/sections/founderstory.liquid (стилі й JS спільні — підключені в theme.js). Змінюєш розмітку тут — онови й там -->
+					<!--
+Shopify: src/shopify/relax-theme/sections/founderstory.liquid (стилі й JS спільні — підключені в theme.js). Змінюєш розмітку тут — онови й там.
+2026-09-29 ваніль оновлено за редизайном (About.png): шапка рядком (пігулка + заголовок ліворуч, текст праворуч),
+під нею портрет Анни ліворуч, праворуч фото набору й фіолетова картка з цитатою. Фото вирізані з макета.
+Liquid ще НЕ синхронізовано.
+-->
 					<section data-fls-founderstory="" class="founderstory">
 						<div class="founderstory__container" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
-							<!-- TODO: тимчасове фото-заглушка — заміни на реальне фото засновниці бренду -->
-							<div class="founderstory__photo">
-								<picture>
-									<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
-									<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
-									<img alt="Анна, засновниця бренду 7dem" class="founderstory__image" width="600" height="640" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
-								</picture>
-							</div>
-							<div class="founderstory__content">
-								<div data-fls-tabletext="" class="tabletext">Продукт, створений з особистого досвіду</div>
-								<h2 class="founderstory__title">
-									Ідея, що почалася
-									<mark class="founderstory__highlight">з власного досвіду</mark>
-								</h2>
+							<div class="founderstory__head">
+								<div class="founderstory__heading">
+									<div data-fls-tabletext="" class="tabletext">Продукт, створений з особистого досвіду</div>
+									<h2 class="founderstory__title">
+										Ідея, що почалася
+										<mark class="founderstory__highlight">з власного досвіду</mark>
+									</h2>
+								</div>
 								<p class="founderstory__text">
 									7dem з'явився з простого спостереження: звичайні органайзери допомагали розділити речі, але не
 				вирішували проблему їхнього постійного зміщення.
 								</p>
-								<blockquote class="founderstory__quote">
-									<svg class="founderstory__quote-mark" aria-hidden="true" width="32" height="24" viewbox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M0 24V14.4C0 9.86667 1.06667 6.4 3.2 4C5.33333 1.33333 8.26667 0 12 0V4.8C10.1333 4.8 8.66667 5.46667 7.6 6.8C6.53333 8.13333 6 9.86667 6 12H12V24H0ZM20 24V14.4C20 9.86667 21.0667 6.4 23.2 4C25.3333 1.33333 28.2667 0 32 0V4.8C30.1333 4.8 28.6667 5.46667 27.6 6.8C26.5333 8.13333 26 9.86667 26 12H32V24H20Z" fill="currentColor"></path>
-									</svg>
-									<p class="founderstory__quote-text">
-										Для мене було важливо створити не просто органайзер, а систему, де порядок закладений у саму
-					конструкцію — і може змінюватися разом із простором
-									</p>
-									<footer class="founderstory__quote-author">
-										<strong>Анна</strong>
-										<span>засновниця бренду</span>
-									</footer>
-								</blockquote>
+							</div>
+							<div class="founderstory__grid">
+								<div class="founderstory__photo">
+									<picture>
+										<source media="(max-width: 600px)" srcset="./assets/img/about/anna-portrait-600.webp" type="image/webp">
+										<img alt="Анна, засновниця бренду 7dem" class="founderstory__image" width="1178" height="1316" loading="lazy" src="./assets/img/about/anna-portrait.webp">
+									</picture>
+								</div>
+								<div class="founderstory__side">
+									<div class="founderstory__product">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/about/set-colored-600.webp" type="image/webp">
+											<img alt="" class="founderstory__image" width="1178" height="638" loading="lazy" src="./assets/img/about/set-colored.webp">
+										</picture>
+									</div>
+									<blockquote class="founderstory__quote">
+										<p class="founderstory__quote-text">
+											Для мене було важливо створити не просто органайзер, а систему, де порядок закладений у саму
+						конструкцію — і може змінюватися разом із простором.
+										</p>
+										<footer class="founderstory__quote-author">
+											<strong>Анна</strong>
+											<span>засновниця 7dem</span>
+										</footer>
+									</blockquote>
+								</div>
 							</div>
 						</div>
 					</section>
-					<!-- Порт: src/shopify/relax-theme/sections/settext.liquid (2026-09-18 синхронізовано). Надстройка теми: варіант settext--about і налаштування heading_highlight — у ванілі їх немає. -->
+					<!--
+Порт: src/shopify/relax-theme/sections/settext.liquid (2026-09-18 синхронізовано). Надстройка теми: варіант settext--about і налаштування heading_highlight — у ванілі їх немає.
+2026-09-29 ваніль оновлено за редизайном (Homepage.png): біле тло, пігулка «Обирай порядок для свого простору»
+(раніше була капшном у reviewspin), «Почни» розовим, кнопка без стрілки. Заголовок тепер однаковий для
+головної й «Про нас» (local about лишився лише для сумісності include). Порт у тему ще НЕ синхронізовано.
+-->
 					<section data-fls-settext="" class="settext">
 						<div class="settext__container" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
+							<div data-fls-tabletext="" class="tabletext">Обирай порядок для свого простору</div>
 							<h2 class="settext__title">
 								<mark class="settext__highlight">Почни</mark>
 								зі свого набору
 							</h2>
 							<p class="settext__text">
-								Обери базову платформу та кілька модулів під свою шухляду.
+								Обери базову платформу та кілька модулів під свою шухляду
 								<br>
 								Доставка по Україні — 1–3 робочі дні.
 							</p>
-							<a href="#" class="settext__button button button--padding-two button--background-black button--border-color-one">
-								Обрати набір
-								<svg aria-hidden="true" width="12" height="8" viewbox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z" fill="#F8F4F1"></path>
-								</svg>
-							</a>
+							<a href="cataloge.html" class="settext__button button button--caps button--background-black button--border-color-one">Обрати набір</a>
+						</div>
+					</section>
+					<!-- 2026-09-29 редизайн: стрічка й FAQ, як на головній (стрічка з набором variant "about") -->
+					<!--
+Порт: src/shopify/relax-theme/sections/faqpin.liquid (2026-09-15 синхронізовано з ваніллю; variant = select у схемі).
+2026-09-29 ваніль оновлено за редизайном: головна тепер у вигляді варіанта catalog (білі рядки на bone),
+пігулка «Часті запитання», «Найчастіші» розовим. Порт у тему ще НЕ синхронізовано.
+-->
+					<!--
+FAQ. Два варіанти через locals variant (передавати явно в кожному include):
+"home" — головна (стрічка marqueepin, пілюля «Часті запитання», «Найчастіші» розовим);
+"about" — «Про нас» (те саме, що home, але стрічка зі своїм набором чипів);
+"catalog" — каталог, Figma 219:1668 (без стрічки, пілюля «• Часті запитання»,
+широкий список окремих білих рядків).
+-->
+					<section data-fls-faqpin="" class="faqpin faqpin--about">
+						<!--
+Порт: ОКРЕМОЇ секції в темі немає — Shopify падає з "Cannot render sections inside sections", тому стрічка інлайниться всередину sections/faqpin.liquid блоками badge (2026-09-18 звірено).
+2026-09-29 ваніль оновлено за редизайном (Homepage.png / About.png): чипи 60 заввишки з кроком 32, порядок і кольори
+з макета. locals variant (з faqpin): "about" — набір «Точність / Фіксація / Варіативність / Функція».
+Порт у тему ще НЕ синхронізовано.
+-->
+						<section data-fls-marqueepin="" data-fls-marquee="" data-fls-marquee-space="32" data-fls-marquee-direction="left" data-fls-marquee-pause="" data-fls-marquee-speed="1000" class="marqueepin">
+							<div class="marqueepin__item marqueepin__item--dark">
+								<picture>
+									<img alt="" width="88" height="88" src="./assets/img/mark-light.webp">
+								</picture>
+								Точність
+							</div>
+							<div class="marqueepin__item marqueepin__item--outline">
+								<picture>
+									<img alt="" width="116" height="116" src="./assets/img/mark-dark.webp">
+								</picture>
+								Фіксація
+							</div>
+							<div class="marqueepin__item marqueepin__item--blush">
+								<picture>
+									<img alt="" width="116" height="116" src="./assets/img/mark-dark.webp">
+								</picture>
+								Варіативність
+							</div>
+							<div class="marqueepin__item marqueepin__item--outline">
+								<picture>
+									<img alt="" width="116" height="116" src="./assets/img/mark-dark.webp">
+								</picture>
+								Функція
+							</div>
+						</section>
+						<div class="faqpin__decor">
+							<div class="faqpin__decor-track">
+								<div class="faqpin__decor-item">
+									<svg width="2030" height="1114" viewbox="0 0 2030 1114" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M139.244 854.954C-143.778 390.615 327.407 206.725 433.734 740.023C540.062 1273.32 1009.3 1084.44 728.225 625.092C447.15 165.741 918.335 -18.1489 1022.72 510.161C1127.1 1038.47 1549.61 729.876 1317.21 395.23C1084.8 60.5832 1555.98 -123.306 1611.7 280.299C1667.41 683.904 2161.95 559.872 1906.19 165.367" stroke="#F9F1EF" stroke-width="100"></path>
+									</svg>
+								</div>
+								<!--
+другий дублікат тієї самої фігури, зміщений одразу на вектор анімації
+(див. &__decor-item--offset у faqpin.scss) — щоб рух ішов уздовж діагоналі,
+в якій "складена" сама змійка, а не просто вбік
+-->
+								<div class="faqpin__decor-item faqpin__decor-item--offset">
+									<svg width="2030" height="1114" viewbox="0 0 2030 1114" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M139.244 854.954C-143.778 390.615 327.407 206.725 433.734 740.023C540.062 1273.32 1009.3 1084.44 728.225 625.092C447.15 165.741 918.335 -18.1489 1022.72 510.161C1127.1 1038.47 1549.61 729.876 1317.21 395.23C1084.8 60.5832 1555.98 -123.306 1611.7 280.299C1667.41 683.904 2161.95 559.872 1906.19 165.367" stroke="#F9F1EF" stroke-width="100"></path>
+									</svg>
+								</div>
+							</div>
+						</div>
+						<div class="faqpin__container" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
+							<div data-fls-tabletext="" class="tabletext">Часті запитання</div>
+							<h2 class="faqpin__title">
+								<mark class="faqpin__highlight">Найчастіші</mark>
+								запитання
+							</h2>
+							<!-- data-fls-spollers(-one) — акордеон із layout/spollers (плавне розкриття, лише один пункт відкритий), не нативний <details> -->
+							<div class="faqpin__list" data-fls-spollers="" data-fls-spollers-one="" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
+								<details class="faqpin__item">
+									<summary class="faqpin__question">
+										Як зрозуміти, які модулі мені потрібні?
+										<span class="faqpin__icon" aria-hidden="true"></span>
+									</summary>
+									<div class="faqpin__answer">
+										<p>
+											Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину
+						рядків, відступи та загальну композицію сторінки.
+										</p>
+									</div>
+								</details>
+								<details class="faqpin__item">
+									<summary class="faqpin__question">
+										Чи підійде система під мою шухляду?
+										<span class="faqpin__icon" aria-hidden="true"></span>
+									</summary>
+									<div class="faqpin__answer">
+										<p>
+											Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину
+						рядків, відступи та загальну композицію сторінки.
+										</p>
+									</div>
+								</details>
+								<details class="faqpin__item">
+									<summary class="faqpin__question">
+										Чи можна докупити окремі модулі пізніше?
+										<span class="faqpin__icon" aria-hidden="true"></span>
+									</summary>
+									<div class="faqpin__answer">
+										<p>
+											Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину
+						рядків, відступи та загальну композицію сторінки.
+										</p>
+									</div>
+								</details>
+								<details class="faqpin__item">
+									<summary class="faqpin__question">
+										Скільки часу займає доставка?
+										<span class="faqpin__icon" aria-hidden="true"></span>
+									</summary>
+									<div class="faqpin__answer">
+										<p>
+											Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину
+						рядків, відступи та загальну композицію сторінки.
+										</p>
+									</div>
+								</details>
+								<details class="faqpin__item">
+									<summary class="faqpin__question">
+										Як доглядати за виробами?
+										<span class="faqpin__icon" aria-hidden="true"></span>
+									</summary>
+									<div class="faqpin__answer">
+										<p>
+											Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину
+						рядків, відступи та загальну композицію сторінки.
+										</p>
+									</div>
+								</details>
+							</div>
 						</div>
 					</section>
 				</div>

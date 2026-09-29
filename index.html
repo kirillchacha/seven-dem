@@ -15,19 +15,19 @@
 			</style>
 		</noscript>
 		<title>Home Page</title>
-		<script type="module" crossorigin="" src="./js/index.min.js?v=1790684291658"></script>
-		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1790684291658">
-		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1790684291658">
-		<link rel="modulepreload" crossorigin="" href="./js/swiper.min.js?v=1790684291658">
-		<link rel="modulepreload" crossorigin="" href="./js/spollers.min.js?v=1790684291658">
-		<link rel="modulepreload" crossorigin="" href="./js/settext.min.js?v=1790684291658">
-		<link rel="modulepreload" crossorigin="" href="./js/faqpin.min.js?v=1790684291658">
-		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1790684291658">
-		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1790684291658">
-		<link rel="stylesheet" crossorigin="" href="./css/spollers.min.css?v=1790684291658">
-		<link rel="stylesheet" crossorigin="" href="./css/settext.min.css?v=1790684291658">
-		<link rel="stylesheet" crossorigin="" href="./css/faqpin.min.css?v=1790684291658">
-		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1790684291658">
+		<script type="module" crossorigin="" src="./js/index.min.js?v=1790693002696"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1790693002696">
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1790693002696">
+		<link rel="modulepreload" crossorigin="" href="./js/swiper.min.js?v=1790693002696">
+		<link rel="modulepreload" crossorigin="" href="./js/spollers.min.js?v=1790693002696">
+		<link rel="modulepreload" crossorigin="" href="./js/marqueepin.min.js?v=1790693002696">
+		<link rel="modulepreload" crossorigin="" href="./js/faqpin.min.js?v=1790693002696">
+		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1790693002696">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1790693002696">
+		<link rel="stylesheet" crossorigin="" href="./css/spollers.min.css?v=1790693002696">
+		<link rel="stylesheet" crossorigin="" href="./css/marqueepin.min.css?v=1790693002696">
+		<link rel="stylesheet" crossorigin="" href="./css/faqpin.min.css?v=1790693002696">
+		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1790693002696">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -147,8 +147,8 @@ fill: currentColor (ховер і білий варіант у підвалі), 
 								</p>
 								<div class="hero__buttons">
 									<a href="cataloge.html" class="button button--caps button--border-color-one button--background-black">Обрати набір</a>
-									<!-- якір на «Три кроки до порядку» (stepsgettingorganised) з'явиться разом з її редизайном -->
-									<a href="#" class="button button--caps button--border-color-one">Як це працює</a>
+									<!-- якір на «Три кроки до порядку» (custom/stepsgettingorganised, id="how-it-works") -->
+									<a href="#how-it-works" class="button button--caps button--border-color-one">Як це працює</a>
 								</div>
 							</div>
 						</div>
@@ -298,12 +298,16 @@ fill: currentColor (ховер і білий варіант у підвалі), 
 							</div>
 						</div>
 					</section>
-					<!-- Порт: src/shopify/relax-theme/sections/sistempintext.liquid (2026-09-18 синхронізовано з ваніллю: кікер знову рендериться сніпетом tabletext, а не власним __kicker). -->
+					<!--
+Порт: src/shopify/relax-theme/sections/sistempintext.liquid (2026-09-18 синхронізовано з ваніллю: кікер знову рендериться сніпетом tabletext, а не власним __kicker).
+2026-09-29 ваніль оновлено за редизайном (пігулка, Madefor-заголовок з розовим другим рядком, темна кнопка), порт у тему ще НЕ синхронізовано.
+-->
 					<section data-fls-sistempintext="" class="sistempintext">
 						<div class="sistempintext__container sistempintext__container--two" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
 							<div data-fls-tabletext="" class="tabletext">Система Pin Pin</div>
 							<h2 class="sistempintext__title">
 								Модульна система яку
+								<br>
 								<mark class="sistempintext__highlight">ти збираєш під себе</mark>
 							</h2>
 							<div class="sistempintext__parahraph">
@@ -312,176 +316,327 @@ fill: currentColor (ховер і білий варіант у підвалі), 
 				довжину рядків, відступи та загальну композицію сторінки.
 								</p>
 							</div>
-							<a href="#" class="sistempintext__button button button--padding-two button--border-color-one">
+							<a href="cataloge.html" class="sistempintext__button button button--caps button--border-color-one button--background-black">
 								Обрати набір
 								<svg aria-hidden="true" width="12" height="8" viewbox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z" fill="#2e2e2e"></path>
+									<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z"></path>
 								</svg>
 							</a>
 						</div>
 					</section>
-					<!-- Порт: src/shopify/relax-theme/sections/catalogscart.liquid + snippets/catalogscart__card.liquid (2026-09-18 синхронізовано). Свідомі відмінності порту: назва в <h3>, свотчі <ul>/<li> з inline style замість модифікаторів, halo — сусід кнопки, а не обгортка (форма Shopify). -->
+					<!--
+Порт: src/shopify/relax-theme/sections/catalogscart.liquid + snippets/catalogscart__card.liquid (2026-09-18 синхронізовано).
+2026-09-29 ваніль оновлено за редизайном (Homepage.png): замість 4 малих карток — 2 великі картки наборів
+(стрічка «Подарунок», серце-закладка, кружечки кольору на фото, кошик → степпер кількості).
+Порт у тему ще НЕ синхронізовано — у темі набори й кількість мають іти з товарів і Ajax Cart API.
+Дані карток:
+gift  — стрічка «Подарунок» у кутку (у темі — тег товару)
+color — колір, вибраний спочатку (MED у макеті — рожевий)
+qty   — стартова кількість у кошику: 0 — кнопка-сумка, >0 — степпер (як MED у макеті)
+price — ціна за 1 шт (грн, число: рядок «2 шт · 2130₴» рахує catalogscart.js)
+Фото наборів вирізано з Homepage.png (накладки макета зафарбовано); рожеве фото MAX —
+поки те саме, що в MED, різнокольорове — product/related-3, білого фото немає (колір неактивний).
+-->
 					<section data-fls-catalogscart="" class="catalogscart">
-						<div class="catalogscart__container catalogscart__container--three" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
+						<div class="catalogscart__container" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
 							<div class="catalogscart__head">
 								<div class="catalogscart__heading">
-									<span class="catalogscart__kicker">каталог</span>
-									<h2 class="catalogscart__title">Обери свій набір</h2>
+									<div data-fls-tabletext="" class="tabletext">Каталог</div>
+									<h2 class="catalogscart__title">
+										<mark class="catalogscart__accent">Обери</mark>
+										свій набір
+									</h2>
 								</div>
-								<a href="#" class="catalogscart__all">
-									Весь каталог
-									<svg aria-hidden="true" width="12" height="8" viewbox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z" fill="currentColor"></path>
-									</svg>
-								</a>
+								<a href="cataloge.html" class="catalogscart__all button button--caps button--border-color-one button--background-black">Переглянути каталог</a>
 							</div>
-							<ul class="catalogscart__grid" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
-								<li class="catalogscart__card">
-									<a href="#" class="catalogscart__photo">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
-											<img alt="BOX_L" width="400" height="400" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
-										</picture>
-									</a>
-									<div class="catalogscart__info">
-										<a href="#" class="catalogscart__name">BOX_L</a>
-										<p class="catalogscart__dims">11 × 18 × 6.3 см</p>
-										<p class="catalogscart__price">890 ₴</p>
-										<div class="catalogscart__swatches" aria-hidden="true">
-											<button type="button" class="catalogscart__swatch catalogscart__swatch--black"></button>
-											<button type="button" class="catalogscart__swatch catalogscart__swatch--white"></button>
-											<button type="button" class="catalogscart__swatch catalogscart__swatch--blush"></button>
-											<button type="button" class="catalogscart__swatch catalogscart__swatch--mixed"></button>
-										</div>
-									</div>
-									<div class="catalogscart__add-halo" aria-hidden="true">
-										<button type="button" class="catalogscart__add" aria-label="Додати BOX_L у кошик">
-											<svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-												<path d="M14.6188 15.4938C15.102 15.4938 15.4938 15.102 15.4938 14.6188L15.4938 6.74377C15.4938 6.26053 15.102 5.86877 14.6188 5.86877C14.1355 5.86877 13.7438 6.26053 13.7438 6.74377L13.7438 13.7438L6.74377 13.7438C6.26053 13.7438 5.86877 14.1355 5.86877 14.6188C5.86877 15.102 6.26053 15.4938 6.74377 15.4938L14.6188 15.4938ZM0.618774 0.618774L5.59911e-05 1.23749L14.0001 15.2375L14.6188 14.6188L15.2375 14.0001L1.23749 5.59911e-05L0.618774 0.618774Z"></path>
+							<ul class="catalogscart__grid">
+								<li class="catalogscart__card" data-fls-bookmarks-card="" data-catalogscart-card="" data-price="1950" data-qty="0">
+									<div class="catalogscart__media" data-catalogscart-media="black">
+										<a href="product-card.html" class="catalogscart__photos" tabindex="-1" aria-hidden="true">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/product/set-max-black-600.webp" type="image/webp">
+												<img class="catalogscart__photo" alt="" data-catalogscart-photo="black" width="1176" height="1120" loading="lazy" src="./assets/img/product/set-max-black.webp">
+											</picture>
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/product/set-med-pink-600.webp" type="image/webp">
+												<img class="catalogscart__photo" alt="" data-catalogscart-photo="blush" width="1176" height="1120" loading="lazy" src="./assets/img/product/set-med-pink.webp">
+											</picture>
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/product/related-3-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/product/related-3-1200.webp" type="image/webp">
+												<img class="catalogscart__photo" alt="" data-catalogscart-photo="mixed" width="1176" height="1120" loading="lazy" src="./assets/img/product/related-3.webp">
+											</picture>
+										</a>
+										<span class="catalogscart__ribbon">
+											<svg viewbox="0 0 16 16" aria-hidden="true">
+												<path d="M2 7h12v2H2zM3 9h10v6H3zM7.25 7h1.5v8h-1.5zM8 6.5C6.5 3 3.5 3.5 4 5.2 4.4 6.4 6.6 6.5 8 6.5Zm0 0c1.5-3.5 4.5-3 4-1.3-.4 1.2-2.6 1.3-4 1.3Z" fill="currentColor"></path>
+											</svg>
+											Подарунок
+										</span>
+										<button type="button" class="catalogscart__save" data-fls-bookmarks-toggle="set-max" data-bookmark-title="Набір MAX" data-bookmark-price="1950 ₴" data-bookmark-url="product-card.html" aria-pressed="false" aria-label="Зберегти в обране: Набір MAX">
+											<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+												<path d="M12 20.5S3.5 15.4 3.5 9.2A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.5 2.8c0 6.2-8.5 11.3-8.5 11.3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
 											</svg>
 										</button>
+										<div class="catalogscart__swatches" role="radiogroup" aria-label="Колір: Набір MAX">
+											<button type="button" class="catalogscart__swatch catalogscart__swatch--black" role="radio" aria-checked="false" aria-label="Чорний" data-catalogscart-color="black"></button>
+											<button type="button" class="catalogscart__swatch catalogscart__swatch--white" role="radio" aria-checked="false" aria-label="Білий" data-catalogscart-color="white"></button>
+											<button type="button" class="catalogscart__swatch catalogscart__swatch--blush" role="radio" aria-checked="false" aria-label="Рожевий" data-catalogscart-color="blush"></button>
+											<button type="button" class="catalogscart__swatch catalogscart__swatch--mixed" role="radio" aria-checked="false" aria-label="Різнокольоровий" data-catalogscart-color="mixed"></button>
+										</div>
+									</div>
+									<div class="catalogscart__body">
+										<div class="catalogscart__info">
+											<h3 class="catalogscart__name">
+												<a href="product-card.html">Набір MAX</a>
+											</h3>
+											<p class="catalogscart__price" data-catalogscart-price="" aria-live="polite">1950₴</p>
+										</div>
+										<button type="button" class="catalogscart__add" data-catalogscart-add="" aria-label="Додати в кошик: Набір MAX">
+											<svg viewbox="0 0 32 38" fill="none" aria-hidden="true">
+												<path d="M11 13V8.5a5 5 0 0 1 10 0V13M3.2 11h25.6l-1.6 22.2a3 3 0 0 1-3 2.8H7.8a3 3 0 0 1-3-2.8L3.2 11Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+											</svg>
+										</button>
+										<div class="catalogscart__stepper" data-catalogscart-stepper="" hidden>
+											<button type="button" class="catalogscart__step" data-catalogscart-minus="" aria-label="Менше">−</button>
+											<span class="catalogscart__qty" data-catalogscart-qty="">0</span>
+											<button type="button" class="catalogscart__step" data-catalogscart-plus="" aria-label="Більше">+</button>
+										</div>
 									</div>
 								</li>
-								<li class="catalogscart__card">
-									<a href="#" class="catalogscart__photo">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/IMG_9846-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/IMG_9846-1200.webp" type="image/webp">
-											<img alt="BOX_S" width="400" height="400" src="./assets/img/IMG_9846.webp">
-										</picture>
-									</a>
-									<div class="catalogscart__info">
-										<a href="#" class="catalogscart__name">BOX_S</a>
-										<p class="catalogscart__dims">11 × 18 × 3.5 см</p>
-										<p class="catalogscart__price">650 ₴</p>
-										<div class="catalogscart__swatches" aria-hidden="true">
-											<button type="button" class="catalogscart__swatch catalogscart__swatch--black"></button>
-											<button type="button" class="catalogscart__swatch catalogscart__swatch--white"></button>
-											<button type="button" class="catalogscart__swatch catalogscart__swatch--blush"></button>
-											<button type="button" class="catalogscart__swatch catalogscart__swatch--mixed"></button>
-										</div>
-									</div>
-									<div class="catalogscart__add-halo" aria-hidden="true">
-										<button type="button" class="catalogscart__add" aria-label="Додати BOX_L у кошик">
-											<svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-												<path d="M14.6188 15.4938C15.102 15.4938 15.4938 15.102 15.4938 14.6188L15.4938 6.74377C15.4938 6.26053 15.102 5.86877 14.6188 5.86877C14.1355 5.86877 13.7438 6.26053 13.7438 6.74377L13.7438 13.7438L6.74377 13.7438C6.26053 13.7438 5.86877 14.1355 5.86877 14.6188C5.86877 15.102 6.26053 15.4938 6.74377 15.4938L14.6188 15.4938ZM0.618774 0.618774L5.59911e-05 1.23749L14.0001 15.2375L14.6188 14.6188L15.2375 14.0001L1.23749 5.59911e-05L0.618774 0.618774Z"></path>
+								<li class="catalogscart__card" data-fls-bookmarks-card="" data-catalogscart-card="" data-price="1065" data-qty="2">
+									<div class="catalogscart__media" data-catalogscart-media="blush">
+										<a href="product-card.html" class="catalogscart__photos" tabindex="-1" aria-hidden="true">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/product/set-max-black-600.webp" type="image/webp">
+												<img class="catalogscart__photo" alt="" data-catalogscart-photo="black" width="1176" height="1120" loading="lazy" src="./assets/img/product/set-max-black.webp">
+											</picture>
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/product/set-med-pink-600.webp" type="image/webp">
+												<img class="catalogscart__photo" alt="" data-catalogscart-photo="blush" width="1176" height="1120" loading="lazy" src="./assets/img/product/set-med-pink.webp">
+											</picture>
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/product/related-3-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/product/related-3-1200.webp" type="image/webp">
+												<img class="catalogscart__photo" alt="" data-catalogscart-photo="mixed" width="1176" height="1120" loading="lazy" src="./assets/img/product/related-3.webp">
+											</picture>
+										</a>
+										<button type="button" class="catalogscart__save" data-fls-bookmarks-toggle="set-med" data-bookmark-title="Набір MED" data-bookmark-price="1065 ₴" data-bookmark-url="product-card.html" aria-pressed="false" aria-label="Зберегти в обране: Набір MED">
+											<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+												<path d="M12 20.5S3.5 15.4 3.5 9.2A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.5 2.8c0 6.2-8.5 11.3-8.5 11.3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
 											</svg>
 										</button>
-									</div>
-								</li>
-								<li class="catalogscart__card">
-									<a href="#" class="catalogscart__photo">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/IMG_9848-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/IMG_9848-1200.webp" type="image/webp">
-											<img alt="BOX_S" width="400" height="400" src="./assets/img/IMG_9848.webp">
-										</picture>
-									</a>
-									<div class="catalogscart__info">
-										<a href="#" class="catalogscart__name">BOX_S</a>
-										<p class="catalogscart__dims">11 × 18 × 3.5 см</p>
-										<p class="catalogscart__price">650 ₴</p>
-										<div class="catalogscart__swatches" aria-hidden="true">
-											<button type="button" class="catalogscart__swatch catalogscart__swatch--black"></button>
-											<button type="button" class="catalogscart__swatch catalogscart__swatch--white"></button>
-											<button type="button" class="catalogscart__swatch catalogscart__swatch--blush"></button>
-											<button type="button" class="catalogscart__swatch catalogscart__swatch--mixed"></button>
+										<div class="catalogscart__swatches" role="radiogroup" aria-label="Колір: Набір MED">
+											<button type="button" class="catalogscart__swatch catalogscart__swatch--black" role="radio" aria-checked="false" aria-label="Чорний" data-catalogscart-color="black"></button>
+											<button type="button" class="catalogscart__swatch catalogscart__swatch--white" role="radio" aria-checked="false" aria-label="Білий" data-catalogscart-color="white"></button>
+											<button type="button" class="catalogscart__swatch catalogscart__swatch--blush" role="radio" aria-checked="false" aria-label="Рожевий" data-catalogscart-color="blush"></button>
+											<button type="button" class="catalogscart__swatch catalogscart__swatch--mixed" role="radio" aria-checked="false" aria-label="Різнокольоровий" data-catalogscart-color="mixed"></button>
 										</div>
 									</div>
-									<div class="catalogscart__add-halo" aria-hidden="true">
-										<button type="button" class="catalogscart__add" aria-label="Додати BOX_L у кошик">
-											<svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-												<path d="M14.6188 15.4938C15.102 15.4938 15.4938 15.102 15.4938 14.6188L15.4938 6.74377C15.4938 6.26053 15.102 5.86877 14.6188 5.86877C14.1355 5.86877 13.7438 6.26053 13.7438 6.74377L13.7438 13.7438L6.74377 13.7438C6.26053 13.7438 5.86877 14.1355 5.86877 14.6188C5.86877 15.102 6.26053 15.4938 6.74377 15.4938L14.6188 15.4938ZM0.618774 0.618774L5.59911e-05 1.23749L14.0001 15.2375L14.6188 14.6188L15.2375 14.0001L1.23749 5.59911e-05L0.618774 0.618774Z"></path>
-											</svg>
-										</button>
-									</div>
-								</li>
-								<li class="catalogscart__card">
-									<a href="#" class="catalogscart__photo">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/IMG_9861-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/IMG_9861-1200.webp" type="image/webp">
-											<img alt="BOX_L" width="400" height="400" src="./assets/img/IMG_9861.webp">
-										</picture>
-									</a>
-									<div class="catalogscart__info">
-										<a href="#" class="catalogscart__name">BOX_L</a>
-										<p class="catalogscart__dims">11 × 18 × 6.3 см</p>
-										<p class="catalogscart__price">890 ₴</p>
-										<div class="catalogscart__swatches" aria-hidden="true">
-											<button type="button" class="catalogscart__swatch catalogscart__swatch--black"></button>
-											<button type="button" class="catalogscart__swatch catalogscart__swatch--white"></button>
-											<button type="button" class="catalogscart__swatch catalogscart__swatch--blush"></button>
-											<button type="button" class="catalogscart__swatch catalogscart__swatch--mixed"></button>
+									<div class="catalogscart__body">
+										<div class="catalogscart__info">
+											<h3 class="catalogscart__name">
+												<a href="product-card.html">Набір MED</a>
+											</h3>
+											<p class="catalogscart__price" data-catalogscart-price="" aria-live="polite">1065₴</p>
 										</div>
-									</div>
-									<div class="catalogscart__add-halo" aria-hidden="true">
-										<button type="button" class="catalogscart__add" aria-label="Додати BOX_L у кошик">
-											<svg viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-												<path d="M14.6188 15.4938C15.102 15.4938 15.4938 15.102 15.4938 14.6188L15.4938 6.74377C15.4938 6.26053 15.102 5.86877 14.6188 5.86877C14.1355 5.86877 13.7438 6.26053 13.7438 6.74377L13.7438 13.7438L6.74377 13.7438C6.26053 13.7438 5.86877 14.1355 5.86877 14.6188C5.86877 15.102 6.26053 15.4938 6.74377 15.4938L14.6188 15.4938ZM0.618774 0.618774L5.59911e-05 1.23749L14.0001 15.2375L14.6188 14.6188L15.2375 14.0001L1.23749 5.59911e-05L0.618774 0.618774Z"></path>
+										<button type="button" class="catalogscart__add" data-catalogscart-add="" aria-label="Додати в кошик: Набір MED">
+											<svg viewbox="0 0 32 38" fill="none" aria-hidden="true">
+												<path d="M11 13V8.5a5 5 0 0 1 10 0V13M3.2 11h25.6l-1.6 22.2a3 3 0 0 1-3 2.8H7.8a3 3 0 0 1-3-2.8L3.2 11Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
 											</svg>
 										</button>
+										<div class="catalogscart__stepper" data-catalogscart-stepper="" hidden>
+											<button type="button" class="catalogscart__step" data-catalogscart-minus="" aria-label="Менше">−</button>
+											<span class="catalogscart__qty" data-catalogscart-qty="">0</span>
+											<button type="button" class="catalogscart__step" data-catalogscart-plus="" aria-label="Більше">+</button>
+										</div>
 									</div>
 								</li>
 							</ul>
 						</div>
 					</section>
-					<!-- Порт: src/shopify/relax-theme/sections/beforeandafter.liquid (2026-09-15 синхронізовано з ваніллю). -->
+					<!--
+Порт: src/shopify/relax-theme/sections/beforeandafter.liquid (2026-09-15 синхронізовано з ваніллю).
+2026-09-29 ваніль оновлено за редизайном (Homepage.png): пігулка, заголовок з розовим «Та сама»,
+чипи категорій зі стрілками, один широкий слайдер «до/після» з круглою ручкою по лінії поділу.
+Порт у тему ще НЕ синхронізовано (у темі категорії — блоки секції з двома image_picker).
+Кожна категорія — своя панель з [data-fls-beforeafter] (драг — layout/beforeafter, без змін);
+чипи й стрілки перемикають панелі (beforeandafter.js). Фото: у макеті видно лише ліву
+половину «до» й праву «після» — вирізано з Homepage.png, приховані половини поки віддзеркалені.
+Кухня / косметика / прикраси — заглушки з тими самими фото, поки немає зйомки.
+-->
 					<section data-fls-beforeandafter="" class="beforeandafter">
-						<div class="beforeandafter__container beforeandafter__container--four" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
-							<span class="beforeandafter__kicker">До і після</span>
-							<h2 class="beforeandafter__title">Та сама шухляда</h2>
-							<div data-fls-beforeafter="" class="beforeandafter__before-after">
-								<div data-fls-beforeafter-before="" class="beforeandafter__item">
-									<div class="beforeandafter__text-before">ДО</div>
-									<div class="beforeandafter__before-center">Фото шухляди без системи</div>
-									<picture>
-										<source media="(max-width: 600px)" srcset="./assets/img/IMG_9848-600.webp" type="image/webp">
-										<source media="(max-width: 1200px)" srcset="./assets/img/IMG_9848-1200.webp" type="image/webp">
-										<img alt="Image" class="beforeandafter__image" src="./assets/img/IMG_9848.webp">
-									</picture>
+						<div class="beforeandafter__container" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
+							<div class="beforeandafter__head">
+								<div class="beforeandafter__heading">
+									<div data-fls-tabletext="" class="tabletext">До/після</div>
+									<h2 class="beforeandafter__title">
+										<mark class="beforeandafter__accent">Та сама</mark>
+										шухляда
+									</h2>
 								</div>
-								<div data-fls-beforeafter-after="" class="beforeandafter__item">
-									<div class="beforeandafter__text-after">ПІСЛЯ</div>
-									<div class="beforeandafter__after-center">Фото тієї самої шухляди з PIN PIN</div>
-									<picture>
-										<source media="(max-width: 600px)" srcset="./assets/img/IMG_9861-600.webp" type="image/webp">
-										<source media="(max-width: 1200px)" srcset="./assets/img/IMG_9861-1200.webp" type="image/webp">
-										<img alt="Image" class="beforeandafter__image" src="./assets/img/IMG_9861.webp">
-									</picture>
+								<div class="beforeandafter__controls">
+									<div class="beforeandafter__chips" role="tablist" aria-label="Категорія шухляди">
+										<button type="button" class="beforeandafter__chip" role="tab" id="beforeandafter-tab-0" aria-controls="beforeandafter-panel-0" aria-selected="true" data-beforeandafter-tab="0">Інструменти</button>
+										<button type="button" class="beforeandafter__chip" role="tab" id="beforeandafter-tab-1" aria-controls="beforeandafter-panel-1" aria-selected="false" data-beforeandafter-tab="1">Кухня</button>
+										<button type="button" class="beforeandafter__chip" role="tab" id="beforeandafter-tab-2" aria-controls="beforeandafter-panel-2" aria-selected="false" data-beforeandafter-tab="2">Косметика</button>
+										<button type="button" class="beforeandafter__chip" role="tab" id="beforeandafter-tab-3" aria-controls="beforeandafter-panel-3" aria-selected="false" data-beforeandafter-tab="3">Прикраси</button>
+									</div>
+									<div class="beforeandafter__arrows">
+										<button type="button" class="beforeandafter__arrow-btn" data-beforeandafter-prev="" aria-label="Попередня категорія" disabled>
+											<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+												<path d="M14 6l-6 6 6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+											</svg>
+										</button>
+										<button type="button" class="beforeandafter__arrow-btn" data-beforeandafter-next="" aria-label="Наступна категорія">
+											<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+												<path d="M10 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+											</svg>
+										</button>
+									</div>
 								</div>
-								<div data-fls-beforeafter-arrow="" class="beforeandafter__arrow">
-									<div class="beforeandafter__drag">перетягни</div>
+							</div>
+							<div class="beforeandafter__panels">
+								<div class="beforeandafter__panel --active" role="tabpanel" id="beforeandafter-panel-0" aria-labelledby="beforeandafter-tab-0" data-beforeandafter-panel="0">
+									<div data-fls-beforeafter="" class="beforeandafter__compare">
+										<div data-fls-beforeafter-before="" class="beforeandafter__item">
+											<span class="beforeandafter__label">до</span>
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/beforeafter/tools-before-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/beforeafter/tools-before-1200.webp" type="image/webp">
+												<img alt="Інструменти: шухляда без системи" width="2400" height="1120" loading="lazy" src="./assets/img/beforeafter/tools-before.webp">
+											</picture>
+										</div>
+										<div data-fls-beforeafter-after="" class="beforeandafter__item beforeandafter__item--after">
+											<span class="beforeandafter__label beforeandafter__label--after">після</span>
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/beforeafter/tools-after-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/beforeafter/tools-after-1200.webp" type="image/webp">
+												<img alt="Інструменти: та сама шухляда з Pin Pin" width="2400" height="1120" loading="lazy" src="./assets/img/beforeafter/tools-after.webp">
+											</picture>
+										</div>
+										<!--
+Ручка нульової ширини: layout/beforeafter ставить їй left = x% − ширина,
+тож лінія поділу йде рівно по x%. Коло й лінія — всередині, mousedown спливає
+-->
+										<div data-fls-beforeafter-arrow="" class="beforeandafter__arrow">
+											<span class="beforeandafter__handle">
+												<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+													<path d="M8 8l-4 4 4 4M16 8l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+												</svg>
+											</span>
+										</div>
+									</div>
+								</div>
+								<div class="beforeandafter__panel" role="tabpanel" id="beforeandafter-panel-1" aria-labelledby="beforeandafter-tab-1" data-beforeandafter-panel="1">
+									<div data-fls-beforeafter="" class="beforeandafter__compare">
+										<div data-fls-beforeafter-before="" class="beforeandafter__item">
+											<span class="beforeandafter__label">до</span>
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/beforeafter/tools-before-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/beforeafter/tools-before-1200.webp" type="image/webp">
+												<img alt="Кухня: шухляда без системи" width="2400" height="1120" loading="lazy" src="./assets/img/beforeafter/tools-before.webp">
+											</picture>
+										</div>
+										<div data-fls-beforeafter-after="" class="beforeandafter__item beforeandafter__item--after">
+											<span class="beforeandafter__label beforeandafter__label--after">після</span>
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/beforeafter/tools-after-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/beforeafter/tools-after-1200.webp" type="image/webp">
+												<img alt="Кухня: та сама шухляда з Pin Pin" width="2400" height="1120" loading="lazy" src="./assets/img/beforeafter/tools-after.webp">
+											</picture>
+										</div>
+										<!--
+Ручка нульової ширини: layout/beforeafter ставить їй left = x% − ширина,
+тож лінія поділу йде рівно по x%. Коло й лінія — всередині, mousedown спливає
+-->
+										<div data-fls-beforeafter-arrow="" class="beforeandafter__arrow">
+											<span class="beforeandafter__handle">
+												<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+													<path d="M8 8l-4 4 4 4M16 8l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+												</svg>
+											</span>
+										</div>
+									</div>
+								</div>
+								<div class="beforeandafter__panel" role="tabpanel" id="beforeandafter-panel-2" aria-labelledby="beforeandafter-tab-2" data-beforeandafter-panel="2">
+									<div data-fls-beforeafter="" class="beforeandafter__compare">
+										<div data-fls-beforeafter-before="" class="beforeandafter__item">
+											<span class="beforeandafter__label">до</span>
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/beforeafter/tools-before-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/beforeafter/tools-before-1200.webp" type="image/webp">
+												<img alt="Косметика: шухляда без системи" width="2400" height="1120" loading="lazy" src="./assets/img/beforeafter/tools-before.webp">
+											</picture>
+										</div>
+										<div data-fls-beforeafter-after="" class="beforeandafter__item beforeandafter__item--after">
+											<span class="beforeandafter__label beforeandafter__label--after">після</span>
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/beforeafter/tools-after-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/beforeafter/tools-after-1200.webp" type="image/webp">
+												<img alt="Косметика: та сама шухляда з Pin Pin" width="2400" height="1120" loading="lazy" src="./assets/img/beforeafter/tools-after.webp">
+											</picture>
+										</div>
+										<!--
+Ручка нульової ширини: layout/beforeafter ставить їй left = x% − ширина,
+тож лінія поділу йде рівно по x%. Коло й лінія — всередині, mousedown спливає
+-->
+										<div data-fls-beforeafter-arrow="" class="beforeandafter__arrow">
+											<span class="beforeandafter__handle">
+												<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+													<path d="M8 8l-4 4 4 4M16 8l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+												</svg>
+											</span>
+										</div>
+									</div>
+								</div>
+								<div class="beforeandafter__panel" role="tabpanel" id="beforeandafter-panel-3" aria-labelledby="beforeandafter-tab-3" data-beforeandafter-panel="3">
+									<div data-fls-beforeafter="" class="beforeandafter__compare">
+										<div data-fls-beforeafter-before="" class="beforeandafter__item">
+											<span class="beforeandafter__label">до</span>
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/beforeafter/tools-before-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/beforeafter/tools-before-1200.webp" type="image/webp">
+												<img alt="Прикраси: шухляда без системи" width="2400" height="1120" loading="lazy" src="./assets/img/beforeafter/tools-before.webp">
+											</picture>
+										</div>
+										<div data-fls-beforeafter-after="" class="beforeandafter__item beforeandafter__item--after">
+											<span class="beforeandafter__label beforeandafter__label--after">після</span>
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/beforeafter/tools-after-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/beforeafter/tools-after-1200.webp" type="image/webp">
+												<img alt="Прикраси: та сама шухляда з Pin Pin" width="2400" height="1120" loading="lazy" src="./assets/img/beforeafter/tools-after.webp">
+											</picture>
+										</div>
+										<!--
+Ручка нульової ширини: layout/beforeafter ставить їй left = x% − ширина,
+тож лінія поділу йде рівно по x%. Коло й лінія — всередині, mousedown спливає
+-->
+										<div data-fls-beforeafter-arrow="" class="beforeandafter__arrow">
+											<span class="beforeandafter__handle">
+												<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+													<path d="M8 8l-4 4 4 4M16 8l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+												</svg>
+											</span>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</section>
-					<!-- Порт: src/shopify/relax-theme/sections/stepsgettingorganised.liquid (2026-09-18 синхронізовано). Свідома відмінність: модифікатори --1/--2/--3 у темі замінені на CSS-змінну --step-bg із налаштування блоку. -->
-					<section data-fls-stepsgettingorganised="" class="stepsgettingorganised">
-						<div class="stepsgettingorganised__container stepsgettingorganised__container--nine" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
-							<span class="stepsgettingorganised__kicker">Як це працює</span>
-							<h2 class="stepsgettingorganised__title">Три кроки до порядку</h2>
+					<!--
+Порт: src/shopify/relax-theme/sections/stepsgettingorganised.liquid (2026-09-18 синхронізовано). Свідома відмінність: модифікатори --1/--2/--3 у темі замінені на CSS-змінну --step-bg із налаштування блоку.
+2026-09-29 ваніль оновлено за редизайном (Homepage.png): пігулка, Madefor-заголовок з розовим «до порядку»,
+картки coral / violet / sky з білим текстом, без стрілок між ними; id — якір кнопки «Як це працює» в hero.
+Порт у тему ще НЕ синхронізовано.
+-->
+					<section data-fls-stepsgettingorganised="" class="stepsgettingorganised" id="how-it-works">
+						<div class="stepsgettingorganised__container" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
+							<div data-fls-tabletext="" class="tabletext">Як це працює</div>
+							<h2 class="stepsgettingorganised__title">
+								Три кроки
+								<mark class="stepsgettingorganised__accent">до порядку</mark>
+							</h2>
 							<div class="stepsgettingorganised__list" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
 								<div class="stepsgettingorganised__step stepsgettingorganised__step--1">
 									<span class="stepsgettingorganised__number">01</span>
@@ -513,232 +668,271 @@ fill: currentColor (ховер і білий варіант у підвалі), 
 							</div>
 						</div>
 					</section>
-					<!-- Порт: src/shopify/relax-theme/sections/aboutuspin.liquid (2026-09-18 синхронізовано: кікер знову сніпет tabletext). Свідома відмінність: абзаци — richtext-налаштування, тож <p> без класу, і ширину їм задає .aboutuspin__parahraph > p. -->
+					<!--
+Порт: src/shopify/relax-theme/sections/aboutuspin.liquid (2026-09-18 синхронізовано: кікер знову сніпет tabletext). Свідома відмінність: абзаци — richtext-налаштування, тож <p> без класу, і ширину їм задає .aboutuspin__parahraph > p.
+2026-09-29 ваніль оновлено за редизайном (Homepage.png): текст і кнопка в один ряд над фото; велике фото
+з підписом, праворуч мале фото й плашки 25+ / 80+. Фото Анни вирізані з макета (підпис зафарбовано).
+Порт у тему ще НЕ синхронізовано.
+-->
 					<section data-fls-aboutuspin="" class="aboutuspin">
-						<div class="aboutuspin__container aboutuspin__container--five" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
-							<div class="aboutuspin__content">
-								<div data-fls-tabletext="" class="tabletext">Про нас</div>
-								<h2 class="aboutuspin__title">Це приклад тексту</h2>
-								<div class="aboutuspin__parahraph">
-									<p class="aboutuspin__text">
-										Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину рядків,
-					відступи та загальну композицію сторінки.
-									</p>
-									<p class="aboutuspin__text">
-										Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину рядків,
-					відступи та загальну композицію сторінки.
-									</p>
+						<div class="aboutuspin__container" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
+							<div class="aboutuspin__head">
+								<div class="aboutuspin__content">
+									<div data-fls-tabletext="" class="tabletext">Про нас</div>
+									<h2 class="aboutuspin__title">
+										<mark class="aboutuspin__accent">Це приклад</mark>
+										тексту
+									</h2>
+									<div class="aboutuspin__parahraph">
+										<p class="aboutuspin__text">
+											Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину рядків,
+						відступи та загальну композицію сторінки.
+										</p>
+									</div>
 								</div>
-								<a href="#" class="aboutuspin__button button button--padding-two button--background-black button--border-color-one">
+								<a href="about.html" class="aboutuspin__button button button--caps button--background-black button--border-color-one">
 									Дізнатись більше
 									<svg aria-hidden="true" width="12" height="8" viewbox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z" fill="#F8F4F1"></path>
+										<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z"></path>
 									</svg>
 								</a>
 							</div>
 							<div class="aboutuspin__media" data-fls-watcher="" data-fls-watcher-once="">
-								<div class="aboutuspin__photo">
+								<figure class="aboutuspin__photo aboutuspin__photo--main">
 									<picture>
-										<source media="(max-width: 600px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-600.webp" type="image/webp">
-										<source media="(max-width: 1200px)" srcset="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash-1200.webp" type="image/webp">
-										<img alt="" width="636" height="688" src="./assets/img/hero/oakywood-R60vO3uz1gc-unsplash.webp">
+										<source media="(max-width: 600px)" srcset="./assets/img/about/anna-kitchen-phone-600.webp" type="image/webp">
+										<source media="(max-width: 1200px)" srcset="./assets/img/about/anna-kitchen-phone-1200.webp" type="image/webp">
+										<img alt="Анна, засновниця 7dem, на кухні з органайзером Pin Pin" width="1584" height="1350" loading="lazy" src="./assets/img/about/anna-kitchen-phone.webp">
+									</picture>
+									<figcaption class="aboutuspin__caption">Анна — засновниця 7dem</figcaption>
+								</figure>
+								<div class="aboutuspin__photo aboutuspin__photo--side">
+									<picture>
+										<source media="(max-width: 600px)" srcset="./assets/img/about/anna-kitchen-set-600.webp" type="image/webp">
+										<img alt="" width="768" height="874" loading="lazy" src="./assets/img/about/anna-kitchen-set.webp">
 									</picture>
 								</div>
-								<div class="aboutuspin__badge aboutuspin__badge--top">
+								<div class="aboutuspin__badge aboutuspin__badge--years">
 									<strong class="aboutuspin__badge-value">
 										<span data-fls-digcounter="">25</span>
-										<span>+ років</span>
+										+
 									</strong>
-									<span class="aboutuspin__badge-text">на ринку України, з бізнесом, який обслуговує більше аніж 80
-					країн</span>
+									<span class="aboutuspin__badge-text">
+										років на
+										<br>
+										ринку України
+									</span>
 								</div>
-								<div class="aboutuspin__badge aboutuspin__badge--bottom">
+								<div class="aboutuspin__badge aboutuspin__badge--countries">
 									<strong class="aboutuspin__badge-value">
-										<span data-fls-digcounter="">25</span>
-										<span>+ років</span>
+										<span data-fls-digcounter="">80</span>
+										+
 									</strong>
-									<span class="aboutuspin__badge-text">на ринку України, з бізнесом, який обслуговує більше аніж 80
-					країн</span>
+									<span class="aboutuspin__badge-text">країн, з якими працює наш бізнес</span>
 								</div>
 							</div>
 						</div>
 					</section>
-					<!-- Порт: src/shopify/relax-theme/sections/reviewspin.liquid (2026-09-18 синхронізовано: кікер і капшн знову рендеряться сніпетом tabletext). Відгуки в темі — блоки @theme, декор картки рахується з позиції (forloop.index0 modulo 4). -->
+					<!--
+Порт: src/shopify/relax-theme/sections/reviewspin.liquid (2026-09-18 синхронізовано: кікер і капшн знову рендеряться сніпетом tabletext). Відгуки в темі — блоки @theme, декор картки рахується з позиції (forloop.index0 modulo 4).
+2026-09-29 ваніль оновлено за редизайном (Homepage.png): заголовок в один рядок з розовим «відгуки»,
+віяло з 4 карток усередині контейнера (кольори blush / bone / sky / violet, імена Madefor),
+капшн «Обирай порядок…» переїхав у settext. Порт у тему ще НЕ синхронізовано.
+-->
 					<section data-fls-reviewspin="" class="reviewspin">
-						<div class="reviewspin__container reviewspin__container--six" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
+						<div class="reviewspin__container" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
 							<div data-fls-tabletext="" class="tabletext">Відгуки</div>
-							<h2 class="reviewspin__title">Реальні відгуки покупців</h2>
+							<h2 class="reviewspin__title">
+								Реальні
+								<mark class="reviewspin__accent">відгуки</mark>
+								покупців
+							</h2>
 							<p class="reviewspin__text">
 								Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину рядків, відступи
 			та загальну композицію сторінки.
 							</p>
-							<div data-fls-tabletext="" class="tabletext">Обирай порядок для свого простору</div>
 						</div>
-						<ul data-fls-parallax-parent="" class="reviewspin__list" data-fls-reveal-group="fade" data-fls-watcher="" data-fls-watcher-once="">
-							<li data-fls-parallax="" class="reviewspin__card-block">
-								<div class="reviewspin__card reviewspin__card--1">
-									<div class="reviewspin__decor">
-										<svg viewbox="0 0 483 612" xmlns="http://www.w3.org/2000/svg">
-											<path d="M39.6083 654.134C3.85708 528.798 36.4066 473.402 137.257 487.947C216.371 495.054 248.92 439.659 234.905 321.759C218.56 207.825 251.109 152.429 332.554 155.571C414.533 158.86 447.082 103.464 430.202 -10.617"></path>
-										</svg>
-									</div>
-									<div class="reviewspin__avatar-and-meta">
-										<div class="reviewspin__avatar" aria-hidden="true">
-											<picture>
-												<img alt="Image" src="./assets/img/avatar.webp">
-											</picture>
+						<div class="reviewspin__container reviewspin__container--fan">
+							<ul data-fls-parallax-parent="" class="reviewspin__list" data-fls-reveal-group="fade" data-fls-watcher="" data-fls-watcher-once="">
+								<li data-fls-parallax="" class="reviewspin__card-block">
+									<div class="reviewspin__card reviewspin__card--1">
+										<div class="reviewspin__decor">
+											<svg viewbox="0 0 483 612" xmlns="http://www.w3.org/2000/svg">
+												<path d="M39.6083 654.134C3.85708 528.798 36.4066 473.402 137.257 487.947C216.371 495.054 248.92 439.659 234.905 321.759C218.56 207.825 251.109 152.429 332.554 155.571C414.533 158.86 447.082 103.464 430.202 -10.617"></path>
+											</svg>
 										</div>
-										<div class="reviewspin__meta">
-											<strong class="reviewspin__name">Анна, 27 років</strong>
-											<span class="reviewspin__role">Викладачка англійської</span>
+										<div class="reviewspin__avatar-and-meta">
+											<div class="reviewspin__avatar" aria-hidden="true">
+												<picture>
+													<img alt="Image" src="./assets/img/avatar.webp">
+												</picture>
+											</div>
+											<div class="reviewspin__meta">
+												<strong class="reviewspin__name">Анна, 27 років</strong>
+												<span class="reviewspin__role">Викладач англійської</span>
+											</div>
 										</div>
+										<p class="reviewspin__quote">
+											Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину рядків,
+						відступи та загальну композицію сторінки. Це приклад тексту для заповнення макета. Він допомагає
+						оцінити вигляд шрифту, довжину рядків, відступи та загальну композицію сторінки.
+										</p>
 									</div>
-									<p class="reviewspin__quote">
-										Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину рядків,
-					відступи та загальну композицію сторінки.
-									</p>
-								</div>
-							</li>
-							<li data-fls-parallax="" class="reviewspin__card-block">
-								<div class="reviewspin__card reviewspin__card--2">
-									<div class="reviewspin__decor">
-										<svg viewbox="0 0 263 685" xmlns="http://www.w3.org/2000/svg">
-											<path d="M221.146 637.625C109.861 595.805 94.8325 546.346 176.061 489.249C236.829 442.237 221.801 392.779 130.976 340.874C41.2266 292.51 26.1983 243.051 85.8907 192.498C146.062 141.679 131.034 92.2201 40.8057 44.1225"></path>
-										</svg>
-									</div>
-									<div class="reviewspin__avatar-and-meta">
-										<div class="reviewspin__avatar" aria-hidden="true">
-											<picture>
-												<img alt="Image" src="./assets/img/avatar.webp">
-											</picture>
+								</li>
+								<li data-fls-parallax="" class="reviewspin__card-block">
+									<div class="reviewspin__card reviewspin__card--2">
+										<div class="reviewspin__decor">
+											<svg viewbox="0 0 263 685" xmlns="http://www.w3.org/2000/svg">
+												<path d="M221.146 637.625C109.861 595.805 94.8325 546.346 176.061 489.249C236.829 442.237 221.801 392.779 130.976 340.874C41.2266 292.51 26.1983 243.051 85.8907 192.498C146.062 141.679 131.034 92.2201 40.8057 44.1225"></path>
+											</svg>
 										</div>
-										<div class="reviewspin__meta">
-											<strong class="reviewspin__name">Анна, 27 років</strong>
-											<span class="reviewspin__role">Викладачка англійської</span>
+										<div class="reviewspin__avatar-and-meta">
+											<div class="reviewspin__avatar" aria-hidden="true">
+												<picture>
+													<img alt="Image" src="./assets/img/avatar.webp">
+												</picture>
+											</div>
+											<div class="reviewspin__meta">
+												<strong class="reviewspin__name">Анна, 27 років</strong>
+												<span class="reviewspin__role">Викладач англійської</span>
+											</div>
 										</div>
+										<p class="reviewspin__quote">
+											Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину рядків,
+						відступи та загальну композицію сторінки. Це приклад тексту для заповнення макета. Він допомагає
+						оцінити вигляд шрифту, довжину рядків, відступи та загальну композицію сторінки.
+										</p>
 									</div>
-									<p class="reviewspin__quote">
-										Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину рядків,
-					відступи та загальну композицію сторінки. Це приклад тексту для заповнення макета.
-									</p>
-								</div>
-							</li>
-							<li data-fls-parallax="" class="reviewspin__card-block">
-								<div class="reviewspin__card reviewspin__card--3">
-									<div class="reviewspin__decor">
-										<svg viewbox="0 0 725 970" xmlns="http://www.w3.org/2000/svg">
-											<path d="M50.5182 967.781C44.1736 804.063 96.1901 723.743 206.568 726.821C294.329 723.414 346.346 643.094 362.617 485.86C375.165 334.377 427.181 254.057 518.667 244.9C610.718 235.855 662.735 155.534 674.716 3.93958"></path>
-										</svg>
-									</div>
-									<div class="reviewspin__avatar-and-meta">
-										<div class="reviewspin__avatar" aria-hidden="true">
-											<picture>
-												<img alt="Image" src="./assets/img/avatar.webp">
-											</picture>
+								</li>
+								<li data-fls-parallax="" class="reviewspin__card-block">
+									<div class="reviewspin__card reviewspin__card--3">
+										<div class="reviewspin__decor">
+											<svg viewbox="0 0 725 970" xmlns="http://www.w3.org/2000/svg">
+												<path d="M50.5182 967.781C44.1736 804.063 96.1901 723.743 206.568 726.821C294.329 723.414 346.346 643.094 362.617 485.86C375.165 334.377 427.181 254.057 518.667 244.9C610.718 235.855 662.735 155.534 674.716 3.93958"></path>
+											</svg>
 										</div>
-										<div class="reviewspin__meta">
-											<strong class="reviewspin__name">Анна, 27 років</strong>
-											<span class="reviewspin__role">Викладачка англійської</span>
+										<div class="reviewspin__avatar-and-meta">
+											<div class="reviewspin__avatar" aria-hidden="true">
+												<picture>
+													<img alt="Image" src="./assets/img/avatar.webp">
+												</picture>
+											</div>
+											<div class="reviewspin__meta">
+												<strong class="reviewspin__name">Анна, 27 років</strong>
+												<span class="reviewspin__role">Викладач англійської</span>
+											</div>
 										</div>
+										<p class="reviewspin__quote">
+											Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину рядків,
+						відступи та загальну композицію сторінки. Це приклад тексту для заповнення макета. Він допомагає
+						оцінити вигляд шрифту, довжину рядків, відступи та загальну композицію сторінки.
+										</p>
 									</div>
-									<p class="reviewspin__quote">
-										Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину рядків,
-					відступи та загальну композицію сторінки.
-									</p>
-								</div>
-							</li>
-							<li data-fls-parallax="" class="reviewspin__card-block">
-								<div class="reviewspin__card reviewspin__card--4">
-									<div class="reviewspin__decor">
-										<svg viewbox="0 0 921 825" xmlns="http://www.w3.org/2000/svg">
-											<path d="M49.1335 815.107C79.5041 654.106 148.141 587.427 255.045 615.073C341.351 631.348 409.989 564.669 460.957 415.038C507.011 270.181 575.648 203.503 666.868 215.004C758.615 226.74 827.253 160.062 872.78 14.9693"></path>
-										</svg>
-									</div>
-									<div class="reviewspin__avatar-and-meta">
-										<div class="reviewspin__avatar" aria-hidden="true">
-											<picture>
-												<img alt="Image" src="./assets/img/avatar.webp">
-											</picture>
+								</li>
+								<li data-fls-parallax="" class="reviewspin__card-block">
+									<div class="reviewspin__card reviewspin__card--4">
+										<div class="reviewspin__decor">
+											<svg viewbox="0 0 921 825" xmlns="http://www.w3.org/2000/svg">
+												<path d="M49.1335 815.107C79.5041 654.106 148.141 587.427 255.045 615.073C341.351 631.348 409.989 564.669 460.957 415.038C507.011 270.181 575.648 203.503 666.868 215.004C758.615 226.74 827.253 160.062 872.78 14.9693"></path>
+											</svg>
 										</div>
-										<div class="reviewspin__meta">
-											<strong class="reviewspin__name">Анна, 27 років</strong>
-											<span class="reviewspin__role">Викладачка англійської</span>
+										<div class="reviewspin__avatar-and-meta">
+											<div class="reviewspin__avatar" aria-hidden="true">
+												<picture>
+													<img alt="Image" src="./assets/img/avatar.webp">
+												</picture>
+											</div>
+											<div class="reviewspin__meta">
+												<strong class="reviewspin__name">Анна, 27 років</strong>
+												<span class="reviewspin__role">Викладач англійської</span>
+											</div>
 										</div>
+										<p class="reviewspin__quote">
+											Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину рядків,
+						відступи та загальну композицію сторінки. Це приклад тексту для заповнення макета. Він допомагає
+						оцінити вигляд шрифту, довжину рядків, відступи та загальну композицію сторінки.
+										</p>
 									</div>
-									<p class="reviewspin__quote">
-										Це приклад тексту для заповнення макета. Він допомагає оцінити вигляд шрифту, довжину рядків,
-					відступи та загальну композицію сторінки. Це приклад тексту для заповнення макета.
-									</p>
-								</div>
-							</li>
-						</ul>
+								</li>
+							</ul>
+						</div>
 					</section>
-					<!-- Порт: src/shopify/relax-theme/sections/settext.liquid (2026-09-18 синхронізовано). Надстройка теми: варіант settext--about і налаштування heading_highlight — у ванілі їх немає. -->
+					<!--
+Порт: src/shopify/relax-theme/sections/settext.liquid (2026-09-18 синхронізовано). Надстройка теми: варіант settext--about і налаштування heading_highlight — у ванілі їх немає.
+2026-09-29 ваніль оновлено за редизайном (Homepage.png): біле тло, пігулка «Обирай порядок для свого простору»
+(раніше була капшном у reviewspin), «Почни» розовим, кнопка без стрілки. Заголовок тепер однаковий для
+головної й «Про нас» (local about лишився лише для сумісності include). Порт у тему ще НЕ синхронізовано.
+-->
 					<section data-fls-settext="" class="settext">
 						<div class="settext__container" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
+							<div data-fls-tabletext="" class="tabletext">Обирай порядок для свого простору</div>
 							<h2 class="settext__title">
-								<mark class="settext__highlight">Почни зі свого набору</mark>
+								<mark class="settext__highlight">Почни</mark>
+								зі свого набору
 							</h2>
 							<p class="settext__text">
-								Обери базову платформу та кілька модулів під свою шухляду.
+								Обери базову платформу та кілька модулів під свою шухляду
 								<br>
 								Доставка по Україні — 1–3 робочі дні.
 							</p>
-							<a href="#" class="settext__button button button--padding-two button--background-black button--border-color-one">
-								Обрати набір
-								<svg aria-hidden="true" width="12" height="8" viewbox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z" fill="#F8F4F1"></path>
-								</svg>
-							</a>
+							<a href="cataloge.html" class="settext__button button button--caps button--background-black button--border-color-one">Обрати набір</a>
 						</div>
 					</section>
-					<!-- Порт: src/shopify/relax-theme/sections/faqpin.liquid (2026-09-15 синхронізовано з ваніллю; variant = select у схемі). -->
+					<!--
+Порт: src/shopify/relax-theme/sections/faqpin.liquid (2026-09-15 синхронізовано з ваніллю; variant = select у схемі).
+2026-09-29 ваніль оновлено за редизайном: головна тепер у вигляді варіанта catalog (білі рядки на bone),
+пігулка «Часті запитання», «Найчастіші» розовим. Порт у тему ще НЕ синхронізовано.
+-->
 					<!--
 FAQ. Два варіанти через locals variant (передавати явно в кожному include):
-"home" — головна (стрічка marqueepin, пілюля «FAQ», заголовок з плашкою);
+"home" — головна (стрічка marqueepin, пілюля «Часті запитання», «Найчастіші» розовим);
+"about" — «Про нас» (те саме, що home, але стрічка зі своїм набором чипів);
 "catalog" — каталог, Figma 219:1668 (без стрічки, пілюля «• Часті запитання»,
 широкий список окремих білих рядків).
 -->
 					<section data-fls-faqpin="" class="faqpin faqpin--home">
-						<!-- Порт: ОКРЕМОЇ секції в темі немає — Shopify падає з "Cannot render sections inside sections", тому стрічка інлайниться всередину sections/faqpin.liquid блоками badge (2026-09-18 звірено). -->
-						<section data-fls-marqueepin="" data-fls-marquee="" data-fls-marquee-space="20" data-fls-marquee-direction="left" data-fls-marquee-pause="" data-fls-marquee-speed="1000" class="marqueepin">
-							<div class="marqueepin__item marqueepin__item--one">
+						<!--
+Порт: ОКРЕМОЇ секції в темі немає — Shopify падає з "Cannot render sections inside sections", тому стрічка інлайниться всередину sections/faqpin.liquid блоками badge (2026-09-18 звірено).
+2026-09-29 ваніль оновлено за редизайном (Homepage.png / About.png): чипи 60 заввишки з кроком 32, порядок і кольори
+з макета. locals variant (з faqpin): "about" — набір «Точність / Фіксація / Варіативність / Функція».
+Порт у тему ще НЕ синхронізовано.
+-->
+						<section data-fls-marqueepin="" data-fls-marquee="" data-fls-marquee-space="32" data-fls-marquee-direction="left" data-fls-marquee-pause="" data-fls-marquee-speed="1000" class="marqueepin">
+							<div class="marqueepin__item marqueepin__item--outline">
 								<picture>
-									<img alt="logo" src="./assets/img/mark-dark.webp">
+									<img alt="" width="116" height="116" src="./assets/img/mark-dark.webp">
 								</picture>
-								власне виробництво
+								Власне виробництво
 							</div>
-							<div class="marqueepin__item marqueepin__item--two">
+							<div class="marqueepin__item marqueepin__item--dark">
 								<picture>
-									<img alt="logo" src="./assets/img/mark-light.webp">
+									<img alt="" width="88" height="88" src="./assets/img/mark-light.webp">
 								</picture>
 								Тримається на сітці
 							</div>
-							<div class="marqueepin__item marqueepin__item--three">
+							<div class="marqueepin__item marqueepin__item--outline">
 								<picture>
-									<img alt="logo" src="./assets/img/mark-dark.webp">
+									<img alt="" width="116" height="116" src="./assets/img/mark-dark.webp">
 								</picture>
-								Підходить під різні
-		шухляди
+								Підходить під різні шухляди
 							</div>
-							<div class="marqueepin__item marqueepin__item--four">
+							<div class="marqueepin__item marqueepin__item--blush">
 								<picture>
-									<img alt="logo" src="./assets/img/mark-dark.webp">
+									<img alt="" width="116" height="116" src="./assets/img/mark-dark.webp">
 								</picture>
 								Комбінуй під себе
 							</div>
-							<div class="marqueepin__item marqueepin__item--five">
+							<div class="marqueepin__item marqueepin__item--outline">
 								<picture>
-									<img alt="logo" src="./assets/img/mark-dark.webp">
+									<img alt="" width="116" height="116" src="./assets/img/mark-dark.webp">
 								</picture>
 								Доставка по Україні
 							</div>
-							<div class="marqueepin__item marqueepin__item--six">
+							<div class="marqueepin__item marqueepin__item--dark">
 								<picture>
-									<img alt="logo" src="./assets/img/mark-light.webp">
+									<img alt="" width="88" height="88" src="./assets/img/mark-light.webp">
 								</picture>
-								Власне виробництво з
-		2019
+								Власне виробництво
 							</div>
 						</section>
 						<div class="faqpin__decor">
@@ -760,10 +954,11 @@ FAQ. Два варіанти через locals variant (передавати я�
 								</div>
 							</div>
 						</div>
-						<div class="faqpin__container faqpin__container--seven" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
-							<div data-fls-tabletext="" class="tabletext">FAQ</div>
+						<div class="faqpin__container" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
+							<div data-fls-tabletext="" class="tabletext">Часті запитання</div>
 							<h2 class="faqpin__title">
-								<mark class="faqpin__highlight">Найчастіші запитання</mark>
+								<mark class="faqpin__highlight">Найчастіші</mark>
+								запитання
 							</h2>
 							<!-- data-fls-spollers(-one) — акордеон із layout/spollers (плавне розкриття, лише один пункт відкритий), не нативний <details> -->
 							<div class="faqpin__list" data-fls-spollers="" data-fls-spollers-one="" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">

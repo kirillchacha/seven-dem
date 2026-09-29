@@ -2,7 +2,7 @@ import "./main.min.js";
 import { l as isMobile } from "./common.min.js";
 import { t as Swiper } from "./swiper.min.js";
 import "./spollers.min.js";
-import "./settext.min.js";
+import "./marqueepin.min.js";
 import "./faqpin.min.js";
 //#region src/components/layout/heroslider/heroslider.js
 function clamp(value, min, max) {
@@ -71,189 +71,80 @@ var HeroSlider = class {
 };
 new HeroSlider({});
 //#endregion
-//#region src/components/effects/marquee/marquee.js
-var marquee = () => {
-	const $marqueeArray = document.querySelectorAll("[data-fls-marquee]");
-	const ATTR_NAMES = {
-		wrapper: "data-fls-marquee-wrapper",
-		inner: "data-fls-marquee-inner",
-		item: "data-fls-marquee-item"
-	};
-	if (!$marqueeArray.length) return;
-	const { head } = document;
-	const debounce = (delay, fn) => {
-		let timerId;
-		return (...args) => {
-			if (timerId) clearTimeout(timerId);
-			timerId = setTimeout(() => {
-				fn(...args);
-				timerId = null;
-			}, delay);
-		};
-	};
-	const onWindowWidthResize = (cb) => {
-		if (!cb && !isFunction(cb)) return;
-		let prevWidth = 0;
-		const handleResize = () => {
-			const currentWidth = window.innerWidth;
-			if (prevWidth !== currentWidth) {
-				prevWidth = currentWidth;
-				cb();
-			}
-		};
-		window.addEventListener("resize", debounce(50, handleResize));
-		handleResize();
-	};
-	const buildMarquee = (marqueeNode) => {
-		if (!marqueeNode) return;
-		const $marquee = marqueeNode;
-		const $childElements = $marquee.children;
-		if (!$childElements.length) return;
-		Array.from($childElements).forEach(($childItem) => $childItem.setAttribute(ATTR_NAMES.item, ""));
-		$marquee.innerHTML = `<div ${ATTR_NAMES.inner}>${$marquee.innerHTML}</div>`;
-	};
-	const getElSize = ($el, isVertical) => {
-		if (isVertical) return $el.offsetHeight;
-		return $el.offsetWidth;
-	};
-	$marqueeArray.forEach(($wrapper) => {
-		if (!$wrapper) return;
-		buildMarquee($wrapper);
-		const $marqueeInner = $wrapper.firstElementChild;
-		let cacheArray = [];
-		if (!$marqueeInner) return;
-		const dataMarqueeSpace = parseFloat($wrapper.getAttribute("data-fls-marquee-space"));
-		const $items = $wrapper.querySelectorAll(`[${ATTR_NAMES.item}]`);
-		const speed = parseFloat($wrapper.getAttribute("data-fls-marquee-speed")) / 10 || 100;
-		const isMousePaused = $wrapper.hasAttribute("data-fls-marquee-pause");
-		const direction = $wrapper.getAttribute("data-fls-marquee-direction");
-		const isVertical = direction === "bottom" || direction === "top";
-		const animName = `marqueeAnimation-${Math.floor(Math.random() * 1e7)}`;
-		let spaceBetweenItem = parseFloat(window.getComputedStyle($items[0])?.getPropertyValue("margin-right"));
-		let spaceBetween = spaceBetweenItem ? spaceBetweenItem : !isNaN(dataMarqueeSpace) ? dataMarqueeSpace : 30;
-		let startPosition = parseFloat($wrapper.getAttribute("data-fls-marquee-start")) || 0;
-		let sumSize = 0;
-		let firstScreenVisibleSize = 0;
-		let initialSizeElements = 0;
-		let initialElementsLength = $marqueeInner.children.length;
-		let index = 0;
-		let counterDuplicateElements = 0;
-		const initEvents = () => {
-			if (startPosition) $marqueeInner.addEventListener("animationiteration", onChangeStartPosition);
-			if (!isMousePaused) return;
-			$marqueeInner.removeEventListener("mouseenter", onChangePaused);
-			$marqueeInner.removeEventListener("mouseleave", onChangePaused);
-			$marqueeInner.addEventListener("mouseenter", onChangePaused);
-			$marqueeInner.addEventListener("mouseleave", onChangePaused);
-		};
-		const onChangeStartPosition = () => {
-			startPosition = 0;
-			$marqueeInner.removeEventListener("animationiteration", onChangeStartPosition);
-			onResize();
-		};
-		const setBaseStyles = (firstScreenVisibleSize) => {
-			let baseStyle = "display: flex; flex-wrap: nowrap;";
-			if (isVertical) {
-				baseStyle += `
-				flex-direction: column;
-				position: relative;
-				will-change: transform;`;
-				if (direction === "bottom") baseStyle += `top: -${firstScreenVisibleSize}px;`;
-			} else {
-				baseStyle += `
-				position: relative;
-				will-change: transform;`;
-				if (direction === "right") baseStyle += `inset-inline-start: -${firstScreenVisibleSize}px;;`;
-			}
-			$marqueeInner.style.cssText = baseStyle;
-		};
-		const setdirectionAnim = (totalWidth) => {
-			switch (direction) {
-				case "right":
-				case "bottom": return totalWidth;
-				default: return -totalWidth;
-			}
-		};
-		const animation = () => {
-			const keyFrameCss = `@keyframes ${animName} {
-					 0% {
-						 transform: translate${isVertical ? "Y" : "X"}(${!isVertical && window.stateRtl ? -startPosition : startPosition}%);
-					 }
-					 100% {
-						 transform: translate${isVertical ? "Y" : "X"}(${setdirectionAnim(!isVertical && window.stateRtl ? -firstScreenVisibleSize : firstScreenVisibleSize)}px);
-					 }
-				 }`;
-			const $style = document.createElement("style");
-			$style.classList.add(animName);
-			$style.innerHTML = keyFrameCss;
-			head.append($style);
-			$marqueeInner.style.animation = `${animName} ${(firstScreenVisibleSize + startPosition * firstScreenVisibleSize / 100) / speed}s infinite linear`;
-		};
-		const addDublicateElements = () => {
-			sumSize = firstScreenVisibleSize = initialSizeElements = counterDuplicateElements = index = 0;
-			const $parentNodeWidth = getElSize($wrapper, isVertical);
-			let $childrenEl = Array.from($marqueeInner.children);
-			if (!$childrenEl.length) return;
-			if (!cacheArray.length) cacheArray = $childrenEl.map(($item) => $item);
-			else $childrenEl = [...cacheArray];
-			$marqueeInner.style.display = "flex";
-			if (isVertical) $marqueeInner.style.flexDirection = "column";
-			$marqueeInner.innerHTML = "";
-			$childrenEl.forEach(($item) => {
-				$marqueeInner.append($item);
-			});
-			$childrenEl.forEach(($item) => {
-				if (isVertical) $item.style.marginBottom = `${spaceBetween}px`;
-				else {
-					$item.style.marginRight = `${spaceBetween}px`;
-					$item.style.flexShrink = 0;
-				}
-				const sizeEl = getElSize($item, isVertical);
-				sumSize += sizeEl + spaceBetween;
-				firstScreenVisibleSize += sizeEl + spaceBetween;
-				initialSizeElements += sizeEl + spaceBetween;
-				counterDuplicateElements += 1;
-				return sizeEl;
-			});
-			const $multiplyWidth = $parentNodeWidth * 2 + initialSizeElements;
-			for (; sumSize < $multiplyWidth; index += 1) {
-				if (!$childrenEl[index]) index = 0;
-				const $cloneNone = $childrenEl[index].cloneNode(true);
-				const $lastElement = $marqueeInner.children[index];
-				$marqueeInner.append($cloneNone);
-				sumSize += getElSize($lastElement, isVertical) + spaceBetween;
-				if (firstScreenVisibleSize < $parentNodeWidth || counterDuplicateElements % initialElementsLength !== 0) {
-					counterDuplicateElements += 1;
-					firstScreenVisibleSize += getElSize($lastElement, isVertical) + spaceBetween;
-				}
-			}
-			setBaseStyles(firstScreenVisibleSize);
-		};
-		const correctSpaceBetween = () => {
-			if (spaceBetweenItem) {
-				$items.forEach(($item) => $item.style.removeProperty("margin-right"));
-				spaceBetweenItem = parseFloat(window.getComputedStyle($items[0]).getPropertyValue("margin-right"));
-				spaceBetween = spaceBetweenItem ? spaceBetweenItem : !isNaN(dataMarqueeSpace) ? dataMarqueeSpace : 30;
-			}
-		};
-		const init = () => {
-			correctSpaceBetween();
-			addDublicateElements();
-			animation();
-			initEvents();
-		};
-		const onResize = () => {
-			head.querySelector(`.${animName}`)?.remove();
-			init();
-		};
-		const onChangePaused = (e) => {
-			const { type, target } = e;
-			target.style.animationPlayState = type === "mouseenter" ? "paused" : "running";
-		};
-		onWindowWidthResize(onResize);
+//#region src/components/custom/catalogscart/catalogscart.js
+function selectColor(media, color) {
+	media.querySelectorAll("[data-catalogscart-photo]").forEach((photo) => {
+		photo.classList.toggle("--active", photo.dataset.catalogscartPhoto === color);
 	});
-};
-marquee();
+	media.querySelectorAll("[data-catalogscart-color]").forEach((option) => {
+		option.setAttribute("aria-checked", String(option.dataset.catalogscartColor === color));
+	});
+}
+function renderQty(card) {
+	const qty = Number(card.dataset.qty) || 0;
+	const price = Number(card.dataset.price) || 0;
+	card.querySelector("[data-catalogscart-add]").hidden = qty > 0;
+	card.querySelector("[data-catalogscart-stepper]").hidden = qty === 0;
+	card.querySelector("[data-catalogscart-qty]").textContent = qty;
+	card.querySelector("[data-catalogscart-price]").textContent = qty > 0 ? `${qty} шт · ${qty * price}₴` : `${price}₴`;
+}
+function initCards() {
+	document.querySelectorAll("[data-catalogscart-card]").forEach((card) => {
+		const media = card.querySelector("[data-catalogscart-media]");
+		const photoColors = [...media.querySelectorAll("[data-catalogscart-photo]")].map((photo) => photo.dataset.catalogscartPhoto);
+		const options = [...media.querySelectorAll("[data-catalogscart-color]")];
+		options.forEach((option) => {
+			if (photoColors.includes(option.dataset.catalogscartColor)) return;
+			option.disabled = true;
+			option.title = "Фото цього кольору ще немає";
+		});
+		const start = options.find((o) => !o.disabled && o.dataset.catalogscartColor === media.dataset.catalogscartMedia) || options.find((o) => !o.disabled);
+		if (start) selectColor(media, start.dataset.catalogscartColor);
+		media.setAttribute("data-catalogscart-ready", "");
+		renderQty(card);
+	});
+}
+document.addEventListener("click", (e) => {
+	const option = e.target.closest("[data-catalogscart-color]");
+	if (option && !option.disabled) {
+		selectColor(option.closest("[data-catalogscart-media]"), option.dataset.catalogscartColor);
+		return;
+	}
+	const control = e.target.closest("[data-catalogscart-add], [data-catalogscart-plus], [data-catalogscart-minus]");
+	if (!control) return;
+	const card = control.closest("[data-catalogscart-card]");
+	const qty = Number(card.dataset.qty) || 0;
+	const next = control.hasAttribute("data-catalogscart-minus") ? Math.max(0, qty - 1) : qty + 1;
+	card.dataset.qty = next;
+	renderQty(card);
+	if (next === 1 && qty === 0) card.querySelector("[data-catalogscart-plus]").focus();
+	if (next === 0) card.querySelector("[data-catalogscart-add]").focus();
+});
+initCards();
+//#endregion
+//#region src/components/custom/beforeandafter/beforeandafter.js
+function select(section, index) {
+	const tabs = [...section.querySelectorAll("[data-beforeandafter-tab]")];
+	if (!tabs[index]) return;
+	tabs.forEach((tab, i) => tab.setAttribute("aria-selected", String(i === index)));
+	section.querySelectorAll("[data-beforeandafter-panel]").forEach((panel) => {
+		panel.classList.toggle("--active", Number(panel.dataset.beforeandafterPanel) === index);
+	});
+	section.querySelector("[data-beforeandafter-prev]").disabled = index === 0;
+	section.querySelector("[data-beforeandafter-next]").disabled = index === tabs.length - 1;
+}
+function current(section) {
+	const tabs = [...section.querySelectorAll("[data-beforeandafter-tab]")];
+	return Math.max(0, tabs.findIndex((tab) => tab.getAttribute("aria-selected") === "true"));
+}
+document.addEventListener("click", (e) => {
+	const section = e.target.closest("[data-fls-beforeandafter]");
+	if (!section) return;
+	const tab = e.target.closest("[data-beforeandafter-tab]");
+	if (tab) return select(section, Number(tab.dataset.beforeandafterTab));
+	if (e.target.closest("[data-beforeandafter-prev]")) return select(section, current(section) - 1);
+	if (e.target.closest("[data-beforeandafter-next]")) return select(section, current(section) + 1);
+});
 //#endregion
 //#region src/components/layout/beforeafter/beforeafter.js
 var BeforeAfter = class {

@@ -15,20 +15,20 @@
 			</style>
 		</noscript>
 		<title>Каталог</title>
-		<script type="module" crossorigin="" src="./js/cataloge.min.js?v=1790684291657"></script>
-		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1790684291657">
-		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1790684291657">
-		<link rel="modulepreload" crossorigin="" href="./js/swiper.min.js?v=1790684291657">
-		<link rel="modulepreload" crossorigin="" href="./js/popup.min.js?v=1790684291657">
-		<link rel="modulepreload" crossorigin="" href="./js/spollers.min.js?v=1790684291657">
-		<link rel="modulepreload" crossorigin="" href="./js/faqpin.min.js?v=1790684291657">
-		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1790684291657">
-		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1790684291657">
-		<link rel="stylesheet" crossorigin="" href="./css/popup.min.css?v=1790684291657">
-		<link rel="stylesheet" crossorigin="" href="./css/spollers.min.css?v=1790684291657">
-		<link rel="stylesheet" crossorigin="" href="./css/faqpin.min.css?v=1790684291657">
-		<link rel="stylesheet" crossorigin="" href="./css/cataloge.min.css?v=1790684291657">
-		<link rel="stylesheet" crossorigin="" href="./css/cataloggrid.min.css?v=1790684291657">
+		<script type="module" crossorigin="" src="./js/cataloge.min.js?v=1790693002697"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1790693002697">
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1790693002697">
+		<link rel="modulepreload" crossorigin="" href="./js/swiper.min.js?v=1790693002697">
+		<link rel="modulepreload" crossorigin="" href="./js/popup.min.js?v=1790693002697">
+		<link rel="modulepreload" crossorigin="" href="./js/spollers.min.js?v=1790693002697">
+		<link rel="modulepreload" crossorigin="" href="./js/faqpin.min.js?v=1790693002697">
+		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1790693002697">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1790693002697">
+		<link rel="stylesheet" crossorigin="" href="./css/popup.min.css?v=1790693002697">
+		<link rel="stylesheet" crossorigin="" href="./css/spollers.min.css?v=1790693002697">
+		<link rel="stylesheet" crossorigin="" href="./css/faqpin.min.css?v=1790693002697">
+		<link rel="stylesheet" crossorigin="" href="./css/cataloge.min.css?v=1790693002697">
+		<link rel="stylesheet" crossorigin="" href="./css/cataloggrid.min.css?v=1790693002697">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -752,10 +752,15 @@ colors: кружечки кольорів на фото; клік перемик
 							</div>
 						</div>
 					</section>
-					<!-- Порт: src/shopify/relax-theme/sections/faqpin.liquid (2026-09-15 синхронізовано з ваніллю; variant = select у схемі). -->
+					<!--
+Порт: src/shopify/relax-theme/sections/faqpin.liquid (2026-09-15 синхронізовано з ваніллю; variant = select у схемі).
+2026-09-29 ваніль оновлено за редизайном: головна тепер у вигляді варіанта catalog (білі рядки на bone),
+пігулка «Часті запитання», «Найчастіші» розовим. Порт у тему ще НЕ синхронізовано.
+-->
 					<!--
 FAQ. Два варіанти через locals variant (передавати явно в кожному include):
-"home" — головна (стрічка marqueepin, пілюля «FAQ», заголовок з плашкою);
+"home" — головна (стрічка marqueepin, пілюля «Часті запитання», «Найчастіші» розовим);
+"about" — «Про нас» (те саме, що home, але стрічка зі своїм набором чипів);
 "catalog" — каталог, Figma 219:1668 (без стрічки, пілюля «• Часті запитання»,
 широкий список окремих білих рядків).
 -->
@@ -779,7 +784,7 @@ FAQ. Два варіанти через locals variant (передавати я�
 								</div>
 							</div>
 						</div>
-						<div class="faqpin__container faqpin__container--seven" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
+						<div class="faqpin__container" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
 							<span class="faqpin__kicker">
 								<span class="faqpin__kicker-dot" aria-hidden="true"></span>
 								Часті запитання

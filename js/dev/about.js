@@ -1,6 +1,8 @@
 import "./main.min.js";
 import "./common.min.js";
-import "./settext.min.js";
+import "./spollers.min.js";
+import "./marqueepin.min.js";
+import "./faqpin.min.js";
 //#region src/components/layout/videofullscreen/videofullscreen.js
 var requestFullscreen = (element) => {
 	const request = element.requestFullscreen || element.webkitRequestFullscreen || element.msRequestFullscreen;
