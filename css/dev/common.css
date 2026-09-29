@@ -21,6 +21,16 @@
 .button--fw {
   width: 100%;
 }
+.button--caps {
+  align-items: center;
+  justify-content: center;
+  padding-block: 1.1875rem;
+  padding-inline: 1.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
 .button--padding-one {
   padding-inline: 1.375rem;
   padding-block: 0.75rem;
@@ -56,6 +66,21 @@
 }
 .button--background-lightred svg path {
   fill: var(--color-bone);
+}
+@media (width < 20em) {
+  .button--caps {
+    font-size: 0.6875rem;
+  }
+}
+@media (width >= 20em) and (width < 90em) {
+  .button--caps {
+    font-size: clamp( 0.6875rem , 0.66964285714375rem  +  0.0892857143vw , 0.75rem );
+  }
+}
+@media (width >= 90em) {
+  .button--caps {
+    font-size: 0.75rem;
+  }
 }
 @media (any-hover: hover) {
   .button:hover {

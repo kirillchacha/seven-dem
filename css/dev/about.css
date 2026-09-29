@@ -43,25 +43,12 @@
 .about {
   display: flow-root;
   background: var(--color-bone);
-  --about-muted: #c9c8cc;
+  --about-muted: var(--color-mist);
   --textreveal-from: var(--about-muted);
 }
 .about h2, .about h3, .about .statsexperience__value, .about .productionsteps__number, .about .founderstory__quote-text {
   font-family: var(--font-family);
   font-weight: 600;
-}
-.about .tabletext {
-  padding: 0.3125rem 0.875rem;
-  font-size: 0.875rem;
-  line-height: 1;
-  text-transform: uppercase;
-  color: var(--main-color);
-  background: transparent;
-  border-color: var(--about-muted);
-}
-.about .tabletext::before {
-  background: var(--color-rose);
-  flex-shrink: 0;
 }
 .about .abouthero__button--primary svg path {
   fill: currentColor;
@@ -996,10 +983,6 @@ body:has([data-fls-about]) .header {
   }
 }
 @media (max-width: 48em) {
-  .about .tabletext {
-    font-size: 0.6875rem;
-    line-height: 1.3;
-  }
   .about .companyintro, .about .productionsteps {
     margin-inline: 0.5rem;
     border-radius: 1.5rem;
