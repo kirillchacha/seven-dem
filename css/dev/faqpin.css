@@ -117,7 +117,6 @@
   margin: 0;
 }
 .faqpin--catalog .faqpin__container {
-  max-width: 81.875rem;
   margin-top: 0;
 }
 .faqpin__kicker {
@@ -182,9 +181,6 @@
   .faqpin--catalog {
     padding-bottom: 3rem;
   }
-  .faqpin--catalog .faqpin__list {
-    margin-top: 1.75rem;
-  }
   .faqpin__kicker {
     font-size: 0.75rem;
   }
@@ -230,13 +226,10 @@
     padding-bottom: clamp( 1rem , 0.85714285714375rem  +  0.7142857143vw , 1.5rem );
   }
   .faqpin--catalog {
-    padding-top: clamp( 2.5rem , 1.7857142857125rem  +  3.5714285714vw , 5rem );
+    padding-top: clamp( 2.5rem , 2.07142857143125rem  +  2.1428571429vw , 4rem );
   }
   .faqpin--catalog {
     padding-bottom: clamp( 3rem , 2.42857142856875rem  +  2.8571428571vw , 5rem );
-  }
-  .faqpin--catalog .faqpin__list {
-    margin-top: clamp( 1.75rem , 1.10714285714375rem  +  3.2142857143vw , 4rem );
   }
   .faqpin__kicker {
     font-size: clamp( 0.75rem , 0.67857142856875rem  +  0.3571428571vw , 1rem );
@@ -283,13 +276,10 @@
     padding-bottom: 1.5rem;
   }
   .faqpin--catalog {
-    padding-top: 5rem;
+    padding-top: 4rem;
   }
   .faqpin--catalog {
     padding-bottom: 5rem;
-  }
-  .faqpin--catalog .faqpin__list {
-    margin-top: 4rem;
   }
   .faqpin__kicker {
     font-size: 1rem;

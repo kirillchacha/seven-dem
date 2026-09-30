@@ -16,26 +16,28 @@
 			</style>
 		</noscript>
 		<title>Мої замовлення — 7dem</title>
-		<link rel="modulepreload" crossorigin href="./js/common.min.js?v=1790693002698">
-		<script type="module" crossorigin="" src="./js/main.min.js?v=1790693002698"></script>
-		<script type="module" crossorigin="" src="./js/swiper.min.js?v=1790693002698"></script>
-		<script type="module" crossorigin="" src="./js/productrelated.min.js?v=1790693002698"></script>
-		<script type="module" crossorigin="" src="./js/popup.min.js?v=1790693002698"></script>
-		<script type="module" crossorigin="" src="./js/cabinet.min.js?v=1790693002698"></script>
-		<script type="module" crossorigin="" src="./js/orders2.min.js?v=1790693002698"></script>
-		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1790693002698">
-		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1790693002698">
-		<link rel="stylesheet" crossorigin="" href="./css/productrelated.min.css?v=1790693002698">
-		<link rel="stylesheet" crossorigin="" href="./css/popup.min.css?v=1790693002698">
-		<link rel="stylesheet" crossorigin="" href="./css/cabinet.min.css?v=1790693002698">
-		<link rel="stylesheet" crossorigin="" href="./css/orders.min.css?v=1790693002698">
+		<link rel="modulepreload" crossorigin href="./js/common.min.js?v=1790749768251">
+		<script type="module" crossorigin="" src="./js/main.min.js?v=1790749768251"></script>
+		<script type="module" crossorigin="" src="./js/swiper.min.js?v=1790749768251"></script>
+		<script type="module" crossorigin="" src="./js/shopcard.min.js?v=1790749768251"></script>
+		<script type="module" crossorigin="" src="./js/productrelated.min.js?v=1790749768251"></script>
+		<script type="module" crossorigin="" src="./js/popup.min.js?v=1790749768251"></script>
+		<script type="module" crossorigin="" src="./js/cabinet.min.js?v=1790749768251"></script>
+		<script type="module" crossorigin="" src="./js/orders2.min.js?v=1790749768251"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1790749768251">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1790749768251">
+		<link rel="stylesheet" crossorigin="" href="./css/shopcard.min.css?v=1790749768251">
+		<link rel="stylesheet" crossorigin="" href="./css/productrelated.min.css?v=1790749768251">
+		<link rel="stylesheet" crossorigin="" href="./css/popup.min.css?v=1790749768251">
+		<link rel="stylesheet" crossorigin="" href="./css/cabinet.min.css?v=1790749768251">
+		<link rel="stylesheet" crossorigin="" href="./css/orders.min.css?v=1790749768251">
 	</head>
 	<body>
 		<div class="wrapper">
 			<!--
 Порт: src/shopify/relax-theme/sections/header.liquid (header_style relax), стилі — frontend/styles/header-relax.scss.
 2026-09-29 ваніль оновлено за редизайном (Homepage.png): логотип @img/logo.svg, меню з 4 пунктів,
-праворуч три іконки замість кнопок «Кошик»/«log in». Порт у тему ще НЕ синхронізовано.
+праворуч три іконки замість кнопок «Кошик»/«log in». 2026-09-29 порт синхронізовано з ваніллю.
 -->
 			<header data-fls-header="" data-fls-header-scroll="" class="header">
 				<div class="header__container">
@@ -174,7 +176,10 @@ fill: currentColor (ховер і білий варіант у підвалі), 
 Необов'язкові locals (лише ваніль; без них розмітка = порт, синхронізувати нічого):
 title / accent — заголовок і його рожевий хвіст (accent "" — без хвоста; кошик: "Доповни набір");
 nav "round" — стрілки в колах 56px, як на макетах кошика й кабінету (Cart — Desktop.png);
-crumbs "no" — без хлібних крихт (сторінки, де товару немає).
+crumbs "no" — без хлібних крихт (сторінки, де товару немає);
+variant "large" — редизайн 2026-09-30 (Product-card.png): великі картки custom/shopcard по 2 в ряд,
+стрілки в колах, без крихт унизу (крихти тепер угорі productgallery). Лише карточка товару;
+кошик і кабінет лишаються на старій картці. Порт у тему ще НЕ синхронізовано.
 -->
 					<section data-fls-productrelated="" class="productrelated productrelated--round">
 						<div class="productrelated__container" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
@@ -350,7 +355,7 @@ crumbs "no" — без хлібних крихт (сторінки, де тов�
 			</main>
 			<!--
 Порт: src/shopify/relax-theme/sections/footer-relax.liquid (2026-09-15, 1:1 з ваніллю).
-2026-09-29 ваніль оновлено за редизайном (логотип з іконкою, контент по контейнеру 1200), порт у тему ще НЕ синхронізовано.
+2026-09-29 ваніль оновлено за редизайном (логотип з іконкою, контент по контейнеру 1200), 2026-09-29 порт синхронізовано з ваніллю.
 -->
 			<footer data-fls-footer="" class="footer">
 				<div class="footer__container">

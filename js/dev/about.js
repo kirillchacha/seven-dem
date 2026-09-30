@@ -1,5 +1,6 @@
 import "./main.min.js";
 import "./common.min.js";
+/* empty css              */
 import "./spollers.min.js";
 import "./marqueepin.min.js";
 import "./faqpin.min.js";

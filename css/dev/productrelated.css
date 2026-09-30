@@ -179,6 +179,19 @@
 .productrelated--round .productrelated__arrow.swiper-button-disabled {
   border-color: var(--color-hairline);
 }
+.productrelated--large .productrelated__title {
+  max-width: none;
+  font-family: var(--font-family);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--main-color);
+}
+.productrelated--large .productrelated__head {
+  align-items: center;
+}
+.productrelated--large .shopcard {
+  flex-shrink: 0;
+}
 .productrelated__crumbs {
   display: flex;
   align-items: center;
@@ -266,6 +279,18 @@
   .productrelated--round .productrelated__arrow {
     height: 2.75rem;
   }
+  .productrelated--large .productrelated__title {
+    font-size: 2rem;
+  }
+  .productrelated--large .productrelated__arrow {
+    width: 2.5rem;
+  }
+  .productrelated--large .productrelated__arrow {
+    height: 2.5rem;
+  }
+  .productrelated--large .productrelated__head {
+    margin-bottom: 1.5rem;
+  }
   .productrelated__crumbs {
     margin-top: 3rem;
   }
@@ -325,6 +350,18 @@
   .productrelated--round .productrelated__arrow {
     height: clamp( 2.75rem , 2.5357142857125rem  +  1.0714285714vw , 3.5rem );
   }
+  .productrelated--large .productrelated__title {
+    font-size: clamp( 2rem , 1.5rem  +  2.5vw , 3.75rem );
+  }
+  .productrelated--large .productrelated__arrow {
+    width: clamp( 2.5rem , 2.42857142856875rem  +  0.3571428571vw , 2.75rem );
+  }
+  .productrelated--large .productrelated__arrow {
+    height: clamp( 2.5rem , 2.42857142856875rem  +  0.3571428571vw , 2.75rem );
+  }
+  .productrelated--large .productrelated__head {
+    margin-bottom: clamp( 1.5rem , 1.2142857142875rem  +  1.4285714286vw , 2.5rem );
+  }
   .productrelated__crumbs {
     margin-top: clamp( 3rem , 2rem  +  5vw , 6.5rem );
   }
@@ -383,6 +420,18 @@
   }
   .productrelated--round .productrelated__arrow {
     height: 3.5rem;
+  }
+  .productrelated--large .productrelated__title {
+    font-size: 3.75rem;
+  }
+  .productrelated--large .productrelated__arrow {
+    width: 2.75rem;
+  }
+  .productrelated--large .productrelated__arrow {
+    height: 2.75rem;
+  }
+  .productrelated--large .productrelated__head {
+    margin-bottom: 2.5rem;
   }
   .productrelated__crumbs {
     margin-top: 6.5rem;

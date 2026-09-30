@@ -1,5 +1,6 @@
 import "./main.min.js";
 import { l as isMobile } from "./common.min.js";
+/* empty css              */
 import { t as Swiper } from "./swiper.min.js";
 import "./spollers.min.js";
 import "./marqueepin.min.js";

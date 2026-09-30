@@ -15,27 +15,30 @@
 			</style>
 		</noscript>
 		<title>Каталог</title>
-		<script type="module" crossorigin="" src="./js/cataloge.min.js?v=1790693002697"></script>
-		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1790693002697">
-		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1790693002697">
-		<link rel="modulepreload" crossorigin="" href="./js/swiper.min.js?v=1790693002697">
-		<link rel="modulepreload" crossorigin="" href="./js/popup.min.js?v=1790693002697">
-		<link rel="modulepreload" crossorigin="" href="./js/spollers.min.js?v=1790693002697">
-		<link rel="modulepreload" crossorigin="" href="./js/faqpin.min.js?v=1790693002697">
-		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1790693002697">
-		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1790693002697">
-		<link rel="stylesheet" crossorigin="" href="./css/popup.min.css?v=1790693002697">
-		<link rel="stylesheet" crossorigin="" href="./css/spollers.min.css?v=1790693002697">
-		<link rel="stylesheet" crossorigin="" href="./css/faqpin.min.css?v=1790693002697">
-		<link rel="stylesheet" crossorigin="" href="./css/cataloge.min.css?v=1790693002697">
-		<link rel="stylesheet" crossorigin="" href="./css/cataloggrid.min.css?v=1790693002697">
+		<script type="module" crossorigin="" src="./js/cataloge.min.js?v=1790749768250"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1790749768250">
+		<link rel="modulepreload" crossorigin="" href="./js/main.min.js?v=1790749768250">
+		<link rel="modulepreload" crossorigin="" href="./js/swiper.min.js?v=1790749768250">
+		<link rel="modulepreload" crossorigin="" href="./js/shopcard.min.js?v=1790749768250">
+		<link rel="modulepreload" crossorigin="" href="./js/popup.min.js?v=1790749768250">
+		<link rel="modulepreload" crossorigin="" href="./js/spollers.min.js?v=1790749768250">
+		<link rel="modulepreload" crossorigin="" href="./js/faqpin.min.js?v=1790749768250">
+		<link rel="stylesheet" crossorigin="" href="./css/common.min.css?v=1790749768250">
+		<link rel="stylesheet" crossorigin="" href="./css/main.min.css?v=1790749768250">
+		<link rel="stylesheet" crossorigin="" href="./css/shopcard.min.css?v=1790749768250">
+		<link rel="stylesheet" crossorigin="" href="./css/popup.min.css?v=1790749768250">
+		<link rel="stylesheet" crossorigin="" href="./css/spollers.min.css?v=1790749768250">
+		<link rel="stylesheet" crossorigin="" href="./css/faqpin.min.css?v=1790749768250">
+		<link rel="stylesheet" crossorigin="" href="./css/cataloge.min.css?v=1790749768250">
+		<link rel="stylesheet" crossorigin="" href="./css/cataloggrid.min.css?v=1790749768250">
+		<link rel="stylesheet" crossorigin="" href="./css/tabletext.min.css?v=1790749768250">
 	</head>
 	<body>
 		<div class="wrapper">
 			<!--
 Порт: src/shopify/relax-theme/sections/header.liquid (header_style relax), стилі — frontend/styles/header-relax.scss.
 2026-09-29 ваніль оновлено за редизайном (Homepage.png): логотип @img/logo.svg, меню з 4 пунктів,
-праворуч три іконки замість кнопок «Кошик»/«log in». Порт у тему ще НЕ синхронізовано.
+праворуч три іконки замість кнопок «Кошик»/«log in». 2026-09-29 порт синхронізовано з ваніллю.
 -->
 			<header data-fls-header="" data-fls-header-scroll="" class="header">
 				<div class="header__container">
@@ -123,73 +126,69 @@ fill: currentColor (ховер і білий варіант у підвалі), 
 					<!--
 Ванільна версія хедера каталогу (режим `npm run dev`), Figma 219:1523.
 Порт: src/shopify/relax-theme/sections/cataloghero.liquid
-2026-09-14 ваніль оновлено за макетом (фото-фон на всю картку + fade-слайдер
-кольорів), 2026-09-14 порт синхронізовано з ваніллю (кадри — блоки slide,
-модифікатори --black/--color у темі названі --neutral/--cool).
-Фон картки — layout/fadeslider: кадри того самого набору в різних кольорах
-змінюються самі. Горизонтальне фото є лише розове (gallery-1, з макета),
-чорний і кольоровий набори — вертикальні кадри product/related-* з кропом
-через object-position (модифікатори). Фото білого набору в репозиторії немає.
-Іконки тут інлайнові: у ванільній гілці немає Liquid-тегу render, тому
-спільний snippets/catalog__icon.liquid не застосовується. Увага — не писати
-у цих коментарях Liquid-теги у фігурних дужках з відсотком: ванільна гілка
-проганяє HTML через nunjucks, і він парсить їх навіть усередині HTML-коментаря.
+2026-09-14 ваніль оновлено за макетом, 2026-09-14 порт синхронізовано з ваніллю.
+2026-09-30 ваніль оновлено за редизайном (Catalogue.png): пігулка-крихти й рядок «КАТАЛОГ» + опис
+над фото; фото 1200×600 у межах контейнера — автоматичний fade-слайдер, що зупиняється, поки курсор
+над карткою (chrome_V5lIBy27FT.png, layout/fadeslider з data-fls-fadeslider-pause); підпис набору
+справа внизу. Порт у тему ще НЕ синхронізовано.
+Кадри: білий набір (product/white-3 — вирізано з Product-card.png, той самий кадр, що в макеті
+каталогу, але без підпису), рожевий і чорний — з «Про нас» (about/hero-set-pink, video-set-black).
+Іконки інлайнові: у ванільній гілці немає Liquid-тегу render (і не писати його в дужках з
+відсотком у коментарях — nunjucks зламається).
 -->
 					<section data-fls-cataloghero="" class="cataloghero" data-fls-reveal-load="">
-						<div class="cataloghero__card" data-fls-reveal-group="fade">
-							<div class="cataloghero__slider" data-fls-fadeslider="4000">
-								<div class="swiper-wrapper">
-									<div class="cataloghero__slide swiper-slide">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/product/gallery-1-600.webp" type="image/webp">
-											<img alt="Набір MAX, рожевий" width="1024" height="576" fetchpriority="high" src="./assets/img/product/gallery-1.webp">
-										</picture>
-									</div>
-									<div class="cataloghero__slide cataloghero__slide--portrait cataloghero__slide--black swiper-slide">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/product/related-1-600.webp" type="image/webp">
-											<img alt="Набір MAX, чорний" width="768" height="1024" loading="lazy" src="./assets/img/product/related-1.webp">
-										</picture>
-									</div>
-									<div class="cataloghero__slide cataloghero__slide--portrait cataloghero__slide--color swiper-slide">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/product/related-3-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/product/related-3-1200.webp" type="image/webp">
-											<img alt="Набір MAX, різнокольоровий" width="2268" height="4032" loading="lazy" src="./assets/img/product/related-3.webp">
-										</picture>
-									</div>
-								</div>
-							</div>
+						<div class="cataloghero__container" data-fls-reveal-group="">
 							<nav class="cataloghero__crumbs" aria-label="Хлібні крихти">
-								<span class="cataloghero__crumbs-dot" aria-hidden="true"></span>
 								<a class="cataloghero__crumb" href="index.html">Головна</a>
-								<span aria-hidden="true">/</span>
-								<span class="cataloghero__crumb cataloghero__crumb--current" aria-current="page">Каталог</span>
+								/
+								<span class="cataloghero__crumb" aria-current="page">Каталог</span>
 							</nav>
-							<div class="cataloghero__promo">
-								<p class="cataloghero__promo-name">Набір MAX</p>
-								<p class="cataloghero__promo-price">1 950 ₴</p>
-								<div class="cataloghero__promo-actions">
-									<a class="cataloghero__promo-cta" href="product-card.html">
-										Обрати набір
-										<svg class="catalog-icon" viewbox="0 0 12 8" fill="none" aria-hidden="true" focusable="false">
-											<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z" fill="currentColor"></path>
-										</svg>
-									</a>
-									<a class="cataloghero__promo-bag" href="product-card.html" aria-label="Обрати варіант: Набір MAX">
-										<svg class="catalog-icon" viewbox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
-											<path d="M9 17.5H39L36.9 38.3C36.79 39.39 36.28 40.39 35.47 41.12C34.66 41.86 33.61 42.26 32.52 42.26H15.48C14.39 42.26 13.34 41.86 12.53 41.12C11.72 40.39 11.21 39.39 11.1 38.3L9 17.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
-											<path d="M17.5 21V13.8C17.5 12.08 18.18 10.42 19.4 9.2C20.62 7.98 22.28 7.3 24 7.3C25.72 7.3 27.38 7.98 28.6 9.2C29.82 10.42 30.5 12.08 30.5 13.8V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-										</svg>
-									</a>
-								</div>
-							</div>
-							<div class="cataloghero__content">
+							<div class="cataloghero__head">
 								<h1 class="cataloghero__title">Каталог</h1>
-								<div class="cataloghero__text">
-									<p>
-										11 елементів однієї модульної системи. Комбінуй їх, щоб створити конфігурацію під свій простір
-									</p>
+								<p class="cataloghero__text">
+									11 елементів однієї модульної системи.
+									<br>
+									Комбінуй їх, щоб створити
+				конфігурацію під свій простір
+								</p>
+							</div>
+							<div class="cataloghero__card" data-fls-reveal="fade">
+								<div class="cataloghero__slider" data-fls-fadeslider="4000" data-fls-fadeslider-pause="">
+									<div class="swiper-wrapper">
+										<div class="cataloghero__slide swiper-slide">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/product/white-3-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/product/white-3-1200.webp" type="image/webp">
+												<img alt="Набір MAX, білий" width="2400" height="1200" fetchpriority="high" src="./assets/img/product/white-3.webp">
+											</picture>
+										</div>
+										<div class="cataloghero__slide swiper-slide">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/about/hero-set-pink-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/about/hero-set-pink-1200.webp" type="image/webp">
+												<img alt="Набір MAX, рожевий" width="2402" height="1120" loading="lazy" src="./assets/img/about/hero-set-pink.webp">
+											</picture>
+										</div>
+										<div class="cataloghero__slide swiper-slide">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/about/video-set-black-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/about/video-set-black-1200.webp" type="image/webp">
+												<img alt="Набір MAX, чорний" width="2400" height="940" loading="lazy" src="./assets/img/about/video-set-black.webp">
+											</picture>
+										</div>
+									</div>
+								</div>
+								<div class="cataloghero__promo">
+									<p class="cataloghero__promo-name">Набір MAX</p>
+									<p class="cataloghero__promo-price">1950 грн</p>
+									<div class="cataloghero__promo-actions">
+										<a class="cataloghero__promo-cta button button--caps button--background-black" href="product-card.html">Купити набір</a>
+										<a class="cataloghero__promo-bag" href="product-card.html" aria-label="Купити набір MAX">
+											<svg viewbox="0 0 32 38" fill="none" aria-hidden="true" focusable="false">
+												<path d="M11 13V8.5a5 5 0 0 1 10 0V13M3.2 11h25.6l-1.6 22.2a3 3 0 0 1-3 2.8H7.8a3 3 0 0 1-3-2.8L3.2 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+											</svg>
+										</a>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -197,191 +196,517 @@ fill: currentColor (ховер і білий варіант у підвалі), 
 					<!--
 Ванільна версія стартового набору (режим `npm run dev`), Figma 219:1523.
 Порт: src/shopify/relax-theme/sections/catalogfeatured.liquid
-2026-09-14 ваніль оновлено за макетом (фото притиснуте до лівого краю,
-кружечки кольорів на фото, чипи над текстом); 2026-09-15 порт синхронізовано з ваніллю.
-Дві відмінності від версії в темі, обидві свідомі:
-1. Кольорові кружечки тут — модифікатори класів (--black/--blush/--white/
---mixed), бо docs/specs/css.md забороняє inline style="" у розмітці.
-У темі той самий колір резолвить Liquid зі справжніх варіантів товару.
-2. Іконки інлайнові: у ванільній гілці немає Liquid-тегу render (і не
-писати його в дужках з відсотком у комментарях — nunjucks зламається).
-Розкладка: __bodies і активний __body мають display: contents, тож фото й
-текст активної вкладки стають клітинками однієї сітки з кнопками-чипами
-(layout/tabs шукає прямих нащадків — DOM не змінюється).
+2026-09-14 ваніль оновлено за макетом; 2026-09-15 порт синхронізовано з ваніллю.
+2026-09-30 ваніль оновлено за редизайном (Catalogue.png): фото 690×520 у контейнері зі стрічкою
+«Подарунок», лупою й кружечками кольорів; під фото — мініатюри; праворуч опис, три характеристики,
+картка подарунка (лише MAX), ціна, степпер + «Додати до кошика» + серце, рядок переваг.
+Порт у тему ще НЕ синхронізовано.
+Розкладка: __bodies і активний __body мають display: contents, тож фото й текст активної
+вкладки стають клітинками однієї сітки з кнопками-чипами (layout/tabs шукає прямих нащадків).
+Лупа відкриває поточне фото в попапі (layout/popup, розмітка внизу секції).
+Кольори й мініатюри перемикають головне фото (catalogfeatured.js): адресу беремо з src мініатюри,
+бо Vite переписує шляхи @img лише в src, не в data-атрибутах. Фото чорного MAX вирізано з
+Catalogue.png; мініатюри макета — дрібні сірі рендери без великих версій, тому тут мініатюри —
+зменшені ті самі великі фото, що й у кольорах. Іконки інлайнові (у ванілі немає render).
 -->
 					<section data-fls-catalogfeatured="" class="catalogfeatured">
-						<div class="catalogfeatured__tabs" data-fls-tabs="" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
-							<nav class="catalogfeatured__titles" data-fls-tabs-titles="">
-								<button type="button" class="catalogfeatured__title --tab-active">MAX</button>
-								<button type="button" class="catalogfeatured__title">MED</button>
-								<button type="button" class="catalogfeatured__title">MIN</button>
-							</nav>
-							<div class="catalogfeatured__bodies" data-fls-tabs-body="">
-								<!--
-colors: кружечки кольорів на фото; клік перемикає фото набору
-(catalogfeatured.js). Колір без img рендериться неактивним — фото
-білого набору в репозиторії поки немає.
--->
-								<div class="catalogfeatured__body">
-									<div class="catalogfeatured__media" data-catalogfeatured-media="">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/product/related-1-600.webp" type="image/webp">
-											<img class="catalogfeatured__photo" alt="Стартовий набір MAX, Чорний" data-catalogfeatured-photo="black" loading="lazy" src="./assets/img/product/related-1.webp">
-										</picture>
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/product/related-2-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/product/related-2-1200.webp" type="image/webp">
-											<img class="catalogfeatured__photo" alt="Стартовий набір MAX, Рожевий" data-catalogfeatured-photo="blush" loading="lazy" src="./assets/img/product/related-2.webp">
-										</picture>
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/product/related-3-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/product/related-3-1200.webp" type="image/webp">
-											<img class="catalogfeatured__photo" alt="Стартовий набір MAX, Різнокольоровий" data-catalogfeatured-photo="mixed" loading="lazy" src="./assets/img/product/related-3.webp">
-										</picture>
-										<div class="catalog-swatches" role="radiogroup" aria-label="Колір набору MAX">
-											<button type="button" class="catalog-swatches__item catalog-swatches__item--black" role="radio" aria-checked="false" aria-label="Чорний" data-catalogfeatured-color="black"></button>
-											<button type="button" class="catalog-swatches__item catalog-swatches__item--blush" role="radio" aria-checked="false" aria-label="Рожевий" data-catalogfeatured-color="blush"></button>
-											<button type="button" class="catalog-swatches__item catalog-swatches__item--white" role="radio" aria-checked="false" aria-label="Білий" data-catalogfeatured-color="white"></button>
-											<button type="button" class="catalog-swatches__item catalog-swatches__item--mixed" role="radio" aria-checked="false" aria-label="Різнокольоровий" data-catalogfeatured-color="mixed"></button>
+						<div class="catalogfeatured__container">
+							<div class="catalogfeatured__tabs" data-fls-tabs="" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
+								<nav class="catalogfeatured__titles" data-fls-tabs-titles="">
+									<button type="button" class="catalogfeatured__title --tab-active">MAX</button>
+									<button type="button" class="catalogfeatured__title">MED</button>
+									<button type="button" class="catalogfeatured__title">MIN</button>
+								</nav>
+								<div class="catalogfeatured__bodies" data-fls-tabs-body="">
+									<div class="catalogfeatured__body" data-catalogfeatured-set="" data-price="1950">
+										<div class="catalogfeatured__gallery">
+											<div class="catalogfeatured__media" data-catalogfeatured-media="">
+												<picture>
+													<source media="(max-width: 600px)" srcset="./assets/img/catalog/featured-max-black-600.webp" type="image/webp">
+													<source media="(max-width: 1200px)" srcset="./assets/img/catalog/featured-max-black-1200.webp" type="image/webp">
+													<img class="catalogfeatured__photo" alt="Набір MAX" width="1380" height="1040" loading="lazy" data-catalogfeatured-photo="" src="./assets/img/catalog/featured-max-black.webp">
+												</picture>
+												<span class="catalogfeatured__ribbon">
+													<svg viewbox="0 0 16 16" aria-hidden="true">
+														<path d="M2 7h12v2H2zM3 9h10v6H3zM7.25 7h1.5v8h-1.5zM8 6.5C6.5 3 3.5 3.5 4 5.2 4.4 6.4 6.6 6.5 8 6.5Zm0 0c1.5-3.5 4.5-3 4-1.3-.4 1.2-2.6 1.3-4 1.3Z" fill="currentColor"></path>
+													</svg>
+													Подарунок
+												</span>
+												<button type="button" class="catalogfeatured__zoom" data-fls-popup-link="featured-zoom" data-catalogfeatured-zoom="" aria-label="Збільшити фото">
+													<svg viewbox="0 0 20 20" fill="none" aria-hidden="true">
+														<circle cx="9" cy="9" r="5.8" stroke="currentColor" stroke-width="1.6"></circle>
+														<path d="M13.3 13.3L17 17M9 6.6v4.8M6.6 9h4.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+													</svg>
+												</button>
+												<div class="catalogfeatured__swatches" role="radiogroup" aria-label="Колір набору MAX">
+													<button type="button" class="catalogfeatured__swatch catalogfeatured__swatch--black" role="radio" aria-checked="false" aria-label="Чорний" data-catalogfeatured-color="black"></button>
+													<button type="button" class="catalogfeatured__swatch catalogfeatured__swatch--white" role="radio" aria-checked="false" aria-label="Білий" data-catalogfeatured-color="white"></button>
+													<button type="button" class="catalogfeatured__swatch catalogfeatured__swatch--blush" role="radio" aria-checked="false" aria-label="Рожевий" data-catalogfeatured-color="blush"></button>
+													<button type="button" class="catalogfeatured__swatch catalogfeatured__swatch--mixed" role="radio" aria-checked="false" aria-label="Різнокольоровий" data-catalogfeatured-color="mixed"></button>
+												</div>
+											</div>
+											<ul class="catalogfeatured__thumbs">
+												<li>
+													<button type="button" class="catalogfeatured__thumb" data-catalogfeatured-thumb="black" aria-label="Фото: Чорний">
+														<picture>
+															<source media="(max-width: 600px)" srcset="./assets/img/catalog/featured-max-black-600.webp" type="image/webp">
+															<source media="(max-width: 1200px)" srcset="./assets/img/catalog/featured-max-black-1200.webp" type="image/webp">
+															<img alt="" width="256" height="256" loading="lazy" src="./assets/img/catalog/featured-max-black.webp">
+														</picture>
+													</button>
+												</li>
+												<li>
+													<button type="button" class="catalogfeatured__thumb" data-catalogfeatured-thumb="white" aria-label="Фото: Білий">
+														<picture>
+															<source media="(max-width: 600px)" srcset="./assets/img/product/white-3-600.webp" type="image/webp">
+															<source media="(max-width: 1200px)" srcset="./assets/img/product/white-3-1200.webp" type="image/webp">
+															<img alt="" width="256" height="256" loading="lazy" src="./assets/img/product/white-3.webp">
+														</picture>
+													</button>
+												</li>
+												<li>
+													<button type="button" class="catalogfeatured__thumb" data-catalogfeatured-thumb="blush" aria-label="Фото: Рожевий">
+														<picture>
+															<source media="(max-width: 600px)" srcset="./assets/img/product/set-med-pink-600.webp" type="image/webp">
+															<img alt="" width="256" height="256" loading="lazy" src="./assets/img/product/set-med-pink.webp">
+														</picture>
+													</button>
+												</li>
+												<li>
+													<button type="button" class="catalogfeatured__thumb" data-catalogfeatured-thumb="mixed" aria-label="Фото: Різнокольоровий">
+														<picture>
+															<source media="(max-width: 600px)" srcset="./assets/img/product/related-3-600.webp" type="image/webp">
+															<source media="(max-width: 1200px)" srcset="./assets/img/product/related-3-1200.webp" type="image/webp">
+															<img alt="" width="256" height="256" loading="lazy" src="./assets/img/product/related-3.webp">
+														</picture>
+													</button>
+												</li>
+												<li>
+													<button type="button" class="catalogfeatured__thumb" data-catalogfeatured-thumb="detail" aria-label="Фото: деталі на сітці">
+														<picture>
+															<source media="(max-width: 600px)" srcset="./assets/img/product/white-2-600.webp" type="image/webp">
+															<source media="(max-width: 1200px)" srcset="./assets/img/product/white-2-1200.webp" type="image/webp">
+															<img alt="" width="256" height="256" loading="lazy" src="./assets/img/product/white-2.webp">
+														</picture>
+													</button>
+												</li>
+											</ul>
+										</div>
+										<div class="catalogfeatured__info">
+											<h2 class="catalogfeatured__heading">
+												Набір
+												<mark class="catalogfeatured__accent">MAX</mark>
+											</h2>
+											<p class="catalogfeatured__text">
+												Максимум можливостей для великих шухляд: 65 деталей, які збираються під ваш простір.
+											</p>
+											<ul class="catalogfeatured__features">
+												<li class="catalogfeatured__feature">
+													<span class="catalogfeatured__feature-icon" aria-hidden="true">
+														<svg viewbox="0 0 40 40" fill="none">
+															<path d="M10.4 15H7.9C6.1 15 4.6 16.5 4.6 18.3v5c0 1.9 1.5 3.4 3.3 3.4h2.5c1.9 0 3.4-1.5 3.4-3.4v-5c0-1.8-1.5-3.3-3.4-3.3ZM22.5 4.6H20c-2.1 0-3.7 1.7-3.7 3.7v14.6c0 2.1 1.6 3.7 3.7 3.7h2.5c2.1 0 3.7-1.6 3.7-3.7V8.3c0-2-1.6-3.7-3.7-3.7ZM32.9 18.3h-1.6c-1.4 0-2.5 1.1-2.5 2.5v3.4c0 1.3 1.1 2.5 2.5 2.5h1.6c1.4 0 2.5-1.2 2.5-2.5v-3.4c0-1.4-1.1-2.5-2.5-2.5ZM32.5 29.6h-25c-1.6 0-2.9 1.3-2.9 2.9s1.3 2.9 2.9 2.9h25c1.6 0 2.9-1.3 2.9-2.9s-1.3-2.9-2.9-2.9Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+														</svg>
+													</span>
+													65 деталей
+													<br>
+													у наборі
+												</li>
+												<li class="catalogfeatured__feature">
+													<span class="catalogfeatured__feature-icon" aria-hidden="true">
+														<svg viewbox="0 0 40 40" fill="none">
+															<path d="M13.75 12.9h-5c-2.3 0-4.17 1.9-4.17 4.2v5c0 2.3 1.87 4.15 4.17 4.15h5c2.3 0 4.17-1.85 4.17-4.15v-5c0-2.3-1.87-4.2-4.17-4.2ZM31.25 12.9h-5c-2.3 0-4.17 1.9-4.17 4.2v5c0 2.3 1.87 4.15 4.17 4.15h5c2.3 0 4.17-1.85 4.17-4.15v-5c0-2.3-1.87-4.2-4.17-4.2ZM30 7.5H11.67M14.58 4.58 11.67 7.5l2.91 2.92M10 32.5h18.33M25.42 29.58l2.91 2.92-2.91 2.92" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+														</svg>
+													</span>
+													Гнучка
+													<br>
+													конфігурація
+												</li>
+												<li class="catalogfeatured__feature">
+													<span class="catalogfeatured__feature-icon" aria-hidden="true">
+														<svg viewbox="0 0 40 40" fill="none">
+															<path d="M27.9 4.6H12.1c-4.2 0-7.5 3.3-7.5 7.5v9.1c0 4.2 3.3 7.5 7.5 7.5h15.8c4.2 0 7.5-3.3 7.5-7.5v-9.1c0-4.2-3.3-7.5-7.5-7.5ZM15 6.7v20M25 6.7v20M7.5 12.5h25M7.5 20.8h25M3.3 34.2h33.4M4.6 31.7v5M35.4 31.7v5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+														</svg>
+													</span>
+													Основа
+													<br>
+													22 × 22 см
+												</li>
+											</ul>
+											<div class="catalogfeatured__gift">
+												<span class="catalogfeatured__gift-icon" aria-hidden="true">
+													<svg viewbox="0 0 16 16">
+														<path d="M2 7h12v2H2zM3 9h10v6H3zM7.25 7h1.5v8h-1.5zM8 6.5C6.5 3 3.5 3.5 4 5.2 4.4 6.4 6.6 6.5 8 6.5Zm0 0c1.5-3.5 4.5-3 4-1.3-.4 1.2-2.6 1.3-4 1.3Z" fill="currentColor"></path>
+													</svg>
+												</span>
+												<p class="catalogfeatured__gift-title">
+													Підставка для телефону
+													<br>
+													у подарунок
+												</p>
+												<p class="catalogfeatured__gift-note">до набору MAX · додається автоматично</p>
+												<picture>
+													<img class="catalogfeatured__gift-image" alt="Рожева підставка для телефону" width="425" height="657" loading="lazy" src="./assets/img/catalog/gift-phone-stand.webp">
+												</picture>
+											</div>
+											<div class="catalogfeatured__buy">
+												<p class="catalogfeatured__price">
+													1950 грн
+													<span class="catalogfeatured__parts">/ 65 деталей</span>
+												</p>
+												<div class="catalogfeatured__actions">
+													<div class="catalogfeatured__stepper">
+														<button type="button" class="catalogfeatured__step" data-catalogfeatured-minus="" aria-label="Менше" disabled>−</button>
+														<span class="catalogfeatured__qty" data-catalogfeatured-qty="" aria-live="polite">1</span>
+														<button type="button" class="catalogfeatured__step" data-catalogfeatured-plus="" aria-label="Більше">+</button>
+													</div>
+													<a class="catalogfeatured__cta button button--caps button--background-black" href="product-card.html">Додати до кошика</a>
+													<button type="button" class="catalogfeatured__save" data-fls-bookmarks-toggle="set-max" data-bookmark-title="Набір MAX" data-bookmark-price="1950 ₴" data-bookmark-url="product-card.html" data-bookmark-toast="Додано в обране" aria-pressed="false" aria-label="Зберегти в обране: Набір MAX">
+														<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+															<path d="M12 20.5S3.5 15.4 3.5 9.2A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.5 2.8c0 6.2-8.5 11.3-8.5 11.3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+														</svg>
+													</button>
+												</div>
+											</div>
+											<ul class="catalogfeatured__perks">
+												<li class="catalogfeatured__perk">
+													<svg viewbox="0 0 20 20" fill="none" aria-hidden="true">
+														<path d="M1.5 5.5h10v8h-10zM11.5 8.5h3.6l2.4 2.7v2.3h-6" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"></path>
+														<circle cx="5" cy="14.5" r="1.6" fill="var(--color-bone)" stroke="currentColor" stroke-width="1.3"></circle>
+														<circle cx="14.5" cy="14.5" r="1.6" fill="var(--color-bone)" stroke="currentColor" stroke-width="1.3"></circle>
+													</svg>
+													Швидка доставка
+												</li>
+												<li class="catalogfeatured__perk">
+													<svg viewbox="0 0 20 20" fill="none" aria-hidden="true">
+														<path d="M10 2 3.5 4.5v5c0 4 2.8 6.9 6.5 8.5 3.7-1.6 6.5-4.5 6.5-8.5v-5L10 2Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"></path>
+														<path d="m7 10 2.2 2.2L13.2 8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg>
+													Надійна упаковка
+												</li>
+												<li class="catalogfeatured__perk">
+													<svg viewbox="0 0 20 20" fill="none" aria-hidden="true">
+														<path d="M4 16C4 9 8.5 4.5 16.5 3.5 16 11 12 15.5 5.5 15.8M4 16l6-6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg>
+													Порядок надихає
+												</li>
+											</ul>
 										</div>
 									</div>
-									<div class="catalogfeatured__info">
-										<div class="catalogfeatured__top">
-											<h2 class="catalogfeatured__heading">
-												Стартовий набір
-												<span class="catalogfeatured__heading-accent">MAX</span>
-											</h2>
-											<p class="catalogfeatured__specs">6 основ · 30 фіксаторів · 10 перестінок · 17 боксів · 2 підставки</p>
-										</div>
-										<div class="catalogfeatured__bottom">
-											<p class="catalogfeatured__price">
-												1 950 ₴
-												<span class="catalogfeatured__parts">/ 65 деталей</span>
-											</p>
-											<div class="catalogfeatured__actions">
-												<a class="catalogfeatured__cta" href="product-card.html">
-													Додати до кошика
-													<svg class="catalog-icon" viewbox="0 0 12 8" fill="none" aria-hidden="true">
-														<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z" fill="currentColor"></path>
+									<div class="catalogfeatured__body" data-catalogfeatured-set="" data-price="1065">
+										<div class="catalogfeatured__gallery">
+											<div class="catalogfeatured__media" data-catalogfeatured-media="">
+												<picture>
+													<source media="(max-width: 600px)" srcset="./assets/img/catalog/set-med-600.webp" type="image/webp">
+													<img class="catalogfeatured__photo" alt="Набір MED" width="1380" height="1040" loading="lazy" data-catalogfeatured-photo="" src="./assets/img/catalog/set-med.webp">
+												</picture>
+												<button type="button" class="catalogfeatured__zoom" data-fls-popup-link="featured-zoom" data-catalogfeatured-zoom="" aria-label="Збільшити фото">
+													<svg viewbox="0 0 20 20" fill="none" aria-hidden="true">
+														<circle cx="9" cy="9" r="5.8" stroke="currentColor" stroke-width="1.6"></circle>
+														<path d="M13.3 13.3L17 17M9 6.6v4.8M6.6 9h4.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
 													</svg>
-												</a>
-												<a class="catalogfeatured__bag" href="product-card.html" aria-label="Стартовий набір MAX">
-													<svg class="catalog-icon" viewbox="0 0 48 48" fill="none" aria-hidden="true">
-														<path d="M9 17.5H39L36.9 38.3C36.79 39.39 36.28 40.39 35.47 41.12C34.66 41.86 33.61 42.26 32.52 42.26H15.48C14.39 42.26 13.34 41.86 12.53 41.12C11.72 40.39 11.21 39.39 11.1 38.3L9 17.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
-														<path d="M17.5 21V13.8C17.5 12.08 18.18 10.42 19.4 9.2C20.62 7.98 22.28 7.3 24 7.3C25.72 7.3 27.38 7.98 28.6 9.2C29.82 10.42 30.5 12.08 30.5 13.8V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-													</svg>
-												</a>
+												</button>
+												<div class="catalogfeatured__swatches" role="radiogroup" aria-label="Колір набору MED">
+													<button type="button" class="catalogfeatured__swatch catalogfeatured__swatch--black" role="radio" aria-checked="false" aria-label="Чорний" data-catalogfeatured-color="black"></button>
+													<button type="button" class="catalogfeatured__swatch catalogfeatured__swatch--white" role="radio" aria-checked="false" aria-label="Білий" data-catalogfeatured-color="white"></button>
+													<button type="button" class="catalogfeatured__swatch catalogfeatured__swatch--blush" role="radio" aria-checked="false" aria-label="Рожевий" data-catalogfeatured-color="blush"></button>
+													<button type="button" class="catalogfeatured__swatch catalogfeatured__swatch--mixed" role="radio" aria-checked="false" aria-label="Різнокольоровий" data-catalogfeatured-color="mixed"></button>
+												</div>
 											</div>
+											<ul class="catalogfeatured__thumbs">
+												<li>
+													<button type="button" class="catalogfeatured__thumb" data-catalogfeatured-thumb="black" aria-label="Фото: Чорний">
+														<picture>
+															<source media="(max-width: 600px)" srcset="./assets/img/catalog/set-med-600.webp" type="image/webp">
+															<img alt="" width="256" height="256" loading="lazy" src="./assets/img/catalog/set-med.webp">
+														</picture>
+													</button>
+												</li>
+												<li>
+													<button type="button" class="catalogfeatured__thumb" data-catalogfeatured-thumb="white" aria-label="Фото: Білий">
+														<picture>
+															<source media="(max-width: 600px)" srcset="./assets/img/product/white-1-600.webp" type="image/webp">
+															<source media="(max-width: 1200px)" srcset="./assets/img/product/white-1-1200.webp" type="image/webp">
+															<img alt="" width="256" height="256" loading="lazy" src="./assets/img/product/white-1.webp">
+														</picture>
+													</button>
+												</li>
+												<li>
+													<button type="button" class="catalogfeatured__thumb" data-catalogfeatured-thumb="blush" aria-label="Фото: Рожевий">
+														<picture>
+															<source media="(max-width: 600px)" srcset="./assets/img/product/set-med-pink-600.webp" type="image/webp">
+															<img alt="" width="256" height="256" loading="lazy" src="./assets/img/product/set-med-pink.webp">
+														</picture>
+													</button>
+												</li>
+												<li>
+													<button type="button" class="catalogfeatured__thumb" data-catalogfeatured-thumb="mixed" aria-label="Фото: Різнокольоровий">
+														<picture>
+															<source media="(max-width: 600px)" srcset="./assets/img/product/related-3-600.webp" type="image/webp">
+															<source media="(max-width: 1200px)" srcset="./assets/img/product/related-3-1200.webp" type="image/webp">
+															<img alt="" width="256" height="256" loading="lazy" src="./assets/img/product/related-3.webp">
+														</picture>
+													</button>
+												</li>
+												<li>
+													<button type="button" class="catalogfeatured__thumb" data-catalogfeatured-thumb="detail" aria-label="Фото: деталі на сітці">
+														<picture>
+															<source media="(max-width: 600px)" srcset="./assets/img/product/white-2-600.webp" type="image/webp">
+															<source media="(max-width: 1200px)" srcset="./assets/img/product/white-2-1200.webp" type="image/webp">
+															<img alt="" width="256" height="256" loading="lazy" src="./assets/img/product/white-2.webp">
+														</picture>
+													</button>
+												</li>
+											</ul>
+										</div>
+										<div class="catalogfeatured__info">
+											<h2 class="catalogfeatured__heading">
+												Набір
+												<mark class="catalogfeatured__accent">MED</mark>
+											</h2>
+											<p class="catalogfeatured__text">
+												Золота середина для шухляд середнього розміру: 45 деталей для кухні, ванної чи робочого столу.
+											</p>
+											<ul class="catalogfeatured__features">
+												<li class="catalogfeatured__feature">
+													<span class="catalogfeatured__feature-icon" aria-hidden="true">
+														<svg viewbox="0 0 40 40" fill="none">
+															<path d="M10.4 15H7.9C6.1 15 4.6 16.5 4.6 18.3v5c0 1.9 1.5 3.4 3.3 3.4h2.5c1.9 0 3.4-1.5 3.4-3.4v-5c0-1.8-1.5-3.3-3.4-3.3ZM22.5 4.6H20c-2.1 0-3.7 1.7-3.7 3.7v14.6c0 2.1 1.6 3.7 3.7 3.7h2.5c2.1 0 3.7-1.6 3.7-3.7V8.3c0-2-1.6-3.7-3.7-3.7ZM32.9 18.3h-1.6c-1.4 0-2.5 1.1-2.5 2.5v3.4c0 1.3 1.1 2.5 2.5 2.5h1.6c1.4 0 2.5-1.2 2.5-2.5v-3.4c0-1.4-1.1-2.5-2.5-2.5ZM32.5 29.6h-25c-1.6 0-2.9 1.3-2.9 2.9s1.3 2.9 2.9 2.9h25c1.6 0 2.9-1.3 2.9-2.9s-1.3-2.9-2.9-2.9Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+														</svg>
+													</span>
+													45 деталей
+													<br>
+													у наборі
+												</li>
+												<li class="catalogfeatured__feature">
+													<span class="catalogfeatured__feature-icon" aria-hidden="true">
+														<svg viewbox="0 0 40 40" fill="none">
+															<path d="M13.75 12.9h-5c-2.3 0-4.17 1.9-4.17 4.2v5c0 2.3 1.87 4.15 4.17 4.15h5c2.3 0 4.17-1.85 4.17-4.15v-5c0-2.3-1.87-4.2-4.17-4.2ZM31.25 12.9h-5c-2.3 0-4.17 1.9-4.17 4.2v5c0 2.3 1.87 4.15 4.17 4.15h5c2.3 0 4.17-1.85 4.17-4.15v-5c0-2.3-1.87-4.2-4.17-4.2ZM30 7.5H11.67M14.58 4.58 11.67 7.5l2.91 2.92M10 32.5h18.33M25.42 29.58l2.91 2.92-2.91 2.92" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+														</svg>
+													</span>
+													Гнучка
+													<br>
+													конфігурація
+												</li>
+												<li class="catalogfeatured__feature">
+													<span class="catalogfeatured__feature-icon" aria-hidden="true">
+														<svg viewbox="0 0 40 40" fill="none">
+															<path d="M27.9 4.6H12.1c-4.2 0-7.5 3.3-7.5 7.5v9.1c0 4.2 3.3 7.5 7.5 7.5h15.8c4.2 0 7.5-3.3 7.5-7.5v-9.1c0-4.2-3.3-7.5-7.5-7.5ZM15 6.7v20M25 6.7v20M7.5 12.5h25M7.5 20.8h25M3.3 34.2h33.4M4.6 31.7v5M35.4 31.7v5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+														</svg>
+													</span>
+													Основа
+													<br>
+													22 × 22 см
+												</li>
+											</ul>
+											<div class="catalogfeatured__buy">
+												<p class="catalogfeatured__price">
+													1065 грн
+													<span class="catalogfeatured__parts">/ 45 деталей</span>
+												</p>
+												<div class="catalogfeatured__actions">
+													<div class="catalogfeatured__stepper">
+														<button type="button" class="catalogfeatured__step" data-catalogfeatured-minus="" aria-label="Менше" disabled>−</button>
+														<span class="catalogfeatured__qty" data-catalogfeatured-qty="" aria-live="polite">1</span>
+														<button type="button" class="catalogfeatured__step" data-catalogfeatured-plus="" aria-label="Більше">+</button>
+													</div>
+													<a class="catalogfeatured__cta button button--caps button--background-black" href="product-card.html">Додати до кошика</a>
+													<button type="button" class="catalogfeatured__save" data-fls-bookmarks-toggle="set-med" data-bookmark-title="Набір MED" data-bookmark-price="1065 ₴" data-bookmark-url="product-card.html" data-bookmark-toast="Додано в обране" aria-pressed="false" aria-label="Зберегти в обране: Набір MED">
+														<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+															<path d="M12 20.5S3.5 15.4 3.5 9.2A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.5 2.8c0 6.2-8.5 11.3-8.5 11.3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+														</svg>
+													</button>
+												</div>
+											</div>
+											<ul class="catalogfeatured__perks">
+												<li class="catalogfeatured__perk">
+													<svg viewbox="0 0 20 20" fill="none" aria-hidden="true">
+														<path d="M1.5 5.5h10v8h-10zM11.5 8.5h3.6l2.4 2.7v2.3h-6" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"></path>
+														<circle cx="5" cy="14.5" r="1.6" fill="var(--color-bone)" stroke="currentColor" stroke-width="1.3"></circle>
+														<circle cx="14.5" cy="14.5" r="1.6" fill="var(--color-bone)" stroke="currentColor" stroke-width="1.3"></circle>
+													</svg>
+													Швидка доставка
+												</li>
+												<li class="catalogfeatured__perk">
+													<svg viewbox="0 0 20 20" fill="none" aria-hidden="true">
+														<path d="M10 2 3.5 4.5v5c0 4 2.8 6.9 6.5 8.5 3.7-1.6 6.5-4.5 6.5-8.5v-5L10 2Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"></path>
+														<path d="m7 10 2.2 2.2L13.2 8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg>
+													Надійна упаковка
+												</li>
+												<li class="catalogfeatured__perk">
+													<svg viewbox="0 0 20 20" fill="none" aria-hidden="true">
+														<path d="M4 16C4 9 8.5 4.5 16.5 3.5 16 11 12 15.5 5.5 15.8M4 16l6-6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg>
+													Порядок надихає
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="catalogfeatured__body" data-catalogfeatured-set="" data-price="482">
+										<div class="catalogfeatured__gallery">
+											<div class="catalogfeatured__media" data-catalogfeatured-media="">
+												<picture>
+													<source media="(max-width: 600px)" srcset="./assets/img/catalog/set-min-600.webp" type="image/webp">
+													<img class="catalogfeatured__photo" alt="Набір MIN" width="1380" height="1040" loading="lazy" data-catalogfeatured-photo="" src="./assets/img/catalog/set-min.webp">
+												</picture>
+												<button type="button" class="catalogfeatured__zoom" data-fls-popup-link="featured-zoom" data-catalogfeatured-zoom="" aria-label="Збільшити фото">
+													<svg viewbox="0 0 20 20" fill="none" aria-hidden="true">
+														<circle cx="9" cy="9" r="5.8" stroke="currentColor" stroke-width="1.6"></circle>
+														<path d="M13.3 13.3L17 17M9 6.6v4.8M6.6 9h4.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+													</svg>
+												</button>
+												<div class="catalogfeatured__swatches" role="radiogroup" aria-label="Колір набору MIN">
+													<button type="button" class="catalogfeatured__swatch catalogfeatured__swatch--black" role="radio" aria-checked="false" aria-label="Чорний" data-catalogfeatured-color="black"></button>
+													<button type="button" class="catalogfeatured__swatch catalogfeatured__swatch--white" role="radio" aria-checked="false" aria-label="Білий" data-catalogfeatured-color="white"></button>
+													<button type="button" class="catalogfeatured__swatch catalogfeatured__swatch--blush" role="radio" aria-checked="false" aria-label="Рожевий" data-catalogfeatured-color="blush"></button>
+													<button type="button" class="catalogfeatured__swatch catalogfeatured__swatch--mixed" role="radio" aria-checked="false" aria-label="Різнокольоровий" data-catalogfeatured-color="mixed"></button>
+												</div>
+											</div>
+											<ul class="catalogfeatured__thumbs">
+												<li>
+													<button type="button" class="catalogfeatured__thumb" data-catalogfeatured-thumb="black" aria-label="Фото: Чорний">
+														<picture>
+															<source media="(max-width: 600px)" srcset="./assets/img/catalog/set-min-600.webp" type="image/webp">
+															<img alt="" width="256" height="256" loading="lazy" src="./assets/img/catalog/set-min.webp">
+														</picture>
+													</button>
+												</li>
+												<li>
+													<button type="button" class="catalogfeatured__thumb" data-catalogfeatured-thumb="white" aria-label="Фото: Білий">
+														<picture>
+															<source media="(max-width: 600px)" srcset="./assets/img/product/white-2-600.webp" type="image/webp">
+															<source media="(max-width: 1200px)" srcset="./assets/img/product/white-2-1200.webp" type="image/webp">
+															<img alt="" width="256" height="256" loading="lazy" src="./assets/img/product/white-2.webp">
+														</picture>
+													</button>
+												</li>
+												<li>
+													<button type="button" class="catalogfeatured__thumb" data-catalogfeatured-thumb="blush" aria-label="Фото: Рожевий">
+														<picture>
+															<source media="(max-width: 600px)" srcset="./assets/img/product/set-med-pink-600.webp" type="image/webp">
+															<img alt="" width="256" height="256" loading="lazy" src="./assets/img/product/set-med-pink.webp">
+														</picture>
+													</button>
+												</li>
+												<li>
+													<button type="button" class="catalogfeatured__thumb" data-catalogfeatured-thumb="mixed" aria-label="Фото: Різнокольоровий">
+														<picture>
+															<source media="(max-width: 600px)" srcset="./assets/img/product/related-3-600.webp" type="image/webp">
+															<source media="(max-width: 1200px)" srcset="./assets/img/product/related-3-1200.webp" type="image/webp">
+															<img alt="" width="256" height="256" loading="lazy" src="./assets/img/product/related-3.webp">
+														</picture>
+													</button>
+												</li>
+												<li>
+													<button type="button" class="catalogfeatured__thumb" data-catalogfeatured-thumb="detail" aria-label="Фото: деталі на сітці">
+														<picture>
+															<source media="(max-width: 600px)" srcset="./assets/img/product/white-2-600.webp" type="image/webp">
+															<source media="(max-width: 1200px)" srcset="./assets/img/product/white-2-1200.webp" type="image/webp">
+															<img alt="" width="256" height="256" loading="lazy" src="./assets/img/product/white-2.webp">
+														</picture>
+													</button>
+												</li>
+											</ul>
+										</div>
+										<div class="catalogfeatured__info">
+											<h2 class="catalogfeatured__heading">
+												Набір
+												<mark class="catalogfeatured__accent">MIN</mark>
+											</h2>
+											<p class="catalogfeatured__text">Компактний старт для невеликої шухляди: 28 деталей, щоб спробувати систему.</p>
+											<ul class="catalogfeatured__features">
+												<li class="catalogfeatured__feature">
+													<span class="catalogfeatured__feature-icon" aria-hidden="true">
+														<svg viewbox="0 0 40 40" fill="none">
+															<path d="M10.4 15H7.9C6.1 15 4.6 16.5 4.6 18.3v5c0 1.9 1.5 3.4 3.3 3.4h2.5c1.9 0 3.4-1.5 3.4-3.4v-5c0-1.8-1.5-3.3-3.4-3.3ZM22.5 4.6H20c-2.1 0-3.7 1.7-3.7 3.7v14.6c0 2.1 1.6 3.7 3.7 3.7h2.5c2.1 0 3.7-1.6 3.7-3.7V8.3c0-2-1.6-3.7-3.7-3.7ZM32.9 18.3h-1.6c-1.4 0-2.5 1.1-2.5 2.5v3.4c0 1.3 1.1 2.5 2.5 2.5h1.6c1.4 0 2.5-1.2 2.5-2.5v-3.4c0-1.4-1.1-2.5-2.5-2.5ZM32.5 29.6h-25c-1.6 0-2.9 1.3-2.9 2.9s1.3 2.9 2.9 2.9h25c1.6 0 2.9-1.3 2.9-2.9s-1.3-2.9-2.9-2.9Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+														</svg>
+													</span>
+													28 деталей
+													<br>
+													у наборі
+												</li>
+												<li class="catalogfeatured__feature">
+													<span class="catalogfeatured__feature-icon" aria-hidden="true">
+														<svg viewbox="0 0 40 40" fill="none">
+															<path d="M13.75 12.9h-5c-2.3 0-4.17 1.9-4.17 4.2v5c0 2.3 1.87 4.15 4.17 4.15h5c2.3 0 4.17-1.85 4.17-4.15v-5c0-2.3-1.87-4.2-4.17-4.2ZM31.25 12.9h-5c-2.3 0-4.17 1.9-4.17 4.2v5c0 2.3 1.87 4.15 4.17 4.15h5c2.3 0 4.17-1.85 4.17-4.15v-5c0-2.3-1.87-4.2-4.17-4.2ZM30 7.5H11.67M14.58 4.58 11.67 7.5l2.91 2.92M10 32.5h18.33M25.42 29.58l2.91 2.92-2.91 2.92" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+														</svg>
+													</span>
+													Гнучка
+													<br>
+													конфігурація
+												</li>
+												<li class="catalogfeatured__feature">
+													<span class="catalogfeatured__feature-icon" aria-hidden="true">
+														<svg viewbox="0 0 40 40" fill="none">
+															<path d="M27.9 4.6H12.1c-4.2 0-7.5 3.3-7.5 7.5v9.1c0 4.2 3.3 7.5 7.5 7.5h15.8c4.2 0 7.5-3.3 7.5-7.5v-9.1c0-4.2-3.3-7.5-7.5-7.5ZM15 6.7v20M25 6.7v20M7.5 12.5h25M7.5 20.8h25M3.3 34.2h33.4M4.6 31.7v5M35.4 31.7v5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+														</svg>
+													</span>
+													Основа
+													<br>
+													22 × 22 см
+												</li>
+											</ul>
+											<div class="catalogfeatured__buy">
+												<p class="catalogfeatured__price">
+													482 грн
+													<span class="catalogfeatured__parts">/ 28 деталей</span>
+												</p>
+												<div class="catalogfeatured__actions">
+													<div class="catalogfeatured__stepper">
+														<button type="button" class="catalogfeatured__step" data-catalogfeatured-minus="" aria-label="Менше" disabled>−</button>
+														<span class="catalogfeatured__qty" data-catalogfeatured-qty="" aria-live="polite">1</span>
+														<button type="button" class="catalogfeatured__step" data-catalogfeatured-plus="" aria-label="Більше">+</button>
+													</div>
+													<a class="catalogfeatured__cta button button--caps button--background-black" href="product-card.html">Додати до кошика</a>
+													<button type="button" class="catalogfeatured__save" data-fls-bookmarks-toggle="set-min" data-bookmark-title="Набір MIN" data-bookmark-price="482 ₴" data-bookmark-url="product-card.html" data-bookmark-toast="Додано в обране" aria-pressed="false" aria-label="Зберегти в обране: Набір MIN">
+														<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+															<path d="M12 20.5S3.5 15.4 3.5 9.2A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.5 2.8c0 6.2-8.5 11.3-8.5 11.3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+														</svg>
+													</button>
+												</div>
+											</div>
+											<ul class="catalogfeatured__perks">
+												<li class="catalogfeatured__perk">
+													<svg viewbox="0 0 20 20" fill="none" aria-hidden="true">
+														<path d="M1.5 5.5h10v8h-10zM11.5 8.5h3.6l2.4 2.7v2.3h-6" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"></path>
+														<circle cx="5" cy="14.5" r="1.6" fill="var(--color-bone)" stroke="currentColor" stroke-width="1.3"></circle>
+														<circle cx="14.5" cy="14.5" r="1.6" fill="var(--color-bone)" stroke="currentColor" stroke-width="1.3"></circle>
+													</svg>
+													Швидка доставка
+												</li>
+												<li class="catalogfeatured__perk">
+													<svg viewbox="0 0 20 20" fill="none" aria-hidden="true">
+														<path d="M10 2 3.5 4.5v5c0 4 2.8 6.9 6.5 8.5 3.7-1.6 6.5-4.5 6.5-8.5v-5L10 2Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"></path>
+														<path d="m7 10 2.2 2.2L13.2 8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg>
+													Надійна упаковка
+												</li>
+												<li class="catalogfeatured__perk">
+													<svg viewbox="0 0 20 20" fill="none" aria-hidden="true">
+														<path d="M4 16C4 9 8.5 4.5 16.5 3.5 16 11 12 15.5 5.5 15.8M4 16l6-6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+													</svg>
+													Порядок надихає
+												</li>
+											</ul>
 										</div>
 									</div>
 								</div>
-								<div class="catalogfeatured__body">
-									<div class="catalogfeatured__media" data-catalogfeatured-media="">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/IMG_9848-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/IMG_9848-1200.webp" type="image/webp">
-											<img class="catalogfeatured__photo" alt="Стартовий набір MED, Чорний" data-catalogfeatured-photo="black" loading="lazy" src="./assets/img/IMG_9848.webp">
-										</picture>
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/product/related-2-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/product/related-2-1200.webp" type="image/webp">
-											<img class="catalogfeatured__photo" alt="Стартовий набір MED, Рожевий" data-catalogfeatured-photo="blush" loading="lazy" src="./assets/img/product/related-2.webp">
-										</picture>
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/product/related-3-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/product/related-3-1200.webp" type="image/webp">
-											<img class="catalogfeatured__photo" alt="Стартовий набір MED, Різнокольоровий" data-catalogfeatured-photo="mixed" loading="lazy" src="./assets/img/product/related-3.webp">
-										</picture>
-										<div class="catalog-swatches" role="radiogroup" aria-label="Колір набору MED">
-											<button type="button" class="catalog-swatches__item catalog-swatches__item--black" role="radio" aria-checked="false" aria-label="Чорний" data-catalogfeatured-color="black"></button>
-											<button type="button" class="catalog-swatches__item catalog-swatches__item--blush" role="radio" aria-checked="false" aria-label="Рожевий" data-catalogfeatured-color="blush"></button>
-											<button type="button" class="catalog-swatches__item catalog-swatches__item--white" role="radio" aria-checked="false" aria-label="Білий" data-catalogfeatured-color="white"></button>
-											<button type="button" class="catalog-swatches__item catalog-swatches__item--mixed" role="radio" aria-checked="false" aria-label="Різнокольоровий" data-catalogfeatured-color="mixed"></button>
-										</div>
-									</div>
-									<div class="catalogfeatured__info">
-										<div class="catalogfeatured__top">
-											<h2 class="catalogfeatured__heading">
-												Стартовий набір
-												<span class="catalogfeatured__heading-accent">MED</span>
-											</h2>
-											<p class="catalogfeatured__specs">5 основ · 24 фіксатори · 8 перестінок · 8 боксів</p>
-										</div>
-										<div class="catalogfeatured__bottom">
-											<p class="catalogfeatured__price">
-												1 065 ₴
-												<span class="catalogfeatured__parts">/ 45 деталей</span>
-											</p>
-											<div class="catalogfeatured__actions">
-												<a class="catalogfeatured__cta" href="product-card.html">
-													Додати до кошика
-													<svg class="catalog-icon" viewbox="0 0 12 8" fill="none" aria-hidden="true">
-														<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z" fill="currentColor"></path>
-													</svg>
-												</a>
-												<a class="catalogfeatured__bag" href="product-card.html" aria-label="Стартовий набір MED">
-													<svg class="catalog-icon" viewbox="0 0 48 48" fill="none" aria-hidden="true">
-														<path d="M9 17.5H39L36.9 38.3C36.79 39.39 36.28 40.39 35.47 41.12C34.66 41.86 33.61 42.26 32.52 42.26H15.48C14.39 42.26 13.34 41.86 12.53 41.12C11.72 40.39 11.21 39.39 11.1 38.3L9 17.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
-														<path d="M17.5 21V13.8C17.5 12.08 18.18 10.42 19.4 9.2C20.62 7.98 22.28 7.3 24 7.3C25.72 7.3 27.38 7.98 28.6 9.2C29.82 10.42 30.5 12.08 30.5 13.8V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-													</svg>
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="catalogfeatured__body">
-									<div class="catalogfeatured__media" data-catalogfeatured-media="">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/IMG_9861-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/IMG_9861-1200.webp" type="image/webp">
-											<img class="catalogfeatured__photo" alt="Стартовий набір MIN, Чорний" data-catalogfeatured-photo="black" loading="lazy" src="./assets/img/IMG_9861.webp">
-										</picture>
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/product/related-2-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/product/related-2-1200.webp" type="image/webp">
-											<img class="catalogfeatured__photo" alt="Стартовий набір MIN, Рожевий" data-catalogfeatured-photo="blush" loading="lazy" src="./assets/img/product/related-2.webp">
-										</picture>
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/product/related-3-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/product/related-3-1200.webp" type="image/webp">
-											<img class="catalogfeatured__photo" alt="Стартовий набір MIN, Різнокольоровий" data-catalogfeatured-photo="mixed" loading="lazy" src="./assets/img/product/related-3.webp">
-										</picture>
-										<div class="catalog-swatches" role="radiogroup" aria-label="Колір набору MIN">
-											<button type="button" class="catalog-swatches__item catalog-swatches__item--black" role="radio" aria-checked="false" aria-label="Чорний" data-catalogfeatured-color="black"></button>
-											<button type="button" class="catalog-swatches__item catalog-swatches__item--blush" role="radio" aria-checked="false" aria-label="Рожевий" data-catalogfeatured-color="blush"></button>
-											<button type="button" class="catalog-swatches__item catalog-swatches__item--white" role="radio" aria-checked="false" aria-label="Білий" data-catalogfeatured-color="white"></button>
-											<button type="button" class="catalog-swatches__item catalog-swatches__item--mixed" role="radio" aria-checked="false" aria-label="Різнокольоровий" data-catalogfeatured-color="mixed"></button>
-										</div>
-									</div>
-									<div class="catalogfeatured__info">
-										<div class="catalogfeatured__top">
-											<h2 class="catalogfeatured__heading">
-												Стартовий набір
-												<span class="catalogfeatured__heading-accent">MIN</span>
-											</h2>
-											<p class="catalogfeatured__specs">4 основи · 18 фіксаторів · 6 перестінок</p>
-										</div>
-										<div class="catalogfeatured__bottom">
-											<p class="catalogfeatured__price">
-												482 ₴
-												<span class="catalogfeatured__parts">/ 28 деталей</span>
-											</p>
-											<div class="catalogfeatured__actions">
-												<a class="catalogfeatured__cta" href="product-card.html">
-													Додати до кошика
-													<svg class="catalog-icon" viewbox="0 0 12 8" fill="none" aria-hidden="true">
-														<path d="M7.60003 7.87195H5.93602L9.96803 3.93595L5.93602 -5.19753e-05H7.60003L11.696 3.93595L7.60003 7.87195ZM10.208 4.51195H2.44379e-05V3.35995H10.208V4.51195Z" fill="currentColor"></path>
-													</svg>
-												</a>
-												<a class="catalogfeatured__bag" href="product-card.html" aria-label="Стартовий набір MIN">
-													<svg class="catalog-icon" viewbox="0 0 48 48" fill="none" aria-hidden="true">
-														<path d="M9 17.5H39L36.9 38.3C36.79 39.39 36.28 40.39 35.47 41.12C34.66 41.86 33.61 42.26 32.52 42.26H15.48C14.39 42.26 13.34 41.86 12.53 41.12C11.72 40.39 11.21 39.39 11.1 38.3L9 17.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
-														<path d="M17.5 21V13.8C17.5 12.08 18.18 10.42 19.4 9.2C20.62 7.98 22.28 7.3 24 7.3C25.72 7.3 27.38 7.98 28.6 9.2C29.82 10.42 30.5 12.08 30.5 13.8V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-													</svg>
-												</a>
-											</div>
-										</div>
-									</div>
+							</div>
+						</div>
+						<!-- Лупа: поточне фото на весь екран (layout/popup; src підставляє catalogfeatured.js) -->
+						<div data-fls-popup="featured-zoom" aria-hidden="true" class="catalogfeatured-zoom">
+							<div data-fls-popup-wrapper="" class="catalogfeatured-zoom__wrapper">
+								<div data-fls-popup-body="" class="catalogfeatured-zoom__body" role="dialog" aria-modal="true" aria-label="Фото набору">
+									<button data-fls-popup-close="" type="button" class="catalogfeatured-zoom__close" aria-label="Закрити">
+										<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+											<path d="M5 5L19 19M19 5L5 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+										</svg>
+									</button>
+									<picture>
+										<source media="(max-width: 600px)" srcset="./assets/img/catalog/featured-max-black-600.webp" type="image/webp">
+										<source media="(max-width: 1200px)" srcset="./assets/img/catalog/featured-max-black-1200.webp" type="image/webp">
+										<img class="catalogfeatured-zoom__image" alt="" width="1380" height="1040" data-catalogfeatured-zoom-image="" src="./assets/img/catalog/featured-max-black.webp">
+									</picture>
 								</div>
 							</div>
 						</div>
@@ -391,10 +716,14 @@ colors: кружечки кольорів на фото; клік перемик
 Порт: src/shopify/relax-theme/sections/cataloggrid.liquid
 2026-09-14 ваніль оновлено за макетом (картка як у productrelated, закладки,
 кнопка «Фільтр»); 2026-09-15 порт синхронізовано з ваніллю.
+2026-09-30 ваніль оновлено за редизайном (Catalogue.png): 14 товарів з PDF (3 набори + 11 деталей),
+2 колонки, картка — спільний custom/shopcard (правила — «Картка товару — правила.png»), фон bone.
+Порт у тему ще НЕ синхронізовано.
 У темі фільтри — справжні посилання на /collections/x/tag з активним станом
 з current_tags, а товари приходять з об'єкта collection. Тут це статичний
-зліпок на 9 карточок для візуальної перевірки розкладки. Закладки працюють
+зліпок для візуальної перевірки розкладки. Закладки працюють
 через layout/bookmarks, дровер фільтрів — custom/catalogfilters.
+Класи cataloggrid__card/__photo/__bar лишаються: ними рендерить картки сторінка «Збережене» (custom/savedlist).
 -->
 					<section data-fls-cataloggrid="" class="cataloggrid">
 						<div class="cataloggrid__container" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
@@ -424,7 +753,7 @@ colors: кружечки кольорів на фото; клік перемик
 								<a class="cataloggrid__filter" href="cataloge.html">Підставки</a>
 							</nav>
 							<div class="cataloggrid__meta">
-								<p class="cataloggrid__count">20 товарів</p>
+								<p class="cataloggrid__count">14 товарів</p>
 								<div class="cataloggrid__tools">
 									<ul class="cataloggrid__active">
 										<li>
@@ -447,322 +776,978 @@ colors: кружечки кольорів на фото; клік перемик
 									</button>
 								</div>
 							</div>
-							<ul class="cataloggrid__grid" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
-								<!--
-Фото наборів у кольорах є лише product/related-* (чорний, розовий,
-кольоровий) — як у макеті; білого набору в репозиторії немає
+							<!--
+Ціни й мінімальне замовлення — info/7dem-nabory-i-detali.pdf; кольори деталей — з макету
+(у PDF для деталей лише білий/чорний/рожевий — уточнити). Фото вирізані з Catalogue.png
+(накладки макета зафарбовано); у більшості кольорів фото поки немає.
 -->
-								<li class="cataloggrid__card" data-fls-bookmarks-card="">
-									<a class="cataloggrid__photo" href="product-card.html" tabindex="-1" aria-hidden="true">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/product/related-1-600.webp" type="image/webp">
-											<img alt="Набір MAX" loading="lazy" src="./assets/img/product/related-1.webp">
-										</picture>
-										<span class="cataloggrid__zoom">
-											<svg class="catalog-icon" viewbox="0 0 16 16" fill="none" aria-hidden="true">
-												<path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+							<ul class="cataloggrid__grid cataloggrid__grid--large" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
+								<!--
+Картка товару «Card, Size=Large» (редизайн 2026-09-30: Catalogue.png, Product-card.png,
+правила — «Картка товару — правила.png»). Спільна для cataloggrid і productrelated:
+інклудиться в циклі з locals='{"item":{"id":"set-max","qty":0,"name":"Набір MAX","url":"product-card.html","price":1950,"unit":false,"min":1,"gift":true,"color":"black","colors":[{"mod":"black","label":"Чорний","img":"assets/img/catalog/set-max.jpg"},{"mod":"white","label":"Білий","img":"assets/img/product/white-3.jpg"},{"mod":"blush","label":"Рожевий","img":"assets/img/product/set-med-pink.jpg"},{"mod":"mixed","label":"Різнокольоровий","img":"assets/img/product/related-3.png"}]}}'. Порту в тему ще немає — при порті стане
+сніпетом (snippets/shopcard.liquid) з даними з product/variants.
+Поля item (усі обов'язкові — posthtml-expressions падає на невідомому local навіть у хибному if):
+id     — ключ закладки (layout/bookmarks)
+name   — назва; url — посилання на товар
+price  — ціна за 1 шт, число (рядок «4 шт · 320₴» рахує shopcard.js)
+unit   — true для деталей: ціна «80₴ / шт», false для наборів: «1950₴»
+min    — мінімальне замовлення: кошик додає одразу стільки, «−» неактивний на мінімумі
+qty    — стартова кількість у кошику (0 — сумка; у макеті MED = 2, Base = 4 — показ степпера)
+gift   — стрічка «Подарунок» у куті
+color  — колір, вибраний спочатку (без нього — перший)
+colors — [{mod, label, img}]; img порожній — колір вибирається, але фото лишається поточне
+(фото деталей є лише чорні, вирізані з Catalogue.png).
+-->
+								<li data-fls-shopcard="" class="shopcard" data-fls-bookmarks-card="" data-shopcard-card="" data-price="1950" data-min="1" data-qty="0">
+									<div class="shopcard__media" data-shopcard-media="black">
+										<a href="product-card.html" class="shopcard__photos" tabindex="-1" aria-hidden="true">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/catalog/set-max-600.webp" type="image/webp">
+												<img class="shopcard__photo" alt="" data-shopcard-photo="black" width="1176" height="1120" loading="lazy" src="./assets/img/catalog/set-max.webp">
+											</picture>
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/product/white-3-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/product/white-3-1200.webp" type="image/webp">
+												<img class="shopcard__photo" alt="" data-shopcard-photo="white" width="1176" height="1120" loading="lazy" src="./assets/img/product/white-3.webp">
+											</picture>
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/product/set-med-pink-600.webp" type="image/webp">
+												<img class="shopcard__photo" alt="" data-shopcard-photo="blush" width="1176" height="1120" loading="lazy" src="./assets/img/product/set-med-pink.webp">
+											</picture>
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/product/related-3-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/product/related-3-1200.webp" type="image/webp">
+												<img class="shopcard__photo" alt="" data-shopcard-photo="mixed" width="1176" height="1120" loading="lazy" src="./assets/img/product/related-3.webp">
+											</picture>
+											<!-- Стрілка по центру фото — з'являється при наведенні на картку -->
+											<span class="shopcard__open">
+												<svg viewbox="0 0 16 16" fill="none" aria-hidden="true">
+													<path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.8M11.5 4.5V10.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+												</svg>
+											</span>
+										</a>
+										<span class="shopcard__ribbon">
+											<svg viewbox="0 0 16 16" aria-hidden="true">
+												<path d="M2 7h12v2H2zM3 9h10v6H3zM7.25 7h1.5v8h-1.5zM8 6.5C6.5 3 3.5 3.5 4 5.2 4.4 6.4 6.6 6.5 8 6.5Zm0 0c1.5-3.5 4.5-3 4-1.3-.4 1.2-2.6 1.3-4 1.3Z" fill="currentColor"></path>
 											</svg>
+											Подарунок
 										</span>
-									</a>
-									<button type="button" class="cataloggrid__save" data-fls-bookmarks-toggle="max-black" data-bookmark-title="Набір MAX" data-bookmark-price="1 950 ₴" data-bookmark-url="product-card.html" aria-pressed="false" aria-label="Зберегти в обране: Набір MAX">
-										<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
-											<path d="M5 7.8C5 6.12 5 5.28 5.33 4.64C5.61 4.07 6.07 3.61 6.64 3.33C7.28 3 8.12 3 9.8 3H14.2C15.88 3 16.72 3 17.36 3.33C17.93 3.61 18.39 4.07 18.67 4.64C19 5.28 19 6.12 19 7.8V21L12 17L5 21V7.8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-										</svg>
-									</button>
-									<div class="cataloggrid__bar">
-										<div class="cataloggrid__pill">
-											<h3 class="cataloggrid__name">
+										<button type="button" class="shopcard__save" data-fls-bookmarks-toggle="set-max" data-bookmark-title="Набір MAX" data-bookmark-price="1950 ₴" data-bookmark-url="product-card.html" data-bookmark-toast="Додано в обране" aria-pressed="false" aria-label="Зберегти в обране: Набір MAX">
+											<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+												<path d="M12 20.5S3.5 15.4 3.5 9.2A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.5 2.8c0 6.2-8.5 11.3-8.5 11.3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+											</svg>
+										</button>
+										<div class="shopcard__swatches" role="radiogroup" aria-label="Колір: Набір MAX">
+											<button type="button" class="shopcard__swatch shopcard__swatch--black" role="radio" aria-checked="false" aria-label="Чорний" data-shopcard-color="black"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--white" role="radio" aria-checked="false" aria-label="Білий" data-shopcard-color="white"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--blush" role="radio" aria-checked="false" aria-label="Рожевий" data-shopcard-color="blush"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--mixed" role="radio" aria-checked="false" aria-label="Різнокольоровий" data-shopcard-color="mixed"></button>
+										</div>
+									</div>
+									<div class="shopcard__body">
+										<div class="shopcard__pill">
+											<h3 class="shopcard__name">
 												<a href="product-card.html">Набір MAX</a>
 											</h3>
-											<p class="cataloggrid__price">1 950 ₴</p>
+											<!-- Без JS — ціна за правилами; shopcard.js перемикає на «N шт · сума» після додавання -->
+											<p class="shopcard__price" data-shopcard-price="" aria-live="polite">1950₴</p>
 										</div>
-										<a class="cataloggrid__bag" href="product-card.html" aria-label="Обрати варіант: Набір MAX">
-											<svg viewbox="0 0 48 48" fill="none" aria-hidden="true">
-												<path d="M9 17.5H39L36.9 38.3C36.79 39.39 36.28 40.39 35.47 41.12C34.66 41.86 33.61 42.26 32.52 42.26H15.48C14.39 42.26 13.34 41.86 12.53 41.12C11.72 40.39 11.21 39.39 11.1 38.3L9 17.5Z" stroke="currentColor" stroke-linejoin="round"></path>
-												<path d="M17.5 21V13.8C17.5 12.08 18.18 10.42 19.4 9.2C20.62 7.98 22.28 7.3 24 7.3C25.72 7.3 27.38 7.98 28.6 9.2C29.82 10.42 30.5 12.08 30.5 13.8V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+										<button type="button" class="shopcard__add" data-shopcard-add="" aria-label="Додати в кошик: Набір MAX">
+											<svg viewbox="0 0 32 38" fill="none" aria-hidden="true">
+												<path d="M11 13V8.5a5 5 0 0 1 10 0V13M3.2 11h25.6l-1.6 22.2a3 3 0 0 1-3 2.8H7.8a3 3 0 0 1-3-2.8L3.2 11Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
 											</svg>
-										</a>
+										</button>
+										<div class="shopcard__stepper" data-shopcard-stepper="" hidden>
+											<button type="button" class="shopcard__step" data-shopcard-minus="" aria-label="Менше: Набір MAX">−</button>
+											<span class="shopcard__qty" data-shopcard-qty="">0</span>
+											<button type="button" class="shopcard__step" data-shopcard-plus="" aria-label="Більше: Набір MAX">+</button>
+										</div>
 									</div>
 								</li>
-								<li class="cataloggrid__card" data-fls-bookmarks-card="">
-									<a class="cataloggrid__photo" href="product-card.html" tabindex="-1" aria-hidden="true">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/product/related-2-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/product/related-2-1200.webp" type="image/webp">
-											<img alt="Набір MAX" loading="lazy" src="./assets/img/product/related-2.webp">
-										</picture>
-										<span class="cataloggrid__zoom">
-											<svg class="catalog-icon" viewbox="0 0 16 16" fill="none" aria-hidden="true">
-												<path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
-											</svg>
-										</span>
-									</a>
-									<button type="button" class="cataloggrid__save" data-fls-bookmarks-toggle="max-pink" data-bookmark-title="Набір MAX" data-bookmark-price="1 950 ₴" data-bookmark-url="product-card.html" aria-pressed="false" aria-label="Зберегти в обране: Набір MAX">
-										<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
-											<path d="M5 7.8C5 6.12 5 5.28 5.33 4.64C5.61 4.07 6.07 3.61 6.64 3.33C7.28 3 8.12 3 9.8 3H14.2C15.88 3 16.72 3 17.36 3.33C17.93 3.61 18.39 4.07 18.67 4.64C19 5.28 19 6.12 19 7.8V21L12 17L5 21V7.8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-										</svg>
-									</button>
-									<div class="cataloggrid__bar">
-										<div class="cataloggrid__pill">
-											<h3 class="cataloggrid__name">
-												<a href="product-card.html">Набір MAX</a>
-											</h3>
-											<p class="cataloggrid__price">1 950 ₴</p>
-										</div>
-										<a class="cataloggrid__bag" href="product-card.html" aria-label="Обрати варіант: Набір MAX">
-											<svg viewbox="0 0 48 48" fill="none" aria-hidden="true">
-												<path d="M9 17.5H39L36.9 38.3C36.79 39.39 36.28 40.39 35.47 41.12C34.66 41.86 33.61 42.26 32.52 42.26H15.48C14.39 42.26 13.34 41.86 12.53 41.12C11.72 40.39 11.21 39.39 11.1 38.3L9 17.5Z" stroke="currentColor" stroke-linejoin="round"></path>
-												<path d="M17.5 21V13.8C17.5 12.08 18.18 10.42 19.4 9.2C20.62 7.98 22.28 7.3 24 7.3C25.72 7.3 27.38 7.98 28.6 9.2C29.82 10.42 30.5 12.08 30.5 13.8V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-											</svg>
+								<!--
+Картка товару «Card, Size=Large» (редизайн 2026-09-30: Catalogue.png, Product-card.png,
+правила — «Картка товару — правила.png»). Спільна для cataloggrid і productrelated:
+інклудиться в циклі з locals='{"item":{"id":"set-med","qty":2,"name":"Набір MED","url":"product-card.html","price":1065,"unit":false,"min":1,"gift":false,"color":"blush","colors":[{"mod":"black","label":"Чорний","img":"assets/img/catalog/set-med.jpg"},{"mod":"white","label":"Білий","img":"assets/img/product/white-1.jpg"},{"mod":"blush","label":"Рожевий","img":"assets/img/product/set-med-pink.jpg"},{"mod":"mixed","label":"Різнокольоровий","img":"assets/img/product/related-3.png"}]}}'. Порту в тему ще немає — при порті стане
+сніпетом (snippets/shopcard.liquid) з даними з product/variants.
+Поля item (усі обов'язкові — posthtml-expressions падає на невідомому local навіть у хибному if):
+id     — ключ закладки (layout/bookmarks)
+name   — назва; url — посилання на товар
+price  — ціна за 1 шт, число (рядок «4 шт · 320₴» рахує shopcard.js)
+unit   — true для деталей: ціна «80₴ / шт», false для наборів: «1950₴»
+min    — мінімальне замовлення: кошик додає одразу стільки, «−» неактивний на мінімумі
+qty    — стартова кількість у кошику (0 — сумка; у макеті MED = 2, Base = 4 — показ степпера)
+gift   — стрічка «Подарунок» у куті
+color  — колір, вибраний спочатку (без нього — перший)
+colors — [{mod, label, img}]; img порожній — колір вибирається, але фото лишається поточне
+(фото деталей є лише чорні, вирізані з Catalogue.png).
+-->
+								<li data-fls-shopcard="" class="shopcard" data-fls-bookmarks-card="" data-shopcard-card="" data-price="1065" data-min="1" data-qty="2">
+									<div class="shopcard__media" data-shopcard-media="blush">
+										<a href="product-card.html" class="shopcard__photos" tabindex="-1" aria-hidden="true">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/catalog/set-med-600.webp" type="image/webp">
+												<img class="shopcard__photo" alt="" data-shopcard-photo="black" width="1176" height="1120" loading="lazy" src="./assets/img/catalog/set-med.webp">
+											</picture>
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/product/white-1-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/product/white-1-1200.webp" type="image/webp">
+												<img class="shopcard__photo" alt="" data-shopcard-photo="white" width="1176" height="1120" loading="lazy" src="./assets/img/product/white-1.webp">
+											</picture>
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/product/set-med-pink-600.webp" type="image/webp">
+												<img class="shopcard__photo" alt="" data-shopcard-photo="blush" width="1176" height="1120" loading="lazy" src="./assets/img/product/set-med-pink.webp">
+											</picture>
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/product/related-3-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/product/related-3-1200.webp" type="image/webp">
+												<img class="shopcard__photo" alt="" data-shopcard-photo="mixed" width="1176" height="1120" loading="lazy" src="./assets/img/product/related-3.webp">
+											</picture>
+											<!-- Стрілка по центру фото — з'являється при наведенні на картку -->
+											<span class="shopcard__open">
+												<svg viewbox="0 0 16 16" fill="none" aria-hidden="true">
+													<path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.8M11.5 4.5V10.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+												</svg>
+											</span>
 										</a>
-									</div>
-								</li>
-								<li class="cataloggrid__card" data-fls-bookmarks-card="">
-									<a class="cataloggrid__photo" href="product-card.html" tabindex="-1" aria-hidden="true">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/product/related-3-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/product/related-3-1200.webp" type="image/webp">
-											<img alt="Набір MAX" loading="lazy" src="./assets/img/product/related-3.webp">
-										</picture>
-										<span class="cataloggrid__zoom">
-											<svg class="catalog-icon" viewbox="0 0 16 16" fill="none" aria-hidden="true">
-												<path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+										<button type="button" class="shopcard__save" data-fls-bookmarks-toggle="set-med" data-bookmark-title="Набір MED" data-bookmark-price="1065 ₴" data-bookmark-url="product-card.html" data-bookmark-toast="Додано в обране" aria-pressed="false" aria-label="Зберегти в обране: Набір MED">
+											<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+												<path d="M12 20.5S3.5 15.4 3.5 9.2A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.5 2.8c0 6.2-8.5 11.3-8.5 11.3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
 											</svg>
-										</span>
-									</a>
-									<button type="button" class="cataloggrid__save" data-fls-bookmarks-toggle="max-color" data-bookmark-title="Набір MAX" data-bookmark-price="1 950 ₴" data-bookmark-url="product-card.html" aria-pressed="false" aria-label="Зберегти в обране: Набір MAX">
-										<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
-											<path d="M5 7.8C5 6.12 5 5.28 5.33 4.64C5.61 4.07 6.07 3.61 6.64 3.33C7.28 3 8.12 3 9.8 3H14.2C15.88 3 16.72 3 17.36 3.33C17.93 3.61 18.39 4.07 18.67 4.64C19 5.28 19 6.12 19 7.8V21L12 17L5 21V7.8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-										</svg>
-									</button>
-									<div class="cataloggrid__bar">
-										<div class="cataloggrid__pill">
-											<h3 class="cataloggrid__name">
-												<a href="product-card.html">Набір MAX</a>
-											</h3>
-											<p class="cataloggrid__price">1 950 ₴</p>
+										</button>
+										<div class="shopcard__swatches" role="radiogroup" aria-label="Колір: Набір MED">
+											<button type="button" class="shopcard__swatch shopcard__swatch--black" role="radio" aria-checked="false" aria-label="Чорний" data-shopcard-color="black"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--white" role="radio" aria-checked="false" aria-label="Білий" data-shopcard-color="white"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--blush" role="radio" aria-checked="false" aria-label="Рожевий" data-shopcard-color="blush"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--mixed" role="radio" aria-checked="false" aria-label="Різнокольоровий" data-shopcard-color="mixed"></button>
 										</div>
-										<a class="cataloggrid__bag" href="product-card.html" aria-label="Обрати варіант: Набір MAX">
-											<svg viewbox="0 0 48 48" fill="none" aria-hidden="true">
-												<path d="M9 17.5H39L36.9 38.3C36.79 39.39 36.28 40.39 35.47 41.12C34.66 41.86 33.61 42.26 32.52 42.26H15.48C14.39 42.26 13.34 41.86 12.53 41.12C11.72 40.39 11.21 39.39 11.1 38.3L9 17.5Z" stroke="currentColor" stroke-linejoin="round"></path>
-												<path d="M17.5 21V13.8C17.5 12.08 18.18 10.42 19.4 9.2C20.62 7.98 22.28 7.3 24 7.3C25.72 7.3 27.38 7.98 28.6 9.2C29.82 10.42 30.5 12.08 30.5 13.8V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-											</svg>
-										</a>
 									</div>
-								</li>
-								<li class="cataloggrid__card" data-fls-bookmarks-card="">
-									<a class="cataloggrid__photo" href="product-card.html" tabindex="-1" aria-hidden="true">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/product/related-1-600.webp" type="image/webp">
-											<img alt="Набір MED" loading="lazy" src="./assets/img/product/related-1.webp">
-										</picture>
-										<span class="cataloggrid__zoom">
-											<svg class="catalog-icon" viewbox="0 0 16 16" fill="none" aria-hidden="true">
-												<path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
-											</svg>
-										</span>
-									</a>
-									<button type="button" class="cataloggrid__save" data-fls-bookmarks-toggle="med-black" data-bookmark-title="Набір MED" data-bookmark-price="1 065 ₴" data-bookmark-url="product-card.html" aria-pressed="false" aria-label="Зберегти в обране: Набір MED">
-										<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
-											<path d="M5 7.8C5 6.12 5 5.28 5.33 4.64C5.61 4.07 6.07 3.61 6.64 3.33C7.28 3 8.12 3 9.8 3H14.2C15.88 3 16.72 3 17.36 3.33C17.93 3.61 18.39 4.07 18.67 4.64C19 5.28 19 6.12 19 7.8V21L12 17L5 21V7.8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-										</svg>
-									</button>
-									<div class="cataloggrid__bar">
-										<div class="cataloggrid__pill">
-											<h3 class="cataloggrid__name">
+									<div class="shopcard__body">
+										<div class="shopcard__pill">
+											<h3 class="shopcard__name">
 												<a href="product-card.html">Набір MED</a>
 											</h3>
-											<p class="cataloggrid__price">1 065 ₴</p>
+											<!-- Без JS — ціна за правилами; shopcard.js перемикає на «N шт · сума» після додавання -->
+											<p class="shopcard__price" data-shopcard-price="" aria-live="polite">1065₴</p>
 										</div>
-										<a class="cataloggrid__bag" href="product-card.html" aria-label="Обрати варіант: Набір MED">
-											<svg viewbox="0 0 48 48" fill="none" aria-hidden="true">
-												<path d="M9 17.5H39L36.9 38.3C36.79 39.39 36.28 40.39 35.47 41.12C34.66 41.86 33.61 42.26 32.52 42.26H15.48C14.39 42.26 13.34 41.86 12.53 41.12C11.72 40.39 11.21 39.39 11.1 38.3L9 17.5Z" stroke="currentColor" stroke-linejoin="round"></path>
-												<path d="M17.5 21V13.8C17.5 12.08 18.18 10.42 19.4 9.2C20.62 7.98 22.28 7.3 24 7.3C25.72 7.3 27.38 7.98 28.6 9.2C29.82 10.42 30.5 12.08 30.5 13.8V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+										<button type="button" class="shopcard__add" data-shopcard-add="" aria-label="Додати в кошик: Набір MED">
+											<svg viewbox="0 0 32 38" fill="none" aria-hidden="true">
+												<path d="M11 13V8.5a5 5 0 0 1 10 0V13M3.2 11h25.6l-1.6 22.2a3 3 0 0 1-3 2.8H7.8a3 3 0 0 1-3-2.8L3.2 11Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
 											</svg>
-										</a>
+										</button>
+										<div class="shopcard__stepper" data-shopcard-stepper="" hidden>
+											<button type="button" class="shopcard__step" data-shopcard-minus="" aria-label="Менше: Набір MED">−</button>
+											<span class="shopcard__qty" data-shopcard-qty="">0</span>
+											<button type="button" class="shopcard__step" data-shopcard-plus="" aria-label="Більше: Набір MED">+</button>
+										</div>
 									</div>
 								</li>
-								<li class="cataloggrid__card" data-fls-bookmarks-card="">
-									<a class="cataloggrid__photo" href="product-card.html" tabindex="-1" aria-hidden="true">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/product/related-2-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/product/related-2-1200.webp" type="image/webp">
-											<img alt="Набір MED" loading="lazy" src="./assets/img/product/related-2.webp">
-										</picture>
-										<span class="cataloggrid__zoom">
-											<svg class="catalog-icon" viewbox="0 0 16 16" fill="none" aria-hidden="true">
-												<path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
-											</svg>
-										</span>
-									</a>
-									<button type="button" class="cataloggrid__save" data-fls-bookmarks-toggle="med-pink" data-bookmark-title="Набір MED" data-bookmark-price="1 065 ₴" data-bookmark-url="product-card.html" aria-pressed="false" aria-label="Зберегти в обране: Набір MED">
-										<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
-											<path d="M5 7.8C5 6.12 5 5.28 5.33 4.64C5.61 4.07 6.07 3.61 6.64 3.33C7.28 3 8.12 3 9.8 3H14.2C15.88 3 16.72 3 17.36 3.33C17.93 3.61 18.39 4.07 18.67 4.64C19 5.28 19 6.12 19 7.8V21L12 17L5 21V7.8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-										</svg>
-									</button>
-									<div class="cataloggrid__bar">
-										<div class="cataloggrid__pill">
-											<h3 class="cataloggrid__name">
-												<a href="product-card.html">Набір MED</a>
-											</h3>
-											<p class="cataloggrid__price">1 065 ₴</p>
-										</div>
-										<a class="cataloggrid__bag" href="product-card.html" aria-label="Обрати варіант: Набір MED">
-											<svg viewbox="0 0 48 48" fill="none" aria-hidden="true">
-												<path d="M9 17.5H39L36.9 38.3C36.79 39.39 36.28 40.39 35.47 41.12C34.66 41.86 33.61 42.26 32.52 42.26H15.48C14.39 42.26 13.34 41.86 12.53 41.12C11.72 40.39 11.21 39.39 11.1 38.3L9 17.5Z" stroke="currentColor" stroke-linejoin="round"></path>
-												<path d="M17.5 21V13.8C17.5 12.08 18.18 10.42 19.4 9.2C20.62 7.98 22.28 7.3 24 7.3C25.72 7.3 27.38 7.98 28.6 9.2C29.82 10.42 30.5 12.08 30.5 13.8V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-											</svg>
+								<!--
+Картка товару «Card, Size=Large» (редизайн 2026-09-30: Catalogue.png, Product-card.png,
+правила — «Картка товару — правила.png»). Спільна для cataloggrid і productrelated:
+інклудиться в циклі з locals='{"item":{"id":"set-min","qty":0,"name":"Набір MIN","url":"product-card.html","price":482,"unit":false,"min":1,"gift":false,"color":"black","colors":[{"mod":"black","label":"Чорний","img":"assets/img/catalog/set-min.jpg"},{"mod":"white","label":"Білий","img":""},{"mod":"blush","label":"Рожевий","img":"assets/img/product/set-med-pink.jpg"},{"mod":"mixed","label":"Різнокольоровий","img":"assets/img/product/related-3.png"}]}}'. Порту в тему ще немає — при порті стане
+сніпетом (snippets/shopcard.liquid) з даними з product/variants.
+Поля item (усі обов'язкові — posthtml-expressions падає на невідомому local навіть у хибному if):
+id     — ключ закладки (layout/bookmarks)
+name   — назва; url — посилання на товар
+price  — ціна за 1 шт, число (рядок «4 шт · 320₴» рахує shopcard.js)
+unit   — true для деталей: ціна «80₴ / шт», false для наборів: «1950₴»
+min    — мінімальне замовлення: кошик додає одразу стільки, «−» неактивний на мінімумі
+qty    — стартова кількість у кошику (0 — сумка; у макеті MED = 2, Base = 4 — показ степпера)
+gift   — стрічка «Подарунок» у куті
+color  — колір, вибраний спочатку (без нього — перший)
+colors — [{mod, label, img}]; img порожній — колір вибирається, але фото лишається поточне
+(фото деталей є лише чорні, вирізані з Catalogue.png).
+-->
+								<li data-fls-shopcard="" class="shopcard" data-fls-bookmarks-card="" data-shopcard-card="" data-price="482" data-min="1" data-qty="0">
+									<div class="shopcard__media" data-shopcard-media="black">
+										<a href="product-card.html" class="shopcard__photos" tabindex="-1" aria-hidden="true">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/catalog/set-min-600.webp" type="image/webp">
+												<img class="shopcard__photo" alt="" data-shopcard-photo="black" width="1176" height="1120" loading="lazy" src="./assets/img/catalog/set-min.webp">
+											</picture>
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/product/set-med-pink-600.webp" type="image/webp">
+												<img class="shopcard__photo" alt="" data-shopcard-photo="blush" width="1176" height="1120" loading="lazy" src="./assets/img/product/set-med-pink.webp">
+											</picture>
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/product/related-3-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/product/related-3-1200.webp" type="image/webp">
+												<img class="shopcard__photo" alt="" data-shopcard-photo="mixed" width="1176" height="1120" loading="lazy" src="./assets/img/product/related-3.webp">
+											</picture>
+											<!-- Стрілка по центру фото — з'являється при наведенні на картку -->
+											<span class="shopcard__open">
+												<svg viewbox="0 0 16 16" fill="none" aria-hidden="true">
+													<path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.8M11.5 4.5V10.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+												</svg>
+											</span>
 										</a>
-									</div>
-								</li>
-								<li class="cataloggrid__card" data-fls-bookmarks-card="">
-									<a class="cataloggrid__photo" href="product-card.html" tabindex="-1" aria-hidden="true">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/product/related-3-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/product/related-3-1200.webp" type="image/webp">
-											<img alt="Набір MED" loading="lazy" src="./assets/img/product/related-3.webp">
-										</picture>
-										<span class="cataloggrid__zoom">
-											<svg class="catalog-icon" viewbox="0 0 16 16" fill="none" aria-hidden="true">
-												<path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+										<button type="button" class="shopcard__save" data-fls-bookmarks-toggle="set-min" data-bookmark-title="Набір MIN" data-bookmark-price="482 ₴" data-bookmark-url="product-card.html" data-bookmark-toast="Додано в обране" aria-pressed="false" aria-label="Зберегти в обране: Набір MIN">
+											<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+												<path d="M12 20.5S3.5 15.4 3.5 9.2A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.5 2.8c0 6.2-8.5 11.3-8.5 11.3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
 											</svg>
-										</span>
-									</a>
-									<button type="button" class="cataloggrid__save" data-fls-bookmarks-toggle="med-color" data-bookmark-title="Набір MED" data-bookmark-price="1 065 ₴" data-bookmark-url="product-card.html" aria-pressed="false" aria-label="Зберегти в обране: Набір MED">
-										<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
-											<path d="M5 7.8C5 6.12 5 5.28 5.33 4.64C5.61 4.07 6.07 3.61 6.64 3.33C7.28 3 8.12 3 9.8 3H14.2C15.88 3 16.72 3 17.36 3.33C17.93 3.61 18.39 4.07 18.67 4.64C19 5.28 19 6.12 19 7.8V21L12 17L5 21V7.8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-										</svg>
-									</button>
-									<div class="cataloggrid__bar">
-										<div class="cataloggrid__pill">
-											<h3 class="cataloggrid__name">
-												<a href="product-card.html">Набір MED</a>
-											</h3>
-											<p class="cataloggrid__price">1 065 ₴</p>
+										</button>
+										<div class="shopcard__swatches" role="radiogroup" aria-label="Колір: Набір MIN">
+											<button type="button" class="shopcard__swatch shopcard__swatch--black" role="radio" aria-checked="false" aria-label="Чорний" data-shopcard-color="black"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--white" role="radio" aria-checked="false" aria-label="Білий" data-shopcard-color="white"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--blush" role="radio" aria-checked="false" aria-label="Рожевий" data-shopcard-color="blush"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--mixed" role="radio" aria-checked="false" aria-label="Різнокольоровий" data-shopcard-color="mixed"></button>
 										</div>
-										<a class="cataloggrid__bag" href="product-card.html" aria-label="Обрати варіант: Набір MED">
-											<svg viewbox="0 0 48 48" fill="none" aria-hidden="true">
-												<path d="M9 17.5H39L36.9 38.3C36.79 39.39 36.28 40.39 35.47 41.12C34.66 41.86 33.61 42.26 32.52 42.26H15.48C14.39 42.26 13.34 41.86 12.53 41.12C11.72 40.39 11.21 39.39 11.1 38.3L9 17.5Z" stroke="currentColor" stroke-linejoin="round"></path>
-												<path d="M17.5 21V13.8C17.5 12.08 18.18 10.42 19.4 9.2C20.62 7.98 22.28 7.3 24 7.3C25.72 7.3 27.38 7.98 28.6 9.2C29.82 10.42 30.5 12.08 30.5 13.8V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-											</svg>
-										</a>
 									</div>
-								</li>
-								<li class="cataloggrid__card" data-fls-bookmarks-card="">
-									<a class="cataloggrid__photo" href="product-card.html" tabindex="-1" aria-hidden="true">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/product/related-1-600.webp" type="image/webp">
-											<img alt="Набір MIN" loading="lazy" src="./assets/img/product/related-1.webp">
-										</picture>
-										<span class="cataloggrid__zoom">
-											<svg class="catalog-icon" viewbox="0 0 16 16" fill="none" aria-hidden="true">
-												<path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
-											</svg>
-										</span>
-									</a>
-									<button type="button" class="cataloggrid__save" data-fls-bookmarks-toggle="min-black" data-bookmark-title="Набір MIN" data-bookmark-price="482 ₴" data-bookmark-url="product-card.html" aria-pressed="false" aria-label="Зберегти в обране: Набір MIN">
-										<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
-											<path d="M5 7.8C5 6.12 5 5.28 5.33 4.64C5.61 4.07 6.07 3.61 6.64 3.33C7.28 3 8.12 3 9.8 3H14.2C15.88 3 16.72 3 17.36 3.33C17.93 3.61 18.39 4.07 18.67 4.64C19 5.28 19 6.12 19 7.8V21L12 17L5 21V7.8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-										</svg>
-									</button>
-									<div class="cataloggrid__bar">
-										<div class="cataloggrid__pill">
-											<h3 class="cataloggrid__name">
+									<div class="shopcard__body">
+										<div class="shopcard__pill">
+											<h3 class="shopcard__name">
 												<a href="product-card.html">Набір MIN</a>
 											</h3>
-											<p class="cataloggrid__price">482 ₴</p>
+											<!-- Без JS — ціна за правилами; shopcard.js перемикає на «N шт · сума» після додавання -->
+											<p class="shopcard__price" data-shopcard-price="" aria-live="polite">482₴</p>
 										</div>
-										<a class="cataloggrid__bag" href="product-card.html" aria-label="Обрати варіант: Набір MIN">
-											<svg viewbox="0 0 48 48" fill="none" aria-hidden="true">
-												<path d="M9 17.5H39L36.9 38.3C36.79 39.39 36.28 40.39 35.47 41.12C34.66 41.86 33.61 42.26 32.52 42.26H15.48C14.39 42.26 13.34 41.86 12.53 41.12C11.72 40.39 11.21 39.39 11.1 38.3L9 17.5Z" stroke="currentColor" stroke-linejoin="round"></path>
-												<path d="M17.5 21V13.8C17.5 12.08 18.18 10.42 19.4 9.2C20.62 7.98 22.28 7.3 24 7.3C25.72 7.3 27.38 7.98 28.6 9.2C29.82 10.42 30.5 12.08 30.5 13.8V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+										<button type="button" class="shopcard__add" data-shopcard-add="" aria-label="Додати в кошик: Набір MIN">
+											<svg viewbox="0 0 32 38" fill="none" aria-hidden="true">
+												<path d="M11 13V8.5a5 5 0 0 1 10 0V13M3.2 11h25.6l-1.6 22.2a3 3 0 0 1-3 2.8H7.8a3 3 0 0 1-3-2.8L3.2 11Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
 											</svg>
-										</a>
+										</button>
+										<div class="shopcard__stepper" data-shopcard-stepper="" hidden>
+											<button type="button" class="shopcard__step" data-shopcard-minus="" aria-label="Менше: Набір MIN">−</button>
+											<span class="shopcard__qty" data-shopcard-qty="">0</span>
+											<button type="button" class="shopcard__step" data-shopcard-plus="" aria-label="Більше: Набір MIN">+</button>
+										</div>
 									</div>
 								</li>
-								<li class="cataloggrid__card" data-fls-bookmarks-card="">
-									<a class="cataloggrid__photo" href="product-card.html" tabindex="-1" aria-hidden="true">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/product/related-2-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/product/related-2-1200.webp" type="image/webp">
-											<img alt="Набір MIN" loading="lazy" src="./assets/img/product/related-2.webp">
-										</picture>
-										<span class="cataloggrid__zoom">
-											<svg class="catalog-icon" viewbox="0 0 16 16" fill="none" aria-hidden="true">
-												<path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
-											</svg>
-										</span>
-									</a>
-									<button type="button" class="cataloggrid__save" data-fls-bookmarks-toggle="min-pink" data-bookmark-title="Набір MIN" data-bookmark-price="482 ₴" data-bookmark-url="product-card.html" aria-pressed="false" aria-label="Зберегти в обране: Набір MIN">
-										<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
-											<path d="M5 7.8C5 6.12 5 5.28 5.33 4.64C5.61 4.07 6.07 3.61 6.64 3.33C7.28 3 8.12 3 9.8 3H14.2C15.88 3 16.72 3 17.36 3.33C17.93 3.61 18.39 4.07 18.67 4.64C19 5.28 19 6.12 19 7.8V21L12 17L5 21V7.8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-										</svg>
-									</button>
-									<div class="cataloggrid__bar">
-										<div class="cataloggrid__pill">
-											<h3 class="cataloggrid__name">
-												<a href="product-card.html">Набір MIN</a>
-											</h3>
-											<p class="cataloggrid__price">482 ₴</p>
-										</div>
-										<a class="cataloggrid__bag" href="product-card.html" aria-label="Обрати варіант: Набір MIN">
-											<svg viewbox="0 0 48 48" fill="none" aria-hidden="true">
-												<path d="M9 17.5H39L36.9 38.3C36.79 39.39 36.28 40.39 35.47 41.12C34.66 41.86 33.61 42.26 32.52 42.26H15.48C14.39 42.26 13.34 41.86 12.53 41.12C11.72 40.39 11.21 39.39 11.1 38.3L9 17.5Z" stroke="currentColor" stroke-linejoin="round"></path>
-												<path d="M17.5 21V13.8C17.5 12.08 18.18 10.42 19.4 9.2C20.62 7.98 22.28 7.3 24 7.3C25.72 7.3 27.38 7.98 28.6 9.2C29.82 10.42 30.5 12.08 30.5 13.8V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-											</svg>
+								<!--
+Картка товару «Card, Size=Large» (редизайн 2026-09-30: Catalogue.png, Product-card.png,
+правила — «Картка товару — правила.png»). Спільна для cataloggrid і productrelated:
+інклудиться в циклі з locals='{"item":{"id":"base","qty":4,"name":"Base","url":"product-card.html","price":80,"unit":true,"min":4,"gift":false,"color":"black","colors":[{"mod":"black","label":"Чорний","img":"assets/img/catalog/base.jpg"},{"mod":"white","label":"Білий","img":""},{"mod":"blush","label":"Рожевий","img":""}]}}'. Порту в тему ще немає — при порті стане
+сніпетом (snippets/shopcard.liquid) з даними з product/variants.
+Поля item (усі обов'язкові — posthtml-expressions падає на невідомому local навіть у хибному if):
+id     — ключ закладки (layout/bookmarks)
+name   — назва; url — посилання на товар
+price  — ціна за 1 шт, число (рядок «4 шт · 320₴» рахує shopcard.js)
+unit   — true для деталей: ціна «80₴ / шт», false для наборів: «1950₴»
+min    — мінімальне замовлення: кошик додає одразу стільки, «−» неактивний на мінімумі
+qty    — стартова кількість у кошику (0 — сумка; у макеті MED = 2, Base = 4 — показ степпера)
+gift   — стрічка «Подарунок» у куті
+color  — колір, вибраний спочатку (без нього — перший)
+colors — [{mod, label, img}]; img порожній — колір вибирається, але фото лишається поточне
+(фото деталей є лише чорні, вирізані з Catalogue.png).
+-->
+								<li data-fls-shopcard="" class="shopcard" data-fls-bookmarks-card="" data-shopcard-card="" data-price="80" data-min="4" data-qty="4">
+									<div class="shopcard__media" data-shopcard-media="black">
+										<a href="product-card.html" class="shopcard__photos" tabindex="-1" aria-hidden="true">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/catalog/base-600.webp" type="image/webp">
+												<img class="shopcard__photo" alt="" data-shopcard-photo="black" width="1176" height="1120" loading="lazy" src="./assets/img/catalog/base.webp">
+											</picture>
+											<!-- Стрілка по центру фото — з'являється при наведенні на картку -->
+											<span class="shopcard__open">
+												<svg viewbox="0 0 16 16" fill="none" aria-hidden="true">
+													<path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.8M11.5 4.5V10.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+												</svg>
+											</span>
 										</a>
+										<button type="button" class="shopcard__save" data-fls-bookmarks-toggle="base" data-bookmark-title="Base" data-bookmark-price="80 ₴" data-bookmark-url="product-card.html" data-bookmark-toast="Додано в обране" aria-pressed="false" aria-label="Зберегти в обране: Base">
+											<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+												<path d="M12 20.5S3.5 15.4 3.5 9.2A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.5 2.8c0 6.2-8.5 11.3-8.5 11.3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+											</svg>
+										</button>
+										<div class="shopcard__swatches" role="radiogroup" aria-label="Колір: Base">
+											<button type="button" class="shopcard__swatch shopcard__swatch--black" role="radio" aria-checked="false" aria-label="Чорний" data-shopcard-color="black"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--white" role="radio" aria-checked="false" aria-label="Білий" data-shopcard-color="white"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--blush" role="radio" aria-checked="false" aria-label="Рожевий" data-shopcard-color="blush"></button>
+										</div>
+									</div>
+									<div class="shopcard__body">
+										<div class="shopcard__pill">
+											<h3 class="shopcard__name">
+												<a href="product-card.html">Base</a>
+											</h3>
+											<!-- Без JS — ціна за правилами; shopcard.js перемикає на «N шт · сума» після додавання -->
+											<p class="shopcard__price" data-shopcard-price="" aria-live="polite">
+												80₴ / шт ·
+												<b>від 4 шт</b>
+											</p>
+										</div>
+										<button type="button" class="shopcard__add" data-shopcard-add="" aria-label="Додати в кошик: Base">
+											<svg viewbox="0 0 32 38" fill="none" aria-hidden="true">
+												<path d="M11 13V8.5a5 5 0 0 1 10 0V13M3.2 11h25.6l-1.6 22.2a3 3 0 0 1-3 2.8H7.8a3 3 0 0 1-3-2.8L3.2 11Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+											</svg>
+										</button>
+										<div class="shopcard__stepper" data-shopcard-stepper="" hidden>
+											<button type="button" class="shopcard__step" data-shopcard-minus="" aria-label="Менше: Base">−</button>
+											<span class="shopcard__qty" data-shopcard-qty="">0</span>
+											<button type="button" class="shopcard__step" data-shopcard-plus="" aria-label="Більше: Base">+</button>
+										</div>
 									</div>
 								</li>
-								<li class="cataloggrid__card" data-fls-bookmarks-card="">
-									<a class="cataloggrid__photo" href="product-card.html" tabindex="-1" aria-hidden="true">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/product/related-3-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/product/related-3-1200.webp" type="image/webp">
-											<img alt="Набір MIN" loading="lazy" src="./assets/img/product/related-3.webp">
-										</picture>
-										<span class="cataloggrid__zoom">
-											<svg class="catalog-icon" viewbox="0 0 16 16" fill="none" aria-hidden="true">
-												<path d="M4 12L12 4M12 4H5.5M12 4V10.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
-											</svg>
-										</span>
-									</a>
-									<button type="button" class="cataloggrid__save" data-fls-bookmarks-toggle="min-color" data-bookmark-title="Набір MIN" data-bookmark-price="482 ₴" data-bookmark-url="product-card.html" aria-pressed="false" aria-label="Зберегти в обране: Набір MIN">
-										<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
-											<path d="M5 7.8C5 6.12 5 5.28 5.33 4.64C5.61 4.07 6.07 3.61 6.64 3.33C7.28 3 8.12 3 9.8 3H14.2C15.88 3 16.72 3 17.36 3.33C17.93 3.61 18.39 4.07 18.67 4.64C19 5.28 19 6.12 19 7.8V21L12 17L5 21V7.8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-										</svg>
-									</button>
-									<div class="cataloggrid__bar">
-										<div class="cataloggrid__pill">
-											<h3 class="cataloggrid__name">
-												<a href="product-card.html">Набір MIN</a>
-											</h3>
-											<p class="cataloggrid__price">482 ₴</p>
-										</div>
-										<a class="cataloggrid__bag" href="product-card.html" aria-label="Обрати варіант: Набір MIN">
-											<svg viewbox="0 0 48 48" fill="none" aria-hidden="true">
-												<path d="M9 17.5H39L36.9 38.3C36.79 39.39 36.28 40.39 35.47 41.12C34.66 41.86 33.61 42.26 32.52 42.26H15.48C14.39 42.26 13.34 41.86 12.53 41.12C11.72 40.39 11.21 39.39 11.1 38.3L9 17.5Z" stroke="currentColor" stroke-linejoin="round"></path>
-												<path d="M17.5 21V13.8C17.5 12.08 18.18 10.42 19.4 9.2C20.62 7.98 22.28 7.3 24 7.3C25.72 7.3 27.38 7.98 28.6 9.2C29.82 10.42 30.5 12.08 30.5 13.8V21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-											</svg>
+								<!--
+Картка товару «Card, Size=Large» (редизайн 2026-09-30: Catalogue.png, Product-card.png,
+правила — «Картка товару — правила.png»). Спільна для cataloggrid і productrelated:
+інклудиться в циклі з locals='{"item":{"id":"pin-short","qty":0,"name":"Pin short","url":"product-card.html","price":4,"unit":true,"min":9,"gift":false,"color":"black","colors":[{"mod":"black","label":"Чорний","img":"assets/img/catalog/pin-short.jpg"},{"mod":"white","label":"Білий","img":""},{"mod":"blue","label":"Блакитний","img":""},{"mod":"blush","label":"Рожевий","img":""}]}}'. Порту в тему ще немає — при порті стане
+сніпетом (snippets/shopcard.liquid) з даними з product/variants.
+Поля item (усі обов'язкові — posthtml-expressions падає на невідомому local навіть у хибному if):
+id     — ключ закладки (layout/bookmarks)
+name   — назва; url — посилання на товар
+price  — ціна за 1 шт, число (рядок «4 шт · 320₴» рахує shopcard.js)
+unit   — true для деталей: ціна «80₴ / шт», false для наборів: «1950₴»
+min    — мінімальне замовлення: кошик додає одразу стільки, «−» неактивний на мінімумі
+qty    — стартова кількість у кошику (0 — сумка; у макеті MED = 2, Base = 4 — показ степпера)
+gift   — стрічка «Подарунок» у куті
+color  — колір, вибраний спочатку (без нього — перший)
+colors — [{mod, label, img}]; img порожній — колір вибирається, але фото лишається поточне
+(фото деталей є лише чорні, вирізані з Catalogue.png).
+-->
+								<li data-fls-shopcard="" class="shopcard" data-fls-bookmarks-card="" data-shopcard-card="" data-price="4" data-min="9" data-qty="0">
+									<div class="shopcard__media" data-shopcard-media="black">
+										<a href="product-card.html" class="shopcard__photos" tabindex="-1" aria-hidden="true">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/catalog/pin-short-600.webp" type="image/webp">
+												<img class="shopcard__photo" alt="" data-shopcard-photo="black" width="1176" height="1120" loading="lazy" src="./assets/img/catalog/pin-short.webp">
+											</picture>
+											<!-- Стрілка по центру фото — з'являється при наведенні на картку -->
+											<span class="shopcard__open">
+												<svg viewbox="0 0 16 16" fill="none" aria-hidden="true">
+													<path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.8M11.5 4.5V10.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+												</svg>
+											</span>
 										</a>
+										<button type="button" class="shopcard__save" data-fls-bookmarks-toggle="pin-short" data-bookmark-title="Pin short" data-bookmark-price="4 ₴" data-bookmark-url="product-card.html" data-bookmark-toast="Додано в обране" aria-pressed="false" aria-label="Зберегти в обране: Pin short">
+											<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+												<path d="M12 20.5S3.5 15.4 3.5 9.2A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.5 2.8c0 6.2-8.5 11.3-8.5 11.3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+											</svg>
+										</button>
+										<div class="shopcard__swatches" role="radiogroup" aria-label="Колір: Pin short">
+											<button type="button" class="shopcard__swatch shopcard__swatch--black" role="radio" aria-checked="false" aria-label="Чорний" data-shopcard-color="black"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--white" role="radio" aria-checked="false" aria-label="Білий" data-shopcard-color="white"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--blue" role="radio" aria-checked="false" aria-label="Блакитний" data-shopcard-color="blue"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--blush" role="radio" aria-checked="false" aria-label="Рожевий" data-shopcard-color="blush"></button>
+										</div>
+									</div>
+									<div class="shopcard__body">
+										<div class="shopcard__pill">
+											<h3 class="shopcard__name">
+												<a href="product-card.html">Pin short</a>
+											</h3>
+											<!-- Без JS — ціна за правилами; shopcard.js перемикає на «N шт · сума» після додавання -->
+											<p class="shopcard__price" data-shopcard-price="" aria-live="polite">
+												4₴ / шт ·
+												<b>від 9 шт</b>
+											</p>
+										</div>
+										<button type="button" class="shopcard__add" data-shopcard-add="" aria-label="Додати в кошик: Pin short">
+											<svg viewbox="0 0 32 38" fill="none" aria-hidden="true">
+												<path d="M11 13V8.5a5 5 0 0 1 10 0V13M3.2 11h25.6l-1.6 22.2a3 3 0 0 1-3 2.8H7.8a3 3 0 0 1-3-2.8L3.2 11Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+											</svg>
+										</button>
+										<div class="shopcard__stepper" data-shopcard-stepper="" hidden>
+											<button type="button" class="shopcard__step" data-shopcard-minus="" aria-label="Менше: Pin short">−</button>
+											<span class="shopcard__qty" data-shopcard-qty="">0</span>
+											<button type="button" class="shopcard__step" data-shopcard-plus="" aria-label="Більше: Pin short">+</button>
+										</div>
+									</div>
+								</li>
+								<!--
+Картка товару «Card, Size=Large» (редизайн 2026-09-30: Catalogue.png, Product-card.png,
+правила — «Картка товару — правила.png»). Спільна для cataloggrid і productrelated:
+інклудиться в циклі з locals='{"item":{"id":"pin-long","qty":0,"name":"Pin long","url":"product-card.html","price":4,"unit":true,"min":9,"gift":false,"color":"black","colors":[{"mod":"black","label":"Чорний","img":"assets/img/catalog/pin-long.jpg"},{"mod":"white","label":"Білий","img":""},{"mod":"blush","label":"Рожевий","img":""},{"mod":"yellow","label":"Жовтий","img":""}]}}'. Порту в тему ще немає — при порті стане
+сніпетом (snippets/shopcard.liquid) з даними з product/variants.
+Поля item (усі обов'язкові — posthtml-expressions падає на невідомому local навіть у хибному if):
+id     — ключ закладки (layout/bookmarks)
+name   — назва; url — посилання на товар
+price  — ціна за 1 шт, число (рядок «4 шт · 320₴» рахує shopcard.js)
+unit   — true для деталей: ціна «80₴ / шт», false для наборів: «1950₴»
+min    — мінімальне замовлення: кошик додає одразу стільки, «−» неактивний на мінімумі
+qty    — стартова кількість у кошику (0 — сумка; у макеті MED = 2, Base = 4 — показ степпера)
+gift   — стрічка «Подарунок» у куті
+color  — колір, вибраний спочатку (без нього — перший)
+colors — [{mod, label, img}]; img порожній — колір вибирається, але фото лишається поточне
+(фото деталей є лише чорні, вирізані з Catalogue.png).
+-->
+								<li data-fls-shopcard="" class="shopcard" data-fls-bookmarks-card="" data-shopcard-card="" data-price="4" data-min="9" data-qty="0">
+									<div class="shopcard__media" data-shopcard-media="black">
+										<a href="product-card.html" class="shopcard__photos" tabindex="-1" aria-hidden="true">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/catalog/pin-long-600.webp" type="image/webp">
+												<img class="shopcard__photo" alt="" data-shopcard-photo="black" width="1176" height="1120" loading="lazy" src="./assets/img/catalog/pin-long.webp">
+											</picture>
+											<!-- Стрілка по центру фото — з'являється при наведенні на картку -->
+											<span class="shopcard__open">
+												<svg viewbox="0 0 16 16" fill="none" aria-hidden="true">
+													<path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.8M11.5 4.5V10.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+												</svg>
+											</span>
+										</a>
+										<button type="button" class="shopcard__save" data-fls-bookmarks-toggle="pin-long" data-bookmark-title="Pin long" data-bookmark-price="4 ₴" data-bookmark-url="product-card.html" data-bookmark-toast="Додано в обране" aria-pressed="false" aria-label="Зберегти в обране: Pin long">
+											<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+												<path d="M12 20.5S3.5 15.4 3.5 9.2A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.5 2.8c0 6.2-8.5 11.3-8.5 11.3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+											</svg>
+										</button>
+										<div class="shopcard__swatches" role="radiogroup" aria-label="Колір: Pin long">
+											<button type="button" class="shopcard__swatch shopcard__swatch--black" role="radio" aria-checked="false" aria-label="Чорний" data-shopcard-color="black"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--white" role="radio" aria-checked="false" aria-label="Білий" data-shopcard-color="white"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--blush" role="radio" aria-checked="false" aria-label="Рожевий" data-shopcard-color="blush"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--yellow" role="radio" aria-checked="false" aria-label="Жовтий" data-shopcard-color="yellow"></button>
+										</div>
+									</div>
+									<div class="shopcard__body">
+										<div class="shopcard__pill">
+											<h3 class="shopcard__name">
+												<a href="product-card.html">Pin long</a>
+											</h3>
+											<!-- Без JS — ціна за правилами; shopcard.js перемикає на «N шт · сума» після додавання -->
+											<p class="shopcard__price" data-shopcard-price="" aria-live="polite">
+												4₴ / шт ·
+												<b>від 9 шт</b>
+											</p>
+										</div>
+										<button type="button" class="shopcard__add" data-shopcard-add="" aria-label="Додати в кошик: Pin long">
+											<svg viewbox="0 0 32 38" fill="none" aria-hidden="true">
+												<path d="M11 13V8.5a5 5 0 0 1 10 0V13M3.2 11h25.6l-1.6 22.2a3 3 0 0 1-3 2.8H7.8a3 3 0 0 1-3-2.8L3.2 11Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+											</svg>
+										</button>
+										<div class="shopcard__stepper" data-shopcard-stepper="" hidden>
+											<button type="button" class="shopcard__step" data-shopcard-minus="" aria-label="Менше: Pin long">−</button>
+											<span class="shopcard__qty" data-shopcard-qty="">0</span>
+											<button type="button" class="shopcard__step" data-shopcard-plus="" aria-label="Більше: Pin long">+</button>
+										</div>
+									</div>
+								</li>
+								<!--
+Картка товару «Card, Size=Large» (редизайн 2026-09-30: Catalogue.png, Product-card.png,
+правила — «Картка товару — правила.png»). Спільна для cataloggrid і productrelated:
+інклудиться в циклі з locals='{"item":{"id":"wall","qty":0,"name":"Wall","url":"product-card.html","price":15,"unit":true,"min":6,"gift":false,"color":"black","colors":[{"mod":"black","label":"Чорний","img":"assets/img/catalog/wall.jpg"},{"mod":"white","label":"Білий","img":""},{"mod":"blush","label":"Рожевий","img":""},{"mod":"yellow","label":"Жовтий","img":""}]}}'. Порту в тему ще немає — при порті стане
+сніпетом (snippets/shopcard.liquid) з даними з product/variants.
+Поля item (усі обов'язкові — posthtml-expressions падає на невідомому local навіть у хибному if):
+id     — ключ закладки (layout/bookmarks)
+name   — назва; url — посилання на товар
+price  — ціна за 1 шт, число (рядок «4 шт · 320₴» рахує shopcard.js)
+unit   — true для деталей: ціна «80₴ / шт», false для наборів: «1950₴»
+min    — мінімальне замовлення: кошик додає одразу стільки, «−» неактивний на мінімумі
+qty    — стартова кількість у кошику (0 — сумка; у макеті MED = 2, Base = 4 — показ степпера)
+gift   — стрічка «Подарунок» у куті
+color  — колір, вибраний спочатку (без нього — перший)
+colors — [{mod, label, img}]; img порожній — колір вибирається, але фото лишається поточне
+(фото деталей є лише чорні, вирізані з Catalogue.png).
+-->
+								<li data-fls-shopcard="" class="shopcard" data-fls-bookmarks-card="" data-shopcard-card="" data-price="15" data-min="6" data-qty="0">
+									<div class="shopcard__media" data-shopcard-media="black">
+										<a href="product-card.html" class="shopcard__photos" tabindex="-1" aria-hidden="true">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/catalog/wall-600.webp" type="image/webp">
+												<img class="shopcard__photo" alt="" data-shopcard-photo="black" width="1176" height="1120" loading="lazy" src="./assets/img/catalog/wall.webp">
+											</picture>
+											<!-- Стрілка по центру фото — з'являється при наведенні на картку -->
+											<span class="shopcard__open">
+												<svg viewbox="0 0 16 16" fill="none" aria-hidden="true">
+													<path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.8M11.5 4.5V10.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+												</svg>
+											</span>
+										</a>
+										<button type="button" class="shopcard__save" data-fls-bookmarks-toggle="wall" data-bookmark-title="Wall" data-bookmark-price="15 ₴" data-bookmark-url="product-card.html" data-bookmark-toast="Додано в обране" aria-pressed="false" aria-label="Зберегти в обране: Wall">
+											<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+												<path d="M12 20.5S3.5 15.4 3.5 9.2A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.5 2.8c0 6.2-8.5 11.3-8.5 11.3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+											</svg>
+										</button>
+										<div class="shopcard__swatches" role="radiogroup" aria-label="Колір: Wall">
+											<button type="button" class="shopcard__swatch shopcard__swatch--black" role="radio" aria-checked="false" aria-label="Чорний" data-shopcard-color="black"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--white" role="radio" aria-checked="false" aria-label="Білий" data-shopcard-color="white"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--blush" role="radio" aria-checked="false" aria-label="Рожевий" data-shopcard-color="blush"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--yellow" role="radio" aria-checked="false" aria-label="Жовтий" data-shopcard-color="yellow"></button>
+										</div>
+									</div>
+									<div class="shopcard__body">
+										<div class="shopcard__pill">
+											<h3 class="shopcard__name">
+												<a href="product-card.html">Wall</a>
+											</h3>
+											<!-- Без JS — ціна за правилами; shopcard.js перемикає на «N шт · сума» після додавання -->
+											<p class="shopcard__price" data-shopcard-price="" aria-live="polite">
+												15₴ / шт ·
+												<b>від 6 шт</b>
+											</p>
+										</div>
+										<button type="button" class="shopcard__add" data-shopcard-add="" aria-label="Додати в кошик: Wall">
+											<svg viewbox="0 0 32 38" fill="none" aria-hidden="true">
+												<path d="M11 13V8.5a5 5 0 0 1 10 0V13M3.2 11h25.6l-1.6 22.2a3 3 0 0 1-3 2.8H7.8a3 3 0 0 1-3-2.8L3.2 11Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+											</svg>
+										</button>
+										<div class="shopcard__stepper" data-shopcard-stepper="" hidden>
+											<button type="button" class="shopcard__step" data-shopcard-minus="" aria-label="Менше: Wall">−</button>
+											<span class="shopcard__qty" data-shopcard-qty="">0</span>
+											<button type="button" class="shopcard__step" data-shopcard-plus="" aria-label="Більше: Wall">+</button>
+										</div>
+									</div>
+								</li>
+								<!--
+Картка товару «Card, Size=Large» (редизайн 2026-09-30: Catalogue.png, Product-card.png,
+правила — «Картка товару — правила.png»). Спільна для cataloggrid і productrelated:
+інклудиться в циклі з locals='{"item":{"id":"box-lip-xs","qty":0,"name":"Box LIP XS","url":"product-card.html","price":20,"unit":true,"min":2,"gift":false,"color":"black","colors":[{"mod":"black","label":"Чорний","img":"assets/img/catalog/box-lip-xs.jpg"},{"mod":"white","label":"Білий","img":""},{"mod":"blush","label":"Рожевий","img":""},{"mod":"violet","label":"Фіолетовий","img":""}]}}'. Порту в тему ще немає — при порті стане
+сніпетом (snippets/shopcard.liquid) з даними з product/variants.
+Поля item (усі обов'язкові — posthtml-expressions падає на невідомому local навіть у хибному if):
+id     — ключ закладки (layout/bookmarks)
+name   — назва; url — посилання на товар
+price  — ціна за 1 шт, число (рядок «4 шт · 320₴» рахує shopcard.js)
+unit   — true для деталей: ціна «80₴ / шт», false для наборів: «1950₴»
+min    — мінімальне замовлення: кошик додає одразу стільки, «−» неактивний на мінімумі
+qty    — стартова кількість у кошику (0 — сумка; у макеті MED = 2, Base = 4 — показ степпера)
+gift   — стрічка «Подарунок» у куті
+color  — колір, вибраний спочатку (без нього — перший)
+colors — [{mod, label, img}]; img порожній — колір вибирається, але фото лишається поточне
+(фото деталей є лише чорні, вирізані з Catalogue.png).
+-->
+								<li data-fls-shopcard="" class="shopcard" data-fls-bookmarks-card="" data-shopcard-card="" data-price="20" data-min="2" data-qty="0">
+									<div class="shopcard__media" data-shopcard-media="black">
+										<a href="product-card.html" class="shopcard__photos" tabindex="-1" aria-hidden="true">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/catalog/box-lip-xs-600.webp" type="image/webp">
+												<img class="shopcard__photo" alt="" data-shopcard-photo="black" width="1176" height="1120" loading="lazy" src="./assets/img/catalog/box-lip-xs.webp">
+											</picture>
+											<!-- Стрілка по центру фото — з'являється при наведенні на картку -->
+											<span class="shopcard__open">
+												<svg viewbox="0 0 16 16" fill="none" aria-hidden="true">
+													<path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.8M11.5 4.5V10.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+												</svg>
+											</span>
+										</a>
+										<button type="button" class="shopcard__save" data-fls-bookmarks-toggle="box-lip-xs" data-bookmark-title="Box LIP XS" data-bookmark-price="20 ₴" data-bookmark-url="product-card.html" data-bookmark-toast="Додано в обране" aria-pressed="false" aria-label="Зберегти в обране: Box LIP XS">
+											<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+												<path d="M12 20.5S3.5 15.4 3.5 9.2A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.5 2.8c0 6.2-8.5 11.3-8.5 11.3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+											</svg>
+										</button>
+										<div class="shopcard__swatches" role="radiogroup" aria-label="Колір: Box LIP XS">
+											<button type="button" class="shopcard__swatch shopcard__swatch--black" role="radio" aria-checked="false" aria-label="Чорний" data-shopcard-color="black"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--white" role="radio" aria-checked="false" aria-label="Білий" data-shopcard-color="white"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--blush" role="radio" aria-checked="false" aria-label="Рожевий" data-shopcard-color="blush"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--violet" role="radio" aria-checked="false" aria-label="Фіолетовий" data-shopcard-color="violet"></button>
+										</div>
+									</div>
+									<div class="shopcard__body">
+										<div class="shopcard__pill">
+											<h3 class="shopcard__name">
+												<a href="product-card.html">Box LIP XS</a>
+											</h3>
+											<!-- Без JS — ціна за правилами; shopcard.js перемикає на «N шт · сума» після додавання -->
+											<p class="shopcard__price" data-shopcard-price="" aria-live="polite">
+												20₴ / шт ·
+												<b>від 2 шт</b>
+											</p>
+										</div>
+										<button type="button" class="shopcard__add" data-shopcard-add="" aria-label="Додати в кошик: Box LIP XS">
+											<svg viewbox="0 0 32 38" fill="none" aria-hidden="true">
+												<path d="M11 13V8.5a5 5 0 0 1 10 0V13M3.2 11h25.6l-1.6 22.2a3 3 0 0 1-3 2.8H7.8a3 3 0 0 1-3-2.8L3.2 11Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+											</svg>
+										</button>
+										<div class="shopcard__stepper" data-shopcard-stepper="" hidden>
+											<button type="button" class="shopcard__step" data-shopcard-minus="" aria-label="Менше: Box LIP XS">−</button>
+											<span class="shopcard__qty" data-shopcard-qty="">0</span>
+											<button type="button" class="shopcard__step" data-shopcard-plus="" aria-label="Більше: Box LIP XS">+</button>
+										</div>
+									</div>
+								</li>
+								<!--
+Картка товару «Card, Size=Large» (редизайн 2026-09-30: Catalogue.png, Product-card.png,
+правила — «Картка товару — правила.png»). Спільна для cataloggrid і productrelated:
+інклудиться в циклі з locals='{"item":{"id":"box-lip-s","qty":0,"name":"Box LIP S","url":"product-card.html","price":30,"unit":true,"min":2,"gift":false,"color":"black","colors":[{"mod":"black","label":"Чорний","img":"assets/img/catalog/box-lip-s.jpg"},{"mod":"white","label":"Білий","img":""},{"mod":"blush","label":"Рожевий","img":""},{"mod":"yellow","label":"Жовтий","img":""}]}}'. Порту в тему ще немає — при порті стане
+сніпетом (snippets/shopcard.liquid) з даними з product/variants.
+Поля item (усі обов'язкові — posthtml-expressions падає на невідомому local навіть у хибному if):
+id     — ключ закладки (layout/bookmarks)
+name   — назва; url — посилання на товар
+price  — ціна за 1 шт, число (рядок «4 шт · 320₴» рахує shopcard.js)
+unit   — true для деталей: ціна «80₴ / шт», false для наборів: «1950₴»
+min    — мінімальне замовлення: кошик додає одразу стільки, «−» неактивний на мінімумі
+qty    — стартова кількість у кошику (0 — сумка; у макеті MED = 2, Base = 4 — показ степпера)
+gift   — стрічка «Подарунок» у куті
+color  — колір, вибраний спочатку (без нього — перший)
+colors — [{mod, label, img}]; img порожній — колір вибирається, але фото лишається поточне
+(фото деталей є лише чорні, вирізані з Catalogue.png).
+-->
+								<li data-fls-shopcard="" class="shopcard" data-fls-bookmarks-card="" data-shopcard-card="" data-price="30" data-min="2" data-qty="0">
+									<div class="shopcard__media" data-shopcard-media="black">
+										<a href="product-card.html" class="shopcard__photos" tabindex="-1" aria-hidden="true">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/catalog/box-lip-s-600.webp" type="image/webp">
+												<img class="shopcard__photo" alt="" data-shopcard-photo="black" width="1176" height="1120" loading="lazy" src="./assets/img/catalog/box-lip-s.webp">
+											</picture>
+											<!-- Стрілка по центру фото — з'являється при наведенні на картку -->
+											<span class="shopcard__open">
+												<svg viewbox="0 0 16 16" fill="none" aria-hidden="true">
+													<path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.8M11.5 4.5V10.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+												</svg>
+											</span>
+										</a>
+										<button type="button" class="shopcard__save" data-fls-bookmarks-toggle="box-lip-s" data-bookmark-title="Box LIP S" data-bookmark-price="30 ₴" data-bookmark-url="product-card.html" data-bookmark-toast="Додано в обране" aria-pressed="false" aria-label="Зберегти в обране: Box LIP S">
+											<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+												<path d="M12 20.5S3.5 15.4 3.5 9.2A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.5 2.8c0 6.2-8.5 11.3-8.5 11.3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+											</svg>
+										</button>
+										<div class="shopcard__swatches" role="radiogroup" aria-label="Колір: Box LIP S">
+											<button type="button" class="shopcard__swatch shopcard__swatch--black" role="radio" aria-checked="false" aria-label="Чорний" data-shopcard-color="black"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--white" role="radio" aria-checked="false" aria-label="Білий" data-shopcard-color="white"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--blush" role="radio" aria-checked="false" aria-label="Рожевий" data-shopcard-color="blush"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--yellow" role="radio" aria-checked="false" aria-label="Жовтий" data-shopcard-color="yellow"></button>
+										</div>
+									</div>
+									<div class="shopcard__body">
+										<div class="shopcard__pill">
+											<h3 class="shopcard__name">
+												<a href="product-card.html">Box LIP S</a>
+											</h3>
+											<!-- Без JS — ціна за правилами; shopcard.js перемикає на «N шт · сума» після додавання -->
+											<p class="shopcard__price" data-shopcard-price="" aria-live="polite">
+												30₴ / шт ·
+												<b>від 2 шт</b>
+											</p>
+										</div>
+										<button type="button" class="shopcard__add" data-shopcard-add="" aria-label="Додати в кошик: Box LIP S">
+											<svg viewbox="0 0 32 38" fill="none" aria-hidden="true">
+												<path d="M11 13V8.5a5 5 0 0 1 10 0V13M3.2 11h25.6l-1.6 22.2a3 3 0 0 1-3 2.8H7.8a3 3 0 0 1-3-2.8L3.2 11Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+											</svg>
+										</button>
+										<div class="shopcard__stepper" data-shopcard-stepper="" hidden>
+											<button type="button" class="shopcard__step" data-shopcard-minus="" aria-label="Менше: Box LIP S">−</button>
+											<span class="shopcard__qty" data-shopcard-qty="">0</span>
+											<button type="button" class="shopcard__step" data-shopcard-plus="" aria-label="Більше: Box LIP S">+</button>
+										</div>
+									</div>
+								</li>
+								<!--
+Картка товару «Card, Size=Large» (редизайн 2026-09-30: Catalogue.png, Product-card.png,
+правила — «Картка товару — правила.png»). Спільна для cataloggrid і productrelated:
+інклудиться в циклі з locals='{"item":{"id":"box-lip-m","qty":0,"name":"Box LIP M","url":"product-card.html","price":70,"unit":true,"min":2,"gift":false,"color":"black","colors":[{"mod":"black","label":"Чорний","img":"assets/img/catalog/box-lip-m.jpg"},{"mod":"white","label":"Білий","img":""},{"mod":"blush","label":"Рожевий","img":""},{"mod":"yellow","label":"Жовтий","img":""},{"mod":"violet","label":"Фіолетовий","img":""}]}}'. Порту в тему ще немає — при порті стане
+сніпетом (snippets/shopcard.liquid) з даними з product/variants.
+Поля item (усі обов'язкові — posthtml-expressions падає на невідомому local навіть у хибному if):
+id     — ключ закладки (layout/bookmarks)
+name   — назва; url — посилання на товар
+price  — ціна за 1 шт, число (рядок «4 шт · 320₴» рахує shopcard.js)
+unit   — true для деталей: ціна «80₴ / шт», false для наборів: «1950₴»
+min    — мінімальне замовлення: кошик додає одразу стільки, «−» неактивний на мінімумі
+qty    — стартова кількість у кошику (0 — сумка; у макеті MED = 2, Base = 4 — показ степпера)
+gift   — стрічка «Подарунок» у куті
+color  — колір, вибраний спочатку (без нього — перший)
+colors — [{mod, label, img}]; img порожній — колір вибирається, але фото лишається поточне
+(фото деталей є лише чорні, вирізані з Catalogue.png).
+-->
+								<li data-fls-shopcard="" class="shopcard" data-fls-bookmarks-card="" data-shopcard-card="" data-price="70" data-min="2" data-qty="0">
+									<div class="shopcard__media" data-shopcard-media="black">
+										<a href="product-card.html" class="shopcard__photos" tabindex="-1" aria-hidden="true">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/catalog/box-lip-m-600.webp" type="image/webp">
+												<img class="shopcard__photo" alt="" data-shopcard-photo="black" width="1176" height="1120" loading="lazy" src="./assets/img/catalog/box-lip-m.webp">
+											</picture>
+											<!-- Стрілка по центру фото — з'являється при наведенні на картку -->
+											<span class="shopcard__open">
+												<svg viewbox="0 0 16 16" fill="none" aria-hidden="true">
+													<path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.8M11.5 4.5V10.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+												</svg>
+											</span>
+										</a>
+										<button type="button" class="shopcard__save" data-fls-bookmarks-toggle="box-lip-m" data-bookmark-title="Box LIP M" data-bookmark-price="70 ₴" data-bookmark-url="product-card.html" data-bookmark-toast="Додано в обране" aria-pressed="false" aria-label="Зберегти в обране: Box LIP M">
+											<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+												<path d="M12 20.5S3.5 15.4 3.5 9.2A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.5 2.8c0 6.2-8.5 11.3-8.5 11.3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+											</svg>
+										</button>
+										<div class="shopcard__swatches" role="radiogroup" aria-label="Колір: Box LIP M">
+											<button type="button" class="shopcard__swatch shopcard__swatch--black" role="radio" aria-checked="false" aria-label="Чорний" data-shopcard-color="black"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--white" role="radio" aria-checked="false" aria-label="Білий" data-shopcard-color="white"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--blush" role="radio" aria-checked="false" aria-label="Рожевий" data-shopcard-color="blush"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--yellow" role="radio" aria-checked="false" aria-label="Жовтий" data-shopcard-color="yellow"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--violet" role="radio" aria-checked="false" aria-label="Фіолетовий" data-shopcard-color="violet"></button>
+										</div>
+									</div>
+									<div class="shopcard__body">
+										<div class="shopcard__pill">
+											<h3 class="shopcard__name">
+												<a href="product-card.html">Box LIP M</a>
+											</h3>
+											<!-- Без JS — ціна за правилами; shopcard.js перемикає на «N шт · сума» після додавання -->
+											<p class="shopcard__price" data-shopcard-price="" aria-live="polite">
+												70₴ / шт ·
+												<b>від 2 шт</b>
+											</p>
+										</div>
+										<button type="button" class="shopcard__add" data-shopcard-add="" aria-label="Додати в кошик: Box LIP M">
+											<svg viewbox="0 0 32 38" fill="none" aria-hidden="true">
+												<path d="M11 13V8.5a5 5 0 0 1 10 0V13M3.2 11h25.6l-1.6 22.2a3 3 0 0 1-3 2.8H7.8a3 3 0 0 1-3-2.8L3.2 11Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+											</svg>
+										</button>
+										<div class="shopcard__stepper" data-shopcard-stepper="" hidden>
+											<button type="button" class="shopcard__step" data-shopcard-minus="" aria-label="Менше: Box LIP M">−</button>
+											<span class="shopcard__qty" data-shopcard-qty="">0</span>
+											<button type="button" class="shopcard__step" data-shopcard-plus="" aria-label="Більше: Box LIP M">+</button>
+										</div>
+									</div>
+								</li>
+								<!--
+Картка товару «Card, Size=Large» (редизайн 2026-09-30: Catalogue.png, Product-card.png,
+правила — «Картка товару — правила.png»). Спільна для cataloggrid і productrelated:
+інклудиться в циклі з locals='{"item":{"id":"box-lip-l","qty":0,"name":"Box LIP L","url":"product-card.html","price":120,"unit":true,"min":1,"gift":false,"color":"black","colors":[{"mod":"black","label":"Чорний","img":"assets/img/catalog/box-lip-l.jpg"},{"mod":"white","label":"Білий","img":""},{"mod":"blush","label":"Рожевий","img":""},{"mod":"teal","label":"Бірюзовий","img":""}]}}'. Порту в тему ще немає — при порті стане
+сніпетом (snippets/shopcard.liquid) з даними з product/variants.
+Поля item (усі обов'язкові — posthtml-expressions падає на невідомому local навіть у хибному if):
+id     — ключ закладки (layout/bookmarks)
+name   — назва; url — посилання на товар
+price  — ціна за 1 шт, число (рядок «4 шт · 320₴» рахує shopcard.js)
+unit   — true для деталей: ціна «80₴ / шт», false для наборів: «1950₴»
+min    — мінімальне замовлення: кошик додає одразу стільки, «−» неактивний на мінімумі
+qty    — стартова кількість у кошику (0 — сумка; у макеті MED = 2, Base = 4 — показ степпера)
+gift   — стрічка «Подарунок» у куті
+color  — колір, вибраний спочатку (без нього — перший)
+colors — [{mod, label, img}]; img порожній — колір вибирається, але фото лишається поточне
+(фото деталей є лише чорні, вирізані з Catalogue.png).
+-->
+								<li data-fls-shopcard="" class="shopcard" data-fls-bookmarks-card="" data-shopcard-card="" data-price="120" data-min="1" data-qty="0">
+									<div class="shopcard__media" data-shopcard-media="black">
+										<a href="product-card.html" class="shopcard__photos" tabindex="-1" aria-hidden="true">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/catalog/box-lip-l-600.webp" type="image/webp">
+												<img class="shopcard__photo" alt="" data-shopcard-photo="black" width="1176" height="1120" loading="lazy" src="./assets/img/catalog/box-lip-l.webp">
+											</picture>
+											<!-- Стрілка по центру фото — з'являється при наведенні на картку -->
+											<span class="shopcard__open">
+												<svg viewbox="0 0 16 16" fill="none" aria-hidden="true">
+													<path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.8M11.5 4.5V10.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+												</svg>
+											</span>
+										</a>
+										<button type="button" class="shopcard__save" data-fls-bookmarks-toggle="box-lip-l" data-bookmark-title="Box LIP L" data-bookmark-price="120 ₴" data-bookmark-url="product-card.html" data-bookmark-toast="Додано в обране" aria-pressed="false" aria-label="Зберегти в обране: Box LIP L">
+											<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+												<path d="M12 20.5S3.5 15.4 3.5 9.2A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.5 2.8c0 6.2-8.5 11.3-8.5 11.3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+											</svg>
+										</button>
+										<div class="shopcard__swatches" role="radiogroup" aria-label="Колір: Box LIP L">
+											<button type="button" class="shopcard__swatch shopcard__swatch--black" role="radio" aria-checked="false" aria-label="Чорний" data-shopcard-color="black"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--white" role="radio" aria-checked="false" aria-label="Білий" data-shopcard-color="white"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--blush" role="radio" aria-checked="false" aria-label="Рожевий" data-shopcard-color="blush"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--teal" role="radio" aria-checked="false" aria-label="Бірюзовий" data-shopcard-color="teal"></button>
+										</div>
+									</div>
+									<div class="shopcard__body">
+										<div class="shopcard__pill">
+											<h3 class="shopcard__name">
+												<a href="product-card.html">Box LIP L</a>
+											</h3>
+											<!-- Без JS — ціна за правилами; shopcard.js перемикає на «N шт · сума» після додавання -->
+											<p class="shopcard__price" data-shopcard-price="" aria-live="polite">120₴ / шт</p>
+										</div>
+										<button type="button" class="shopcard__add" data-shopcard-add="" aria-label="Додати в кошик: Box LIP L">
+											<svg viewbox="0 0 32 38" fill="none" aria-hidden="true">
+												<path d="M11 13V8.5a5 5 0 0 1 10 0V13M3.2 11h25.6l-1.6 22.2a3 3 0 0 1-3 2.8H7.8a3 3 0 0 1-3-2.8L3.2 11Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+											</svg>
+										</button>
+										<div class="shopcard__stepper" data-shopcard-stepper="" hidden>
+											<button type="button" class="shopcard__step" data-shopcard-minus="" aria-label="Менше: Box LIP L">−</button>
+											<span class="shopcard__qty" data-shopcard-qty="">0</span>
+											<button type="button" class="shopcard__step" data-shopcard-plus="" aria-label="Більше: Box LIP L">+</button>
+										</div>
+									</div>
+								</li>
+								<!--
+Картка товару «Card, Size=Large» (редизайн 2026-09-30: Catalogue.png, Product-card.png,
+правила — «Картка товару — правила.png»). Спільна для cataloggrid і productrelated:
+інклудиться в циклі з locals='{"item":{"id":"box-s","qty":0,"name":"Box S","url":"product-card.html","price":160,"unit":true,"min":1,"gift":false,"color":"black","colors":[{"mod":"black","label":"Чорний","img":"assets/img/catalog/box-s.jpg"},{"mod":"white","label":"Білий","img":""},{"mod":"blush","label":"Рожевий","img":""},{"mod":"teal","label":"Бірюзовий","img":""},{"mod":"violet","label":"Фіолетовий","img":""}]}}'. Порту в тему ще немає — при порті стане
+сніпетом (snippets/shopcard.liquid) з даними з product/variants.
+Поля item (усі обов'язкові — posthtml-expressions падає на невідомому local навіть у хибному if):
+id     — ключ закладки (layout/bookmarks)
+name   — назва; url — посилання на товар
+price  — ціна за 1 шт, число (рядок «4 шт · 320₴» рахує shopcard.js)
+unit   — true для деталей: ціна «80₴ / шт», false для наборів: «1950₴»
+min    — мінімальне замовлення: кошик додає одразу стільки, «−» неактивний на мінімумі
+qty    — стартова кількість у кошику (0 — сумка; у макеті MED = 2, Base = 4 — показ степпера)
+gift   — стрічка «Подарунок» у куті
+color  — колір, вибраний спочатку (без нього — перший)
+colors — [{mod, label, img}]; img порожній — колір вибирається, але фото лишається поточне
+(фото деталей є лише чорні, вирізані з Catalogue.png).
+-->
+								<li data-fls-shopcard="" class="shopcard" data-fls-bookmarks-card="" data-shopcard-card="" data-price="160" data-min="1" data-qty="0">
+									<div class="shopcard__media" data-shopcard-media="black">
+										<a href="product-card.html" class="shopcard__photos" tabindex="-1" aria-hidden="true">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/catalog/box-s-600.webp" type="image/webp">
+												<img class="shopcard__photo" alt="" data-shopcard-photo="black" width="1176" height="1120" loading="lazy" src="./assets/img/catalog/box-s.webp">
+											</picture>
+											<!-- Стрілка по центру фото — з'являється при наведенні на картку -->
+											<span class="shopcard__open">
+												<svg viewbox="0 0 16 16" fill="none" aria-hidden="true">
+													<path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.8M11.5 4.5V10.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+												</svg>
+											</span>
+										</a>
+										<button type="button" class="shopcard__save" data-fls-bookmarks-toggle="box-s" data-bookmark-title="Box S" data-bookmark-price="160 ₴" data-bookmark-url="product-card.html" data-bookmark-toast="Додано в обране" aria-pressed="false" aria-label="Зберегти в обране: Box S">
+											<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+												<path d="M12 20.5S3.5 15.4 3.5 9.2A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.5 2.8c0 6.2-8.5 11.3-8.5 11.3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+											</svg>
+										</button>
+										<div class="shopcard__swatches" role="radiogroup" aria-label="Колір: Box S">
+											<button type="button" class="shopcard__swatch shopcard__swatch--black" role="radio" aria-checked="false" aria-label="Чорний" data-shopcard-color="black"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--white" role="radio" aria-checked="false" aria-label="Білий" data-shopcard-color="white"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--blush" role="radio" aria-checked="false" aria-label="Рожевий" data-shopcard-color="blush"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--teal" role="radio" aria-checked="false" aria-label="Бірюзовий" data-shopcard-color="teal"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--violet" role="radio" aria-checked="false" aria-label="Фіолетовий" data-shopcard-color="violet"></button>
+										</div>
+									</div>
+									<div class="shopcard__body">
+										<div class="shopcard__pill">
+											<h3 class="shopcard__name">
+												<a href="product-card.html">Box S</a>
+											</h3>
+											<!-- Без JS — ціна за правилами; shopcard.js перемикає на «N шт · сума» після додавання -->
+											<p class="shopcard__price" data-shopcard-price="" aria-live="polite">160₴ / шт</p>
+										</div>
+										<button type="button" class="shopcard__add" data-shopcard-add="" aria-label="Додати в кошик: Box S">
+											<svg viewbox="0 0 32 38" fill="none" aria-hidden="true">
+												<path d="M11 13V8.5a5 5 0 0 1 10 0V13M3.2 11h25.6l-1.6 22.2a3 3 0 0 1-3 2.8H7.8a3 3 0 0 1-3-2.8L3.2 11Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+											</svg>
+										</button>
+										<div class="shopcard__stepper" data-shopcard-stepper="" hidden>
+											<button type="button" class="shopcard__step" data-shopcard-minus="" aria-label="Менше: Box S">−</button>
+											<span class="shopcard__qty" data-shopcard-qty="">0</span>
+											<button type="button" class="shopcard__step" data-shopcard-plus="" aria-label="Більше: Box S">+</button>
+										</div>
+									</div>
+								</li>
+								<!--
+Картка товару «Card, Size=Large» (редизайн 2026-09-30: Catalogue.png, Product-card.png,
+правила — «Картка товару — правила.png»). Спільна для cataloggrid і productrelated:
+інклудиться в циклі з locals='{"item":{"id":"box-l","qty":0,"name":"Box L","url":"product-card.html","price":206,"unit":true,"min":1,"gift":false,"color":"black","colors":[{"mod":"black","label":"Чорний","img":"assets/img/catalog/box-l.jpg"},{"mod":"white","label":"Білий","img":""},{"mod":"blush","label":"Рожевий","img":""},{"mod":"yellow","label":"Жовтий","img":""}]}}'. Порту в тему ще немає — при порті стане
+сніпетом (snippets/shopcard.liquid) з даними з product/variants.
+Поля item (усі обов'язкові — posthtml-expressions падає на невідомому local навіть у хибному if):
+id     — ключ закладки (layout/bookmarks)
+name   — назва; url — посилання на товар
+price  — ціна за 1 шт, число (рядок «4 шт · 320₴» рахує shopcard.js)
+unit   — true для деталей: ціна «80₴ / шт», false для наборів: «1950₴»
+min    — мінімальне замовлення: кошик додає одразу стільки, «−» неактивний на мінімумі
+qty    — стартова кількість у кошику (0 — сумка; у макеті MED = 2, Base = 4 — показ степпера)
+gift   — стрічка «Подарунок» у куті
+color  — колір, вибраний спочатку (без нього — перший)
+colors — [{mod, label, img}]; img порожній — колір вибирається, але фото лишається поточне
+(фото деталей є лише чорні, вирізані з Catalogue.png).
+-->
+								<li data-fls-shopcard="" class="shopcard" data-fls-bookmarks-card="" data-shopcard-card="" data-price="206" data-min="1" data-qty="0">
+									<div class="shopcard__media" data-shopcard-media="black">
+										<a href="product-card.html" class="shopcard__photos" tabindex="-1" aria-hidden="true">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/catalog/box-l-600.webp" type="image/webp">
+												<img class="shopcard__photo" alt="" data-shopcard-photo="black" width="1176" height="1120" loading="lazy" src="./assets/img/catalog/box-l.webp">
+											</picture>
+											<!-- Стрілка по центру фото — з'являється при наведенні на картку -->
+											<span class="shopcard__open">
+												<svg viewbox="0 0 16 16" fill="none" aria-hidden="true">
+													<path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.8M11.5 4.5V10.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+												</svg>
+											</span>
+										</a>
+										<button type="button" class="shopcard__save" data-fls-bookmarks-toggle="box-l" data-bookmark-title="Box L" data-bookmark-price="206 ₴" data-bookmark-url="product-card.html" data-bookmark-toast="Додано в обране" aria-pressed="false" aria-label="Зберегти в обране: Box L">
+											<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+												<path d="M12 20.5S3.5 15.4 3.5 9.2A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.5 2.8c0 6.2-8.5 11.3-8.5 11.3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+											</svg>
+										</button>
+										<div class="shopcard__swatches" role="radiogroup" aria-label="Колір: Box L">
+											<button type="button" class="shopcard__swatch shopcard__swatch--black" role="radio" aria-checked="false" aria-label="Чорний" data-shopcard-color="black"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--white" role="radio" aria-checked="false" aria-label="Білий" data-shopcard-color="white"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--blush" role="radio" aria-checked="false" aria-label="Рожевий" data-shopcard-color="blush"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--yellow" role="radio" aria-checked="false" aria-label="Жовтий" data-shopcard-color="yellow"></button>
+										</div>
+									</div>
+									<div class="shopcard__body">
+										<div class="shopcard__pill">
+											<h3 class="shopcard__name">
+												<a href="product-card.html">Box L</a>
+											</h3>
+											<!-- Без JS — ціна за правилами; shopcard.js перемикає на «N шт · сума» після додавання -->
+											<p class="shopcard__price" data-shopcard-price="" aria-live="polite">206₴ / шт</p>
+										</div>
+										<button type="button" class="shopcard__add" data-shopcard-add="" aria-label="Додати в кошик: Box L">
+											<svg viewbox="0 0 32 38" fill="none" aria-hidden="true">
+												<path d="M11 13V8.5a5 5 0 0 1 10 0V13M3.2 11h25.6l-1.6 22.2a3 3 0 0 1-3 2.8H7.8a3 3 0 0 1-3-2.8L3.2 11Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+											</svg>
+										</button>
+										<div class="shopcard__stepper" data-shopcard-stepper="" hidden>
+											<button type="button" class="shopcard__step" data-shopcard-minus="" aria-label="Менше: Box L">−</button>
+											<span class="shopcard__qty" data-shopcard-qty="">0</span>
+											<button type="button" class="shopcard__step" data-shopcard-plus="" aria-label="Більше: Box L">+</button>
+										</div>
+									</div>
+								</li>
+								<!--
+Картка товару «Card, Size=Large» (редизайн 2026-09-30: Catalogue.png, Product-card.png,
+правила — «Картка товару — правила.png»). Спільна для cataloggrid і productrelated:
+інклудиться в циклі з locals='{"item":{"id":"watch-stand","qty":0,"name":"Watch stand","url":"product-card.html","price":150,"unit":true,"min":1,"gift":false,"color":"black","colors":[{"mod":"black","label":"Чорний","img":"assets/img/catalog/watch-stand.jpg"},{"mod":"white","label":"Білий","img":""},{"mod":"blush","label":"Рожевий","img":""},{"mod":"violet","label":"Фіолетовий","img":""}]}}'. Порту в тему ще немає — при порті стане
+сніпетом (snippets/shopcard.liquid) з даними з product/variants.
+Поля item (усі обов'язкові — posthtml-expressions падає на невідомому local навіть у хибному if):
+id     — ключ закладки (layout/bookmarks)
+name   — назва; url — посилання на товар
+price  — ціна за 1 шт, число (рядок «4 шт · 320₴» рахує shopcard.js)
+unit   — true для деталей: ціна «80₴ / шт», false для наборів: «1950₴»
+min    — мінімальне замовлення: кошик додає одразу стільки, «−» неактивний на мінімумі
+qty    — стартова кількість у кошику (0 — сумка; у макеті MED = 2, Base = 4 — показ степпера)
+gift   — стрічка «Подарунок» у куті
+color  — колір, вибраний спочатку (без нього — перший)
+colors — [{mod, label, img}]; img порожній — колір вибирається, але фото лишається поточне
+(фото деталей є лише чорні, вирізані з Catalogue.png).
+-->
+								<li data-fls-shopcard="" class="shopcard" data-fls-bookmarks-card="" data-shopcard-card="" data-price="150" data-min="1" data-qty="0">
+									<div class="shopcard__media" data-shopcard-media="black">
+										<a href="product-card.html" class="shopcard__photos" tabindex="-1" aria-hidden="true">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/catalog/watch-stand-600.webp" type="image/webp">
+												<img class="shopcard__photo" alt="" data-shopcard-photo="black" width="1176" height="1120" loading="lazy" src="./assets/img/catalog/watch-stand.webp">
+											</picture>
+											<!-- Стрілка по центру фото — з'являється при наведенні на картку -->
+											<span class="shopcard__open">
+												<svg viewbox="0 0 16 16" fill="none" aria-hidden="true">
+													<path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.8M11.5 4.5V10.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+												</svg>
+											</span>
+										</a>
+										<button type="button" class="shopcard__save" data-fls-bookmarks-toggle="watch-stand" data-bookmark-title="Watch stand" data-bookmark-price="150 ₴" data-bookmark-url="product-card.html" data-bookmark-toast="Додано в обране" aria-pressed="false" aria-label="Зберегти в обране: Watch stand">
+											<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
+												<path d="M12 20.5S3.5 15.4 3.5 9.2A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.5 2.8c0 6.2-8.5 11.3-8.5 11.3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+											</svg>
+										</button>
+										<div class="shopcard__swatches" role="radiogroup" aria-label="Колір: Watch stand">
+											<button type="button" class="shopcard__swatch shopcard__swatch--black" role="radio" aria-checked="false" aria-label="Чорний" data-shopcard-color="black"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--white" role="radio" aria-checked="false" aria-label="Білий" data-shopcard-color="white"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--blush" role="radio" aria-checked="false" aria-label="Рожевий" data-shopcard-color="blush"></button>
+											<button type="button" class="shopcard__swatch shopcard__swatch--violet" role="radio" aria-checked="false" aria-label="Фіолетовий" data-shopcard-color="violet"></button>
+										</div>
+									</div>
+									<div class="shopcard__body">
+										<div class="shopcard__pill">
+											<h3 class="shopcard__name">
+												<a href="product-card.html">Watch stand</a>
+											</h3>
+											<!-- Без JS — ціна за правилами; shopcard.js перемикає на «N шт · сума» після додавання -->
+											<p class="shopcard__price" data-shopcard-price="" aria-live="polite">150₴ / шт</p>
+										</div>
+										<button type="button" class="shopcard__add" data-shopcard-add="" aria-label="Додати в кошик: Watch stand">
+											<svg viewbox="0 0 32 38" fill="none" aria-hidden="true">
+												<path d="M11 13V8.5a5 5 0 0 1 10 0V13M3.2 11h25.6l-1.6 22.2a3 3 0 0 1-3 2.8H7.8a3 3 0 0 1-3-2.8L3.2 11Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+											</svg>
+										</button>
+										<div class="shopcard__stepper" data-shopcard-stepper="" hidden>
+											<button type="button" class="shopcard__step" data-shopcard-minus="" aria-label="Менше: Watch stand">−</button>
+											<span class="shopcard__qty" data-shopcard-qty="">0</span>
+											<button type="button" class="shopcard__step" data-shopcard-plus="" aria-label="Більше: Watch stand">+</button>
+										</div>
 									</div>
 								</li>
 							</ul>
 							<div class="cataloggrid__footer">
-								<p class="cataloggrid__shown">Переглянуто 9 з 20 товарів</p>
+								<p class="cataloggrid__shown">Переглянуто 14 з 14 товарів</p>
 							</div>
 						</div>
 					</section>
 					<!--
 Порт: src/shopify/relax-theme/sections/faqpin.liquid (2026-09-15 синхронізовано з ваніллю; variant = select у схемі).
 2026-09-29 ваніль оновлено за редизайном: головна тепер у вигляді варіанта catalog (білі рядки на bone),
-пігулка «Часті запитання», «Найчастіші» розовим. Порт у тему ще НЕ синхронізовано.
+пігулка «Часті запитання», «Найчастіші» розовим. 2026-09-29 порт синхронізовано з ваніллю.
+2026-09-30 ваніль оновлено за редизайном каталогу (Catalogue.png): варіант catalog — та сама пігулка
+tabletext і розове «Найчастіші», список 1200 як на головній, лише без стрічки. Порт (faqpin.liquid,
+гілка catalog з __kicker) ще НЕ синхронізовано — стилі __kicker у faqpin.scss лишаються для нього.
 -->
 					<!--
 FAQ. Два варіанти через locals variant (передавати явно в кожному include):
 "home" — головна (стрічка marqueepin, пілюля «Часті запитання», «Найчастіші» розовим);
 "about" — «Про нас» (те саме, що home, але стрічка зі своїм набором чипів);
-"catalog" — каталог, Figma 219:1668 (без стрічки, пілюля «• Часті запитання»,
-широкий список окремих білих рядків).
+"catalog" — каталог (без стрічки; решта — як на головній).
 -->
 					<section data-fls-faqpin="" class="faqpin faqpin--catalog">
 						<div class="faqpin__decor">
@@ -785,11 +1770,11 @@ FAQ. Два варіанти через locals variant (передавати я�
 							</div>
 						</div>
 						<div class="faqpin__container" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
-							<span class="faqpin__kicker">
-								<span class="faqpin__kicker-dot" aria-hidden="true"></span>
-								Часті запитання
-							</span>
-							<h2 class="faqpin__title">Найчастіші запитання</h2>
+							<div data-fls-tabletext="" class="tabletext">Часті запитання</div>
+							<h2 class="faqpin__title">
+								<mark class="faqpin__highlight">Найчастіші</mark>
+								запитання
+							</h2>
 							<!-- data-fls-spollers(-one) — акордеон із layout/spollers (плавне розкриття, лише один пункт відкритий), не нативний <details> -->
 							<div class="faqpin__list" data-fls-spollers="" data-fls-spollers-one="" data-fls-reveal-group="" data-fls-watcher="" data-fls-watcher-once="">
 								<details class="faqpin__item">
@@ -859,7 +1844,7 @@ FAQ. Два варіанти через locals variant (передавати я�
 			</main>
 			<!--
 Порт: src/shopify/relax-theme/sections/footer-relax.liquid (2026-09-15, 1:1 з ваніллю).
-2026-09-29 ваніль оновлено за редизайном (логотип з іконкою, контент по контейнеру 1200), порт у тему ще НЕ синхронізовано.
+2026-09-29 ваніль оновлено за редизайном (логотип з іконкою, контент по контейнеру 1200), 2026-09-29 порт синхронізовано з ваніллю.
 -->
 			<footer data-fls-footer="" class="footer">
 				<div class="footer__container">
@@ -933,6 +1918,9 @@ FAQ. Два варіанти через locals variant (передавати я�
 		</div>
 		<!--
 Порт: src/shopify/relax-theme/snippets/catalogfilters.liquid (2026-09-15 синхронізовано з ваніллю).
+2026-09-30 ваніль оновлено за Filters-popup.png: дані під 14 товарів каталогу (категорії 3/1/1/2/6/1,
+8 кольорів, ціна 4–1950). Розмітка й поведінка не змінились — у темі дані й так з collection.filters,
+а кольори кружечків — swatch-colors.scss (нові жовтий/фіолетовий/бірюзовий/блакитний туди ще НЕ додано).
 Дровер фільтрів каталогу (Figma 219:1684 «Filters / Drawer»).
 Каркас — layout/popup (data-fls-popup / -wrapper / -body / -close): ESC,
 клік по фону, фокус-пастка, блокування скролу. Відкривається кнопкою
@@ -949,7 +1937,7 @@ filter.v.price.gte/lte). У ванілі фільтрації немає (сіт
 						<div class="catalogfilters__head">
 							<h2 class="catalogfilters__title" id="catalogfilters-title">
 								Фільтри
-								<span data-catalogfilters-count="">(3)</span>
+								<span data-catalogfilters-count="">(2)</span>
 							</h2>
 							<button data-fls-popup-close="" type="button" class="catalogfilters__close" aria-label="Закрити фільтри">
 								<svg viewbox="0 0 24 24" fill="none" aria-hidden="true">
@@ -976,7 +1964,7 @@ filter.v.price.gte/lte). У ванілі фільтрації немає (сіт
 													<path d="M5.5 9.1L8.7 12.3L14.5 6.5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
 												</svg>
 												<span class="catalogfilters__label">набори</span>
-												<span class="catalogfilters__qty">4</span>
+												<span class="catalogfilters__qty">3</span>
 											</label>
 										</li>
 										<li>
@@ -987,18 +1975,18 @@ filter.v.price.gte/lte). У ванілі фільтрації немає (сіт
 													<path d="M5.5 9.1L8.7 12.3L14.5 6.5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
 												</svg>
 												<span class="catalogfilters__label">база</span>
-												<span class="catalogfilters__qty">6</span>
+												<span class="catalogfilters__qty">1</span>
 											</label>
 										</li>
 										<li>
 											<label class="catalogfilters__option">
-												<input class="catalogfilters__input" type="checkbox" name="category" value="перестінок">
+												<input class="catalogfilters__input" type="checkbox" name="category" value="перестінки">
 												<svg class="catalogfilters__check" viewbox="0 0 20 20" fill="none" aria-hidden="true">
 													<rect x="1.75" y="1.75" width="16.5" height="16.5" rx="2.25" stroke-width="1.5"></rect>
 													<path d="M5.5 9.1L8.7 12.3L14.5 6.5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
 												</svg>
-												<span class="catalogfilters__label">перестінок</span>
-												<span class="catalogfilters__qty">5</span>
+												<span class="catalogfilters__label">перестінки</span>
+												<span class="catalogfilters__qty">1</span>
 											</label>
 										</li>
 										<li>
@@ -1009,7 +1997,7 @@ filter.v.price.gte/lte). У ванілі фільтрації немає (сіт
 													<path d="M5.5 9.1L8.7 12.3L14.5 6.5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
 												</svg>
 												<span class="catalogfilters__label">фіксатори</span>
-												<span class="catalogfilters__qty">3</span>
+												<span class="catalogfilters__qty">2</span>
 											</label>
 										</li>
 										<li>
@@ -1020,7 +2008,7 @@ filter.v.price.gte/lte). У ванілі фільтрації немає (сіт
 													<path d="M5.5 9.1L8.7 12.3L14.5 6.5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
 												</svg>
 												<span class="catalogfilters__label">бокси</span>
-												<span class="catalogfilters__qty">2</span>
+												<span class="catalogfilters__qty">6</span>
 											</label>
 										</li>
 										<li>
@@ -1031,7 +2019,7 @@ filter.v.price.gte/lte). У ванілі фільтрації немає (сіт
 													<path d="M5.5 9.1L8.7 12.3L14.5 6.5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
 												</svg>
 												<span class="catalogfilters__label">підставки</span>
-												<span class="catalogfilters__qty">4</span>
+												<span class="catalogfilters__qty">1</span>
 											</label>
 										</li>
 									</ul>
@@ -1048,10 +2036,10 @@ filter.v.price.gte/lte). У ванілі фільтрації немає (сіт
 									<ul class="catalogfilters__options catalogfilters__options--swatches">
 										<li>
 											<label class="catalogfilters__option">
-												<input class="catalogfilters__input" type="checkbox" name="color" value="рожевий" checked>
-												<span class="catalogfilters__swatch catalogfilters__swatch--rose" aria-hidden="true"></span>
-												<span class="catalogfilters__label">рожевий</span>
-												<span class="catalogfilters__qty">5</span>
+												<input class="catalogfilters__input" type="checkbox" name="color" value="чорний">
+												<span class="catalogfilters__swatch catalogfilters__swatch--black" aria-hidden="true"></span>
+												<span class="catalogfilters__label">чорний</span>
+												<span class="catalogfilters__qty">14</span>
 											</label>
 										</li>
 										<li>
@@ -1059,15 +2047,15 @@ filter.v.price.gte/lte). У ванілі фільтрації немає (сіт
 												<input class="catalogfilters__input" type="checkbox" name="color" value="білий">
 												<span class="catalogfilters__swatch catalogfilters__swatch--white" aria-hidden="true"></span>
 												<span class="catalogfilters__label">білий</span>
-												<span class="catalogfilters__qty">6</span>
+												<span class="catalogfilters__qty">14</span>
 											</label>
 										</li>
 										<li>
 											<label class="catalogfilters__option">
-												<input class="catalogfilters__input" type="checkbox" name="color" value="чорний">
-												<span class="catalogfilters__swatch catalogfilters__swatch--black" aria-hidden="true"></span>
-												<span class="catalogfilters__label">чорний</span>
-												<span class="catalogfilters__qty">6</span>
+												<input class="catalogfilters__input" type="checkbox" name="color" value="рожевий" checked>
+												<span class="catalogfilters__swatch catalogfilters__swatch--rose" aria-hidden="true"></span>
+												<span class="catalogfilters__label">рожевий</span>
+												<span class="catalogfilters__qty">14</span>
 											</label>
 										</li>
 										<li>
@@ -1076,6 +2064,38 @@ filter.v.price.gte/lte). У ванілі фільтрації немає (сіт
 												<span class="catalogfilters__swatch catalogfilters__swatch--mixed" aria-hidden="true"></span>
 												<span class="catalogfilters__label">різнокольоровий</span>
 												<span class="catalogfilters__qty">3</span>
+											</label>
+										</li>
+										<li>
+											<label class="catalogfilters__option">
+												<input class="catalogfilters__input" type="checkbox" name="color" value="жовтий">
+												<span class="catalogfilters__swatch catalogfilters__swatch--yellow" aria-hidden="true"></span>
+												<span class="catalogfilters__label">жовтий</span>
+												<span class="catalogfilters__qty">5</span>
+											</label>
+										</li>
+										<li>
+											<label class="catalogfilters__option">
+												<input class="catalogfilters__input" type="checkbox" name="color" value="фіолетовий">
+												<span class="catalogfilters__swatch catalogfilters__swatch--violet" aria-hidden="true"></span>
+												<span class="catalogfilters__label">фіолетовий</span>
+												<span class="catalogfilters__qty">4</span>
+											</label>
+										</li>
+										<li>
+											<label class="catalogfilters__option">
+												<input class="catalogfilters__input" type="checkbox" name="color" value="бірюзовий">
+												<span class="catalogfilters__swatch catalogfilters__swatch--teal" aria-hidden="true"></span>
+												<span class="catalogfilters__label">бірюзовий</span>
+												<span class="catalogfilters__qty">2</span>
+											</label>
+										</li>
+										<li>
+											<label class="catalogfilters__option">
+												<input class="catalogfilters__input" type="checkbox" name="color" value="блакитний">
+												<span class="catalogfilters__swatch catalogfilters__swatch--blue" aria-hidden="true"></span>
+												<span class="catalogfilters__label">блакитний</span>
+												<span class="catalogfilters__qty">1</span>
 											</label>
 										</li>
 									</ul>
@@ -1095,18 +2115,18 @@ filter.v.price.gte/lte). У ванілі фільтрації немає (сіт
 які виставляє catalogfilters.js
 -->
 									<div class="catalogfilters__range" data-catalogfilters-range="">
-										<input class="catalogfilters__thumb" type="range" name="price_min" min="490" max="5490" step="10" value="1490" aria-label="Ціна від" data-catalogfilters-min="">
-										<input class="catalogfilters__thumb" type="range" name="price_max" min="490" max="5490" step="10" value="4990" aria-label="Ціна до" data-catalogfilters-max="">
+										<input class="catalogfilters__thumb" type="range" name="price_min" min="4" max="1950" step="1" value="4" aria-label="Ціна від" data-catalogfilters-min="">
+										<input class="catalogfilters__thumb" type="range" name="price_max" min="4" max="1950" step="1" value="1950" aria-label="Ціна до" data-catalogfilters-max="">
 									</div>
 									<div class="catalogfilters__values">
-										<output data-catalogfilters-min-label="">1 490 ₴</output>
-										<output data-catalogfilters-max-label="">4 990 ₴</output>
+										<output data-catalogfilters-min-label="">4 ₴</output>
+										<output data-catalogfilters-max-label="">1 950 ₴</output>
 									</div>
 								</div>
 							</details>
 						</div>
 						<div class="catalogfilters__foot">
-							<button type="submit" class="catalogfilters__apply">Показати 12 товарів</button>
+							<button type="submit" class="catalogfilters__apply">Показати 1 товар</button>
 							<button type="button" class="catalogfilters__clear" data-catalogfilters-clear="">Очистити фільтри</button>
 						</div>
 					</form>

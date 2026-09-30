@@ -1,7 +1,9 @@
 import "./main.min.js";
 /* empty css                */
 import { a as dataMediaQueries, d as slideDown, p as slideUp, s as getHash, u as setHash } from "./common.min.js";
+/* empty css              */
 import { a as getSlideTransformEl, i as elementTransitionEnd, t as Swiper } from "./swiper.min.js";
+import "./shopcard.min.js";
 import "./popup.min.js";
 import "./spollers.min.js";
 import "./faqpin.min.js";
@@ -457,7 +459,7 @@ function initFadeSliders() {
 	document.querySelectorAll("[data-fls-fadeslider]").forEach((slider) => {
 		if (slider.swiper) return;
 		const delay = parseInt(slider.dataset.flsFadeslider, 10) || 4e3;
-		new Swiper(slider, {
+		const swiper = new Swiper(slider, {
 			modules: [Autoplay, EffectFade],
 			effect: "fade",
 			fadeEffect: { crossFade: true },
@@ -469,6 +471,11 @@ function initFadeSliders() {
 				disableOnInteraction: false
 			}
 		});
+		const hoverArea = slider.hasAttribute("data-fls-fadeslider-pause") && slider.parentElement;
+		if (hoverArea && !reduceMotion) {
+			hoverArea.addEventListener("mouseenter", () => swiper.autoplay.pause());
+			hoverArea.addEventListener("mouseleave", () => swiper.autoplay.resume());
+		}
 	});
 }
 window.addEventListener("load", initFadeSliders);
@@ -573,35 +580,61 @@ function tabs() {
 window.addEventListener("load", tabs);
 //#endregion
 //#region src/components/custom/catalogfeatured/catalogfeatured.js
-function selectColor(media, color) {
-	media.querySelectorAll("[data-catalogfeatured-photo]").forEach((photo) => {
-		photo.classList.toggle("--active", photo.dataset.catalogfeaturedPhoto === color);
-	});
-	media.querySelectorAll("[data-catalogfeatured-color]").forEach((option) => {
-		option.setAttribute("aria-checked", String(option.dataset.catalogfeaturedColor === color));
+function thumbImage(set, key) {
+	return set.querySelector(`[data-catalogfeatured-thumb="${key}"] img`);
+}
+function showPhoto(set, key) {
+	const thumb = thumbImage(set, key);
+	if (!thumb) return;
+	const photo = set.querySelector("[data-catalogfeatured-photo]");
+	photo.src = thumb.currentSrc || thumb.src;
+	set.querySelectorAll("[data-catalogfeatured-thumb]").forEach((button) => {
+		button.classList.toggle("--active", button.dataset.catalogfeaturedThumb === key);
 	});
 }
-function initFeaturedColors() {
-	document.querySelectorAll("[data-catalogfeatured-media]").forEach((media) => {
-		if (media.hasAttribute("data-catalogfeatured-ready")) return;
-		const photoColors = [...media.querySelectorAll("[data-catalogfeatured-photo]")].map((photo) => photo.dataset.catalogfeaturedPhoto);
-		const options = [...media.querySelectorAll("[data-catalogfeatured-color]")];
-		options.forEach((option) => {
-			if (photoColors.includes(option.dataset.catalogfeaturedColor)) return;
-			option.disabled = true;
-			option.title = "Фото цього кольору ще немає";
-		});
-		const first = options.find((option) => !option.disabled);
-		if (first) selectColor(media, first.dataset.catalogfeaturedColor);
-		media.setAttribute("data-catalogfeatured-ready", "");
+function selectColor(set, color) {
+	set.querySelectorAll("[data-catalogfeatured-color]").forEach((option) => {
+		option.setAttribute("aria-checked", String(option.dataset.catalogfeaturedColor === color));
+	});
+	showPhoto(set, color);
+}
+function setQty(set, qty) {
+	const next = Math.max(1, qty);
+	set.dataset.qty = next;
+	set.querySelector("[data-catalogfeatured-qty]").textContent = next;
+	set.querySelector("[data-catalogfeatured-minus]").disabled = next <= 1;
+}
+function initFeatured() {
+	document.querySelectorAll("[data-catalogfeatured-set]:not([data-catalogfeatured-ready])").forEach((set) => {
+		const first = set.querySelector("[data-catalogfeatured-color]");
+		if (first) selectColor(set, first.dataset.catalogfeaturedColor);
+		setQty(set, 1);
+		set.setAttribute("data-catalogfeatured-ready", "");
 	});
 }
 document.addEventListener("click", (e) => {
+	const set = e.target.closest("[data-catalogfeatured-set]");
+	if (!set) return;
 	const option = e.target.closest("[data-catalogfeatured-color]");
-	if (!option || option.disabled) return;
-	selectColor(option.closest("[data-catalogfeatured-media]"), option.dataset.catalogfeaturedColor);
+	if (option) return selectColor(set, option.dataset.catalogfeaturedColor);
+	const thumb = e.target.closest("[data-catalogfeatured-thumb]");
+	if (thumb) {
+		const key = thumb.dataset.catalogfeaturedThumb;
+		if (set.querySelector(`[data-catalogfeatured-color="${key}"]`)) return selectColor(set, key);
+		return showPhoto(set, key);
+	}
+	if (e.target.closest("[data-catalogfeatured-plus]")) return setQty(set, Number(set.dataset.qty) + 1);
+	if (e.target.closest("[data-catalogfeatured-minus]")) return setQty(set, Number(set.dataset.qty) - 1);
+	if (e.target.closest("[data-catalogfeatured-zoom]")) {
+		const photo = set.querySelector("[data-catalogfeatured-photo]");
+		const zoom = document.querySelector("[data-catalogfeatured-zoom-image]");
+		if (zoom) {
+			zoom.src = photo.currentSrc || photo.src;
+			zoom.alt = photo.alt;
+		}
+	}
 });
-initFeaturedColors();
+initFeatured();
 //#endregion
 //#region src/components/custom/catalogfilters/catalogfilters.js
 var priceFormat = new Intl.NumberFormat("uk-UA");

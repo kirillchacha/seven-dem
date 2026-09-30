@@ -108,10 +108,24 @@ var Bookmarks = class {
 		const id = toggle.dataset.flsBookmarksToggle;
 		if (!id) return;
 		e.preventDefault();
-		this.items = this.has(id) ? this.items.filter((item) => item.id !== id) : [...this.items, this.snapshot(toggle, id)];
+		const added = !this.has(id);
+		this.items = added ? [...this.items, this.snapshot(toggle, id)] : this.items.filter((item) => item.id !== id);
 		this.write();
 		this.render();
+		if (added && toggle.dataset.bookmarkToast) this.toast(toggle.dataset.bookmarkToast);
 		document.dispatchEvent(new CustomEvent("bookmarksChange", { detail: { items: this.items } }));
+	}
+	toast(text) {
+		if (!this.toastEl) {
+			this.toastEl = document.createElement("div");
+			this.toastEl.className = "fls-toast";
+			this.toastEl.setAttribute("role", "status");
+			document.body.append(this.toastEl);
+		}
+		this.toastEl.textContent = text;
+		this.toastEl.classList.add("--visible");
+		clearTimeout(this.toastTimer);
+		this.toastTimer = setTimeout(() => this.toastEl.classList.remove("--visible"), 2400);
 	}
 	snapshot(toggle, id) {
 		const card = toggle.closest("[data-fls-bookmarks-card]");

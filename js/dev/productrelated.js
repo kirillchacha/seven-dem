@@ -1,4 +1,5 @@
 import { n as createElement, o as makeElementsArray, r as elementChildren, s as setInnerHTML, t as Swiper } from "./swiper.min.js";
+import "./shopcard.min.js";
 //#region node_modules/swiper/shared/create-element-if-not-defined.mjs
 function createElementIfNotDefined(swiper, originalParams, params, checkProps) {
 	const target = params ?? {};
@@ -198,7 +199,9 @@ function initProductRelated() {
 	document.querySelectorAll("[data-fls-productrelated]").forEach((section) => {
 		const slider = section.querySelector(".productrelated__slider");
 		if (!slider) return;
+		const large = section.classList.contains("productrelated--large");
 		new Swiper(slider, {
+			...large && { slideClass: "shopcard" },
 			modules: [Navigation],
 			observer: true,
 			observeParents: true,
@@ -209,7 +212,10 @@ function initProductRelated() {
 				prevEl: section.querySelector(".productrelated__arrow--prev"),
 				nextEl: section.querySelector(".productrelated__arrow--next")
 			},
-			breakpoints: {
+			breakpoints: large ? { 768: {
+				slidesPerView: 2,
+				spaceBetween: 24
+			} } : {
 				480: {
 					slidesPerView: 2,
 					spaceBetween: 16
